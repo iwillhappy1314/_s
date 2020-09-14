@@ -279,24 +279,15 @@ if ( ! function_exists('_s_woocommerce_header_cart')) {
      */
     function _s_woocommerce_header_cart()
     {
-        if (is_cart()) {
-            $class = 'current-menu-item';
-        } else {
-            $class = '';
+        if(is_cart() || is_checkout()){
+            return;
         }
         ?>
-        <ul id="site-header-cart" class="site-header-cart">
-            <li class="<?php echo esc_attr($class); ?>">
-                <?php _s_woocommerce_cart_link(); ?>
-            </li>
+        <ul id="site-header-cart" class="site-header-cart menu">
             <li>
-                <?php
-                $instance = [
-                    'title' => '',
-                ];
-
-                the_widget('WC_Widget_Cart', $instance);
-                ?>
+                <div class="cart-click">
+                    <?php _s_woocommerce_cart_link(); ?>
+                </div>
             </li>
         </ul>
         <?php
@@ -334,13 +325,9 @@ if ( ! function_exists('_s_header_cart_drawer')) {
     function _s_header_cart_drawer()
     {
         if (function_exists('is_woocommerce')) {
-            if (is_cart()) {
-                $class = 'current-menu-item';
-            } else {
-                $class = '';
-            }
+            $class = is_cart() ? 'current-menu-item' : '';
             ?>
-            <div class="shoptimizer-mini-cart-wrap">
+            <div class="shoptimizer-mini-cart-wrap <?= $class; ?>">
 
                 <div id="ajax-loading">
                     <div class="shoptimizer-loader">
@@ -622,7 +609,7 @@ if ( ! function_exists('_s_cart_progress')) {
                             <?php esc_html_e('Shopping Cart', '_s'); ?>
                         </a>
                     </li>
-                    <li class="<?= is_checkout() && !is_order_received_page() ? 'next' : ''; ?><?= is_order_received_page() ? 'active' : ''; ?>">
+                    <li class="<?= is_checkout() && ! is_order_received_page() ? 'next' : ''; ?><?= is_order_received_page() ? 'active' : ''; ?>">
                         <a href="<?php echo get_permalink(wc_get_page_id('checkout')); ?>">
                             <?php esc_html_e('Shipping and Checkout', '_s'); ?>
                         </a>
