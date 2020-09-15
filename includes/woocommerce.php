@@ -279,13 +279,14 @@ if ( ! function_exists('_s_woocommerce_header_cart')) {
      */
     function _s_woocommerce_header_cart()
     {
-        if(is_cart() || is_checkout()){
-            return;
+        $class = 'js-cart-click';
+        if (is_cart() || is_checkout()) {
+            $class = '';
         }
         ?>
         <ul id="site-header-cart" class="site-header-cart menu">
             <li>
-                <div class="cart-click">
+                <div class="<?= $class; ?>">
                     <?php _s_woocommerce_cart_link(); ?>
                 </div>
             </li>
@@ -356,7 +357,7 @@ if ( ! function_exists('_s_header_cart_drawer')) {
 					} );
 
 					// Toggle cart drawer.
-					$( '.site-header-cart .cart-click' ).on( 'click', function( e ) {
+					$( '.site-header-cart .js-cart-click' ).on( 'click', function( e ) {
 						e.stopPropagation();
 						e.preventDefault();
 						$( 'body' ).toggleClass( 'drawer-open' );
