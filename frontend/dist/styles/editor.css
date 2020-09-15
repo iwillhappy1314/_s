@@ -119338,6 +119338,37 @@ input:focus,
   outline: 0;
 }
 
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  --text-opacity: 1;
+  color: #9e9e9e;
+  color: rgba(158, 158, 158, var(--text-opacity));
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  --text-opacity: 1;
+  color: #9e9e9e;
+  color: rgba(158, 158, 158, var(--text-opacity));
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  --text-opacity: 1;
+  color: #9e9e9e;
+  color: rgba(158, 158, 158, var(--text-opacity));
+}
+
+input::-ms-input-placeholder, textarea::-ms-input-placeholder {
+  --text-opacity: 1;
+  color: #9e9e9e;
+  color: rgba(158, 158, 158, var(--text-opacity));
+}
+
+input::placeholder,
+textarea::placeholder {
+  --text-opacity: 1;
+  color: #9e9e9e;
+  color: rgba(158, 158, 158, var(--text-opacity));
+}
+
 [type=submit] {
   border-width: 0;
 }
