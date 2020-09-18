@@ -2016,3 +2016,7 @@ div.product table.variations .value {
   background-size: contain;
   height: 128px;
 }
+
+.rswc-widget {
+  margin-top: 1rem;
+}

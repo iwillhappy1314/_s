@@ -1054,6 +1054,7 @@ div.woocommerce-MyAccount-navigation {
 
 .woocommerce-Address-title .edit {
   font-size: 0.875rem;
+  text-decoration: underline;
   margin-top: 2px;
 }
 

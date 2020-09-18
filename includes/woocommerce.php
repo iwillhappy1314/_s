@@ -151,9 +151,61 @@ if ( ! function_exists('_s_woocommerce_widgets_init')) {
             'after_title'   => '</span></h2>',
         ]);
 
+        register_sidebar([
+            'name'          => esc_html__('Single Product Custom area', '_s'),
+            'id'            => 'widget-area-product',
+            'description'   => esc_html__('Add widgets here.', '_s'),
+            'before_widget' => '<section id="%1$s" class="rswc-widget rswc-%2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title"><span>',
+            'after_title'   => '</span></h2>',
+        ]);
+
+        register_sidebar([
+            'name'          => esc_html__('Cart Widgets Area', '_s'),
+            'id'            => 'widget-area-cart',
+            'description'   => esc_html__('Add widgets here.', '_s'),
+            'before_widget' => '<section id="%1$s" class="rswc-widget rswc-%2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title"><span>',
+            'after_title'   => '</span></h2>',
+        ]);
+
+        register_sidebar([
+            'name'          => esc_html__('Checkout Widgets Area', '_s'),
+            'id'            => 'widget-area-checkout',
+            'description'   => esc_html__('Add widgets here.', '_s'),
+            'before_widget' => '<section id="%1$s" class="rswc-widget rswc-%2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title"><span>',
+            'after_title'   => '</span></h2>',
+        ]);
+
     }
 }
 
+
+add_action('woocommerce_single_product_summary', function ()
+{
+    if (is_active_sidebar('widget-area-product')) {
+        dynamic_sidebar('widget-area-product');
+    }
+}, 35);
+
+
+add_action('woocommerce_after_cart_totals', function ()
+{
+    if (is_active_sidebar('widget-area-cart')) {
+        dynamic_sidebar('widget-area-cart');
+    }
+}, 35);
+
+add_action('woocommerce_review_order_after_submit', function ()
+{
+    if (is_active_sidebar('widget-area-checkout')) {
+        dynamic_sidebar('widget-area-checkout');
+    }
+}, 35);
 
 if ( ! function_exists('_s_woocommerce_scripts')) {
     /**
