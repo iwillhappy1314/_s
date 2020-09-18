@@ -13,6 +13,10 @@ function _s_scripts()
     wp_enqueue_style('_s-main', _s_asset('styles/main.css'));
     wp_enqueue_style('_s-iconfont', _s_asset('styles/iconfont.css'));
 
+    if (is_singular()) {
+        wp_enqueue_style('_s-post', _s_asset('styles/post.css'));
+    }
+
     wp_enqueue_script('_s-main', _s_asset('scripts/main.js'), ['jquery'], '20151215', true);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {

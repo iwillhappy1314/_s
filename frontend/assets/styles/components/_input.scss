@@ -27,6 +27,11 @@ textarea {
     }
 }
 
+input::placeholder,
+textarea::placeholder {
+    @apply text-gray-500;
+}
+
 [type=submit]{
     border-width: 0;
 }

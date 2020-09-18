@@ -34,6 +34,15 @@ remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_pro
 remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
 
 
+/**
+ * Remove product meta after description
+ */
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+
+
+/**
+ * Add custom wrap
+ */
 add_action('woocommerce_before_main_content', '_s_woocommerce_wrapper_before');
 add_action('woocommerce_after_main_content', '_s_woocommerce_wrapper_after');
 
@@ -49,7 +58,12 @@ add_filter('woocommerce_product_additional_information_heading', '__return_false
  */
 add_action('after_setup_theme', '_s_woocommerce_setup');
 
+add_action('woocommerce_show_page_title', '__return_false');
 
+
+/**
+ * Add widgets area used in woocommerce page
+ */
 add_action('widgets_init', '_s_woocommerce_widgets_init');
 
 
@@ -151,9 +165,67 @@ if ( ! function_exists('_s_woocommerce_widgets_init')) {
             'after_title'   => '</span></h2>',
         ]);
 
+        register_sidebar([
+            'name'          => esc_html__('Single Product Custom area', '_s'),
+            'id'            => 'widget-area-product',
+            'description'   => esc_html__('Add widgets here.', '_s'),
+            'before_widget' => '<section id="%1$s" class="rswc-widget rswc-%2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title"><span>',
+            'after_title'   => '</span></h2>',
+        ]);
+
+        register_sidebar([
+            'name'          => esc_html__('Cart Widgets Area', '_s'),
+            'id'            => 'widget-area-cart',
+            'description'   => esc_html__('Add widgets here.', '_s'),
+            'before_widget' => '<section id="%1$s" class="rswc-widget rswc-%2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title"><span>',
+            'after_title'   => '</span></h2>',
+        ]);
+
+        register_sidebar([
+            'name'          => esc_html__('Checkout Widgets Area', '_s'),
+            'id'            => 'widget-area-checkout',
+            'description'   => esc_html__('Add widgets here.', '_s'),
+            'before_widget' => '<section id="%1$s" class="rswc-widget rswc-%2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title"><span>',
+            'after_title'   => '</span></h2>',
+        ]);
+
     }
 }
 
+
+add_action('woocommerce_single_product_summary', function ()
+{
+    if (is_active_sidebar('widget-area-product')) {
+        echo '<div class="rs-widgets rs-widgets--product">';
+        dynamic_sidebar('widget-area-product');
+        echo '</div>';
+    }
+}, 35);
+
+
+add_action('woocommerce_after_cart_totals', function ()
+{
+    if (is_active_sidebar('widget-area-cart')) {
+        echo '<div class="rs-widgets rs-widgets--cart">';
+        dynamic_sidebar('widget-area-cart');
+        echo '</div>';
+    }
+}, 35);
+
+add_action('woocommerce_review_order_after_submit', function ()
+{
+    if (is_active_sidebar('widget-area-checkout')) {
+        echo '<div class="rs-widgets rs-widgets--checkout">';
+        dynamic_sidebar('widget-area-checkout');
+        echo '</div>';
+    }
+}, 35);
 
 if ( ! function_exists('_s_woocommerce_scripts')) {
     /**
@@ -279,24 +351,16 @@ if ( ! function_exists('_s_woocommerce_header_cart')) {
      */
     function _s_woocommerce_header_cart()
     {
-        if (is_cart()) {
-            $class = 'current-menu-item';
-        } else {
+        $class = 'js-cart-click';
+        if (is_cart() || is_checkout()) {
             $class = '';
         }
         ?>
-        <ul id="site-header-cart" class="site-header-cart">
-            <li class="<?php echo esc_attr($class); ?>">
-                <?php _s_woocommerce_cart_link(); ?>
-            </li>
+        <ul id="site-header-cart" class="site-header-cart menu">
             <li>
-                <?php
-                $instance = [
-                    'title' => '',
-                ];
-
-                the_widget('WC_Widget_Cart', $instance);
-                ?>
+                <div class="<?= $class; ?>">
+                    <?php _s_woocommerce_cart_link(); ?>
+                </div>
             </li>
         </ul>
         <?php
@@ -334,13 +398,9 @@ if ( ! function_exists('_s_header_cart_drawer')) {
     function _s_header_cart_drawer()
     {
         if (function_exists('is_woocommerce')) {
-            if (is_cart()) {
-                $class = 'current-menu-item';
-            } else {
-                $class = '';
-            }
+            $class = is_cart() ? 'current-menu-item' : '';
             ?>
-            <div class="shoptimizer-mini-cart-wrap">
+            <div class="shoptimizer-mini-cart-wrap <?= $class; ?>">
 
                 <div id="ajax-loading">
                     <div class="shoptimizer-loader">
@@ -369,7 +429,7 @@ if ( ! function_exists('_s_header_cart_drawer')) {
 					} );
 
 					// Toggle cart drawer.
-					$( '.site-header-cart .cart-click' ).on( 'click', function( e ) {
+					$( '.site-header-cart .js-cart-click' ).on( 'click', function( e ) {
 						e.stopPropagation();
 						e.preventDefault();
 						$( 'body' ).toggleClass( 'drawer-open' );
@@ -504,6 +564,14 @@ add_action('woocommerce_product_after_tabs', function ()
 }, 15);
 
 
+add_action('woocommerce_after_single_product_summary', function ()
+{
+    echo '<div class="rs-product-metas">';
+    woocommerce_template_single_meta();
+    echo '</div>';
+}, 11);
+
+
 if (get_theme_mod('rswc_single_product_sidebar_layout', 'sidebar-none') !== 'sidebar-none') {
 
     add_action('woocommerce_after_single_product_summary', function ()
@@ -622,7 +690,7 @@ if ( ! function_exists('_s_cart_progress')) {
                             <?php esc_html_e('Shopping Cart', '_s'); ?>
                         </a>
                     </li>
-                    <li class="<?= is_checkout() && !is_order_received_page() ? 'next' : ''; ?><?= is_order_received_page() ? 'active' : ''; ?>">
+                    <li class="<?= is_checkout() && ! is_order_received_page() ? 'next' : ''; ?><?= is_order_received_page() ? 'active' : ''; ?>">
                         <a href="<?php echo get_permalink(wc_get_page_id('checkout')); ?>">
                             <?php esc_html_e('Shipping and Checkout', '_s'); ?>
                         </a>
@@ -637,3 +705,12 @@ if ( ! function_exists('_s_cart_progress')) {
         }
     }
 }
+
+
+add_filter('woocommerce_breadcrumb_defaults', function ($args)
+{
+    $args[ 'wrap_before' ] = '<div class="rswc-breadcrumb"><nav class="container woocommerce-breadcrumb">';
+    $args[ 'wrap_after' ]  = '</nav></div>';
+
+    return $args;
+}, 10, 1);

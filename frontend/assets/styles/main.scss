@@ -11,15 +11,13 @@
 @import "components/reset";
 @import "components/typo";
 @import "components/button";
+@import "components/input";
 @import "components/wordpress";
 @import "components/site";
 @import "components/menu";
 @import "components/menu-toggle";
 @import "components/entry";
-@import "components/post";
-@import "components/comment";
 @import "components/widget";
-@import "components/input";
 @import "components/empty";
 @import "components/wpuf";
 
@@ -53,6 +51,50 @@ $default-grid-gutter: 2rem;
     @extend .container;
 }
 
-.rswc-product-hero {
-    @apply py-8 bg-gray-100;
+
+.below-content {
+    clear: both;
+    overflow: hidden;
+    padding-top: 2rem;
+    padding-bottom: 1.7em;
+    border-top: 1px solid #eee
+}
+
+.below-content .col-full,footer .col-full {
+    display: flex;
+    padding-right: calc(2.617924em - 20px);
+    padding-left: calc(2.617924em - 20px)
+}
+
+.below-content .widget .widget-title {
+    margin-bottom: 0;
+    padding-left: 32px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.35;
+    text-transform: none;
+    letter-spacing: 0
+}
+
+.below-content .widget p {
+    margin-bottom: 0;
+    padding-left: 32px;
+    color: #777;
+    font-size: 14px
+}
+
+.below-content .widget,footer .widget {
+    position: relative;
+    width: 0;
+    margin: 0;
+    padding: 0 20px;
+    flex: 1
+}
+
+.below-content .widget .ri {
+    position: absolute;
+    top: 3px;
+    left: 20px;
+    color: #999;
+    font-size: 16px
 }

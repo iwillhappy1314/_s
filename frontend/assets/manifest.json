@@ -23,6 +23,12 @@
             ],
             "main": true
         },
+        "post.css": {
+            "files": [
+                "styles/post.scss"
+            ],
+            "main": true
+        },
         "iconfont.css": {
             "files": [
                 "styles/iconfont.scss"

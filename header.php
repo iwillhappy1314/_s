@@ -55,13 +55,7 @@
                 ?>
             </nav>
 
-            <ul class="site-header-cart menu">
-                <li>
-                    <div class="cart-click">
-                        <?php _s_woocommerce_cart_link(); ?>
-                    </div>
-                </li>
-            </ul>
+            <?php _s_woocommerce_header_cart(); ?>
 
         </div>
     </header>
