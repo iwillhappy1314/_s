@@ -3,9 +3,9 @@
 @font-face {
   font-family: '#{$icomoon-font-family}';
   src:
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?7m49s0') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?7m49s0') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?7m49s0##{$icomoon-font-family}') format('svg');
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?tj175b') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?tj175b') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?tj175b##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,6 +26,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-check-square {
+  &:before {
+    content: $icon-check-square; 
+  }
+}
 .icon-user-female {
   &:before {
     content: $icon-user-female; 
