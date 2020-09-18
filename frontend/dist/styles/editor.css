@@ -119310,14 +119310,6 @@ ul.wpuf-form li .wp-editor-wrap {
   }
 }
 
-.rswc-product-hero {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  --bg-opacity: 1;
-  background-color: #f5f5f5;
-  background-color: rgba(245, 245, 245, var(--bg-opacity));
-}
-
 pre {
   border-radius: 0.3em;
   padding: 1em;

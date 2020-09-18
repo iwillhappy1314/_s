@@ -58,6 +58,8 @@ add_filter('woocommerce_product_additional_information_heading', '__return_false
  */
 add_action('after_setup_theme', '_s_woocommerce_setup');
 
+add_action('woocommerce_show_page_title', '__return_false');
+
 
 /**
  * Add widgets area used in woocommerce page
@@ -699,3 +701,11 @@ if ( ! function_exists('_s_cart_progress')) {
         }
     }
 }
+
+
+add_filter('woocommerce_breadcrumb_defaults', function($args){
+    $args['wrap_before'] = '<div class="rswc-breadcrumb"><nav class="container woocommerce-breadcrumb">';
+    $args['wrap_after'] = '</nav></div>';
+
+    return $args;
+}, 10, 1);
