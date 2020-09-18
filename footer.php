@@ -10,12 +10,18 @@
  */
 ?>
 
+<?php if (is_active_sidebar('sidebar-below-content')) : ?>
+    <div class="rs-widgets rs-widgets--below-content">
+        <?php dynamic_sidebar('sidebar-below-content'); ?>
+    </div>
+<?php endif; ?>
+
 <footer id="colophon" class="site__footer">
 
     <?php if (is_active_sidebar('sidebar-footer')): ?>
         <div class="content__footer">
             <section class="container">
-                <div class="content__footer--inner">
+                <div class="rs-widgets rs-widgets--footer">
                     <?php dynamic_sidebar('sidebar-footer'); ?>
                 </div>
             </section>

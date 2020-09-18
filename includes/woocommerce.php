@@ -202,7 +202,7 @@ if ( ! function_exists('_s_woocommerce_widgets_init')) {
 add_action('woocommerce_single_product_summary', function ()
 {
     if (is_active_sidebar('widget-area-product')) {
-        echo '<div class="rs-product-widget">';
+        echo '<div class="rs-widgets rs-widgets--product">';
         dynamic_sidebar('widget-area-product');
         echo '</div>';
     }
@@ -212,14 +212,18 @@ add_action('woocommerce_single_product_summary', function ()
 add_action('woocommerce_after_cart_totals', function ()
 {
     if (is_active_sidebar('widget-area-cart')) {
+        echo '<div class="rs-widgets rs-widgets--cart">';
         dynamic_sidebar('widget-area-cart');
+        echo '</div>';
     }
 }, 35);
 
 add_action('woocommerce_review_order_after_submit', function ()
 {
     if (is_active_sidebar('widget-area-checkout')) {
+        echo '<div class="rs-widgets rs-widgets--checkout">';
         dynamic_sidebar('widget-area-checkout');
+        echo '</div>';
     }
 }, 35);
 
@@ -703,9 +707,10 @@ if ( ! function_exists('_s_cart_progress')) {
 }
 
 
-add_filter('woocommerce_breadcrumb_defaults', function($args){
-    $args['wrap_before'] = '<div class="rswc-breadcrumb"><nav class="container woocommerce-breadcrumb">';
-    $args['wrap_after'] = '</nav></div>';
+add_filter('woocommerce_breadcrumb_defaults', function ($args)
+{
+    $args[ 'wrap_before' ] = '<div class="rswc-breadcrumb"><nav class="container woocommerce-breadcrumb">';
+    $args[ 'wrap_after' ]  = '</nav></div>';
 
     return $args;
 }, 10, 1);
