@@ -24,6 +24,13 @@ remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_pro
 
 
 /**
+ * Move breadcrumb bar
+ */
+remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+add_action('bbq778_after_header','woocommerce_breadcrumb', 2);
+
+
+/**
  * Within Product Loop - remove title hook and create a new one with the category displayed above it.
  */
 remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);

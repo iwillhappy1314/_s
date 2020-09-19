@@ -27,7 +27,7 @@
 // 商品分类
 .c-widget--product_categories {
     .cat-item {
-        @apply flex flext-wrap justify-between text-gray-500 py-2 px-4;
+        @apply flex flex-wrap justify-between text-gray-500 py-2 px-4;
 
         & > a {
             @apply p-0;
@@ -138,7 +138,7 @@
     }
 
     .price_slider_amount {
-        @apply text-right text-sm
+        @apply text-right text-sm;
         line-height: 2.4;
 
         .button {
