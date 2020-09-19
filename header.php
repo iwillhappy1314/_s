@@ -59,3 +59,5 @@
 
         </div>
     </header>
+
+    <?php do_action('_s_after_header'); ?>

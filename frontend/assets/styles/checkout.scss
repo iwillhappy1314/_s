@@ -214,6 +214,12 @@
     }
 }
 
+.payment_method_stripe {
+    img {
+        max-width: 48px;
+    }
+}
+
 .payment_methods {
     @include clearfix;
 
@@ -271,7 +277,7 @@
     font-size: 13px;
 }
 
-.woocommerce-privacy-policy-link{
+.woocommerce-privacy-policy-link {
     @apply underline;
 }
 
