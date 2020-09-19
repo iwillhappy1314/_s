@@ -9,6 +9,7 @@
  * @package _s
  */
 ?>
+<?php do_action('_s_before_footer'); ?>
 
 <?php if (is_active_sidebar('sidebar-below-content')) : ?>
     <div class="rs-widgets rs-widgets--below-content">
@@ -37,6 +38,8 @@
 </footer>
 
 </div><!-- #page -->
+
+<?php do_action('_s_after_footer'); ?>
 
 <?php wp_footer(); ?>
 
