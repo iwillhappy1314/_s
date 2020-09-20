@@ -1110,6 +1110,10 @@
   max-height: 52px;
 }
 
+.payment_method_stripe img {
+  max-width: 48px;
+}
+
 .payment_methods {
   zoom: 1;
 }
