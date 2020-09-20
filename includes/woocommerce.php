@@ -416,10 +416,10 @@ if ( ! function_exists('_s_header_cart_drawer')) {
         if (function_exists('is_woocommerce')) {
             $class = is_cart() ? 'current-menu-item' : '';
             ?>
-            <div class="shoptimizer-mini-cart-wrap <?= $class; ?>">
+            <div class="rsmini-cart-wrap <?= $class; ?>">
 
                 <div id="ajax-loading">
-                    <div class="shoptimizer-loader">
+                    <div class="rsloader">
                         <div class="spinner">
                             <div class="bounce1"></div>
                             <div class="bounce2"></div>
@@ -445,7 +445,7 @@ if ( ! function_exists('_s_header_cart_drawer')) {
 					} );
 
 					// Toggle cart drawer.
-					$( '.site-header-cart .js-cart-click' ).on( 'click', function( e ) {
+					$( '.js-cart-click' ).on( 'click', function( e ) {
 						e.stopPropagation();
 						e.preventDefault();
 						$( 'body' ).toggleClass( 'drawer-open' );
@@ -453,7 +453,7 @@ if ( ! function_exists('_s_header_cart_drawer')) {
 
 					// Close the drawer when clicking outside it
 					$( document ).mouseup( function( e ) {
-						var container = $( '.shoptimizer-mini-cart-wrap' );
+						var container = $( '.rsmini-cart-wrap' );
 
 						if ( ! container.is( e.target ) && 0 === container.has( e.target ).length ) {
 							$( 'body' ).removeClass( 'drawer-open' );

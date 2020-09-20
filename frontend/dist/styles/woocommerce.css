@@ -1337,11 +1337,11 @@ div.product table.variations .value {
   font-weight: 700;
 }
 
-.woocommerce-demo-store .shoptimizer-mini-cart-wrap {
+.woocommerce-demo-store .rsmini-cart-wrap {
   z-index: 10000;
 }
 
-.shoptimizer-mini-cart-wrap div.blockOverlay {
+.rsmini-cart-wrap div.blockOverlay {
   background-color: transparent !important;
 }
 
@@ -1405,19 +1405,19 @@ div.product table.variations .value {
   }
 }
 
-.admin-bar .shoptimizer-mini-cart-wrap {
+.admin-bar .rsmini-cart-wrap {
   top: 32px;
 }
 
-.admin-bar.customize-partial-edit-shortcuts-shown .shoptimizer-mini-cart-wrap {
+.admin-bar.customize-partial-edit-shortcuts-shown .rsmini-cart-wrap {
   top: 0;
 }
 
-.admin-bar.customize-partial-edit-shortcuts-shown .shoptimizer-mini-cart-wrap .widget_shopping_cart {
+.admin-bar.customize-partial-edit-shortcuts-shown .rsmini-cart-wrap .widget_shopping_cart {
   height: 100%;
 }
 
-.admin-bar .shoptimizer-mini-cart-wrap .widget_shopping_cart .product_list_widget {
+.admin-bar .rsmini-cart-wrap .widget_shopping_cart .product_list_widget {
   height: calc(100vh - 275px);
 }
 
@@ -1427,7 +1427,7 @@ div.product table.variations .value {
   position: relative;
 }
 
-.drawer-open .shoptimizer-mini-cart-wrap {
+.drawer-open .rsmini-cart-wrap {
   -ms-scroll-chaining: none;
       overscroll-behavior: contain;
   right: 0;
@@ -1451,7 +1451,7 @@ div.product table.variations .value {
   }
 }
 
-.shoptimizer-mini-cart-wrap {
+.rsmini-cart-wrap {
   overflow: hidden;
   position: fixed;
   z-index: 101;
@@ -1466,7 +1466,7 @@ div.product table.variations .value {
   transition: all .5s;
 }
 
-.shoptimizer-mini-cart-wrap .widget_shopping_cart {
+.rsmini-cart-wrap .widget_shopping_cart {
   overflow-x: hidden;
   overflow-y: scroll;
   position: relative;
@@ -1481,11 +1481,11 @@ div.product table.variations .value {
   font-size: inherit;
 }
 
-.shoptimizer-mini-cart-wrap .widget_shopping_cart h2.widgettitle {
+.rsmini-cart-wrap .widget_shopping_cart h2.widgettitle {
   display: none;
 }
 
-.shoptimizer-mini-cart-wrap .widget_shopping_cart .product_list_widget {
+.rsmini-cart-wrap .widget_shopping_cart .product_list_widget {
   overflow-y: scroll;
   height: calc(100vh - 245px);
   height: calc((var(--vh, 1vh) * 100) - 245px);
@@ -1495,16 +1495,16 @@ div.product table.variations .value {
           box-shadow: inset 0 -15px 15px -15px rgba(0, 0, 0, 0.06);
 }
 
-.shoptimizer-mini-cart-wrap .widget_shopping_cart .product_list_widget .product_list_widget {
+.rsmini-cart-wrap .widget_shopping_cart .product_list_widget .product_list_widget {
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
 }
 
-.shoptimizer-mini-cart-wrap .widget_shopping_cart .product_list_widget .product_list_widget::-webkit-scrollbar {
+.rsmini-cart-wrap .widget_shopping_cart .product_list_widget .product_list_widget::-webkit-scrollbar {
   width: 0 !important;
 }
 
-.shoptimizer-mini-cart-wrap .close-drawer {
+.rsmini-cart-wrap .close-drawer {
   position: absolute;
   z-index: 99;
   top: 15px;
@@ -1517,7 +1517,7 @@ div.product table.variations .value {
   transition: opacity .3s;
 }
 
-.shoptimizer-mini-cart-wrap .close-drawer:after, .shoptimizer-mini-cart-wrap .close-drawer:before {
+.rsmini-cart-wrap .close-drawer:after, .rsmini-cart-wrap .close-drawer:before {
   position: absolute;
   left: 0;
   width: 2px;
@@ -1526,13 +1526,13 @@ div.product table.variations .value {
   content: "";
 }
 
-.shoptimizer-mini-cart-wrap .close-drawer:before {
+.rsmini-cart-wrap .close-drawer:before {
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
-.shoptimizer-mini-cart-wrap .close-drawer:after {
+.rsmini-cart-wrap .close-drawer:after {
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
@@ -2044,4 +2044,9 @@ div.product table.variations .value {
   padding-top: 2rem;
   padding-bottom: 2rem;
   background: #f8f8f8;
+}
+
+.rs-mobile-nav {
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
 }
