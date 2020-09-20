@@ -118884,6 +118884,10 @@ ul.blocks-gallery-grid {
   }
 }
 
+.admin-bar .site__nav .sm-menu {
+  top: 110px;
+}
+
 .menu-toggle {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
