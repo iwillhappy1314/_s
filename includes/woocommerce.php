@@ -27,7 +27,7 @@ remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_pro
  * Move breadcrumb bar
  */
 remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
-add_action('bbq778_after_header','woocommerce_breadcrumb', 2);
+add_action('_s_after_header', 'woocommerce_breadcrumb', 2);
 
 
 /**
@@ -133,6 +133,13 @@ add_filter('woocommerce_add_to_cart_fragments', '_s_woocommerce_cart_link_fragme
  * Mini cart drawer
  */
 add_action('_s_before_site', '_s_header_cart_drawer', 5);
+
+
+/**
+ * Move notice position
+ */
+remove_action('woocommerce_before_single_product', 'woocommerce_output_all_notices', 10);
+add_action('_s_before_product_hero', 'woocommerce_output_all_notices', 10);
 
 
 if ( ! function_exists('_s_woocommerce_setup')) {
@@ -380,7 +387,9 @@ if ( ! function_exists('_s_product_content_wrapper_start')) {
      */
     function _s_product_content_wrapper_start()
     {
-        echo '<div class="rswc-product-hero"><div class="container relative clearfix">';
+        echo '<div class="rswc-product-hero">';
+        echo '<div class="container relative clearfix">';
+        do_action('_s_before_product_hero');
     }
 }
 

@@ -1028,13 +1028,6 @@ p.demo_store a,
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   line-height: 1.5;
-}
-
-.single-product .rswc-product-hero {
-  padding-top: 0;
-}
-
-.single-product .rswc-breadcrumb {
   background: #f8f8f8;
 }
 
@@ -1807,7 +1800,16 @@ div.product table.variations .value {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .site__shop {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
 }
 
 .post-type-archive .site__shop,
