@@ -13,8 +13,6 @@ function _s_scripts()
     wp_enqueue_style('_s-main', _s_asset('styles/main.css'));
     wp_enqueue_style('_s-iconfont', _s_asset('styles/iconfont.css'));
 
-    wp_enqueue_script('wprs-sticky-kit');
-
     if (is_singular()) {
         wp_enqueue_style('_s-post', _s_asset('styles/post.css'));
     }

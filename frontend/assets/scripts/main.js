@@ -59,7 +59,6 @@
         }
     };
 
-
     /**
      * Close cart drawer
      */
@@ -108,7 +107,10 @@
                 currentChild.slideDown(Number(elementSpeed), elementEasing);
                 currentSubmenu.slideDown(Number(elementSpeed), elementEasing);
 
-                element.find('ul > li.current-menu-item').parent().parent().slideDown(Number(elementSpeed), elementEasing);
+                element.find('ul > li.current-menu-item').
+                        parent().
+                        parent().
+                        slideDown(Number(elementSpeed), elementEasing);
                 element.find('ul > li.current-menu-item').parent().parent('li').addClass('active');
                 element.find('ul > li.current-cat').parent().parent('li').addClass('active');
 
@@ -124,10 +126,12 @@
                     element.find('ul li:has(ul) > a .icon').click(function(e) {
                         var childElement = $(this).parent();
                         element.find('ul li').not(childElement.parents()).removeClass('active');
-                        childElement.parent().children('ul').slideToggle(Number(elementSpeed), elementEasing, function() {
-                            $(this).find('ul').hide();
-                            $(this).find('li.active').removeClass('active');
-                        });
+                        childElement.parent().
+                                     children('ul').
+                                     slideToggle(Number(elementSpeed), elementEasing, function() {
+                                         $(this).find('ul').hide();
+                                         $(this).find('li.active').removeClass('active');
+                                     });
                         element.find('ul li > ul').
                                 not(childElement.parent().children('ul')).
                                 not(childElement.parents('ul')).

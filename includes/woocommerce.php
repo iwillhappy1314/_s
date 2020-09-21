@@ -116,11 +116,6 @@ add_action('woocommerce_single_product_summary', '_s_product_content_wrapper_end
 add_action('woocommerce_before_shop_loop', '_s_sorting_wrapper', 9);
 add_action('woocommerce_before_shop_loop', '_s_sorting_wrapper_close', 31);
 
-/**
- * Ajax add product to cart scripts
- */
-add_action('wp_enqueue_scripts', '_s_pdp_ajax_atc_enqueue');
-
 
 /**
  * Ajax add product to cart backend
@@ -269,6 +264,16 @@ if ( ! function_exists('_s_woocommerce_scripts')) {
 
         if (is_account_page() || is_order_received_page()) {
             wp_enqueue_style('_s-woocommerce-account', _s_asset('styles/account.css'));
+        }
+
+        if (is_product()) {
+            wp_enqueue_script('_s-wc-product', _s_asset('scripts/product.js'), ['jquery']);
+            wp_localize_script('_s-wc-product', '_s_ajax_obj',
+                [
+                    'ajaxurl' => admin_url('admin-ajax.php'),
+                    'nonce'   => wp_create_nonce('ajax-nonce'),
+                ]
+            );
         }
 
         $font_path   = WC()->plugin_url() . '/assets/fonts/';
@@ -433,9 +438,7 @@ if ( ! function_exists('_s_header_cart_drawer')) {
                 <?php the_widget('WC_Widget_Cart', 'title='); ?>
             </div>
             <?php
-
-            $drawer_js = '';
-            $drawer_js .= "
+            $drawer_js = "
 				( function ( $ ) {
 
 					// Open the drawer if a product is added to the cart
@@ -468,7 +471,7 @@ if ( ! function_exists('_s_header_cart_drawer')) {
 				}( jQuery ) );
 				";
 
-            wp_add_inline_script('_s-main', $drawer_js);
+            wp_add_inline_script('_s-woocommerce-main', $drawer_js);
         }
     }
 }
@@ -513,30 +516,6 @@ if ( ! function_exists('_s_pdp_ajax_atc')) {
         ];
 
         wp_send_json($data);
-    }
-}
-
-if ( ! function_exists('_s_pdp_ajax_atc_enqueue')) {
-    /**
-     * Enqueue assets for PDP/Single product ajax add to cart.
-     */
-    function _s_pdp_ajax_atc_enqueue()
-    {
-        if (is_product()) {
-            wp_enqueue_script(
-                '_s-wc-scripts',
-                get_template_directory_uri() . '/frontend/dist/scripts/product.js',
-                ['jquery']
-            );
-            wp_localize_script(
-                '_s-wc-scripts',
-                '_s_ajax_obj',
-                [
-                    'ajaxurl' => admin_url('admin-ajax.php'),
-                    'nonce'   => wp_create_nonce('ajax-nonce'),
-                ]
-            );
-        }
     }
 }
 
@@ -673,6 +652,7 @@ add_action('woocommerce_after_account_navigation', function ()
 {
     echo '</div>';
 });
+
 
 add_filter('woocommerce_breadcrumb_defaults', function ($args)
 {
