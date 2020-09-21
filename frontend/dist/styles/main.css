@@ -119162,11 +119162,6 @@ ul.blocks-gallery-grid {
   color: rgba(66, 66, 66, var(--text-opacity));
 }
 
-.widget ul {
-  border: 1px solid #eee;
-  background: #f8f8f8;
-}
-
 .rs-empty {
   margin-left: auto;
   margin-right: auto;

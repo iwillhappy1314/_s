@@ -416,7 +416,7 @@ if ( ! function_exists('_s_header_cart_drawer')) {
         if (function_exists('is_woocommerce')) {
             $class = is_cart() ? 'current-menu-item' : '';
             ?>
-            <div class="rsmini-cart-wrap <?= $class; ?>">
+            <div class="rs-mini-cart-wrap <?= $class; ?>">
 
                 <div id="ajax-loading">
                     <div class="rsloader">
