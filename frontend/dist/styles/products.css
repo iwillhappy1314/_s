@@ -315,6 +315,11 @@ div.images .woocommerce-product-gallery__trigger:after {
   margin-bottom: 1rem;
 }
 
+.woocommerce.widget ul {
+  border: 1px solid #eee;
+  background: #f8f8f8;
+}
+
 .widget-wprs_cart_widget button.button {
   color: #1F65D2;
 }
