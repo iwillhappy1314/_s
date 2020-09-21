@@ -640,5 +640,9 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
 .admin-bar{
     .site__nav .sm-menu{
         top: 110px;
+
+        @screen md{
+          top: 121px;
+        }
     }
 }
