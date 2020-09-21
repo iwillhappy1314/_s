@@ -118888,6 +118888,12 @@ ul.blocks-gallery-grid {
   top: 110px;
 }
 
+@media (min-width: 768px) {
+  .admin-bar .site__nav .sm-menu {
+    top: 121px;
+  }
+}
+
 .menu-toggle {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
@@ -119154,6 +119160,11 @@ ul.blocks-gallery-grid {
   --text-opacity: 1;
   color: #424242;
   color: rgba(66, 66, 66, var(--text-opacity));
+}
+
+.widget ul {
+  border: 1px solid #eee;
+  background: #f8f8f8;
 }
 
 .rs-empty {
