@@ -806,7 +806,7 @@ div.images .woocommerce-product-gallery__trigger:after {
 
 .rs-sticky-add-to-cart__content-title {
   display: block;
-  padding-right: 1rem;
+  padding-left: 1rem;
   font-weight: 700;
   overflow: hidden;
   white-space: nowrap;
