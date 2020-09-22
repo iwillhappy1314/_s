@@ -120,8 +120,8 @@ add_action('woocommerce_before_shop_loop', '_s_sorting_wrapper_close', 31);
 /**
  * Ajax add product to cart backend
  */
-add_action('wp_ajax_wprs_wc_ajax_atc', '_s_pdp_ajax_atc');
-add_action('wp_ajax_nopriv_wprs_wc_ajax_atc', '_s_pdp_ajax_atc');
+add_action('wp_ajax_wprs_wc_ajax_add_to_cart', '_s_ajax_add_to_cart');
+add_action('wp_ajax_nopriv_wprs_wc_ajax_add_to_cart', '_s_ajax_add_to_cart');
 add_filter('woocommerce_add_to_cart_fragments', '_s_woocommerce_cart_link_fragment');
 
 /**
@@ -267,7 +267,7 @@ if ( ! function_exists('_s_woocommerce_scripts')) {
         }
 
         if (is_product()) {
-            wp_enqueue_script('_s-wc-product', _s_asset('scripts/product.js'), ['jquery']);
+            wp_enqueue_script('_s-wc-product', _s_asset('scripts/woocommerce.js'), ['jquery']);
             wp_localize_script('_s-wc-product', '_s_ajax_obj',
                 [
                     'ajaxurl' => admin_url('admin-ajax.php'),
@@ -456,7 +456,7 @@ if ( ! function_exists('_s_header_cart_drawer')) {
 
 					// Close the drawer when clicking outside it
 					$( document ).mouseup( function( e ) {
-						var container = $( '.rsmini-cart-wrap' );
+						var container = $( '.rs-mini-cart-wrap' );
 
 						if ( ! container.is( e.target ) && 0 === container.has( e.target ).length ) {
 							$( 'body' ).removeClass( 'drawer-open' );
@@ -476,11 +476,11 @@ if ( ! function_exists('_s_header_cart_drawer')) {
     }
 }
 
-if ( ! function_exists('_s_pdp_ajax_atc')) {
+if ( ! function_exists('_s_ajax_add_to_cart')) {
     /**
      * PDP/Single product ajax add to cart.
      */
-    function _s_pdp_ajax_atc()
+    function _s_ajax_add_to_cart()
     {
         $sku        = '';
         $product_id = '';

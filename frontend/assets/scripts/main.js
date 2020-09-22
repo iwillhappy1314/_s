@@ -2,10 +2,10 @@
 
     'use strict';
 
-    var header = document.getElementById('masthead');
-    var body = document.getElementsByTagName('body')[0];
+    const header = document.getElementById('masthead');
+    const body = document.getElementsByTagName('body')[0];
 
-    var _s = _s || {};
+    const _s = {};
 
     _s.init = function() {
         this.ajaxLoading();
@@ -18,7 +18,7 @@
      * Ajax loading style
      */
     _s.ajaxLoading = function() {
-        var $loading = $('#ajax-loading').hide();
+        const $loading = $('#ajax-loading').hide();
 
         $(document).ajaxStart(function() {
             $loading.show();
@@ -48,7 +48,7 @@
      * Header sticky
      */
     _s.navSticky = function() {
-        var sticky = header.offsetTop + 100;
+        const sticky = header.offsetTop + 100;
 
         if (window.pageYOffset > sticky) {
             header.classList.add('is-sticky');
@@ -72,11 +72,11 @@
      * Nav accordion
      */
     _s.navTree = function() {
-        var $navTreeEl = $('.widget_nav_menu, .widget_product_categories111, .widget-nav_menu');
+        const $navTreeEl = $('.widget_nav_menu, .widget_product_categories111, .widget-nav_menu');
         if ($navTreeEl.length > 0) {
             $navTreeEl.each(function() {
 
-                var element = $(this),
+                let element = $(this),
                     elementSpeed = element.attr('data-speed'),
                     elementEasing = element.attr('data-easing'),
                     currentChild = element.find(
@@ -124,7 +124,7 @@
                 } else {
                     // 如果需要父级菜单不能点击，把点击元素设置为 a
                     element.find('ul li:has(ul) > a .icon').click(function(e) {
-                        var childElement = $(this).parent();
+                        const childElement = $(this).parent();
                         element.find('ul li').not(childElement.parents()).removeClass('active');
                         childElement.parent().
                                      children('ul').
