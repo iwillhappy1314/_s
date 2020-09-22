@@ -12,9 +12,9 @@
                 "scripts/customizer.js"
             ]
         },
-        "product.js": {
+        "woocommerce.js": {
             "files": [
-                "scripts/product.js"
+                "scripts/woocommerce.js"
             ]
         },
         "main.css": {
