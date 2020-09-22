@@ -72,3 +72,11 @@
         @apply text-base mb-4;
     }
 }
+
+
+// 商品图片需要拼接显示商品详细介绍图片，取消默认图片样式和间隔
+.wc-tab{
+    img{
+        @apply shadow-none rounded-none mt-0;
+    }
+}
