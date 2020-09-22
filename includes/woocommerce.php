@@ -24,6 +24,13 @@ remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_pro
 
 
 /**
+ * Move breadcrumb bar
+ */
+remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+add_action('_s_after_header', 'woocommerce_breadcrumb', 2);
+
+
+/**
  * Within Product Loop - remove title hook and create a new one with the category displayed above it.
  */
 remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
@@ -109,23 +116,25 @@ add_action('woocommerce_single_product_summary', '_s_product_content_wrapper_end
 add_action('woocommerce_before_shop_loop', '_s_sorting_wrapper', 9);
 add_action('woocommerce_before_shop_loop', '_s_sorting_wrapper_close', 31);
 
-/**
- * Ajax add product to cart scripts
- */
-add_action('wp_enqueue_scripts', '_s_pdp_ajax_atc_enqueue');
-
 
 /**
  * Ajax add product to cart backend
  */
-add_action('wp_ajax_wprs_wc_ajax_atc', '_s_pdp_ajax_atc');
-add_action('wp_ajax_nopriv_wprs_wc_ajax_atc', '_s_pdp_ajax_atc');
+add_action('wp_ajax_wprs_wc_ajax_add_to_cart', '_s_ajax_add_to_cart');
+add_action('wp_ajax_nopriv_wprs_wc_ajax_add_to_cart', '_s_ajax_add_to_cart');
 add_filter('woocommerce_add_to_cart_fragments', '_s_woocommerce_cart_link_fragment');
 
 /**
  * Mini cart drawer
  */
 add_action('_s_before_site', '_s_header_cart_drawer', 5);
+
+
+/**
+ * Move notice position
+ */
+remove_action('woocommerce_before_single_product', 'woocommerce_output_all_notices', 10);
+add_action('_s_before_product_hero', 'woocommerce_output_all_notices', 10);
 
 
 if ( ! function_exists('_s_woocommerce_setup')) {
@@ -257,6 +266,16 @@ if ( ! function_exists('_s_woocommerce_scripts')) {
             wp_enqueue_style('_s-woocommerce-account', _s_asset('styles/account.css'));
         }
 
+        if (is_product()) {
+            wp_enqueue_script('_s-wc-product', _s_asset('scripts/woocommerce.js'), ['jquery']);
+            wp_localize_script('_s-wc-product', '_s_ajax_obj',
+                [
+                    'ajaxurl' => admin_url('admin-ajax.php'),
+                    'nonce'   => wp_create_nonce('ajax-nonce'),
+                ]
+            );
+        }
+
         $font_path   = WC()->plugin_url() . '/assets/fonts/';
         $inline_font = '@font-face {
 			font-family: "star";
@@ -328,7 +347,7 @@ if ( ! function_exists('_s_woocommerce_cart_link')) {
     function _s_woocommerce_cart_link()
     {
         ?>
-        <a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php esc_attr_e('View your shopping cart', '_s'); ?>">
+        <a class="cart-contents" href="<?= esc_url(wc_get_cart_url()); ?>" title="<?php esc_attr_e('View your shopping cart', '_s'); ?>">
             <?php
             $item_count_text = sprintf(
             /* translators: number of items in the mini cart. */
@@ -336,8 +355,8 @@ if ( ! function_exists('_s_woocommerce_cart_link')) {
                 WC()->cart->get_cart_contents_count()
             );
             ?>
-            <span class="amount"><?php echo wp_kses_data(WC()->cart->get_cart_subtotal()); ?></span>
-            <span class="count"><?php echo esc_html($item_count_text); ?></span>
+            <span class="amount"><?= wp_kses_data(WC()->cart->get_cart_subtotal()); ?></span>
+            <span class="count"><?= esc_html($item_count_text); ?></span>
         </a>
         <?php
     }
@@ -373,7 +392,9 @@ if ( ! function_exists('_s_product_content_wrapper_start')) {
      */
     function _s_product_content_wrapper_start()
     {
-        echo '<div class="rswc-product-hero"><div class="container relative clearfix">';
+        echo '<div class="rswc-product-hero">';
+        echo '<div class="container relative clearfix">';
+        do_action('_s_before_product_hero');
     }
 }
 
@@ -400,10 +421,10 @@ if ( ! function_exists('_s_header_cart_drawer')) {
         if (function_exists('is_woocommerce')) {
             $class = is_cart() ? 'current-menu-item' : '';
             ?>
-            <div class="shoptimizer-mini-cart-wrap <?= $class; ?>">
+            <div class="rs-mini-cart-wrap <?= $class; ?>">
 
                 <div id="ajax-loading">
-                    <div class="shoptimizer-loader">
+                    <div class="rsloader">
                         <div class="spinner">
                             <div class="bounce1"></div>
                             <div class="bounce2"></div>
@@ -417,9 +438,7 @@ if ( ! function_exists('_s_header_cart_drawer')) {
                 <?php the_widget('WC_Widget_Cart', 'title='); ?>
             </div>
             <?php
-
-            $drawer_js = '';
-            $drawer_js .= "
+            $drawer_js = "
 				( function ( $ ) {
 
 					// Open the drawer if a product is added to the cart
@@ -429,7 +448,7 @@ if ( ! function_exists('_s_header_cart_drawer')) {
 					} );
 
 					// Toggle cart drawer.
-					$( '.site-header-cart .js-cart-click' ).on( 'click', function( e ) {
+					$( '.js-cart-click' ).on( 'click', function( e ) {
 						e.stopPropagation();
 						e.preventDefault();
 						$( 'body' ).toggleClass( 'drawer-open' );
@@ -437,7 +456,7 @@ if ( ! function_exists('_s_header_cart_drawer')) {
 
 					// Close the drawer when clicking outside it
 					$( document ).mouseup( function( e ) {
-						var container = $( '.shoptimizer-mini-cart-wrap' );
+						var container = $( '.rs-mini-cart-wrap' );
 
 						if ( ! container.is( e.target ) && 0 === container.has( e.target ).length ) {
 							$( 'body' ).removeClass( 'drawer-open' );
@@ -457,11 +476,11 @@ if ( ! function_exists('_s_header_cart_drawer')) {
     }
 }
 
-if ( ! function_exists('_s_pdp_ajax_atc')) {
+if ( ! function_exists('_s_ajax_add_to_cart')) {
     /**
      * PDP/Single product ajax add to cart.
      */
-    function _s_pdp_ajax_atc()
+    function _s_ajax_add_to_cart()
     {
         $sku        = '';
         $product_id = '';
@@ -497,30 +516,6 @@ if ( ! function_exists('_s_pdp_ajax_atc')) {
         ];
 
         wp_send_json($data);
-    }
-}
-
-if ( ! function_exists('_s_pdp_ajax_atc_enqueue')) {
-    /**
-     * Enqueue assets for PDP/Single product ajax add to cart.
-     */
-    function _s_pdp_ajax_atc_enqueue()
-    {
-        if (is_product()) {
-            wp_enqueue_script(
-                '_s-wc-scripts',
-                get_template_directory_uri() . '/frontend/dist/scripts/product.js',
-                ['jquery']
-            );
-            wp_localize_script(
-                '_s-wc-scripts',
-                '_s_ajax_obj',
-                [
-                    'ajaxurl' => admin_url('admin-ajax.php'),
-                    'nonce'   => wp_create_nonce('ajax-nonce'),
-                ]
-            );
-        }
     }
 }
 
@@ -659,54 +654,6 @@ add_action('woocommerce_after_account_navigation', function ()
 });
 
 
-/**
- * Add Progress Bar to the Cart and Checkout pages.
- */
-add_action('woocommerce_before_cart', '_s_cart_progress');
-add_action('woocommerce_before_checkout_form', '_s_cart_progress', 5);
-add_action('woocommerce_before_thankyou', '_s_cart_progress', 5);
-
-if ( ! function_exists('_s_cart_progress')) {
-
-    /**
-     * More product info
-     * Link to product
-     *
-     * @return void
-     * @since  1.0.0
-     */
-    function _s_cart_progress()
-    {
-
-        $show_progress_bar = true;
-
-        if (true === $show_progress_bar) {
-            ?>
-
-            <div class="rs-checkout-wrap">
-                <ul class="rs-checkout-bar">
-                    <li class="active first">
-                        <a href="<?php echo get_permalink(wc_get_page_id('cart')); ?>">
-                            <?php esc_html_e('Shopping Cart', '_s'); ?>
-                        </a>
-                    </li>
-                    <li class="<?= is_checkout() && ! is_order_received_page() ? 'next' : ''; ?><?= is_order_received_page() ? 'active' : ''; ?>">
-                        <a href="<?php echo get_permalink(wc_get_page_id('checkout')); ?>">
-                            <?php esc_html_e('Shipping and Checkout', '_s'); ?>
-                        </a>
-                    </li>
-                    <li class="<?= is_order_received_page() ? 'active last' : ''; ?>">
-                        <?php esc_html_e('Confirmation', '_s'); ?>
-                    </li>
-                </ul>
-            </div>
-
-            <?php
-        }
-    }
-}
-
-
 add_filter('woocommerce_breadcrumb_defaults', function ($args)
 {
     $args[ 'wrap_before' ] = '<div class="rswc-breadcrumb"><nav class="container woocommerce-breadcrumb">';
@@ -714,3 +661,104 @@ add_filter('woocommerce_breadcrumb_defaults', function ($args)
 
     return $args;
 }, 10, 1);
+
+
+add_action('woocommerce_after_single_product', '_s_sticky_add_to_cart', 30);
+
+
+if ( ! function_exists('_s_sticky_add_to_cart')) {
+    /**
+     * Sticky Add to Cart
+     *
+     * @since 1.0.0
+     */
+    function _s_sticky_add_to_cart()
+    {
+
+        $_s_layout_woocommerce_sticky_cart_display = true;
+        $_s_layout_woocommerce_single_product_ajax = true;
+
+        /**
+         * @var $product \WC_Product
+         */
+        global $product;
+
+        $id = $product->get_id();
+
+        if (true === $_s_layout_woocommerce_sticky_cart_display) {
+
+            $_s_sticky_add_to_cart_js = "
+                ( function ( $ ) {
+                    'use strict';
+                     var initialTopOffset = $('.rswc-product-hero').offset().top;
+                        $(window).scroll(function(event) {
+                          var scroll = $(window).scrollTop();
+    
+                          if (scroll + initialTopOffset >= $('.product_title').offset().top) {
+                            $('.js-sticky-add-to-cart').addClass('visible'); 
+                          } else {
+                            $('.js-sticky-add-to-cart').removeClass('visible');
+                          }
+                        });
+
+                    $(window).scroll(); 
+    
+                }( jQuery ) );
+		    ";
+
+            wp_add_inline_script('_s-main', $_s_sticky_add_to_cart_js);
+            ?>
+
+            <?php if ($product->is_in_stock()) { ?>
+
+                <section class="js-sticky-add-to-cart rs-sticky-add-to-cart">
+                    <div class="container">
+                        <div class="rs-sticky-add-to-cart__content">
+
+                            <?= wp_kses_post(woocommerce_get_product_thumbnail()); ?>
+
+                            <div class="rs-sticky-add-to-cart__content-product-info">
+                                <span class="rs-sticky-add-to-cart__content-title"><?php the_title(); ?>
+                                    <?= wc_get_rating_html($product->get_average_rating()); ?>
+                                </span>
+                            </div>
+
+                            <div class="rs-sticky-add-to-cart__content-button">
+
+                                <span class="rs-sticky-add-to-cart__content-price"><?= $product->get_price_html(); ?></span>
+
+                                <?php if ($product->is_type('variable') || $product->is_type('composite') || $product->is_type('bundle') || $product->is_type('grouped')) { ?>
+
+                                    <a href="#sticky-scroll" class="variable-grouped-sticky button alt">
+                                        <?= esc_attr__('Select options', '_s'); ?>
+                                    </a>
+
+                                <?php } else { ?>
+
+                                    <?php if (false === $_s_layout_woocommerce_single_product_ajax) { ?>
+
+                                        <a href="<?= esc_url($product->add_to_cart_url()); ?>" class="ajax_add_to_cart single_add_to_cart_button button alt">
+                                            <?= esc_attr($product->single_add_to_cart_text()); ?>
+                                        </a>
+
+                                    <?php } else { ?>
+
+                                        <a href="<?= esc_url($product->add_to_cart_url()); ?>" data-quantity="1"
+                                           data-product_id="<?= esc_html($id); ?>" data-product_sku="" class="ajax_add_to_cart button alt">
+                                            <?= esc_attr($product->single_add_to_cart_text()); ?>
+                                        </a>
+
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <?php
+            }
+        }
+    }
+}

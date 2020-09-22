@@ -44,7 +44,7 @@
     }
 
     &__branding {
-        @apply bg-white flex-grow;
+        @apply flex-grow;
         z-index: 99;
         @screen lg {
             @apply flex-grow-0;

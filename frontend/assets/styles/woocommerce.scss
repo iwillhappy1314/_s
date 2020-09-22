@@ -56,7 +56,11 @@
 }
 
 .site__shop{
-    @apply flex w-full;
+    @apply flex flex-wrap w-full;
+
+    @screen lg{
+      @apply flex-no-wrap;
+    }
 }
 
 .post-type-archive .site__shop,
@@ -236,4 +240,8 @@
 .rswc-product-hero {
     @apply py-8;
     background: #f8f8f8;
+}
+
+.rs-mobile-nav{
+    box-shadow: 0 0 4px rgba(0,0,0,.15);
 }

@@ -1,5 +1,12 @@
+.woocommerce.widget {
+    ul {
+        border: 1px solid #eee;
+        background: #f8f8f8;
+    }
+}
+
 // 下拉迷你购物车
-.c-widget--wprs_cart_widget {
+.widget-wprs_cart_widget {
     button.button {
         color: $woocommerce;
     }
@@ -25,12 +32,12 @@
 
 
 // 商品分类
-.c-widget--product_categories {
+.widget_product_categories {
     .cat-item {
-        @apply flex flext-wrap justify-between text-gray-500 py-2 px-4;
+        @apply flex flex-wrap items-center justify-between text-gray-500 relative pr-2;
 
         & > a {
-            @apply p-0;
+            @apply block flex-grow py-2 px-4;
 
             & + span.count {
                 @apply m-0;
@@ -39,16 +46,17 @@
 
         ul {
             @apply hidden w-full;
-
-            li.cat-item {
-                padding-right: 0 !important;
-            }
+            position: absolute;
+            left: 100% !important;
+            z-index: 99;
+            margin-left: 0 !important;
+            margin-top: -9px !important;
         }
     }
 }
 
 // 最近查看的商品
-.c-widget--recently_viewed_products {
+.widget_recently_viewed_products {
     li {
         @apply px-4 py-2;
 
@@ -63,7 +71,7 @@
 }
 
 // 商品列表
-.c-widget--products {
+.widget_products {
     .amount {
         @apply text-orange-700;
     }
@@ -93,12 +101,8 @@
     margin-top: 1em;
 }
 
-.c-widget--filters {
-    @apply p-6 mb-8 bg-gray-300;
-}
-
-.c-widget--filters {
-    @apply flex py-2;
+.widget_filters {
+    @apply flex py-2 p-6 mb-8 bg-gray-300;
 
     .c-widget__title {
         @apply pr-2 font-normal text-base;
@@ -107,7 +111,7 @@
     }
 }
 
-.c-widget--layered_nav {
+.widget_layered_nav {
     @apply border-b border-gray-200;
 
     .woocommerce-widget-layered-nav-list {
@@ -128,7 +132,7 @@
 }
 
 // 价格筛选
-.c-widget--price_filter {
+.widget_price_filter {
     form {
         @apply flex-grow;
     }
@@ -138,7 +142,7 @@
     }
 
     .price_slider_amount {
-        @apply text-right text-sm
+        @apply text-right text-sm;
         line-height: 2.4;
 
         .button {
@@ -195,7 +199,7 @@
 }
 
 // 评分筛选
-.c-widget--rating_filter {
+.widget_rating_filter {
     ul {
         @apply m-0 p-0 border-0 list-none;
 
@@ -232,7 +236,7 @@
 }
 
 // 已启用的过滤器
-.c-widget--layered_nav_filters {
+.widget_layered_nav_filters {
     ul {
         @apply m-0 p-0 border-0 list-none overflow-hidden;
         zoom: 1;

@@ -93,7 +93,7 @@ $sm-menu__collapsible-sub-item-indentation: 8px !default;
 // ----------------------------------------------------------
 
 // Menu box
-$sm-menu__desktop-bg: #fff !default;
+$sm-menu__desktop-bg: transparent !default;
 
 // Items
 $sm-menu__desktop-item-color: $sm-menu__black !default;
@@ -632,6 +632,17 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
                     padding: $sm-menu__desktop-sub-item-padding-vertical $sm-menu__desktop-sub-item-padding-horizontal;
                 }
             }
+        }
+    }
+}
+
+
+.admin-bar{
+    .site__nav .sm-menu{
+        top: 110px;
+
+        @screen md{
+          top: 121px;
         }
     }
 }

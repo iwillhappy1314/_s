@@ -118172,9 +118172,6 @@ ul.blocks-gallery-grid {
 }
 
 .site__branding {
-  --bg-opacity: 1;
-  background-color: #fff;
-  background-color: rgba(255, 255, 255, var(--bg-opacity));
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -118608,7 +118605,7 @@ ul.blocks-gallery-grid {
 
   .sm-menu {
     border-top: 0;
-    background: #fff;
+    background: transparent;
   }
 
   .sm-menu a, .sm-menu a:hover, .sm-menu a:focus, .sm-menu a:active, .sm-menu a.highlighted {
@@ -118884,6 +118881,16 @@ ul.blocks-gallery-grid {
 
   .sm-menu.sm-vertical ul a {
     padding: 10px 20px;
+  }
+}
+
+.admin-bar .site__nav .sm-menu {
+  top: 110px;
+}
+
+@media (min-width: 768px) {
+  .admin-bar .site__nav .sm-menu {
+    top: 121px;
   }
 }
 

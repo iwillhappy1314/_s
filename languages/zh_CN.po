@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2020-09-14 11:38+0800\n"
-"PO-Revision-Date: 2020-09-14 11:39+0800\n"
+"POT-Creation-Date: 2020-09-21 00:27+0800\n"
+"PO-Revision-Date: 2020-09-21 09:05+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -163,11 +163,17 @@ msgstr "主要"
 msgid "Primary Widgets Area"
 msgstr "主要小工具区域"
 
-#: includes/setup.php:109 includes/setup.php:118 includes/woocommerce.php:147
+#: includes/setup.php:109 includes/setup.php:118 includes/setup.php:127
+#: includes/woocommerce.php:175 includes/woocommerce.php:185
+#: includes/woocommerce.php:195 includes/woocommerce.php:205
 msgid "Add widgets here."
 msgstr "在这里添加小工具。"
 
 #: includes/setup.php:116
+msgid "Below Content Widgets  Area"
+msgstr "内容底部小工具区域"
+
+#: includes/setup.php:125
 msgid "Footer Widgets Area"
 msgstr "页脚小工具区域"
 
@@ -195,21 +201,21 @@ msgstr "<span class=\"screen-reader-text\">在 %s </span>发表评论"
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr "编辑<span class=\"screen-reader-text\">%s</span>"
 
-#: includes/woocommerce.php:145
+#: includes/woocommerce.php:173
 msgid "WooCommerce Widget Area"
 msgstr "WooCommerce小工具区域"
 
-#: includes/woocommerce.php:622
-msgid "Shopping Cart"
-msgstr "购物车"
+#: includes/woocommerce.php:183
+msgid "Single Product Custom area"
+msgstr "产品摘要小工具区域"
 
-#: includes/woocommerce.php:627
-msgid "Shipping and Checkout"
-msgstr "运费和结算"
+#: includes/woocommerce.php:193
+msgid "Cart Widgets Area"
+msgstr "购物车小工具区域"
 
-#: includes/woocommerce.php:631
-msgid "Confirmation"
-msgstr "订单确认"
+#: includes/woocommerce.php:203
+msgid "Checkout Widgets Area"
+msgstr "结账小工具区域"
 
 #: search.php:22
 #, php-format
@@ -253,6 +259,15 @@ msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr "看来我们不能找到你要找的东西。请搜索一下试试吧。"
+
+#~ msgid "Shopping Cart"
+#~ msgstr "购物车"
+
+#~ msgid "Shipping and Checkout"
+#~ msgstr "运费和结算"
+
+#~ msgid "Confirmation"
+#~ msgstr "订单确认"
 
 #~ msgid "Colors"
 #~ msgstr "颜色"
