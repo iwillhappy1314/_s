@@ -78,5 +78,19 @@
             $('body').toggleClass('drawer-open');
         });
 
+        // Add custom id to the single product form
+        $(document).ready(function() {
+            $('.single-product form.cart').attr('id', 'sticky-scroll');
+        });
+
+        // Smooth scroll for sticky single products - for variable, bundle, composite and grouped items
+        $('a.variable-grouped-sticky[href*="#"]').on('click', function(e) {
+            e.preventDefault();
+
+            $('html, body').animate({
+                scrollTop: $($(this).attr('href')).offset().top - 80,
+            }, 500, 'linear');
+        });
+
     });
 }(jQuery));
