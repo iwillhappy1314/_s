@@ -57,7 +57,6 @@ const enabled = {
     failStyleTask: argv.production,
     failJSHint   : argv.production,
     stripJSDebug : argv.production,
-    stripJSDebug : argv.production,
 };
 
 /**
@@ -140,10 +139,6 @@ const cssTasks = (filename) => {
 const jsTasks = (filename) => {
     return lazypipe().pipe(() => {
         return gulpif(enabled.maps, sourcemaps.init());
-    }).pipe(() => {
-        return babel({
-            presets: ['@babel/env']
-        });
     }).pipe(concat, filename).pipe(uglify, {
         compress: {
             'drop_debugger': enabled.stripJSDebug,

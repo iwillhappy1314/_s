@@ -15,7 +15,7 @@
      */
     _s_wc.ajax_add_to_cart = function() {
         body.on('submit', 'form.cart', function(e) {
-            var $product_element = $(this).parents('.type-product');
+            const $product_element = $(this).parents('.type-product');
 
             if ($product_element.hasClass('product-type-external') ||
                 $product_element.hasClass('product-type-grouped')) {
@@ -24,9 +24,8 @@
 
             e.preventDefault();
 
-            let $cart_form = $(this),
-                $add_to_cart_button = $cart_form.find('.single_add_to_cart_button'),
-                data = $cart_form.serialize();
+            let $add_to_cart_button = $(this).find('.single_add_to_cart_button'),
+                data = $(this).serialize();
 
             data += '&action=wprs_wc_ajax_add_to_cart';
 
@@ -48,9 +47,6 @@
                         return;
                     }
 
-                    let cur_page = window.location.toString();
-                    cur_page = cur_page.replace('add-to-cart', 'added-to-cart');
-
                     if (resp.error && resp.product_url) {
                         window.location = resp.product_url;
                         return;
@@ -59,14 +55,12 @@
                     $add_to_cart_button.removeClass('loading');
 
                     const fragments = resp.fragments;
-                    const cart_hash = resp.cart_hash;
 
                     if (fragments) {
                         $.each(fragments, function(key) {
                             $(key).addClass('updating');
                         });
-                    }
-                    if (fragments) {
+
                         $.each(fragments, function(key, value) {
                             $(key).replaceWith(value);
                         });
@@ -80,12 +74,14 @@
                     }
                 },
                 error   : function() {
-                    console.log('pdp ajax atc error occurred');
+                    console.log('error occurred when add product to cart.');
                 },
                 complete: function() {
 
                 },
             });
+
+            return false;
         });
 
         body.on('adding_to_cart', function(event, fragments, cart_hash) {
@@ -112,7 +108,5 @@
     $(document).ready(function() {
         _s_wc.init();
     });
-
-    _s_wc.init();
 
 })(jQuery);

@@ -728,6 +728,10 @@ form.register {
   z-index: 100;
 }
 
+.shipping-calculator-form .input-text {
+  text-align: right;
+}
+
 .woocommerce .button {
   -webkit-transform: scale(1);
       -ms-transform: scale(1);
