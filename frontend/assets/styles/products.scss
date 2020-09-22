@@ -44,6 +44,15 @@
         }
     }
 
+    // 快速购买
+    .rswc_quick_buy_button{
+        @include button-bg($red, darken($red, 3%), darken($red, 6%));
+        @include button-border(darken($red, 3%), darken($red, 6%), darken($red, 9%));
+        @apply ml-4 px-8 cursor-pointer text-white;
+        height: 58px;
+        line-height: 58px;
+    }
+
     /**
     * Product loops
     */

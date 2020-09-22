@@ -956,6 +956,37 @@ div.images .woocommerce-product-gallery__trigger:after {
   opacity: .65;
 }
 
+.woocommerce .rswc_quick_buy_button {
+  background-color: #e53238;
+  border-width: 1px;
+  border-color: #e3242b;
+  margin-left: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  cursor: pointer;
+  --text-opacity: 1;
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+  height: 58px;
+  line-height: 58px;
+}
+
+.woocommerce .rswc_quick_buy_button:hover {
+  background-color: #e3242b;
+}
+
+.woocommerce .rswc_quick_buy_button:active {
+  background-color: #dc1c22;
+}
+
+.woocommerce .rswc_quick_buy_button:hover {
+  border-color: #dc1c22;
+}
+
+.woocommerce .rswc_quick_buy_button:active {
+  border-color: #cf1a20;
+}
+
 .woocommerce ul.products {
   clear: both;
   zoom: 1;
