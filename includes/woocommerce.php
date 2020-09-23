@@ -27,7 +27,13 @@ remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_pro
  * Move breadcrumb bar
  */
 remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
-add_action('_s_after_header', 'woocommerce_breadcrumb', 2);
+
+add_action('_s_after_header', function ()
+{
+    if (is_woocommerce()) {
+        woocommerce_breadcrumb();
+    }
+}, 2);
 
 
 /**
