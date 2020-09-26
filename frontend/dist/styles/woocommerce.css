@@ -676,6 +676,32 @@ form.register {
   border-radius: 0.25rem;
 }
 
+form.cart.grouped_form {
+  display: block;
+}
+
+form.cart.grouped_form td {
+  border-bottom-width: 1px;
+  --border-opacity: 1;
+  border-color: #e0e0e0;
+  border-color: rgba(224, 224, 224, var(--border-opacity));
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+form.cart.grouped_form td.woocommerce-grouped-product-list-item__quantity {
+  min-width: 120px;
+}
+
+form.cart.grouped_form table.woocommerce-grouped-product-list {
+  margin-bottom: 2rem;
+}
+
+form.cart.grouped_form .button.single_add_to_cart_button {
+  width: auto;
+  margin-left: 0;
+}
+
 .woocommerce-form__label-for-checkbox {
   display: -webkit-box;
   display: -ms-flexbox;

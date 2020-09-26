@@ -27,6 +27,10 @@
 
 $default-grid-gutter: 2rem;
 
+.clearfix{
+    @include clearfix;
+}
+
 .grid {
     @include grid($default-grid-gutter);
 
