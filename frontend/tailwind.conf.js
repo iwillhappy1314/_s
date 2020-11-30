@@ -1,8 +1,8 @@
 module.exports = {
-    purge: {
-        enabled: true,
-        content: ['/Users/Amoslee/Downloads/us.sitesucker.mac.sitesucker/c.wpcio.com/**/*.html'],
-    },
+    //purge: {
+    //    enabled: true,
+    //    content: ['/Users/Amoslee/Downloads/us.sitesucker.mac.sitesucker/s.ams/**/*.html'],
+    //},
     theme   : {
         extend: {
             colors: {

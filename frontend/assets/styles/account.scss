@@ -392,6 +392,10 @@ ul.order_details {
     }
 }
 
+.order-again{
+    @apply mt-6;
+}
+
 .woocommerce-privacy-policy-text {
     @apply text-gray-600 mb-4;
     font-size: 13px;

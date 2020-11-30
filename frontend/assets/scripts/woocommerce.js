@@ -3,6 +3,7 @@
     'use strict';
 
     const _s_wc = {};
+
     const rswc_options = {};
 
     _s_wc.init = function() {
@@ -266,7 +267,6 @@
         return price;
     };
 
-
     _s_wc.product_addons_get_total_price = function(){
         let price = 0;
 
@@ -303,7 +303,6 @@
         });
         return product_ids;
     };
-
 
     // get checked product ids
     _s_wc.pbt_refresh_fragments = function(response){

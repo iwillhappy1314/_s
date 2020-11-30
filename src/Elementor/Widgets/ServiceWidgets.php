@@ -19,7 +19,7 @@ class ServiceWidgets extends \Elementor\Widget_Base
      */
     public function get_name()
     {
-        return 'oembed';
+        return '_s_service';
     }
 
     /**
@@ -64,7 +64,7 @@ class ServiceWidgets extends \Elementor\Widget_Base
      */
     public function get_categories()
     {
-        return ['general'];
+        return ['wenprise-addons'];
     }
 
     /**

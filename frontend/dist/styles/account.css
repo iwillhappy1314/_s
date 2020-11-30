@@ -1277,6 +1277,10 @@ ul.order_details li strong {
   border-color: #00284a;
 }
 
+.order-again {
+  margin-top: 1.5rem;
+}
+
 .woocommerce-privacy-policy-text {
   --text-opacity: 1;
   color: #757575;
