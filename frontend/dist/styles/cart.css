@@ -1061,7 +1061,8 @@ table.cart td.actions .coupon label {
 
 .woocommerce-cart-form table td.actions .coupon .input-text {
   line-height: 1.5;
-  outline: 0;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
   font-size: 0.875rem;
   border-width: 1px;
   --border-opacity: 1;

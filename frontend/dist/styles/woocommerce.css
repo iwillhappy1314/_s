@@ -778,6 +778,7 @@ form.cart.grouped_form .button.single_add_to_cart_button {
   list-style-position: outside;
   list-style-type: none;
   width: auto;
+  word-wrap: break-word;
   overflow-wrap: break-word;
   padding: 1em 2em 1em 3.5em;
   margin: 0 0 2em;

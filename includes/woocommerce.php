@@ -253,7 +253,7 @@ if ( ! function_exists('_s_woocommerce_scripts')) {
         wp_enqueue_style('_s-woocommerce-main', _s_asset('styles/woocommerce.css'));
 
         if (is_product() || is_shop() || is_product_category() || is_product_tag()) {
-            wp_enqueue_style('_s-woocommerce-checkout', _s_asset('styles/products.css'));
+            wp_enqueue_style('_s-woocommerce-products', _s_asset('styles/products.css'));
         }
 
         if (is_singular('product')) {

@@ -216,7 +216,8 @@
 
 .payment_method_stripe {
     img {
-        max-width: 48px;
+         @apply inline-block;
+        max-width: 36px;
     }
 }
 
