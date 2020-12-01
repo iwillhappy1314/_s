@@ -37,10 +37,10 @@
                 $ul.slideDown(100, complete);
             },
             hideFunction: function($ul, complete) {
-                $ul.slideUp(100, complete);
+                $ul.hide();
             },
             showTimeout : 0,
-            hideTimeout : 0,
+            hideTimeout : 100,
         });
     };
 

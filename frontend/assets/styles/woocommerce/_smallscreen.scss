@@ -12,26 +12,26 @@
 
         table.shop_table_responsive {
             thead {
-                display: none;
+                @apply hidden;
             }
 
             tbody {
                 tr:first-child {
                     td:first-child {
-                        border-top: 0;
+                        @apply border-t-0;
                     }
                 }
 
                 th {
-                    display: none;
+                    @apply hidden;
                 }
             }
 
             tr {
-                display: block;
+                @apply block;
 
                 td {
-                    display: block;
+                    @apply block;
                     text-align: right !important; // Important to overwrite order status inline styling
 
                     &.order-actions {
@@ -39,15 +39,14 @@
                     }
 
                     &::before {
+                        @apply font-medium float-left;
                         content: attr(data-title) ': ';
-                        font-weight: 500;
-                        float: left;
                     }
 
                     &.product-remove,
                     &.actions {
                         &::before {
-                            display: none;
+                            @apply hidden;
                         }
                     }
                 }
@@ -64,14 +63,14 @@
             tr {
                 td {
                     &.order-actions {
-                        text-align: left;
+                        @apply text-left;
 
                         &::before {
-                            display: none;
+                            @apply hidden;
                         }
 
                         .button {
-                            float: none;
+                            @apply float-none;
                             margin: 0.125em 0.25em 0.125em 0;
                         }
                     }
@@ -85,8 +84,7 @@
         .col2-set {
             .col-1,
             .col-2 {
-                float: none;
-                width: 100%;
+                @apply w-full float-none;
             }
         }
 
@@ -95,13 +93,12 @@
          */
         ul.products[class*='columns-'] {
             li.product {
+                @apply float-left clear-both;
                 width: 48%;
-                float: left;
-                clear: both;
                 margin: 0 0 2.992em;
 
                 &:nth-child( 2n ) {
-                    float: right;
+                    @apply float-right;
                     clear: none !important; // This should never clear.
                 }
             }
@@ -113,8 +110,7 @@
         div.product {
             div.images,
             div.summary {
-                float: none;
-                width: 100%;
+                @apply w-full float-none;
             }
         }
 
@@ -123,7 +119,7 @@
          */
         table.cart {
             .product-thumbnail {
-                display: none;
+                @apply hidden;
             }
         }
 
@@ -131,9 +127,7 @@
             .cart_totals,
             .shipping_calculator,
             .cross-sells {
-                width: 100%;
-                float: none;
-                text-align: left;
+                @apply w-full float-none text-left;
             }
         }
 
@@ -143,22 +137,18 @@
         &.woocommerce-checkout {
             form.login {
                 .form-row {
-                    width: 100%;
-                    float: none;
+                    @apply w-full float-none;
                 }
             }
         }
 
         #payment {
             .terms {
-                text-align: left;
-                padding: 0;
+                @apply text-left p-0;
             }
 
             #place_order {
-                float: none;
-                width: 100%;
-                box-sizing: border-box;
+                @apply w-full float-none box-border;
                 margin-bottom: 1em;
             }
         }
@@ -180,18 +170,17 @@
 @media screen and (max-width: $md){
     .woocommerce table.cart {
         td.actions {
-            text-align: left;
+            @apply text-left;
 
             .coupon {
-                float: none;
+                @apply float-none mb-2;
                 @include clearfix();
-                padding-bottom: 0.5em;
 
                 input,
                 .button,
                 .input-text {
+                    @apply box-border;
                     width: 48%;
-                    box-sizing: border-box;
                 }
 
                 .input-text{
@@ -200,13 +189,12 @@
 
                 .input-text + .button,
                 .button.alt {
-                    float: right;
+                    @apply float-right;
                 }
             }
 
             .button {
-                display: block;
-                width: 100%;
+                @apply w-full block;
             }
         }
     }

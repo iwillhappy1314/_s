@@ -49,7 +49,7 @@ table.shop_table_responsive {
             }
 
             td:before {
-                font-weight: 400;
+                @apply font-normal;
                 color: $text-light;
             }
         }

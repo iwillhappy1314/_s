@@ -6,12 +6,8 @@
     @apply mt-8 text-center;
 
     ul {
-        display: inline-block;
-        white-space: nowrap;
-        padding: 0;
-        clear: both;
+        @apply inline-block whitespace-no-wrap p-0 clear-both border-r-0;
         border: 1px solid darken($secondary, 10%);
-        border-right: 0;
         margin: 1px;
 
         .page-numbers {
@@ -19,23 +15,16 @@
         }
 
         li {
+            @apply p-0 m-0 float-left inline overflow-hidden;
             border-right: 1px solid darken($secondary, 10%);
-            padding: 0;
-            margin: 0;
-            float: left;
-            display: inline;
-            overflow: hidden;
 
             a,
             span {
-                margin: 0;
+                @apply m-0 leading-none block font-normal;
                 text-decoration: none;
-                line-height: 1;
                 font-size: 1em;
-                font-weight: normal;
                 padding: 0.5rem 0.75rem;
                 min-width: 1em;
-                display: block;
             }
 
             span.current,

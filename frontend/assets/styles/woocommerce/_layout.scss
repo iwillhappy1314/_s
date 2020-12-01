@@ -13,7 +13,7 @@
      */
     .col2-set {
         @include clearfix();
-        width: 100%;
+        @apply w-full;
 
         .col-1 {
             @apply float-left;
@@ -88,7 +88,6 @@
     &.columns-1 {
         ul.products {
             li.product {
-                width: 100%;
                 @apply w-full mr-0;
             }
         }
@@ -166,7 +165,7 @@
  * Right to left styles */
 .rtl.woocommerce {
     div.product div.images .flex-control-thumbs li {
-        float: right;
+        @apply float-right;
     }
 
     .price_label span {

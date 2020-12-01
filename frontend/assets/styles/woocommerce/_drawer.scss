@@ -8,7 +8,7 @@
 }
 
 #ajax-loading {
-    position: absolute;
+    @apply absolute;
     z-index: 100;
     top: 50%;
     left: 50%;
@@ -16,14 +16,13 @@
 }
 
 .spinner {
-    position: relative;
+    @apply relative text-center;
     top: 50%;
     width: 70px;
     margin: -9px auto 0;
-    text-align: center;
 
     & > div {
-        display: inline-block;
+        @apply inline-block;
         width: 18px;
         height: 18px;
         border-radius: 100%;
@@ -67,71 +66,49 @@
 }
 
 .drawer-open {
-    height: 100%;
-    overflow: hidden;
-    position: relative;
+    @apply h-full overflow-hidden relative;
 
     .rs-mini-cart-wrap {
         overscroll-behavior: contain;
-        right: 0
+        @apply right-0;
     }
 
     @screen md {
         &:before {
-            display: block;
-            position: absolute;
+            @apply absolute block top-0 left-0 w-full cursor-pointer;
             z-index: 100;
-            top: 0;
-            left: 0;
-            width: 100%;
             height: 1000%;
             background: rgba(0, 0, 0, .7);
             content: "";
-            cursor: pointer;
             transition: opacity .5s, visibility .5s
         }
     }
 }
 
 .rs-mini-cart-wrap {
-    overflow: hidden;
-    position: fixed;
+    @apply overflow-hidden fixed top-0 left-auto h-full bg-white;
     z-index: 101;
-    top: 0;
     right: -370px;
-    left: auto;
     width: 370px;
-    height: 100%;
-    background-color: #fff;
     transition: all .5s;
 
     .widget_shopping_cart {
-        overflow-x: hidden;
-        overflow-y: scroll;
-        position: relative;
+        @apply relative top-auto left-auto h-full m-0 bg-white z-10 overflow-x-hidden overflow-y-scroll;
         -webkit-overflow-scrolling: touch;
-        z-index: 10;
-        top: auto;
-        left: auto;
-        height: 100%;
-        margin: 0;
         padding: 45px 20px 0;
-        background: #fff;
         font-size: inherit;
 
         h2.widgettitle {
-            display: none;
+            @apply hidden;
         }
 
         .product_list_widget {
-            overflow-y: scroll;
+            @apply overflow-y-scroll bg-transparent border-0;
             height: calc(100vh - 245px);
             height: calc((var(--vh, 1vh) * 100) - 245px);
             border-bottom-right-radius: 20px;
             -webkit-overflow-scrolling: touch;
             box-shadow: inset 0 -15px 15px -15px rgba(0, 0, 0, .06);
-            background: transparent;
-            border: 0;
 
             .product_list_widget {
                 overflow: -moz-scrollbars-none;
@@ -145,19 +122,17 @@
     }
 
     .close-drawer {
-        position: absolute;
+        @apply absolute cursor-pointer;
         z-index: 99;
         top: 15px;
         right: 20px;
         width: 14px;
         height: 14px;
-        cursor: pointer;
         transition: opacity .3s;
 
         &:after,
         &:before {
-            position: absolute;
-            left: 0;
+            @apply absolute left-0;
             width: 2px;
             height: 15px;
             background-color: #333;
@@ -185,27 +160,24 @@
     }
 
     .count {
-        @apply inline-block relative text-center text-xs text-primary border border-primary;
+        @apply inline-block relative text-center text-xs text-primary border border-primary text-primary;
         width: 28px;
         height: 28px;
         margin-left: 5px;
         padding: 3px;
         border-bottom-right-radius: 3px;
         border-bottom-left-radius: 3px;
-        color: $primary;
         line-height: 22px;
         letter-spacing: -0.7px;
 
         &::after {
-            position: absolute;
+            @apply absolute border border-primary border-b-0;
             bottom: 90%;
             left: 50%;
             width: 10px;
             height: 6px;
             margin-bottom: 1px;
             margin-left: -6px;
-            border: 1px solid $primary;
-            border-bottom: 0;
             border-top-left-radius: 99px;
             border-top-right-radius: 99px;
             content: ""

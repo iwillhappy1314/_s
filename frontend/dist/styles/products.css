@@ -29,9 +29,9 @@ div.images {
 @media (min-width: 1024px) {
   div.images {
     width: 48%;
-    margin-right: 0;
-    margin-bottom: 0;
     float: left;
+    margin-bottom: 0;
+    margin-right: 0;
   }
 }
 
@@ -251,10 +251,10 @@ div.images .woocommerce-product-gallery__trigger:after {
 .woocommerce-tabs ul.tabs li a:after {
   display: block;
   position: absolute;
-  top: 100%;
   left: 0;
   width: 100%;
   border-bottom: 1px solid #ccc;
+  top: 100%;
   content: "";
   -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.28, 0.75, 0.22, 0.95);
   transition: -webkit-transform 0.3s cubic-bezier(0.28, 0.75, 0.22, 0.95);
@@ -395,8 +395,8 @@ div.images .woocommerce-product-gallery__trigger:after {
 
 .widget_product_categories .cat-item ul {
   display: none;
-  width: 100%;
   position: absolute;
+  width: 100%;
   left: 100% !important;
   z-index: 99;
   margin-left: 0 !important;

@@ -45,8 +45,7 @@
         }
 
         ul {
-            @apply hidden w-full;
-            position: absolute;
+            @apply hidden absolute w-full;
             left: 100% !important;
             z-index: 99;
             margin-left: 0 !important;

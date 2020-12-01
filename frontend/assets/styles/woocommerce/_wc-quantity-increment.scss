@@ -1,7 +1,6 @@
 body.woocommerce-page .quantity .minus, body.woocommerce-page .quantity .plus {
+    @apply bg-white border-gray-300;
     height: 27px;
-    border-color: #ccc;
-    background: #fff
 }
 
 body.woocommerce-page .quantity .minus:focus, body.woocommerce-page .quantity .plus:focus {
@@ -12,19 +11,23 @@ body.woocommerce-page .shop_table .quantity .minus, body.woocommerce-page .shop_
     height: 18px
 }
 
-.quantity, .single-product #page div.product .summary, .title-left h2, ul.products li.product .price .amount, ul.products li.product .price ins {
-    position: relative
+.quantity,
+.single-product #page div.product .summary,
+.title-left h2,
+ul.products li.product .price .amount,
+ul.products li.product .price ins {
+    @apply relative;
 }
 
 .quantity.buttons_added input[type=number]::-webkit-inner-spin-button, .quantity.buttons_added input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
-    margin: 0
+    @apply m-0;
 }
 
 .quantity.buttons_added input[type=number] {
     -moz-appearance: textfield;
     padding-right: 50px;
-    text-align: center
+    @apply text-center;
 }
 
 .quantity.buttons_added input:focus {
@@ -32,23 +35,17 @@ body.woocommerce-page .shop_table .quantity .minus, body.woocommerce-page .shop_
 }
 
 .quantity-nav {
-    position: absolute;
-    top: 0;
+    @apply absolute top-0 bottom-0 bg-white;
     right: -34px;
-    bottom: 0;
     width: 35px;
     border: 1px solid #e2e2e2;
-    background: #fff
 }
 
 .quantity-button {
-    position: absolute;
-    right: 0;
-    left: 0;
+    @apply absolute right-0 left-0 cursor-pointer;
     height: 50%;
     background: no-repeat 50%;
     background-size: auto 8px;
-    cursor: pointer;
     user-select: none;
     transition: background-color .1s linear, opacity .1s linear
 }

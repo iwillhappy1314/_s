@@ -6,9 +6,7 @@ div.images {
 
     @screen lg {
         width: 48%;
-        margin-right: 0;
-        margin-bottom: 0;
-        @apply float-left;
+        @apply float-left mb-0 mr-0;
     }
 
     img {

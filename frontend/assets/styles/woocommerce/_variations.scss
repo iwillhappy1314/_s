@@ -1,5 +1,5 @@
 .variations_form {
-    flex-wrap: wrap;
+    @apply flex-wrap;
 
     &__select {
         min-width: 75%;
@@ -11,7 +11,7 @@
 }
 
 .woocommerce-variation-add-to-cart {
-    display: flex;
+    @apply flex;
 }
 
 .woocommerce-variation-price {
@@ -25,18 +25,15 @@ a.reset_variations {
 
 div.product table.variations td,
 .product table.variations th {
+    @apply p-0 bg-transparent list-none;
     display: list-item;
-    padding: 0;
-    background-color: transparent;
-    list-style: none;
 }
 
 div.product table.variations .label {
-    display: block;
+    @apply block font-bold;
     margin-bottom: 6px;
     color: #222;
     font-size: 15px;
-    font-weight: 700;
 }
 
 div.product table.variations .value {

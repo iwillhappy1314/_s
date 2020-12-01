@@ -1,22 +1,16 @@
 .woocommerce-message,
 .woocommerce-error,
 .woocommerce-info {
+    @apply relative list-outside list-none w-auto break-words;
     padding: 1em 2em 1em 3.5em;
     margin: 0 0 2em;
-    position: relative;
-    list-style: none outside;
     border-top: 3px solid;
-
     @include clearfix;
 
-    width: auto;
-    word-wrap: break-word;
-
     &::before {
+        @apply absolute inline-block;
         font-family: "WooCommerce";
         content: "";
-        display: inline-block;
-        position: absolute;
         top: 1em;
         left: 1.5em;
     }
@@ -45,10 +39,8 @@
     }
 
     .button{
+        @apply text-sm float-right rounded-sm;
         color: #333;
-        float: right;
-        font-size: 14px;
-        border-radius: 2px;
     }
 }
 
@@ -74,20 +66,13 @@
  * Global styles */
 p.demo_store,
 .woocommerce-store-notice {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0;
-    width: 100%;
+    @apply absolute top-0 right-0 bottom-0 left-0 w-full text-center hidden;
     font-size: 1em;
     padding: 1em 0;
-    text-align: center;
     background-color: $woocommerce;
     color: $primarytext;
     z-index: 99998;
     box-shadow: 0 1px 1em rgba(0, 0, 0, 0.2);
-    display: none;
 
     a {
         color: $primarytext;
