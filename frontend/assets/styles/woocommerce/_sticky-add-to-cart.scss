@@ -24,19 +24,16 @@
     }
 
     &__content-price {
-        margin-right: 5px;
-        color: #111;
+        @apply text-gray-900 mr-1;
 
         del {
-            @apply text-sm;
-            margin-right: 5px;
+            @apply text-sm mr-1;
             opacity: 0.35;
         }
     }
 
     &__content-product-info {
-        @apply pl-0 flex pr-4 mr-auto;
-        color: #222;
+        @apply pl-0 flex pr-4 mr-auto text-gray-800;
         min-width: 0;
         flex: 1;
     }
@@ -46,7 +43,7 @@
         min-width: 200px;
 
         a {
-            border-radius: 2px;
+            @apply rounded-sm;
 
             &.button {
                 @apply font-bold text-sm;

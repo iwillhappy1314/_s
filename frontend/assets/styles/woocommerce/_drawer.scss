@@ -22,10 +22,9 @@
     margin: -9px auto 0;
 
     & > div {
-        @apply inline-block;
+        @apply inline-block rounded-full;
         width: 18px;
         height: 18px;
-        border-radius: 100%;
         background-color: #dc9814;
         animation: a 1.4s infinite ease-in-out both
     }
@@ -58,7 +57,7 @@
 }
 
 .admin-bar.customize-partial-edit-shortcuts-shown .rs-mini-cart-wrap .widget_shopping_cart {
-    height: 100%
+    @apply h-full;
 }
 
 .admin-bar .rs-mini-cart-wrap .widget_shopping_cart .product_list_widget {

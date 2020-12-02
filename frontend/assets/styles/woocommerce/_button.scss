@@ -10,13 +10,13 @@
         @include button-border(#ddd, #dadada, #d3d3d3);
 
         &.loading {
-            opacity: 0.25;
+            @apply opacity-25;
             padding-right: 2.618em;
 
             &::after {
+                @apply align-top font-normal absolute leading-none;
                 font-family: "WooCommerce";
                 content: "";
-                @apply align-top font-normal absolute leading-none;
                 top: 11px;
                 margin-left: 0.53em;
                 animation: spin 2s linear infinite;

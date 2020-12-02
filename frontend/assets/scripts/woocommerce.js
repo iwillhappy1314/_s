@@ -9,6 +9,7 @@
     _s_wc.init = function() {
         this.ajax_add_to_cart();
         this.sticky_cart();
+        this.sticky_add_to_cat();
         this.quick_shop();
         this.productBoughtTogetherInit();
         this.productBoughtTogetherChangeEvent();
@@ -381,6 +382,24 @@
         woo_price_return = '<span class="woocommerce-Price-amount amount">' + woo_price_return + '</span>';
 
         return woo_price_return;
+    };
+
+    _s_wc.sticky_add_to_cat = function(){
+        if(!$('.js-sticky-add-to-cart').length){
+            return;
+        }
+
+        var initialTopOffset = $('.rswc-product-hero').offset().top;
+        $(window).scroll(function(event) {
+            var scroll = $(window).scrollTop();
+
+            if (scroll + initialTopOffset >= $('.product_title').offset().top) {
+                $('.js-sticky-add-to-cart').addClass('visible');
+            } else {
+                $('.js-sticky-add-to-cart').removeClass('visible');
+            }
+        });
+        $(window).scroll();
     };
 
     $(document).ready(function() {
