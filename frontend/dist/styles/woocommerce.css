@@ -1849,14 +1849,22 @@ ul.products li.product .price ins {
 }
 
 .woocommerce ul.products li.product .price .amount {
-  font-weight: 700;
+  font-weight: 600;
+  color: #f5af02;
   font-size: 21px;
 }
 
 .woocommerce ul.products li.product .price del {
   display: inline-block;
-  opacity: 0.5;
-  color: inherit;
+  --text-opacity: 1;
+  color: #757575;
+  color: rgba(117, 117, 117, var(--text-opacity));
+}
+
+.woocommerce ul.products li.product .price del .amount {
+  --text-opacity: 1;
+  color: #757575;
+  color: rgba(117, 117, 117, var(--text-opacity));
 }
 
 .woocommerce ul.products li.product .price del bdi {
@@ -1922,6 +1930,9 @@ ul.products li.product .price ins {
 .woocommerce div.product span.price del .amount,
     .woocommerce div.product p.price del .amount {
   font-size: 1.25rem;
+  --text-opacity: 1;
+  color: #757575;
+  color: rgba(117, 117, 117, var(--text-opacity));
 }
 
 [class^="wpion-"], [class*=" wpion-"] {

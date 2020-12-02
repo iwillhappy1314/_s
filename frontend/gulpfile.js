@@ -20,6 +20,7 @@ const uglify = require('gulp-uglify-es').default;
 const postcss = require('gulp-postcss');
 const purgecss = require('@fullhuman/postcss-purgecss');
 const purgecssWhiteList = require('@wenprise/purgecss-with-wordpress');
+const googleWebFonts = require('gulp-google-webfonts');
 const babel = require('gulp-babel');
 
 /**
@@ -208,6 +209,17 @@ gulp.task('scripts', gulp.series(async () => {
     });
     return merged.pipe(writeToManifest('scripts'));
 }));
+
+/**
+ * 下载 Google font 到本地
+ */
+gulp.task('gfonts', function() {
+    return gulp.src('./fonts.list').pipe(googleWebFonts({
+        cssDir  : '../styles/components',
+        fontsDir: '../fonts/',
+        cssFilename: '_fonts.scss'
+    })).pipe(gulp.dest('assets/fonts'));
+});
 
 /**
  * 收集所有的字体并输出到 fonts 文件夹
