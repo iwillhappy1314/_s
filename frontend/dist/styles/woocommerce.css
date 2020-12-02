@@ -1823,6 +1823,107 @@ ul.products li.product .price ins {
   }
 }
 
+/**
+ * woocommerce-layout.scss
+ * Applies layout to the default WooCommerce frontend design
+ */
+
+.woocommerce-Price-amount,
+.price {
+  font-family: "Overpass", sans-serif;
+}
+
+.woocommerce :not(.sale) .price {
+  font-weight: 600;
+  font-size: 1.875rem;
+  color: #f5af02;
+}
+
+.woocommerce ul.products li.product .price {
+  display: block;
+  position: relative;
+  font-weight: 400;
+  --text-opacity: 1;
+  color: #212121;
+  color: rgba(33, 33, 33, var(--text-opacity));
+}
+
+.woocommerce ul.products li.product .price .amount {
+  font-weight: 700;
+  font-size: 21px;
+}
+
+.woocommerce ul.products li.product .price del {
+  display: inline-block;
+  opacity: 0.5;
+  color: inherit;
+}
+
+.woocommerce ul.products li.product .price del bdi {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.woocommerce ul.products li.product .price ins {
+  display: inline-block;
+  font-weight: 700;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.woocommerce ul.products li.product .price .from {
+  font-size: 0.67em;
+  margin: -2px 0 0 0;
+  text-transform: uppercase;
+  color: rgba(75, 45, 46, 0.5);
+}
+
+.woocommerce ul.products li.product-type-grouped .price .amount,
+.woocommerce ul.products li.product-type-variable .price {
+  font-size: 0.875rem;
+}
+
+.woocommerce div.product span.price,
+.woocommerce div.product p.price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  color: #f5af02;
+}
+
+.woocommerce div.product span.price ins,
+  .woocommerce div.product p.price ins {
+  margin-right: 0.5rem;
+  text-decoration: none;
+  background: inherit;
+  line-height: 1.4;
+}
+
+.woocommerce div.product span.price ins .amount,
+    .woocommerce div.product p.price ins .amount {
+  font-weight: 600;
+  font-size: 1.875rem;
+}
+
+.woocommerce div.product span.price del,
+  .woocommerce div.product p.price del {
+  --text-opacity: 1;
+  color: #757575;
+  color: rgba(117, 117, 117, var(--text-opacity));
+  font-weight: 300;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.woocommerce div.product span.price del .amount,
+    .woocommerce div.product p.price del .amount {
+  font-size: 1.25rem;
+}
+
 [class^="wpion-"], [class*=" wpion-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;

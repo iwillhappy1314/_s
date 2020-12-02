@@ -1113,7 +1113,8 @@
 }
 
 .payment_method_stripe img {
-  max-width: 48px;
+  display: inline-block;
+  max-width: 36px;
 }
 
 .payment_methods {

@@ -361,7 +361,7 @@ if ( ! function_exists('_s_woocommerce_cart_link')) {
                 WC()->cart->get_cart_contents_count()
             );
             ?>
-            <span class="amount"><?= wp_kses_data(WC()->cart->get_cart_subtotal()); ?></span>
+            <span class="woocommerce-Price-amount amount"><?= wp_kses_data(WC()->cart->get_cart_subtotal()); ?></span>
             <span class="count"><?= esc_html($item_count_text); ?></span>
         </a>
         <?php

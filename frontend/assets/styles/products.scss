@@ -176,36 +176,6 @@
             .button {
                 //margin-top: 1em
             }
-
-            .price {
-                @apply block relative font-normal my-2;
-                color: #111;
-
-                .amount {
-                    @apply text-base font-medium;
-                }
-
-                //margin-bottom: 0.5em
-                //font-size: 0.857em
-
-                del {
-                    @apply inline-block opacity-50;
-                    color: inherit;
-                }
-
-                ins {
-                    background: none;
-                    font-weight: 700;
-                    display: inline-block;
-                }
-
-                .from {
-                    font-size: 0.67em;
-                    margin: (-2px) 0 0 0;
-                    text-transform: uppercase;
-                    color: rgba(desaturate($highlight, 75%), 0.5);
-                }
-            }
         }
 
         li.product:hover {
@@ -230,11 +200,6 @@
             .button {
                 @apply opacity-100;
             }
-        }
-
-        li.product-type-grouped .price .amount,
-        li.product-type-variable .price {
-            @apply text-sm;
         }
 
         li.first {
@@ -291,21 +256,6 @@
 
         .product_title {
             @apply text-2xl mb-2 mt-0 p-0 clear-none;
-        }
-
-        span.price,
-        p.price {
-            @apply text-xl;
-            color: $highlight;
-
-            ins {
-                @apply inline-block;
-                background: inherit;
-            }
-
-            del {
-                @apply inline-block opacity-50;
-            }
         }
 
         .stock {
