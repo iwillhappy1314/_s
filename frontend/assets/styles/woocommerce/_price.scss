@@ -3,9 +3,11 @@
  * Applies layout to the default WooCommerce frontend design
  */
 $price-font-family: 'Overpass', sans-serif;
+$primary-font-color: #333;
+$delete-font-color: #666;
 
 .woocommerce-Price-amount,
-.price{
+.price {
     font-family: $price-font-family;
 }
 
@@ -23,13 +25,17 @@ $price-font-family: 'Overpass', sans-serif;
                 @apply block relative font-normal text-gray-900;
 
                 .amount {
-                    @apply font-bold;
+                    @apply font-semibold;
+                    color: $secondary;
                     font-size: 21px;
                 }
 
                 del {
-                    @apply inline-block opacity-50;
-                    color: inherit;
+                    @apply inline-block text-gray-600;
+
+                    .amount {
+                        @apply text-gray-600;
+                    }
 
                     bdi {
                         @apply text-base font-light;
@@ -76,7 +82,7 @@ $price-font-family: 'Overpass', sans-serif;
             del {
                 @apply text-gray-600 font-light order-2;
                 .amount {
-                    @apply text-xl;
+                    @apply text-xl text-gray-600;
                 }
             }
         }
