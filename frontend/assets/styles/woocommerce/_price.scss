@@ -56,9 +56,15 @@ $delete-font-color: #666;
             }
         }
 
-        li.product-type-grouped .price .amount,
-        li.product-type-variable .price {
-            @apply text-sm;
+        li.product-type-grouped,
+        li.product-type-variable {
+            .price {
+                color: $secondary;
+
+                //.amount {
+                //    @apply text-xl;
+                //}
+            }
         }
     }
 

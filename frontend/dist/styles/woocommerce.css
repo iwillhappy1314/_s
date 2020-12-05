@@ -1890,9 +1890,9 @@ ul.products li.product .price ins {
   color: rgba(75, 45, 46, 0.5);
 }
 
-.woocommerce ul.products li.product-type-grouped .price .amount,
+.woocommerce ul.products li.product-type-grouped .price,
 .woocommerce ul.products li.product-type-variable .price {
-  font-size: 0.875rem;
+  color: #f5af02;
 }
 
 .woocommerce div.product span.price,
