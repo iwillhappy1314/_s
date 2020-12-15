@@ -18,6 +18,10 @@
             @apply p-0 m-0 float-left inline overflow-hidden;
             border-right: 1px solid darken($secondary, 10%);
 
+            &:last-child{
+                border-right: 0;
+            }
+
             a,
             span {
                 @apply m-0 leading-none block font-normal no-underline;

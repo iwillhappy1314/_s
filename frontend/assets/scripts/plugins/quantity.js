@@ -32,7 +32,7 @@ function _s_wc_quantity_buttons($quantitySelector) {
         // Add plus and minus icons
         $quantityBoxes.parent().addClass('buttons_added');
         $quantityBoxes.after(
-            '<div class="quantity-nav"><a href="javascript:void(0)" class="quantity-button quantity-up plus">&nbsp;</a><a href="javascript:void(0)" class="quantity-button quantity-down minus">&nbsp;</a></div>');
+            '<div class="quantity-nav"><a href="javascript:void(0)" class="quantity-button quantity-up plus"></a><a href="javascript:void(0)" class="quantity-button quantity-down minus"></a></div>');
 
         // Target quantity inputs on product pages
         $j('input' + $quantitySelector + ':not(.product-quantity input' + $quantitySelector + ')').each(function() {

@@ -145,15 +145,24 @@ form.register {
 form.cart.grouped_form {
     @apply block;
     td {
-        @apply border-b border-gray-300 py-2;
-
-        &.woocommerce-grouped-product-list-item__quantity{
-            min-width: 120px;
-        }
+        @apply align-top border-0 border-b border-gray-300 py-2;
     }
 
-    table.woocommerce-grouped-product-list{
+    table.group_table{
         @apply mb-8;
+    }
+
+    td:first-child {
+        @apply w-16 text-center;
+    }
+
+    .woocommerce-grouped-product-list-item__label {
+        padding: .5rem 1rem;
+    }
+
+    .wc-grouped-product-add-to-cart-checkbox {
+        @apply inline-block w-auto mx-auto my-0;
+        transform: scale(1.5, 1.5);
     }
 
     .button.single_add_to_cart_button{

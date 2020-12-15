@@ -1,17 +1,19 @@
-body.woocommerce-page .quantity .minus, body.woocommerce-page .quantity .plus {
-    @apply bg-white border-gray-300;
-    height: 27px;
+$border-color: #e2e2e2;
+
+body.woocommerce-page .quantity .minus,
+body.woocommerce-page .quantity .plus {
+    @apply bg-white border-gray-300 h-full;
+
+    &:focus{
+        @apply outline-none;
+    }
 }
 
-body.woocommerce-page .quantity .minus:focus, body.woocommerce-page .quantity .plus:focus {
-    outline: none
-}
-
-body.woocommerce-page .shop_table .quantity .minus, body.woocommerce-page .shop_table .quantity .plus {
+body.woocommerce-page .shop_table .quantity .minus,
+body.woocommerce-page .shop_table .quantity .plus {
     height: 18px
 }
 
-.quantity,
 .single-product #page div.product .summary,
 .title-left h2,
 ul.products li.product .price .amount,
@@ -19,65 +21,60 @@ ul.products li.product .price ins {
     @apply relative;
 }
 
-.quantity.buttons_added input[type=number]::-webkit-inner-spin-button, .quantity.buttons_added input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    @apply m-0;
-}
 
-.quantity.buttons_added input[type=number] {
-    -moz-appearance: textfield;
-    padding-right: 50px;
-    @apply text-center;
-}
+.quantity{
+    input[type=number] {
+        @apply text-center border-r-0 px-0 py-2 rounded-r-none;
 
-.quantity.buttons_added input:focus {
-    outline: 0
+        -moz-appearance: textfield;
+        width: 4rem;
+    }
+
+    &.buttons_added{
+        @apply flex;
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            @apply m-0 appearance-none;
+        }
+
+        input:focus {
+            @apply outline-none;
+        }
+    }
 }
 
 .quantity-nav {
-    @apply absolute top-0 bottom-0 bg-white;
+    @apply bg-white grid grid-rows-2 items-center;
     right: -34px;
     width: 35px;
-    border: 1px solid #e2e2e2;
+    border: 1px solid $border-color;
 }
 
 .quantity-button {
-    @apply absolute right-0 left-0 cursor-pointer;
-    height: 50%;
-    background: no-repeat 50%;
-    background-size: auto 8px;
+    @apply cursor-pointer flex items-center justify-center;
     user-select: none;
-    transition: background-color .1s linear, opacity .1s linear
-}
+    transition: background-color .1s linear, opacity .1s linear;
 
-.quantity-button:active {
-    background-color: #f5f5f7
-}
+    &:active {
+        background-color: #f5f5f7
+    }
 
-.quantity-button.disabled {
-    opacity: .25;
-    cursor: default
-}
+    &.disabled {
+        @apply cursor-default opacity-25;
+    }
 
-.quantity-button.quantity-up {
-    top: 1px;
-    border-bottom: 1px solid #e2e2e2
-}
+    &.quantity-up {
+        border-bottom: 1px solid $border-color;
+    }
 
-.quantity-button.quantity-down:before,
-.quantity-button.quantity-up:before {
-    margin-left: 9px;
-    font-family: icomoon, sans-serif;
-    font-size: 14px;
-    content: "\e607"
-}
+    &.quantity-down:before,
+    &.quantity-up:before {
+        @apply h-full text-sm flex items-center justify-center;
+        font-family: icomoon, sans-serif;
+        content: "\e607"
+    }
 
-.quantity-button.quantity-down:before {
-    position: relative;
-    top: 2px;
-    content: "\e604"
-}
-
-.quantity-button.quantity-down {
-    bottom: 1px
+    &.quantity-down:before {
+        content: "\e604"
+    }
 }
