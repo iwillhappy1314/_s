@@ -318,10 +318,6 @@ table.shop_attributes tr:nth-child(even) td,
 }
 
 @media screen and (max-width: 640px) {
-  table.shop_table_responsive tr {
-    margin-bottom: 2rem;
-  }
-
   table.shop_table_responsive tr.order-total {
     margin-bottom: 0;
   }
@@ -539,8 +535,15 @@ table.shop_attributes tr:nth-child(even) td,
 
 .woocommerce form .form-row-first,
 .woocommerce form .form-row-last {
-  width: 48.5%;
+  width: 100%;
   overflow: visible;
+}
+
+@media (min-width: 768px) {
+  .woocommerce form .form-row-first,
+  .woocommerce form .form-row-last {
+    width: 48.5%;
+  }
 }
 
 .woocommerce form .form-row-first {
@@ -1157,10 +1160,6 @@ div.product table.variations .label {
   font-size: 15px;
 }
 
-div.product table.variations .value {
-  margin-bottom: 1em;
-}
-
 .woocommerce-mini-cart li {
   padding: 1rem;
   position: relative;
@@ -1631,7 +1630,6 @@ ul.products li.product .price ins {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  right: -34px;
   width: 35px;
   border: 1px solid #e2e2e2;
 }
@@ -1732,13 +1730,9 @@ ul.products li.product .price ins {
     display: none;
   }
 
-  .woocommerce table.shop_table_responsive tr {
-    display: block;
-  }
-
   .woocommerce table.shop_table_responsive tr td {
-    display: block;
-    text-align: right !important;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 
   .woocommerce table.shop_table_responsive tr td.order-actions {
@@ -1748,11 +1742,27 @@ ul.products li.product .price ins {
   .woocommerce table.shop_table_responsive tr td::before {
     font-weight: 500;
     float: left;
-    content: attr(data-title) ": ";
   }
 
   .woocommerce table.shop_table_responsive tr td.product-remove::before, .woocommerce table.shop_table_responsive tr td.actions::before {
     display: none;
+  }
+
+  .woocommerce table.shop_table_responsive tr td.product-remove {
+    min-width: initial;
+  }
+
+  .woocommerce table.shop_table_responsive tr td.product-remove .remove {
+    margin-right: 0.25rem;
+  }
+
+  .woocommerce .cart_totals tr td {
+    display: block;
+    padding: 12px !important;
+  }
+
+  .woocommerce .cart_totals tr td::before {
+    content: attr(data-title) ": ";
   }
 
   .woocommerce table.my_account_orders tr td.order-actions {
@@ -1793,7 +1803,8 @@ ul.products li.product .price ins {
   }
 
   .woocommerce table.cart .product-thumbnail {
-    display: none;
+    font-size: 0.875rem;
+    width: 100%;
   }
 
   .woocommerce .cart-collaterals .cart_totals,

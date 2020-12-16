@@ -59,7 +59,11 @@
         background: transparent none;
 
         p{
-            @apply mt-0 mb-4 p-0;
+            @apply mt-0 py-0 mb-4;
+        }
+
+        .comment-notes{
+            @apply p-0;
         }
     }
 

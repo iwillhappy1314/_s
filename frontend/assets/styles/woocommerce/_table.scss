@@ -42,7 +42,7 @@ table.shop_attributes {
 table.shop_table_responsive {
     tr {
         @media screen and (max-width: $phone) {
-            @apply mb-8;
+            //@apply mb-8;
 
             &.order-total{
                 @apply mb-0;

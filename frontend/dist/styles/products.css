@@ -323,8 +323,15 @@ div.images .woocommerce-product-gallery__trigger:after {
 }
 
 .woocommerce.widget ul {
-  border: 1px solid #eee;
-  background: #f8f8f8;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-width: 1px;
+  --border-opacity: 1;
+  border-color: #e0e0e0;
+  border-color: rgba(224, 224, 224, var(--border-opacity));
+  --bg-opacity: 1;
+  background-color: #eee;
+  background-color: rgba(238, 238, 238, var(--bg-opacity));
 }
 
 .widget-wprs_cart_widget button.button {

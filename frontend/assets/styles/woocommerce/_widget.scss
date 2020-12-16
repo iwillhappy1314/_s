@@ -1,7 +1,6 @@
 .woocommerce.widget {
     ul {
-        border: 1px solid #eee;
-        background: #f8f8f8;
+        @apply py-2 border border-gray-300 bg-gray-200;
     }
 }
 

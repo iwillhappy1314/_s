@@ -108,8 +108,11 @@
 
         .form-row-first,
         .form-row-last {
-            width: 48.5%;
+            @apply w-full;
             overflow: visible;
+            @screen md{
+                width: 48.5%;
+            }
         }
 
         .form-row-first {
