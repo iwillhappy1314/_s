@@ -10,6 +10,7 @@
 @import "woocommerce/select2";
 
 $bg-color: $bg-base;
+$text-color: $text-base;
 $border-color: $border-base;
 $border-highlight: $border-highlight;
 
@@ -114,7 +115,8 @@ table.my_account_orders {
                 }
 
                 a {
-                    @apply px-2 py-1 block text-gray-700;
+                    @apply px-2 py-1 block;
+                    color: $text-color;
                 }
 
                 &.is-active {

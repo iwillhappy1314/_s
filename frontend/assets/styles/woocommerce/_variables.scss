@@ -22,7 +22,7 @@ $highlightext: desaturate(lighten($highlight, 50%), 18%);
 
 // Text on highlight color bg
 
-$contentbg: #fff;
+$contentbg: $bg-base;
 
 // Content BG - Tabs (active state)
 $subtext: $text-mute-color;

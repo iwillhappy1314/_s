@@ -855,8 +855,7 @@ table.my_account_orders .order-actions .button {
   padding-right: 0.5rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-  --tw-text-opacity: 1;
-  color: rgba(97, 97, 97, var(--tw-text-opacity));
+  color: #383838;
 }
 
 .woocommerce-MyAccount-navigation ul li.is-active {
