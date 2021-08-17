@@ -88,7 +88,7 @@ table.cart {
 }
 
 .shipping-calculator-button{
-    @apply underline flex items-center justify-end whitespace-no-wrap mb-1;
+    @apply underline flex items-center justify-end whitespace-nowrap mb-1;
     &::after {
         @include iconafter("");
     }

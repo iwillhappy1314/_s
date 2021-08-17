@@ -45,13 +45,12 @@ $link: $primary;
 $body-background-color: rgba(31, 99, 209, 0.02);
 $highlight: #333;
 
-// 背景和边框
-$background: #f1f1f1;
-$border: #eee;
-$border-color: $border;
-$border-color-darker: #ccc;
 
+
+
+// ======================
 // 文字颜色
+// ======================
 $text-color: #383838;
 $text-dark: #000;
 $text-light: #666;
@@ -60,6 +59,43 @@ $text-strong-color: 0;
 $text-mark-color: #fff;
 $text-mark-background-color: #ff0;
 $text-mute-color: #bbb;
+
+$text-400: #fff;
+$text-base: $text-400;
+
+$text-300: $text-color;
+$text-500: $text-color;
+$text-600: $text-color;
+$text-700: $text-color;
+
+
+// ======================
+// 背景颜色
+// ======================
+$background: #fff;
+$bg-400: $background;
+$bg-base: $bg-400;
+
+$bg-300: lighten($bg-400, 5%);
+$bg-500: darken($bg-400, 5%);
+$bg-600: darken($bg-400, 10%);
+$bg-700: darken($bg-400, 15%);
+
+$bg-highlight: $background;
+
+
+// ======================
+// 边框颜色
+// ======================
+$border: #222;
+$border-400: $border;
+$border-base: $border-400;
+
+$border-300: lighten($border, 5%);
+$border-500: darken($border, 5%);
+$border-600: darken($border, 10%);
+$border-700: darken($border, 15%);
+
 
 // ======================
 // 字体家族
@@ -96,21 +132,3 @@ $bronze: 1.333;
 $sliver: 1.414;
 $golden: 1.618;
 $platinum: 1.732;
-
-// ======================
-// 字号
-// ======================
-
-//文字字号
-$text-tiny-font-size: 10px;
-$text-small-font-size: 12px;
-$text-font-size: 14px;
-$text-large-font-size: 16px;
-
-// 标题字号
-$h1-font-size: 36px;
-$h2-font-size: 28px;
-$h3-font-size: 24px;
-$h4-font-size: 20px;
-$h5-font-size: 18px;
-$h6-font-size: 16px;

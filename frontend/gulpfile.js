@@ -85,11 +85,7 @@ const cssPurge = () => {
             ]),
             extractors       : [
                 {
-                    extractor : class TailwindExtractor {
-                        static extract(content) {
-                            return content.match(/[A-z0-9-:\/]+/g) || [];
-                        }
-                    },
+                    extractor : content => content.match(/[A-z0-9-:\/]+/g) || [],
                     extensions: ['css', 'html'],
                 },
             ],
@@ -187,7 +183,7 @@ gulp.task('styles', gulp.series('wiredep', async () => {
         const cssTasksInstance = cssTasks(dep.name);
         if (!enabled.failStyleTask) {
             cssTasksInstance.on('error', (err) => {
-                console.error(err.message);
+                console.error(err);
                 this.emit('end');
             });
         }

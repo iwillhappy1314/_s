@@ -31,11 +31,11 @@
                 }
 
                 &.hidden {
-                    visibility: hidden;
+                    @apply invisible;
                 }
 
-                .inline {
-                    @apply inline;
+                &.inline {
+                    display: inline;
                 }
             }
 
@@ -108,8 +108,7 @@
 
         .form-row-first,
         .form-row-last {
-            @apply w-full;
-            overflow: visible;
+            @apply w-full visible;
             @screen md{
                 width: 48.5%;
             }

@@ -209,8 +209,8 @@
 }
 
 .select2-container--default .select2-selection--single {
-  background-color: #fff;
-  border: 1px solid #dbdbdb;
+  background-color: #f2f2f2;
+  border: 1px solid #090808;
   border-radius: 4px;
 }
 
@@ -219,7 +219,7 @@
 }
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
-  border-color: #dbdbdb;
+  border-color: #090808;
   height: 42px;
   line-height: 42px;
 }
@@ -280,7 +280,7 @@
 
 .select2-container--default .select2-selection--multiple {
   background-color: white;
-  border: 1px solid #dbdbdb;
+  border: 1px solid #090808;
   border-radius: 4px;
   cursor: text;
 }
@@ -320,7 +320,7 @@
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
   background-color: #e4e4e4;
-  border: 1px solid #dbdbdb;
+  border: 1px solid #090808;
   border-radius: 4px;
   cursor: default;
   float: left;
@@ -384,7 +384,7 @@
 }
 
 .select2-container--default .select2-search--dropdown .select2-search__field {
-  border: 1px solid #dbdbdb;
+  border: 1px solid #090808;
   border-radius: 4px;
   padding: 4px 8px;
 }
@@ -467,7 +467,7 @@
 
 .select2-container--classic .select2-selection--single {
   background-color: #f7f7f7;
-  border: 1px solid #dbdbdb;
+  border: 1px solid #090808;
   border-radius: 4px;
   outline: 0;
   background-image: -o-linear-gradient(top, white 50%, #eeeeee 100%);
@@ -499,7 +499,7 @@
 .select2-container--classic .select2-selection--single .select2-selection__arrow {
   background-color: #ddd;
   border: none;
-  border-left: 1px solid #dbdbdb;
+  border-left: 1px solid #090808;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   height: calc(2.25em - 2px);
@@ -533,7 +533,7 @@
 
 .select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__arrow {
   border: none;
-  border-right: 1px solid #dbdbdb;
+  border-right: 1px solid #090808;
   border-radius: 0;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -579,7 +579,7 @@
 
 .select2-container--classic .select2-selection--multiple {
   background-color: white;
-  border: 1px solid #dbdbdb;
+  border: 1px solid #090808;
   border-radius: 4px;
   cursor: text;
   outline: 0;
@@ -601,7 +601,7 @@
 
 .select2-container--classic .select2-selection--multiple .select2-selection__choice {
   background-color: #e4e4e4;
-  border: 1px solid #dbdbdb;
+  border: 1px solid #090808;
   border-radius: 4px;
   cursor: default;
   float: left;
@@ -653,7 +653,7 @@
 }
 
 .select2-container--classic .select2-search--dropdown .select2-search__field {
-  border: 1px solid #dbdbdb;
+  border: 1px solid #090808;
   outline: 0;
 }
 
@@ -712,7 +712,7 @@
 
 .rs-checkout-bar {
   position: absolute;
-  padding: 0;
+  padding: 0px;
   top: -90px;
   width: 80%;
   height: 6px;
@@ -723,26 +723,27 @@
 
 .rs-checkout-bar li {
   position: relative;
-  display: inline-block;
-  padding: 0;
-  font-weight: 400;
-  text-align: center;
-  font-size: 0.875rem;
-  vertical-align: top;
-  background-color: transparent;
-  margin: 0;
+  margin: 0px;
   margin-top: 1.5rem;
+  display: inline-block;
+  background-color: transparent;
+  padding: 0px;
+  text-align: center;
+  vertical-align: top;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
   width: 32%;
 }
 
 .rs-checkout-bar li::before {
   position: absolute;
-  --text-opacity: 1;
-  color: #fff;
-  color: rgba(255, 255, 255, var(--text-opacity));
-  font-weight: 700;
   text-align: center;
   font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
   z-index: 5;
   top: -40px;
   left: 43%;
@@ -800,10 +801,9 @@
 
 .rs-checkout-bar li.visited::after, .rs-checkout-bar::before {
   position: absolute;
-  --bg-opacity: 1;
-  background-color: #065aaa;
-  background-color: rgba(6, 90, 170, var(--bg-opacity));
-  left: 0;
+  left: 0px;
+  --tw-bg-opacity: 1;
+  background-color: rgba(6, 90, 170, var(--tw-bg-opacity));
   width: 17%;
   height: 6px;
   border-radius: 6px;
@@ -824,9 +824,8 @@
 }
 
 .woocommerce-checkout .rs-checkout-bar li.active::after {
-  --bg-opacity: 1;
-  background-color: #065aaa;
-  background-color: rgba(6, 90, 170, var(--bg-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(6, 90, 170, var(--tw-bg-opacity));
 }
 
 .woocommerce-checkout ul.rs-checkout-bar li.next {
@@ -877,8 +876,8 @@ table.cart img {
 }
 
 table.cart td.actions {
-  text-align: right;
   background-color: transparent;
+  text-align: right;
 }
 
 @media (min-width: 1024px) {
@@ -887,10 +886,14 @@ table.cart td.actions {
   }
 }
 
-table.cart td.actions button,
-  table.cart td.actions input[type=submit] {
-  font-size: 0.875rem;
+table.cart td.actions button, table.cart td.actions input[type=submit]{
   border-radius: 0.125rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+table.cart td.actions button,
+  table.cart td.actions input[type=submit]{
   padding-left: 22px;
   padding-right: 22px;
   color: #111;
@@ -942,8 +945,7 @@ table.cart td.actions .coupon label {
   width: 48%;
 }
 
-.woocommerce-shipping-methods,
-.woocommerce-shipping-destination {
+.woocommerce-shipping-methods, .woocommerce-shipping-destination{
   margin-bottom: 0.5rem;
 }
 
@@ -957,7 +959,7 @@ table.cart td.actions .coupon label {
 }
 
 .shipping-calculator-button {
-  text-decoration: underline;
+  margin-bottom: 0.25rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -968,7 +970,7 @@ table.cart td.actions .coupon label {
       -ms-flex-pack: end;
           justify-content: flex-end;
   white-space: nowrap;
-  margin-bottom: 0.25rem;
+  text-decoration: underline;
 }
 
 .shipping-calculator-button::after {
@@ -987,7 +989,7 @@ table.cart td.actions .coupon label {
 @media (min-width: 1024px) {
   .woocommerce-cart-form {
     float: left;
-    margin-bottom: 0;
+    margin-bottom: 0px;
     width: 62%;
   }
 }
@@ -1000,8 +1002,9 @@ table.cart td.actions .coupon label {
 
 .woocommerce-cart-form table img {
   width: 2rem;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  --tw-shadow: 0 0 #0000;
+  -webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+          box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .woocommerce-cart-form table .product-thumbnail {
@@ -1013,10 +1016,9 @@ table.cart td.actions .coupon label {
 }
 
 .woocommerce-cart-form table th {
-  --text-opacity: 1;
-  color: #757575;
-  color: rgba(117, 117, 117, var(--text-opacity));
   text-align: left;
+  --tw-text-opacity: 1;
+  color: rgba(117, 117, 117, var(--tw-text-opacity));
 }
 
 .woocommerce-cart-form table th.product-subtotal {
@@ -1025,9 +1027,8 @@ table.cart td.actions .coupon label {
 
 .woocommerce-cart-form table td {
   border-bottom-width: 1px;
-  --border-opacity: 1;
-  border-color: #e0e0e0;
-  border-color: rgba(224, 224, 224, var(--border-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(224, 224, 224, var(--tw-border-opacity));
 }
 
 @media (min-width: 1280px) {
@@ -1049,7 +1050,7 @@ table.cart td.actions .coupon label {
 
 @media screen and (max-width: 768px) {
   .woocommerce-cart-form table td.actions {
-    border-bottom-width: 0;
+    border-bottom-width: 0px;
   }
 }
 
@@ -1060,14 +1061,14 @@ table.cart td.actions .coupon label {
 }
 
 .woocommerce-cart-form table td.actions .coupon .input-text {
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(158, 123, 7, var(--tw-border-opacity));
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   line-height: 1.5;
   outline: 2px solid transparent;
   outline-offset: 2px;
-  font-size: 0.875rem;
-  border-width: 1px;
-  --border-opacity: 1;
-  border-color: #9e7b07;
-  border-color: rgba(158, 123, 7, var(--border-opacity));
   margin: 0 -1px 0 0;
 }
 
@@ -1078,33 +1079,32 @@ table.cart td.actions .coupon label {
 }
 
 .woocommerce-cart-form table div.quantity {
-  margin: 0;
   float: none;
-  vertical-align: middle;
+  margin: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  vertical-align: middle;
 }
 
 .woocommerce-cart-form table input {
-  margin: 0;
+  margin: 0px;
   vertical-align: middle;
 }
 
 .woocommerce-cart-form table small.stock {
-  display: block;
   float: none;
+  display: block;
 }
 
 .woocommerce-cart-form .variations {
   margin-bottom: 1rem;
-  border-width: 0;
   width: 100%;
+  border-width: 0px;
 }
 
-.woocommerce-cart-form .variations td,
-  .woocommerce-cart-form .variations th {
-  border-width: 0;
+.woocommerce-cart-form .variations td, .woocommerce-cart-form .variations th{
+  border-width: 0px;
   vertical-align: top;
   line-height: 2;
 }
@@ -1130,11 +1130,11 @@ td.product-name dl.variation dt, td.product-name dl.variation .wc-item-meta-labe
 }
 
 td.product-name dl.variation dd, td.product-name .wc-item-meta dd {
-  margin: 0;
+  margin: 0px;
 }
 
 td.product-name dl.variation p, td.product-name dl.variation:last-child, td.product-name .wc-item-meta p, td.product-name .wc-item-meta:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0px;
 }
 
 td.product-name p.backorder_notification {
@@ -1142,9 +1142,8 @@ td.product-name p.backorder_notification {
 }
 
 td.product-name a {
-  --text-opacity: 1;
-  color: #424242;
-  color: rgba(66, 66, 66, var(--text-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(66, 66, 66, var(--tw-text-opacity));
 }
 
 td.product-quantity {
@@ -1153,11 +1152,10 @@ td.product-quantity {
 
 .woocommerce .wc-proceed-to-checkout .button {
   background-color: #3bb54a;
-  --text-opacity: 1;
-  color: #fff;
-  color: rgba(255, 255, 255, var(--text-opacity));
   display: block;
-  border-width: 0;
+  border-width: 0px;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
   height: 58px;
   line-height: 58px;
   font-size: 19px;

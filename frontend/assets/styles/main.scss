@@ -53,7 +53,7 @@ $default-grid-gutter: 2rem;
 .single-product .archive-header .woocommerce-breadcrumb,
 .related.products,
 .upsells.products {
-    @extend .container;
+    @extend .container !optional;
 }
 
 

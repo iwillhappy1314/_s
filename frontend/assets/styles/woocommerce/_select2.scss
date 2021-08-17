@@ -1,5 +1,4 @@
-$border-color: #dbdbdb;
-$primary: $primary;
+$border-color: $border-600;
 
 .select2-container {
     box-sizing: border-box;
@@ -173,7 +172,7 @@ $primary: $primary;
 }
 
 .select2-container--default .select2-selection--single {
-    background-color: #fff;
+    background-color: $bg-500;
     border: 1px solid $border-color;
     border-radius: 4px;
     &:focus{

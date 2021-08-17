@@ -25,17 +25,16 @@
 .woocommerce #reviews h2 small {
   float: right;
   font-size: 1rem;
-  --text-opacity: 1;
-  color: #757575;
-  color: rgba(117, 117, 117, var(--text-opacity));
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(117, 117, 117, var(--tw-text-opacity));
   margin: 10px 0 0;
 }
 
 .woocommerce #reviews h2 small a {
+  --tw-text-opacity: 1;
+  color: rgba(117, 117, 117, var(--tw-text-opacity));
   text-decoration: none;
-  --text-opacity: 1;
-  color: #757575;
-  color: rgba(117, 117, 117, var(--text-opacity));
 }
 
 .woocommerce #reviews #comment {
@@ -81,8 +80,8 @@
 }
 
 .woocommerce .products .star-rating {
-  display: block;
   float: none;
+  display: block;
   margin: 0 0 0.5em;
 }
 
@@ -93,10 +92,10 @@
 .woocommerce #review_form #respond {
   zoom: 1;
   position: static;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
   width: auto;
-  border-width: 0;
+  border-width: 0px;
+  padding: 0px;
   background: transparent none;
 }
 
@@ -110,24 +109,25 @@
 }
 
 .woocommerce #review_form #respond p {
-  margin-top: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+  margin-top: 0px;
   margin-bottom: 1rem;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .woocommerce #review_form #respond .comment-notes {
-  padding: 0;
+  padding: 0px;
 }
 
 .woocommerce .comment-reply-title {
-  display: block;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
+  display: block;
 }
 
 .woocommerce .comment-form-rating label {
   font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .woocommerce p.stars {
@@ -137,18 +137,17 @@
 .woocommerce p.stars a {
   position: relative;
   display: inline-block;
+  --tw-text-opacity: 1;
+  color: rgba(220, 38, 38, var(--tw-text-opacity));
   text-decoration: none;
-  --text-opacity: 1;
-  color: #e53e3e;
-  color: rgba(229, 62, 62, var(--text-opacity));
   height: 1em;
   width: 1em;
   text-indent: -999em;
 }
 
 .woocommerce p.stars a::before {
-  display: block;
   position: absolute;
+  display: block;
   line-height: 1;
   width: 1em;
   height: 1em;
@@ -198,37 +197,35 @@ ol.commentlist li {
 
 ol.commentlist li .meta {
   font-size: 0.875rem;
+  line-height: 1.25rem;
   color: #bbb;
 }
 
 ol.commentlist li img.avatar {
-  float: left;
   position: absolute;
-  width: 2rem;
+  float: left;
   height: auto;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  width: 2rem;
   border-width: 1px;
-  --border-opacity: 1;
-  border-color: #e0e0e0;
-  border-color: rgba(224, 224, 224, var(--border-opacity));
-  --bg-opacity: 1;
-  background-color: #f5f5f5;
-  background-color: rgba(245, 245, 245, var(--bg-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(224, 224, 224, var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(245, 245, 245, var(--tw-bg-opacity));
+  --tw-shadow: 0 0 #0000;
+  -webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+          box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   padding: 3px;
 }
 
 ol.commentlist li .comment-text {
   zoom: 1;
-  --bg-opacity: 1;
-  background-color: #fff;
-  background-color: rgba(255, 255, 255, var(--bg-opacity));
   border-radius: 0.25rem;
-  padding: 1rem;
   border-width: 1px;
-  --border-opacity: 1;
-  border-color: #e0e0e0;
-  border-color: rgba(224, 224, 224, var(--border-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(224, 224, 224, var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  padding: 1rem;
   margin: 0 0 0 50px;
 }
 
@@ -242,7 +239,7 @@ ol.commentlist li .comment-text::after {
 }
 
 ol.commentlist li .comment-text p {
-  margin-bottom: 0;
+  margin-bottom: 0px;
 }
 
 ol.commentlist li .comment-text p:not(:last-child) {
@@ -252,6 +249,7 @@ ol.commentlist li .comment-text p:not(:last-child) {
 ol.commentlist li .comment-text p.meta {
   margin-bottom: 0.5rem;
   font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 ol.commentlist li > li::before {
@@ -270,9 +268,8 @@ ol.commentlist ul.children .star-rating {
 ol.commentlist #respond {
   border-radius: 0.25rem;
   border-width: 1px;
-  --border-opacity: 1;
-  border-color: #e0e0e0;
-  border-color: rgba(224, 224, 224, var(--border-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(224, 224, 224, var(--tw-border-opacity));
   padding: 1em 1em 0;
   margin: 20px 0 0 50px;
 }

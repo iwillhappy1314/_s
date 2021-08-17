@@ -82,7 +82,7 @@ table.my_account_orders {
     }
 
     &__cell {
-        @apply text-sm whitespace-no-wrap align-middle text-left font-medium;
+        @apply text-sm whitespace-nowrap align-middle text-left font-medium;
         padding: 20px 0 20px 30px;
         color: #354052;
     }
@@ -95,7 +95,8 @@ table.my_account_orders {
         @apply w-full;
 
         ul {
-            @apply bg-white px-6 py-4 flex flex-wrap;
+            @apply px-6 py-4 flex flex-wrap;
+            background-color: $bg-700;
 
             li {
                 @apply w-1/2 flex-shrink-0;
@@ -124,7 +125,9 @@ table.my_account_orders {
     }
 
     &-content {
-        @apply bg-white p-8 shadow border-t-4 border-gray-400 w-full mt-6;
+        @apply p-8 shadow border-t-4 border-gray-400 w-full mt-6;
+        background-color: $bg-700;
+        border-color: $border-500;
 
         @screen md {
             @apply mt-0 float-right;
@@ -223,8 +226,9 @@ div.woocommerce-MyAccount-navigation {
 }
 
 .woocommerce-Address {
-    border: 1px solid $border;
     @apply mt-4;
+    border: 1px solid $border;
+    background-color: $bg-700;
 
     @media screen and (max-width: $tablet) {
         & + .woocommerce-Address {
@@ -265,7 +269,9 @@ div.woocommerce-MyAccount-navigation {
 // 用户资料卡片
 //===================================
 .wc-profile-card {
-    @apply text-center bg-white border-b border-gray-200 p-8;
+    @apply text-center border-b p-8;
+    background-color: $bg-700;
+    border-color: $border-600;
 
     img {
         @apply mx-auto;

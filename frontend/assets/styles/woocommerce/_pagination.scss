@@ -6,7 +6,7 @@
     @apply mt-8 text-center;
 
     ul {
-        @apply inline-block whitespace-no-wrap p-0 clear-both border-r-0;
+        @apply inline-block whitespace-nowrap p-0 clear-both border-r-0;
         border: 1px solid darken($secondary, 10%);
         margin: 1px;
 

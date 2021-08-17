@@ -63,7 +63,7 @@
         }
 
         .amount {
-            @apply text-orange-700;
+            @apply text-yellow-700;
         }
     }
 }
@@ -71,7 +71,7 @@
 // 商品列表
 .widget_products {
     .amount {
-        @apply text-orange-700;
+        @apply text-yellow-700;
     }
 
     del {
@@ -81,7 +81,7 @@
     }
 
     ins {
-        @apply text-orange-700;
+        @apply text-yellow-700;
     }
 }
 

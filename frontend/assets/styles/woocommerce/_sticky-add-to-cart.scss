@@ -14,7 +14,7 @@
     }
 
     &__content-title {
-        @apply block pl-4 font-bold overflow-hidden whitespace-no-wrap;
+        @apply block pl-4 font-bold overflow-hidden whitespace-nowrap;
         text-overflow: ellipsis;
 
         .star-rating {

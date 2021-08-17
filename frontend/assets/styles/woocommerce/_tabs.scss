@@ -3,7 +3,8 @@
 //===================================
 .woocommerce-tabs {
     clear: both;
-    @apply bg-white flex-grow order-2;
+    @apply flex-grow order-2;
+    background: $bg-base;
 
     ul.tabs {
         @apply relative overflow-hidden text-center mb-4;

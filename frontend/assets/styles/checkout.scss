@@ -260,8 +260,7 @@
 .wc-checkout-form {
     h3,
     &__title {
-        @apply font-light;
-        font-size: $h3-font-size;
+        @apply font-light text-xl;
     }
 }
 
@@ -332,7 +331,7 @@
         }
 
         label {
-            @apply inline whitespace-no-wrap;
+            @apply inline whitespace-nowrap;
         }
     }
 

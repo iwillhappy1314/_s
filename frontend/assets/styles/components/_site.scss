@@ -27,7 +27,9 @@
     min-height: 100vh;
 
     &__header {
-        @apply flex justify-between items-center w-full bg-white border-b border-gray-300;
+        @apply flex justify-between items-center w-full border-b;
+        background-color: $bg-base;
+        border-color: $border-base;
         height: 64px;
 
         .container {
@@ -77,12 +79,11 @@
             z-index: 98;
 
             @screen md {
-                @apply ;
                 top: 75px;
             }
 
             @screen lg {
-                @apply flex flex-no-wrap static;
+                @apply flex flex-nowrap static;
             }
 
             @screen xl {
@@ -124,7 +125,7 @@
         }
 
         @screen lg {
-            @apply flex-no-wrap;
+            @apply flex-nowrap;
         }
 
         @screen xl {
@@ -137,7 +138,7 @@
     }
 
     &__footer {
-        @apply bg-gray-200;
+        background-color: $bg-700;
     }
 
     &__info {
@@ -183,13 +184,12 @@
 .rs-widgets--footer {
     @apply flex -mx-4 flex-wrap;
 
-    @apply lg {
-        @apply flex-no-wrap;
+    @screen lg {
+        @apply flex-nowrap;
     }
 
     .widget {
-        @apply mx-4 w-full;
-        flex-grow: 1;
+        @apply mx-4 w-full flex-grow;
 
         @screen lg {
             @apply mb-0;
@@ -209,7 +209,6 @@
             @screen lg {
                 @apply order-1 mr-8;
             }
-
         }
     }
 }

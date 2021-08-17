@@ -60,7 +60,7 @@
     @apply flex flex-wrap w-full;
 
     @screen lg {
-        @apply flex-no-wrap;
+        @apply flex-nowrap;
     }
 }
 
@@ -118,9 +118,8 @@
     }
 
     small.note {
-        display: block;
+        @apply block text-sm;
         color: $subtext;
-        font-size: $text-small-font-size;
         margin-top: 10px;
     }
 
@@ -240,13 +239,12 @@
 
 .rswc-product-hero {
     @apply py-8;
-    background: #f8f8f8;
+    background: $bg-600;
 }
 
 .rs-mobile-nav {
     box-shadow: 0 0 4px rgba(0, 0, 0, .15);
 }
-
 
 .rswc-bt-products {
     @apply border bg-white border-gray-200 mt-6 pt-3;
@@ -264,7 +262,7 @@
     }
 
     .product-title {
-        @apply block whitespace-no-wrap overflow-hidden;
+        @apply block whitespace-nowrap overflow-hidden;
         text-overflow: ellipsis;
     }
 
@@ -284,17 +282,12 @@
         @apply flex flex-grow items-center;
 
         & > div {
+            @apply relative flex flex-col;
             padding: 0 22px;
-            position: relative;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-direction: column;
-            flex-direction: column;
         }
 
         .amount {
-            font-size: 16px;
-            font-weight: 600;
+            @apply font-normal text-base;
         }
     }
 }

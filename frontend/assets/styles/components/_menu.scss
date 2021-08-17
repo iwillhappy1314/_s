@@ -23,9 +23,9 @@
 // :: 1.1. 颜色
 // ----------------------------------------------------------
 
-$sm-menu__white: #fff !default; // Background color
-$sm-menu__black: #333 !default; // Text color
-$sm-menu__green: #f7fafc !default; // Dropdown box Box
+$sm-menu__white: $text-base !default; // Background color
+$sm-menu__black: $text-600 !default; // Text color
+$sm-menu__green: $text-700 !default; // Dropdown box Box
 $sm-menu__green-dark: $primary !default;  //Active Color
 
 $sm-menu__box-shadow: rgba(0, 0, 0, 0.25) !default;
@@ -62,7 +62,7 @@ $sm-menu__border-radius-base: 0 !default;
 
 // 菜单盒子
 $sm-menu__collapsible-bg: $sm-menu__white !default;
-$sm-menu__collapsible-border-color: #eee !default;
+$sm-menu__collapsible-border-color: $border-500 !default;
 
 // 菜单项
 $sm-menu__collapsible-item-color: $sm-menu__black !default;
