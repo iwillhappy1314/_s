@@ -1,5 +1,6 @@
 $bg: $bg-base;
-$border-color: $border-base;
+$border-color: #dedede;
+$input-height: 40px;
 
 .select2-container {
     box-sizing: border-box;
@@ -7,14 +8,16 @@ $border-color: $border-base;
     margin: 0;
     position: relative;
     vertical-align: middle;
+    line-height: $input-height;
+    height: $input-height;
 }
 
 .select2-container .select2-selection--single {
     box-sizing: border-box;
     cursor: pointer;
     display: block;
-	height: 42px;
-	margin: 0 0 -4px;
+    height: $input-height;
+    margin: 0 0 -4px;
     user-select: none;
     -webkit-user-select: none;
 }
@@ -56,8 +59,8 @@ $border-color: $border-base;
 }
 
 .select2-container .select2-search--inline {
-	float: left;
-	padding: 0;
+    float: left;
+    padding: 0;
 }
 
 .select2-container .select2-search--inline .select2-search__field {
@@ -98,7 +101,8 @@ $border-color: $border-base;
     padding: 6px;
     user-select: none;
     -webkit-user-select: none;
-    &:focus{
+
+    &:focus {
         outline: 0;
     }
 }
@@ -175,8 +179,10 @@ $border-color: $border-base;
 .select2-container--default .select2-selection--single {
     background-color: $bg;
     border: 1px solid $border-color;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .05);
     border-radius: 4px;
-    &:focus{
+
+    &:focus {
         outline: 0;
     }
 }
@@ -185,8 +191,8 @@ $border-color: $border-base;
     //color: #444;
     //box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
     border-color: $border-color;
-    height: 42px;
-    line-height: 42px;
+    height: $input-height;
+    line-height: $input-height;
 }
 
 .select2-container--default .select2-selection--single .select2-selection__clear {
@@ -240,7 +246,7 @@ $border-color: $border-base;
 
 .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
     border-color: transparent transparent #888 transparent;
-	border-width: 0 4px 5px 4px;
+    border-width: 0 4px 5px 4px;
 }
 
 .select2-container--default .select2-selection--multiple {
@@ -259,13 +265,13 @@ $border-color: $border-base;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__rendered li {
-	list-style: none;
-	margin: 5px 5px 0 0;
+    list-style: none;
+    margin: 5px 5px 0 0;
 
-	&:before {
-		content: '';
-		display: none;
-	}
+    &:before {
+        content: '';
+        display: none;
+    }
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__placeholder {
@@ -352,8 +358,9 @@ $border-color: $border-base;
     //box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
     border-radius: 4px;
     padding: 4px 8px;
+
     &:focus,
-    &:active{
+    &:active {
         outline: 0;
     }
 }
@@ -366,7 +373,7 @@ $border-color: $border-base;
     -webkit-appearance: textfield;
 }
 
-.select2-container--default .select2-results>.select2-results__options {
+.select2-container--default .select2-results > .select2-results__options {
     max-height: 200px;
     overflow-y: auto;
 }
@@ -434,7 +441,7 @@ $border-color: $border-base;
     border: 1px solid $border-color;
     border-radius: 4px;
     outline: 0;
-    background-image: linear-gradient(to bottom, white 50%, #eeeeee 100%);
+    background-image: linear-gradient(to bottom, white 50%, #eee 100%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE', GradientType=0);
 }
@@ -470,7 +477,7 @@ $border-color: $border-base;
     top: 1px;
     right: 1px;
     width: 20px;
-    background-image: linear-gradient(to bottom, #eeeeee 50%, #cccccc 100%);
+    background-image: linear-gradient(to bottom, #eee 50%, #ccc 100%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFCCCCCC', GradientType=0);
 }
@@ -520,7 +527,7 @@ $border-color: $border-base;
     border-top: none;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    background-image: linear-gradient(to bottom, white 0%, #eeeeee 50%);
+    background-image: linear-gradient(to bottom, white 0%, #eee 50%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE', GradientType=0);
 }
@@ -529,7 +536,7 @@ $border-color: $border-base;
     border-bottom: none;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    background-image: linear-gradient(to bottom, #eeeeee 50%, white 100%);
+    background-image: linear-gradient(to bottom, #eee 50%, white 100%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFFFFFFF', GradientType=0);
 }
@@ -632,7 +639,7 @@ $border-color: $border-base;
     border-top: none;
 }
 
-.select2-container--classic .select2-results>.select2-results__options {
+.select2-container--classic .select2-results > .select2-results__options {
     max-height: 200px;
     overflow-y: auto;
 }

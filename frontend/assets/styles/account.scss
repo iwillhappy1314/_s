@@ -11,6 +11,7 @@
 
 $bg-color: $bg-base;
 $border-color: $border-base;
+$border-highlight: $border-highlight;
 
 .woocommerce-account {
     @apply bg-gray-100;
@@ -128,9 +129,9 @@ table.my_account_orders {
     }
 
     &-content {
-        @apply p-8 shadow border-t-4 border-gray-400 w-full mt-6;
+        @apply p-8 shadow border-t-4 w-full mt-6;
         background-color: $bg-color;
-        border-color: #333;
+        border-color: $border-highlight;
 
         @screen md {
             @apply mt-0 float-right;
@@ -231,7 +232,7 @@ div.woocommerce-MyAccount-navigation {
 .woocommerce-Address {
     @apply mt-4;
     border: 1px solid $border-color;
-    background-color: $bg-400;
+    background-color: $bg-color;
 
     @media screen and (max-width: $tablet) {
         & + .woocommerce-Address {

@@ -1,3 +1,5 @@
+$border-color: $border-base;
+
 .woocommerce {
     table {
         @apply w-full;
@@ -64,7 +66,7 @@ table.shop_table_responsive {
     }
 
     th {
-        @apply font-normal border-t text-left pb-1;
+        @apply font-normal border-t border-gray-300 text-left pb-1;
     }
 
     td {
