@@ -1,6 +1,7 @@
-// ======================
+// ============================================================================
 // 配色
-// ======================
+// 这里是基础配色，主要需要修改的是背景颜色、边框颜色、文字颜色、其他的样式直接通过CSS修改或覆盖
+// ============================================================================
 
 @import "../fonts/icomoon/variables";
 
@@ -46,8 +47,6 @@ $body-background-color: rgba(31, 99, 209, 0.02);
 $highlight: #333;
 
 
-
-
 // ======================
 // 文字颜色
 // ======================
@@ -60,42 +59,35 @@ $text-mark-color: #fff;
 $text-mark-background-color: #ff0;
 $text-mute-color: #bbb;
 
-$text-400: #fff;
-$text-base: $text-400;
-
+$text-base: #383838;
 $text-300: $text-color;
 $text-500: $text-color;
 $text-600: $text-color;
 $text-700: $text-color;
 
-
+$text-highlight: #fff;
 // ======================
 // 背景颜色
 // ======================
-$background: #fff;
-$bg-400: $background;
-$bg-base: $bg-400;
+//基础背景色，大面积背景使用
+$bg-base: #fff;
+$bg-100: #eee;
+$bg-200: darken($bg-100, 5%);
+$bg-300: darken($bg-100, 10%);
+$bg-400: darken($bg-100, 15%);
 
-$bg-300: lighten($bg-400, 5%);
-$bg-500: darken($bg-400, 5%);
-$bg-600: darken($bg-400, 10%);
-$bg-700: darken($bg-400, 15%);
-
-$bg-highlight: $background;
+//品牌背景色，和品牌色相同或相近
+$bg-highlight: $primary;
 
 
 // ======================
 // 边框颜色
 // ======================
-$border: #222;
-$border-400: $border;
-$border-base: $border-400;
-
-$border-300: lighten($border, 5%);
-$border-500: darken($border, 5%);
-$border-600: darken($border, 10%);
-$border-700: darken($border, 15%);
-
+$border-base: #f3f3f3;
+$border-100: #ededed;
+$border-200: darken($border-base, 5%);
+$border-300: darken($border-base, 10%);
+$border-400: darken($border-base, 15%);
 
 // ======================
 // 字体家族

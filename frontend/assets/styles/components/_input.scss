@@ -1,8 +1,11 @@
+$bg-color: $bg-base;
+$border-color: $border-base;
+
 input,
 select,
 textarea {
-    border: 1px solid $border-500;
-    background-color: $bg-500;
+    border: 1px solid $border-color;
+    background-color: $bg-color;
     border-radius: 3px;
     transition: all 0.3s ease;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .05);
@@ -30,7 +33,7 @@ textarea {
 
 input::placeholder,
 textarea::placeholder {
-    background-color: $bg-600;
+    background-color: $bg-color;
 }
 
 [type=submit]{
@@ -71,7 +74,7 @@ textarea {
 select {
     width: 100%;
     max-width: 100%;
-    background: $bg-500 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 8" width="30"><path fill="%23d1d1d1" d="M0,0l6,8l6-8"/></svg>') center right no-repeat;
+    background: $bg-color url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 8" width="30"><path fill="%23d1d1d1" d="M0,0l6,8l6-8"/></svg>') center right no-repeat;
     background-size: 30px 30px;
     text-indent: .01px;
     text-overflow: "";
@@ -79,7 +82,7 @@ select {
     padding-right: 3rem;
 
     &:focus{
-        background-image: $bg-500 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 8" width="30"><path fill="%23666666" d="M0,0l6,8l6-8"/></svg>')
+        background-image: $bg-color url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 8" width="30"><path fill="%23666666" d="M0,0l6,8l6-8"/></svg>')
     }
 }
 

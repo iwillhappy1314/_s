@@ -10,9 +10,9 @@
 get_header();
 ?>
 
-    <div class="py-16 text-center" style="background: url(https://res.cloudinary.com/timber/image/upload/v1495730898/pricing/blog-header.png) center 0px no-repeat, linear-gradient(rgb(19, 15, 33), rgb(34, 33, 63));">
+    <div class="site__banner py-16 text-center" style="background: url(https://res.cloudinary.com/timber/image/upload/v1495730898/pricing/blog-header.png) center 0px no-repeat, linear-gradient(rgb(19, 15, 33), rgb(34, 33, 63));">
         <div class="container">
-            <h1 class="rs-post__title text-white">
+            <h1 class="rs-post__title">
                 <?php the_title(); ?>
             </h1>
             <div class="rs-post__meta justify-center">

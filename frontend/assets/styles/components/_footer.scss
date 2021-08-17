@@ -1,0 +1,51 @@
+$bg: $bg-highlight;
+$text-color: $bg-base;
+$text-hover-color: $bg-base;
+
+.site__footer {
+    background-color: $bg;
+}
+
+.site__info {
+    @apply mx-auto;
+    color: $text-color;
+
+    a {
+        color: $text-color;
+        &:hover{
+            color: $text-hover-color;
+        }
+    }
+}
+
+.rs-widgets--footer {
+    @apply flex -mx-4 flex-wrap;
+    color: $text-color;
+
+    @screen lg {
+        @apply flex-nowrap;
+    }
+
+    .widget {
+        @apply mx-4 w-full flex-grow;
+
+        @screen lg {
+            @apply mb-0;
+            flex: 0;
+            flex-grow: 1;
+        }
+
+        img {
+            @apply rounded-none shadow-none;
+        }
+
+        li {
+            a {
+                color: $text-color;
+                &:hover{
+                    color: $text-hover-color;
+                }
+            }
+        }
+    }
+}

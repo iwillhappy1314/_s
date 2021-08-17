@@ -1,18 +1,23 @@
+$text-color: $text-base;
+$text-highlight: $text-highlight;
+
 .rs-post {
     &__header {
         @apply mb-4;
 
-        @screen lg{
-          @apply mb-8;
+        @screen lg {
+            @apply mb-8;
         }
     }
 
     &__title {
-        @apply text-3xl text-gray-800 leading-normal;
+        @apply text-3xl leading-normal;
+        color: $text-color;
     }
 
     &__meta {
-        @apply flex text-gray-600;
+        @apply flex;
+        color: $text-color;
 
         & > div {
             @apply mr-2;
@@ -21,5 +26,17 @@
 
     &__conent {
 
+    }
+}
+
+.site__banner {
+    .rs-post {
+        &__title {
+            color: $text-highlight;
+        }
+
+        &__meta {
+            color: $text-highlight;
+        }
     }
 }

@@ -26,96 +26,6 @@
     @apply flex flex-col;
     min-height: 100vh;
 
-    &__header {
-        @apply flex justify-between items-center w-full border-b;
-        background-color: $bg-base;
-        border-color: $border-base;
-        height: 64px;
-
-        .container {
-            @apply flex justify-between items-center;
-        }
-
-        @screen md {
-            height: 75px;
-        }
-
-        @screen lg {
-            height: 100px;
-        }
-    }
-
-    &__branding {
-        @apply flex-grow;
-        z-index: 99;
-        @screen lg {
-            @apply flex-grow-0;
-        }
-
-        h1 {
-            @apply text-4xl;
-        }
-
-        .custom-logo-link {
-            @apply block;
-            img {
-                width: auto;
-                @screen lg {
-                    height: 64px;
-                    @apply h-auto;
-                }
-            }
-        }
-    }
-
-    &__nav {
-        @apply flex flex-grow justify-end;
-        @screen lg {
-            @apply mr-8;
-        }
-        .nav-menu {
-            @apply hidden flex-wrap ml-8 m-0 left-0 absolute;
-            top: 64px;
-            z-index: 98;
-
-            @screen md {
-                top: 75px;
-            }
-
-            @screen lg {
-                @apply flex flex-nowrap static;
-            }
-
-            @screen xl {
-                @apply ml-0;
-            }
-
-            li {
-                @apply w-full relative;
-
-                @screen lg {
-                    @apply w-auto;
-                }
-            }
-
-            a {
-                @apply relative block leading-none;
-
-                @screen md {
-                    @apply leading-none;
-                }
-            }
-
-        }
-
-        &.is-toggled {
-            .nav-menu {
-                @apply flex w-full;
-                box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
-            }
-        }
-    }
-
     &__content {
         @apply w-full flex flex-wrap flex-grow mx-auto p-4;
         @extend .container;
@@ -135,14 +45,6 @@
         .elementor {
             @apply w-full;
         }
-    }
-
-    &__footer {
-        background-color: $bg-700;
-    }
-
-    &__info {
-        @apply mx-auto;
     }
 }
 
@@ -178,28 +80,6 @@
 
     &__footer {
         @apply py-8;
-    }
-}
-
-.rs-widgets--footer {
-    @apply flex -mx-4 flex-wrap;
-
-    @screen lg {
-        @apply flex-nowrap;
-    }
-
-    .widget {
-        @apply mx-4 w-full flex-grow;
-
-        @screen lg {
-            @apply mb-0;
-            flex: 0;
-            flex-grow: 1;
-        }
-
-        img {
-            @apply rounded-none shadow-none;
-        }
     }
 }
 

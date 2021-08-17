@@ -9,6 +9,9 @@
 @import "woocommerce/variables";
 @import "woocommerce/select2";
 
+$bg-color: $bg-base;
+$border-color: $border-base;
+
 .woocommerce-account {
     @apply bg-gray-100;
 
@@ -96,7 +99,7 @@ table.my_account_orders {
 
         ul {
             @apply px-6 py-4 flex flex-wrap;
-            background-color: $bg-700;
+            background-color: $bg-color;
 
             li {
                 @apply w-1/2 flex-shrink-0;
@@ -126,8 +129,8 @@ table.my_account_orders {
 
     &-content {
         @apply p-8 shadow border-t-4 border-gray-400 w-full mt-6;
-        background-color: $bg-700;
-        border-color: $border-500;
+        background-color: $bg-color;
+        border-color: #333;
 
         @screen md {
             @apply mt-0 float-right;
@@ -227,8 +230,8 @@ div.woocommerce-MyAccount-navigation {
 
 .woocommerce-Address {
     @apply mt-4;
-    border: 1px solid $border;
-    background-color: $bg-700;
+    border: 1px solid $border-color;
+    background-color: $bg-400;
 
     @media screen and (max-width: $tablet) {
         & + .woocommerce-Address {
@@ -238,7 +241,7 @@ div.woocommerce-MyAccount-navigation {
 
     &-title {
         @apply px-4 py-3 flex justify-between leading-normal;
-        border-bottom: 1px solid $border;
+        border-bottom: 1px solid $border-color;
 
         h3 {
             @apply flex-grow text-base;
@@ -270,8 +273,8 @@ div.woocommerce-MyAccount-navigation {
 //===================================
 .wc-profile-card {
     @apply text-center border-b p-8;
-    background-color: $bg-700;
-    border-color: $border-600;
+    background-color: $bg-color;
+    border-color: $border-color;
 
     img {
         @apply mx-auto;
@@ -447,6 +450,13 @@ ul.order_details {
     &--orders {
         &:after {
             content: '\e601';
+            font-family: icomoon, sans-serif;
+        }
+    }
+
+    &--payment-methods {
+        &:after {
+            content: '\e025';
             font-family: icomoon, sans-serif;
         }
     }

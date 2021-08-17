@@ -209,8 +209,8 @@
 }
 
 .select2-container--default .select2-selection--single {
-  background-color: #f2f2f2;
-  border: 1px solid #090808;
+  background-color: #fff;
+  border: 1px solid #f3f3f3;
   border-radius: 4px;
 }
 
@@ -219,7 +219,7 @@
 }
 
 .select2-container--default .select2-selection--single .select2-selection__rendered {
-  border-color: #090808;
+  border-color: #f3f3f3;
   height: 42px;
   line-height: 42px;
 }
@@ -280,7 +280,7 @@
 
 .select2-container--default .select2-selection--multiple {
   background-color: white;
-  border: 1px solid #090808;
+  border: 1px solid #f3f3f3;
   border-radius: 4px;
   cursor: text;
 }
@@ -320,7 +320,7 @@
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
   background-color: #e4e4e4;
-  border: 1px solid #090808;
+  border: 1px solid #f3f3f3;
   border-radius: 4px;
   cursor: default;
   float: left;
@@ -384,7 +384,7 @@
 }
 
 .select2-container--default .select2-search--dropdown .select2-search__field {
-  border: 1px solid #090808;
+  border: 1px solid #f3f3f3;
   border-radius: 4px;
   padding: 4px 8px;
 }
@@ -467,7 +467,7 @@
 
 .select2-container--classic .select2-selection--single {
   background-color: #f7f7f7;
-  border: 1px solid #090808;
+  border: 1px solid #f3f3f3;
   border-radius: 4px;
   outline: 0;
   background-image: -o-linear-gradient(top, white 50%, #eeeeee 100%);
@@ -499,7 +499,7 @@
 .select2-container--classic .select2-selection--single .select2-selection__arrow {
   background-color: #ddd;
   border: none;
-  border-left: 1px solid #090808;
+  border-left: 1px solid #f3f3f3;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   height: calc(2.25em - 2px);
@@ -533,7 +533,7 @@
 
 .select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__arrow {
   border: none;
-  border-right: 1px solid #090808;
+  border-right: 1px solid #f3f3f3;
   border-radius: 0;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -579,7 +579,7 @@
 
 .select2-container--classic .select2-selection--multiple {
   background-color: white;
-  border: 1px solid #090808;
+  border: 1px solid #f3f3f3;
   border-radius: 4px;
   cursor: text;
   outline: 0;
@@ -601,7 +601,7 @@
 
 .select2-container--classic .select2-selection--multiple .select2-selection__choice {
   background-color: #e4e4e4;
-  border: 1px solid #090808;
+  border: 1px solid #f3f3f3;
   border-radius: 4px;
   cursor: default;
   float: left;
@@ -653,7 +653,7 @@
 }
 
 .select2-container--classic .select2-search--dropdown .select2-search__field {
-  border: 1px solid #090808;
+  border: 1px solid #f3f3f3;
   outline: 0;
 }
 
@@ -824,7 +824,7 @@ table.my_account_orders .order-actions .button {
   padding-right: 1.5rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #d9d9d9;
+  background-color: #fff;
 }
 
 .woocommerce-MyAccount-navigation ul li {
@@ -874,8 +874,8 @@ table.my_account_orders .order-actions .button {
   --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   -webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
           box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  background-color: #d9d9d9;
-  border-color: #151515;
+  background-color: #fff;
+  border-color: #333;
 }
 
 @media (min-width: 768px) {
@@ -1016,8 +1016,8 @@ div.woocommerce-MyAccount-navigation {
 
 .woocommerce-Address {
   margin-top: 1rem;
-  border: 1px solid #222;
-  background-color: #d9d9d9;
+  border: 1px solid #f3f3f3;
+  background-color: #c8c8c8;
 }
 
 @media screen and (max-width: 768px) {
@@ -1038,7 +1038,7 @@ div.woocommerce-MyAccount-navigation {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   line-height: 1.5;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid #f3f3f3;
 }
 
 .woocommerce-Address-title h3 {
@@ -1074,8 +1074,8 @@ div.woocommerce-MyAccount-navigation {
   border-bottom-width: 1px;
   padding: 2rem;
   text-align: center;
-  background-color: #d9d9d9;
-  border-color: #090808;
+  background-color: #fff;
+  border-color: #f3f3f3;
 }
 
 .wc-profile-card img {
@@ -1328,6 +1328,11 @@ ul.order_details li strong {
 
 .woocommerce-MyAccount-navigation-link--orders:after {
   content: '\e601';
+  font-family: icomoon, sans-serif;
+}
+
+.woocommerce-MyAccount-navigation-link--payment-methods:after {
+  content: '\e025';
   font-family: icomoon, sans-serif;
 }
 

@@ -320,12 +320,10 @@ div.images .woocommerce-product-gallery__trigger:after {
 
 .woocommerce.widget ul {
   border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgba(224, 224, 224, var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgba(238, 238, 238, var(--tw-bg-opacity));
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  background-color: #f3f3f3;
+  border-color: #eee;
 }
 
 .widget-wprs_cart_widget button.button {
@@ -340,17 +338,15 @@ div.images .woocommerce-product-gallery__trigger:after {
 
 .widget-wprs_cart_widget .widget_shopping_cart_content {
   border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgba(238, 238, 238, var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-color: #eee;
 }
 
 .widget-wprs_cart_widget .widget_shopping_cart_content .woocommerce-mini-cart-item {
   border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgba(238, 238, 238, var(--tw-border-opacity));
   padding: 1rem;
+  border-color: #eee;
 }
 
 .widget-wprs_cart_widget .widget_shopping_cart_content .woocommerce-mini-cart__buttons {
@@ -463,11 +459,10 @@ div.images .woocommerce-product-gallery__trigger:after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  --tw-bg-opacity: 1;
-  background-color: rgba(224, 224, 224, var(--tw-bg-opacity));
   padding: 1.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  background-color: #f3f3f3;
 }
 
 .widget_filters .c-widget__title {
@@ -482,8 +477,7 @@ div.images .woocommerce-product-gallery__trigger:after {
 
 .widget_layered_nav {
   border-bottom-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgba(238, 238, 238, var(--tw-border-opacity));
+  border-color: #eee;
 }
 
 .widget_layered_nav .woocommerce-widget-layered-nav-list {
@@ -1044,7 +1038,7 @@ div.images .woocommerce-product-gallery__trigger:after {
   width: 100%;
   margin-top: 3px;
   margin-bottom: 3px;
-  color: #fff;
+  color: #383838;
   font-size: 16px;
 }
 
@@ -1075,7 +1069,7 @@ div.images .woocommerce-product-gallery__trigger:after {
   -webkit-transition: all .2s;
   -o-transition: all .2s;
   transition: all .2s;
-  background: #f2f2f2;
+  background: #c8c8c8;
 }
 
 .woocommerce ul.products li.product.product-category img {

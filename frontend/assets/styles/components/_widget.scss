@@ -1,3 +1,7 @@
+$bg: $bg-base;
+$text-color: $text-base;
+$text-hover-color: darken($text-base, 5%);
+
 .widget{
     @apply mb-10;
     &-title{
@@ -7,10 +11,11 @@
     li{
         @apply text-sm leading-relaxed leading-6;
         a{
-            @apply inline-block text-gray-600;
+            @apply inline-block;
+            color: $text-color;
 
             &:hover{
-                @apply text-gray-800;
+                color: $text-hover-color;
             }
         }
     }

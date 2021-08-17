@@ -26,20 +26,26 @@
   font-size: 1.875rem;
   line-height: 2.25rem;
   line-height: 1.5;
-  --tw-text-opacity: 1;
-  color: rgba(66, 66, 66, var(--tw-text-opacity));
+  color: #383838;
 }
 
 .rs-post__meta {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  --tw-text-opacity: 1;
-  color: rgba(117, 117, 117, var(--tw-text-opacity));
+  color: #383838;
 }
 
 .rs-post__meta > div {
   margin-right: 0.5rem;
+}
+
+.site__banner .rs-post__title {
+  color: #fff;
+}
+
+.site__banner .rs-post__meta {
+  color: #fff;
 }
 
 /* =Comments

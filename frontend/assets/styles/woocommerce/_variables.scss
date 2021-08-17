@@ -43,8 +43,8 @@ $input-focus-box-shadow-size: 0 0 0 0.125em !default;
 $input-focus-box-shadow-color: rgba($link, 0.25) !default;
 
 $input-disabled-color: $text-light !default;
-$input-disabled-background-color: $background !default;
-$input-disabled-border-color: $background !default;
+$input-disabled-background-color: $bg-base !default;
+$input-disabled-border-color: $bg-base !default;
 
 $input-arrow: $link !default;
 
@@ -53,7 +53,7 @@ $input-icon-active-color: $grey !default;
 
 $input-radius: $radius !default;
 
-$file-border-color: $border !default;
+$file-border-color: $border-base !default;
 $file-radius: $radius !default;
 
 $file-cta-background-color: $white-ter !default;
@@ -61,7 +61,7 @@ $file-cta-color: $grey-dark !default;
 $file-cta-hover-color: $grey-darker !default;
 $file-cta-active-color: $grey-darker !default;
 
-$file-name-border-color: $border !default;
+$file-name-border-color: $border-base !default;
 $file-name-border-style: solid !default;
 $file-name-border-width: 1px 1px 1px 0 !default;
 $file-name-max-width: 16em !default;
