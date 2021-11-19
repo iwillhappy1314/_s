@@ -7,7 +7,7 @@
  * @package _s
  */
 
-add_shortcode('_s_elemetor_block', '_s_render_elementor_block');
+add_shortcode('_s_elementor_block', '_s_render_elementor_block');
 
 if ( ! function_exists('_s_render_elementor_block')) {
     /**
