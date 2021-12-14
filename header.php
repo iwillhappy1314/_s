@@ -41,6 +41,8 @@
                 <?php endif; ?>
             </div>
 
+            <?php do_action('_s_before_navigation'); ?>
+
             <nav id="site-navigation" class="site__nav main-navigation">
                 <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
                     <span><?php esc_html_e('Menu', '_s'); ?></span>
@@ -55,7 +57,7 @@
                 ?>
             </nav>
 
-            <?php _s_woocommerce_header_cart(); ?>
+            <?php do_action('_s_after_navigation'); ?>
 
         </div>
     </header>

@@ -390,6 +390,8 @@ if ( ! function_exists('_s_woocommerce_header_cart')) {
         </ul>
         <?php
     }
+
+    add_action('_s_after_navigation', '_s_woocommerce_header_cart');
 }
 
 if ( ! function_exists('_s_product_content_wrapper_start')) {
