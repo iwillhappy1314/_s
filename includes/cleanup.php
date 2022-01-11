@@ -29,7 +29,28 @@ add_action('wp_enqueue_scripts', function ()
  */
 add_action('after_switch_theme', function ()
 {
+    // Disable Avatar
     update_option('show_avatars', 0);
+
+    // Disable register
+    update_option('users_can_register', 0);
+
+    // Set blog description to empty
+    update_option('blogdescription', '');
+
+    // Set permalink structure to postname
+    update_option('permalink_structure', '/%postname%/');
+    flush_rewrite_rules();
+
+    // For dev site, we prevent search engine to index
+    update_option('blog_public', 0);
+
+    // Set popular datetime format in China
+    update_option('date_format', 'Y-m-d');
+    update_option('time_format', 'H:i');
+
+    // Remove default sample comment.
+    wp_delete_comment(1, true);
 });
 
 
