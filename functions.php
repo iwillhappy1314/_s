@@ -57,6 +57,13 @@ require_once(get_theme_file_path('includes/template-tags.php'));
  */
 require_once(get_theme_file_path('includes/customizer.php'));
 
+
+/**
+ * Cleanup assets
+ */
+require_once(get_theme_file_path('includes/cleanup.php'));
+
+
 /**
  * Load WooCommerce compatibility file.
  */
