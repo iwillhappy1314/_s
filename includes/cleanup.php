@@ -14,6 +14,7 @@ add_action('wp_print_styles', function ()
     wp_deregister_style('wp-block-library');
 });
 
+
 /**
  * Remove Scripts
  */
@@ -21,6 +22,16 @@ add_action('wp_enqueue_scripts', function ()
 {
     wp_deregister_script('wp-embed');
 }, PHP_INT_MAX);
+
+
+/**
+ * Set default options after active theme
+ */
+add_action('after_switch_theme', function ()
+{
+    update_option('show_avatars', 0);
+});
+
 
 // Remove wordpress generator info
 remove_action('wp_head', 'wp_generator');
@@ -41,7 +52,11 @@ remove_action('wp_head', 'wp_resource_hints', 2);
 remove_action('wp_head', 'feed_links_extra', 3);
 remove_action('wp_head', 'feed_links', 2);
 
+// Remove rsd link
 remove_action('wp_head', 'rsd_link');
+
+// remove WordPress shortlink
+remove_action('wp_head', 'wp_shortlink_wp_head', 10);
 
 // Remove emoji script and styles
 remove_action('wp_head', 'print_emoji_detection_script', 7);
@@ -61,3 +76,39 @@ add_action('elementor/frontend/after_register_styles', function ()
 
 // Disable xmlrpc
 add_filter('xmlrpc_enabled', '__return_false');
+
+
+/**
+ * Remove WordPress links in menubar
+ */
+add_action('wp_before_admin_bar_render', function ()
+{
+    global $wp_admin_bar;
+
+    $wp_admin_bar->remove_menu('wp-logo');
+    $wp_admin_bar->remove_menu('about');
+    $wp_admin_bar->remove_menu('wporg');
+    $wp_admin_bar->remove_menu('documentation');
+    $wp_admin_bar->remove_menu('support-forums');
+    $wp_admin_bar->remove_menu('feedback');
+    $wp_admin_bar->remove_menu('view-site');
+});
+
+
+/**
+ * Remove dashboard metabox
+ */
+add_action('wp_before_admin_bar_render', function ()
+{
+    global $wp_meta_boxes;
+
+    unset($wp_meta_boxes[ 'dashboard' ][ 'side' ][ 'core' ][ 'dashboard_recent_drafts' ]);
+    unset($wp_meta_boxes[ 'dashboard' ][ 'side' ][ 'core' ][ 'dashboard_primary' ]);
+    unset($wp_meta_boxes[ 'dashboard' ][ 'side' ][ 'core' ][ 'dashboard_secondary' ]);
+    unset($wp_meta_boxes[ 'dashboard' ][ 'normal' ][ 'core' ][ 'dashboard_duoshuo' ]);
+    unset($wp_meta_boxes[ 'dashboard' ][ 'normal' ][ 'core' ][ 'dashboard_site_health' ]);
+    unset($wp_meta_boxes[ 'dashboard' ][ 'normal' ][ 'core' ][ 'e-dashboard-overview' ]);
+    unset($wp_meta_boxes[ 'dashboard' ][ 'normal' ][ 'core' ][ 'dashboard_recent_comments' ]);
+    unset($wp_meta_boxes[ 'dashboard' ][ 'normal' ][ 'core' ][ 'dashboard_incoming_links' ]);
+    unset($wp_meta_boxes[ 'dashboard' ][ 'normal' ][ 'core' ][ 'dashboard_plugins' ]);
+});
