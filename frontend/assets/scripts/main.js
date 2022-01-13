@@ -5,9 +5,9 @@
     const header = document.getElementById('masthead');
     const body = document.getElementsByTagName('body')[0];
 
-    const _s = {};
+    const spaceName = {};
 
-    _s.init = function() {
+    spaceName.init = function() {
         this.ajaxLoading();
         this.smartMenu();
         this.closeCartDrawer();
@@ -17,7 +17,7 @@
     /**
      * Ajax loading style
      */
-    _s.ajaxLoading = function() {
+    spaceName.ajaxLoading = function() {
         const $loading = $('#ajax-loading').hide();
 
         $(document).ajaxStart(function() {
@@ -30,7 +30,7 @@
     /**
      * Smart dropdown menu
      */
-    _s.smartMenu = function() {
+    spaceName.smartMenu = function() {
         //@see https://www.smartmenus.org/docs/
         $('.sm, .product-categories').smartmenus({
             showFunction: function($ul, complete) {
@@ -47,7 +47,7 @@
     /**
      * Header sticky
      */
-    _s.navSticky = function() {
+    spaceName.navSticky = function() {
         const sticky = header.offsetTop + 100;
 
         if (window.pageYOffset > sticky) {
@@ -62,7 +62,7 @@
     /**
      * Close cart drawer
      */
-    _s.closeCartDrawer = function() {
+    spaceName.closeCartDrawer = function() {
         $('.close-drawer').on('click', function() {
             $('body').removeClass('mobile-toggled').removeClass('drawer-open');
         });
@@ -71,7 +71,7 @@
     /**
      * Nav accordion
      */
-    _s.navTree = function() {
+    spaceName.navTree = function() {
         const $navTreeEl = $('.widget_nav_menu, .widget_product_categories111, .widget-nav_menu');
         if ($navTreeEl.length > 0) {
             $navTreeEl.each(function() {
@@ -145,11 +145,11 @@
     };
 
     $(document).ready(function() {
-        _s.init();
+        spaceName.init();
     });
 
     window.onscroll = function() {
-        _s.navSticky();
+        spaceName.navSticky();
     };
 
 })(jQuery);
