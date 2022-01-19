@@ -36,7 +36,9 @@ add_action('after_switch_theme', function ()
     update_option('users_can_register', 0);
 
     // Set blog description to empty
-    update_option('blogdescription', '');
+    if (get_bloginfo('description') === '又一个WordPress站点') {
+        update_option('blogdescription', '');
+    }
 
     // Set permalink structure to postname
     update_option('permalink_structure', '/%postname%/');

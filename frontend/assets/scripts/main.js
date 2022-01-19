@@ -1,6 +1,6 @@
-(function($) {
+"use strict";
 
-    'use strict';
+(function($) {
 
     const header = document.getElementById('masthead');
     const body = document.getElementsByTagName('body')[0];
