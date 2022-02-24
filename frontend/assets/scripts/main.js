@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 (function($) {
 
@@ -12,6 +12,8 @@
         this.smartMenu();
         this.closeCartDrawer();
         this.navTree();
+        this.stickySidebar();
+        this.accordion();
     };
 
     /**
@@ -45,12 +47,47 @@
     };
 
     /**
+     * Sticky Sidebar
+     */
+    spaceName.stickySidebar = function() {
+        if ($(document).width() > 1024) {
+            $('.js-sticky-left, .js-sticky-right').theiaStickySidebar({
+                additionalMarginTop: 32,
+            });
+        }
+    };
+
+    /**
+     * Accordion
+     */
+    spaceName.accordion = function() {
+        $('.rs-accordion > li > .rs-accordion__answer').hide();
+
+        $('.rs-accordion > li').click(function() {
+            if ($(this).hasClass('active')) {
+                $(this).
+                    removeClass('active').
+                    find('.rs-accordion__answer').
+                    slideUp();
+            } else {
+                $('.rs-accordion > li.active .rs-accordion__answer').slideUp();
+                $('.rs-accordion > li.active').removeClass('active');
+                $(this).
+                    addClass('active').
+                    find('.rs-accordion__answer').
+                    slideDown();
+            }
+            return false;
+        });
+    };
+
+    /**
      * Header sticky
      */
     spaceName.navSticky = function() {
         const sticky = header.offsetTop + 100;
 
-        if (window.pageYOffset > sticky) {
+        if (window.scrollY > sticky) {
             header.classList.add('is-sticky');
             body.classList.add('is-sticky');
         } else {
@@ -72,14 +109,15 @@
      * Nav accordion
      */
     spaceName.navTree = function() {
-        const $navTreeEl = $('.widget_nav_menu, .widget_product_categories111, .widget-nav_menu');
+        const $navTreeEl = $(
+            '.widget_nav_menu, .widget_product_categories111, .widget-nav_menu');
         if ($navTreeEl.length > 0) {
             $navTreeEl.each(function() {
 
-                let element = $(this),
-                    elementSpeed = element.attr('data-speed'),
-                    elementEasing = element.attr('data-easing'),
-                    currentChild = element.find(
+                let element        = $(this),
+                    elementSpeed   = element.attr('data-speed'),
+                    elementEasing  = element.attr('data-easing'),
+                    currentChild   = element.find(
                         'ul li.current_page_parent .children, ul > li.current_page_item .children, ul > li.current-menu-item .children,  ul > li.current-menu-parent .children, ul > li.current-cat-parent .children, ul > li.current-cat.cat-parent .children'),
                     currentSubmenu = element.find(
                         'ul li.current_page_parent .sub-menu, ul > li.current_page_item .sub-menu, ul > li.current-menu-item .sub-menu, ul > li.current-menu-parent .sub-menu, ul > li.current-cat-parent .sub-menu, ul > li.current-cat.cat-parent .sub-menu');
@@ -97,45 +135,64 @@
                 // 添加 sub-menu 类，添加箭头
                 element.find('ul li:has(ul)').addClass('sub-menu');
                 element.find('ul li:has(ul) > a').
-                        append('<span class="icon"><i class="wpion-angle-down"></i></span>');
+                    append(
+                        '<span class="icon"><i class="wpion-angle-down"></i></span>');
 
                 // 打开当前菜单的父级
                 element.find(
                     'ul li.current_page_ancestor, ul li.current_page_parent, ul > li.current_page_item, ul > li.current-menu-parent, ul > li.current-cat-parent').
-                        addClass('active');
+                    addClass('active');
 
                 currentChild.slideDown(Number(elementSpeed), elementEasing);
                 currentSubmenu.slideDown(Number(elementSpeed), elementEasing);
 
                 element.find('ul > li.current-menu-item').
-                        parent().
-                        parent().
-                        slideDown(Number(elementSpeed), elementEasing);
-                element.find('ul > li.current-menu-item').parent().parent('li').addClass('active');
-                element.find('ul > li.current-cat').parent().parent('li').addClass('active');
+                    parent().
+                    parent().
+                    slideDown(Number(elementSpeed), elementEasing);
+                element.find('ul > li.current-menu-item').
+                    parent().
+                    parent('li').
+                    addClass('active');
+                element.find('ul > li.current-cat').
+                    parent().
+                    parent('li').
+                    addClass('active');
 
                 // 鼠标划过还是点击显示子菜单
                 if (element.hasClass('on-hover')) {
-                    element.find('ul li:has(ul):not(.active)').hover(function() {
-                        $(this).children('ul').stop(true, true).slideDown(Number(elementSpeed), elementEasing);
-                    }, function() {
-                        $(this).children('ul').delay(250).slideUp(Number(elementSpeed), elementEasing);
-                    });
+                    element.find('ul li:has(ul):not(.active)').
+                        hover(function() {
+                            $(this).
+                                children('ul').
+                                stop(true, true).
+                                slideDown(Number(elementSpeed), elementEasing);
+                        }, function() {
+                            $(this).
+                                children('ul').
+                                delay(250).
+                                slideUp(Number(elementSpeed), elementEasing);
+                        });
                 } else {
                     // 如果需要父级菜单不能点击，把点击元素设置为 a
                     element.find('ul li:has(ul) > a .icon').click(function(e) {
                         const childElement = $(this).parent();
-                        element.find('ul li').not(childElement.parents()).removeClass('active');
+                        element.find('ul li').
+                            not(childElement.parents()).
+                            removeClass('active');
                         childElement.parent().
-                                     children('ul').
-                                     slideToggle(Number(elementSpeed), elementEasing, function() {
-                                         $(this).find('ul').hide();
-                                         $(this).find('li.active').removeClass('active');
-                                     });
+                            children('ul').
+                            slideToggle(Number(elementSpeed), elementEasing,
+                                function() {
+                                    $(this).find('ul').hide();
+                                    $(this).
+                                        find('li.active').
+                                        removeClass('active');
+                                });
                         element.find('ul li > ul').
-                                not(childElement.parent().children('ul')).
-                                not(childElement.parents('ul')).
-                                slideUp(Number(elementSpeed), elementEasing);
+                            not(childElement.parent().children('ul')).
+                            not(childElement.parents('ul')).
+                            slideUp(Number(elementSpeed), elementEasing);
                         childElement.parent('li:has(ul)').toggleClass('active');
                         e.preventDefault();
                     });

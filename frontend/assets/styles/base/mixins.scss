@@ -10,13 +10,6 @@
     background: linear-gradient($direction, $color-stops);
 }
 
-// 自适应到
-@mixin respond-to($max-breakpoint) {
-    @media (max-width: $max-breakpoint) {
-        @content;
-    }
-}
-
 // 滚动条
 @mixin scrollbar {
     &::-webkit-scrollbar { /* [2] */
@@ -137,5 +130,42 @@
     margin-left: $gap / 2;
     margin-right: $gap / 2;
     margin-bottom: $gap;
+}
+
+
+@mixin below($max-breakpoint) {
+    @media (max-width: $max-breakpoint - 1) {
+        @content;
+    }
+}
+
+@mixin above($max-breakpoint) {
+    @media (min-width: $max-breakpoint) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: $phone) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (max-width: $widescreen) {
+        @content;
+    }
 }
 

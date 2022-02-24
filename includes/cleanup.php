@@ -10,7 +10,10 @@
  */
 add_action('wp_print_styles', function ()
 {
-    wp_deregister_style('dashicons');
+   if ( ! is_user_logged_in()) {
+       wp_deregister_style('dashicons');
+   }
+       
     wp_deregister_style('wp-block-library');
 });
 
@@ -55,8 +58,10 @@ add_action('after_switch_theme', function ()
     wp_delete_comment(1, true);
 });
 
+// Disable widget block editor
+add_filter('use_widgets_block_editor', '__return_false');
 
-// Remove wordpress generator info
+// Remove WordPress generator info
 remove_action('wp_head', 'wp_generator');
 
 // Remove link for windows live writer
@@ -128,7 +133,6 @@ add_action('wp_before_admin_bar_render', function ()
     unset($wp_meta_boxes[ 'dashboard' ][ 'side' ][ 'core' ][ 'dashboard_recent_drafts' ]);
     unset($wp_meta_boxes[ 'dashboard' ][ 'side' ][ 'core' ][ 'dashboard_primary' ]);
     unset($wp_meta_boxes[ 'dashboard' ][ 'side' ][ 'core' ][ 'dashboard_secondary' ]);
-    unset($wp_meta_boxes[ 'dashboard' ][ 'normal' ][ 'core' ][ 'dashboard_duoshuo' ]);
     unset($wp_meta_boxes[ 'dashboard' ][ 'normal' ][ 'core' ][ 'dashboard_site_health' ]);
     unset($wp_meta_boxes[ 'dashboard' ][ 'normal' ][ 'core' ][ 'e-dashboard-overview' ]);
     unset($wp_meta_boxes[ 'dashboard' ][ 'normal' ][ 'core' ][ 'dashboard_recent_comments' ]);
