@@ -10,6 +10,7 @@ add_filter('nav_menu_css_class', '_s_menu_css_class', 10, 4);
 add_filter('walker_nav_menu_start_el', '_s_render_mega_menu_content', 10, 4);
 add_filter('nav_menu_submenu_css_class', '_s_submenu_css_class');
 add_filter('widget_nav_menu_args', '_s_widget_menu_args');
+add_filter('nav_menu_item_title', '_s_render_shortcode_in_menu_title');
 
 if ( ! function_exists('_s_submenu_css_class')) {
     /**
@@ -66,6 +67,13 @@ if ( ! function_exists('_s_menu_css_class')) {
         }
 
         return $classes;
+    }
+}
+
+
+if(!function_exists('_s_render_shortcode_in_menu_title')){
+    function _s_render_shortcode_in_menu_title($title){
+        return do_shortcode($title);
     }
 }
 

@@ -56,6 +56,19 @@ add_action('after_switch_theme', function ()
 
     // Remove default sample comment.
     wp_delete_comment(1, true);
+    
+    // Set WooCommerce page template to app template
+    if (class_exists('WooCommerce')) {
+       $page_ids = [
+          get_option( 'woocommerce_cart_page_id' ),
+          get_option( 'woocommerce_checkout_page_id' ),
+          get_option( 'woocommerce_myaccount_page_id' ),
+       ];
+       
+       foreach($page_ids as $page_id){
+          update_post_meta($page_id, '_wp_page_template', 'template-app.php');
+       }
+    }
 });
 
 // Disable widget block editor

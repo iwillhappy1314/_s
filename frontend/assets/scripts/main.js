@@ -59,22 +59,24 @@
 
     /**
      * Accordion
+     *
+     * ul.rs-accordion>li>h3+div.rs-accordion__content
      */
     spaceName.accordion = function() {
-        $('.rs-accordion > li > .rs-accordion__answer').hide();
+        $('.rs-accordion > li > .rs-accordion__content').hide();
 
         $('.rs-accordion > li').click(function() {
             if ($(this).hasClass('active')) {
                 $(this).
                     removeClass('active').
-                    find('.rs-accordion__answer').
+                    find('.rs-accordion__content').
                     slideUp();
             } else {
-                $('.rs-accordion > li.active .rs-accordion__answer').slideUp();
+                $('.rs-accordion > li.active .rs-accordion__content').slideUp();
                 $('.rs-accordion > li.active').removeClass('active');
                 $(this).
                     addClass('active').
-                    find('.rs-accordion__answer').
+                    find('.rs-accordion__content').
                     slideDown();
             }
             return false;
