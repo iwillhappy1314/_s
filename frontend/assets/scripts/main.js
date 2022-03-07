@@ -48,6 +48,8 @@
 
     /**
      * Sticky Sidebar
+     *
+     * div.js-sticky-left>div.theiaStickySidebar | div.js-sticky-right>div
      */
     spaceName.stickySidebar = function() {
         if ($(document).width() > 1024) {
