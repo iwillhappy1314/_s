@@ -95,6 +95,21 @@ if ( ! function_exists('_s_setup')) :
 endif;
 
 
+add_filter('manage_elementor_library_posts_columns', function ($columns)
+{
+    $columns[ 'shortcode' ] = __('Shortcode');
+
+    return $columns;
+});
+
+add_action('manage_elementor_library_posts_custom_column', function ($column, $post_id)
+{
+    if ('shortcode' === $column) {
+        echo '<input style="min-width: 256px;" type="text" readonly="" onfocus="this.select()" value="[ezviz_elementor_block id=' . $post_id . ']"><br/>';
+    }
+}, 10, 2);
+
+
 /**
  * Register widget area.
  *
