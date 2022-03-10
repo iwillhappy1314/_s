@@ -1,8 +1,177 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./assets/scripts/plugins/quantity.js":
+/*!********************************************!*\
+  !*** ./assets/scripts/plugins/quantity.js ***!
+  \********************************************/
+/***/ (() => {
+
+var $j = jQuery.noConflict();
+$j(window).on('load', function () {
+  'use strict'; // Woo quantity buttons
+
+  _s_wc_quantity_buttons();
+});
+$j(document).ajaxComplete(function () {
+  'use strict'; // Woo quantity buttons
+
+  _s_wc_quantity_buttons();
+});
+/**
+ * WooCommerce quantity buttons
+ * @param {number} $quantitySelector Quantity.
+ */
+
+function _s_wc_quantity_buttons($quantitySelector) {
+  var $quantityBoxes;
+
+  if (!$quantitySelector) {
+    $quantitySelector = '.qty';
+  }
+
+  $quantityBoxes = $j('div.quantity:not(.buttons_added), td.quantity:not(.buttons_added)').find($quantitySelector);
+
+  if ($quantityBoxes && 'date' !== $quantityBoxes.prop('type') && 'hidden' !== $quantityBoxes.prop('type')) {
+    // Add plus and minus icons
+    $quantityBoxes.parent().addClass('buttons_added');
+    $quantityBoxes.after('<div class="quantity-nav"><a href="javascript:void(0)" class="quantity-button quantity-up plus"></a><a href="javascript:void(0)" class="quantity-button quantity-down minus"></a></div>'); // Target quantity inputs on product pages
+
+    $j('input' + $quantitySelector + ':not(.product-quantity input' + $quantitySelector + ')').each(function () {
+      var $min = parseFloat($j(this).attr('min'));
+
+      if ($min && 0 < $min && parseFloat($j(this).val()) < $min) {
+        $j(this).val($min);
+      }
+    });
+    $j('.plus, .minus').unbind('click');
+    $j('.plus, .minus').on('click', function () {
+      // Get values
+      var $quantityBox = $j(this).closest('.quantity').find($quantitySelector),
+          $currentQuantity = parseFloat($quantityBox.val()),
+          $maxQuantity = parseFloat($quantityBox.attr('max')),
+          $minQuantity = parseFloat($quantityBox.attr('min')),
+          $step = $quantityBox.attr('step'); // Fallback default values
+
+      if (!$currentQuantity || '' === $currentQuantity || 'NaN' === $currentQuantity) {
+        $currentQuantity = 0;
+      }
+
+      if ('' === $maxQuantity || 'NaN' === $maxQuantity) {
+        $maxQuantity = '';
+      }
+
+      if ('' === $minQuantity || 'NaN' === $minQuantity) {
+        $minQuantity = 0;
+      }
+
+      if ('any' === $step || '' === $step || undefined === $step || 'NaN' === parseFloat($step)) {
+        $step = 1;
+      } // Change the value
+
+
+      if ($j(this).is('.plus')) {
+        if ($maxQuantity && ($maxQuantity === $currentQuantity || $currentQuantity > $maxQuantity)) {
+          $quantityBox.val($maxQuantity);
+        } else {
+          $quantityBox.val($currentQuantity + parseFloat($step));
+        }
+      } else {
+        if ($minQuantity && ($minQuantity === $currentQuantity || $currentQuantity < $minQuantity)) {
+          $quantityBox.val($minQuantity);
+        } else if (0 < $currentQuantity) {
+          $quantityBox.val($currentQuantity - parseFloat($step));
+        }
+      } // Trigger change event.
+
+
+      $quantityBox.trigger('change');
+    });
+  }
+}
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
 var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+(() => {
+"use strict";
 /*!***************************************!*\
   !*** ./assets/scripts/woocommerce.js ***!
   \***************************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _plugins_quantity__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./plugins/quantity */ "./assets/scripts/plugins/quantity.js");
+/* harmony import */ var _plugins_quantity__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_plugins_quantity__WEBPACK_IMPORTED_MODULE_0__);
+
+
 (function ($) {
   'use strict';
 
@@ -377,5 +546,8 @@ var __webpack_exports__ = {};
     _s_wc.init();
   });
 })(jQuery);
+})();
+
 /******/ })()
 ;
+//# sourceMappingURL=woocommerce.js.map

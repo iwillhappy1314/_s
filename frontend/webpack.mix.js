@@ -1,32 +1,39 @@
 let mix = require('laravel-mix');
 
 require('laravel-mix-tailwind');
+require('laravel-mix-versionhash');
 
-mix.sass('assets/styles/main.scss', 'dist/styles').tailwind();
-mix.sass('assets/styles/account.scss', 'dist/styles').tailwind();
-mix.sass('assets/styles/cart.scss', 'dist/styles').tailwind();
-mix.sass('assets/styles/checkout.scss', 'dist/styles').tailwind();
-mix.sass('assets/styles/editor.scss', 'dist/styles').tailwind();
-mix.sass('assets/styles/iconfont.scss', 'dist/styles').tailwind();
-mix.sass('assets/styles/post.scss', 'dist/styles').tailwind();
-mix.sass('assets/styles/products.scss', 'dist/styles').tailwind();
-mix.sass('assets/styles/review.scss', 'dist/styles').tailwind();
-mix.sass('assets/styles/woocommerce.scss', 'dist/styles').tailwind();
+mix.setPublicPath('./');
 
-mix.js('assets/scripts/main.js', 'dist/scripts');
-mix.js('assets/scripts/customizer.js', 'dist/scripts');
-mix.js('assets/scripts/woocommerce.js', 'dist/scripts');
+mix.sass('assets/styles/main.scss', 'dist/styles').
+    sass('assets/styles/account.scss', 'dist/styles').
+    sass('assets/styles/cart.scss', 'dist/styles').
+    sass('assets/styles/checkout.scss', 'dist/styles').
+    sass('assets/styles/editor.scss', 'dist/styles').
+    sass('assets/styles/iconfont.scss', 'dist/styles').
+    sass('assets/styles/post.scss', 'dist/styles').
+    sass('assets/styles/products.scss', 'dist/styles').
+    sass('assets/styles/review.scss', 'dist/styles').
+    sass('assets/styles/woocommerce.scss', 'dist/styles').
+    tailwind();
 
-mix.copy('assets/images', 'dist/images');
+mix.js('assets/scripts/main.js', 'dist/scripts').
+    js('assets/scripts/customizer.js', 'dist/scripts').
+    js('assets/scripts/woocommerce.js', 'dist/scripts');
 
-mix.copy('assets/fonts', 'dist/fonts');
+mix.copy('assets/images', 'dist/images').
+    copy('assets/fonts', 'dist/fonts');
 
-mix.minify('dist/scripts/main.js');
-mix.minify('dist/styles/main.css');
+if (mix.inProduction()) {
+    mix.versionHash();
+} else {
+    mix.sourceMaps();
+    mix.webpackConfig({devtool: 'source-map'});
+}
 
 mix.browserSync({
-    proxy: "s.as",
-    files: [
+    proxy         : 's.as',
+    files         : [
         {
             match  : [
                 './dist/**/*',

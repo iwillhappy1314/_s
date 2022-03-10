@@ -1,5 +1,10 @@
 'use strict';
 
+import './plugins/navigation';
+import './plugins/skip-link-focus-fix';
+import 'smartmenus';
+import 'theia-sticky-sidebar';
+
 (function($) {
 
     const header = document.getElementById('masthead');
@@ -114,7 +119,7 @@
      */
     spaceName.navTree = function() {
         const $navTreeEl = $(
-            '.widget_nav_menu, .widget_product_categories111, .widget-nav_menu');
+            '.widget_nav_menu, .widget_product_categories, .widget-nav_menu');
         if ($navTreeEl.length > 0) {
             $navTreeEl.each(function() {
 

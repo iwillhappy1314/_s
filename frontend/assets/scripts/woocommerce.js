@@ -1,3 +1,5 @@
+import './plugins/quantity';
+
 (function($) {
 
     'use strict';
