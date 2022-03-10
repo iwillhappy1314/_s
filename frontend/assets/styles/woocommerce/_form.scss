@@ -29,14 +29,6 @@
                 &.checkbox {
                     @apply inline;
                 }
-
-                &.hidden {
-                    @apply invisible;
-                }
-
-                &.inline {
-                    display: inline;
-                }
             }
 
             select {
@@ -77,7 +69,7 @@
             }
 
             .input-checkbox {
-                @apply inline text-center align-middle;
+                @apply text-center align-middle;
                 margin: (-2px) 8px 0 0;
             }
 
