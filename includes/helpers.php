@@ -54,4 +54,24 @@ if ( ! function_exists('_s_assets')) {
 }
 
 
+if(! function_exists('_s_has_shortcode')){
 
+
+    function _s_has_shortcode($post)
+    {
+        /*
+         * Default false
+         */
+        $found = false;
+    
+        /*
+         * If shortcode exists in content, return true
+         */
+        if (stripos($post->post_content, '[') !== false) {
+            $found = true;
+        }
+    
+        return $found;
+    
+    }
+}

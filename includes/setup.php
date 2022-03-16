@@ -42,7 +42,8 @@ if ( ! function_exists('_s_setup')) :
          * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
          */
         add_theme_support('post-thumbnails');
-        add_image_size('index-thumbnail', 200, 150, true);
+        add_image_size('index-thumbnail', 400, 300, true);
+        add_image_size('product-thumbnail', 800, 800, true);
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus([

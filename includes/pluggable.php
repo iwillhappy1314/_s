@@ -59,10 +59,7 @@ if ( ! function_exists('_s_menu_css_class')) {
      */
     function _s_menu_css_class($classes, $item, $args, $depth)
     {
-        $menu_type    = get_post_meta($item->ID, '_menu_type', true);
-        $menu_content = get_post_meta($item->ID, '_menu_content', true);
-
-        if ($menu_type && $menu_content) {
+        if (_s_has_shortcode($item)) {
             $classes[] = 'sm-mega-menu';
         }
 
@@ -72,6 +69,9 @@ if ( ! function_exists('_s_menu_css_class')) {
 
 
 if(!function_exists('_s_render_shortcode_in_menu_title')){
+    /**
+     * Render shortcode in menu titler
+     */
     function _s_render_shortcode_in_menu_title($title){
         return do_shortcode($title);
     }
@@ -91,27 +91,17 @@ if ( ! function_exists('_s_render_mega_menu_content')) {
      */
     function _s_render_mega_menu_content($item_output, $item, $depth, $args)
     {
-        $menu_type    = get_post_meta($item->ID, '_menu_type', true);
-        $menu_content = get_post_meta($item->ID, '_menu_content', true);
-
         $html = '';
-        if ($menu_content) {
-            $html .= '<ul class="mega-menu">';
+        if (_s_has_shortcode($item)) {
+            $html .= '<ul class="rs-mega-menu">';
             $html .= '<li>';
-            switch ($menu_type) {
-                case 'shortcode':
-                    $html .= do_shortcode($menu_content);
-
-                    break;
-                default:
-                    echo "";
-            }
-
+        
+            $html .= do_shortcode($item->post_content);
+        
             $html .= '</ul>';
             $html .= '</li>';
         }
-
+        
         return $item_output . $html;
-
     }
 }

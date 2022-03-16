@@ -19,6 +19,8 @@ import 'theia-sticky-sidebar';
         this.navTree();
         this.stickySidebar();
         this.accordion();
+        this.tab();
+        this.lazyYoutube();
     };
 
     /**
@@ -87,6 +89,46 @@ import 'theia-sticky-sidebar';
                     slideDown();
             }
             return false;
+        });
+    };
+
+    /**
+     * Simple tab
+     *
+     * ul.rs-tab__nav>li*3>a[href=#rs-$]>{Nav-$}
+     * div.rs-tab__contents>div.rs-tab__content#rs-$*3>{Content-$}
+     */
+    spaceName.tab = function() {
+        // Show the first tab and hide the rest
+        $('.rs-tab__nav li:first-child').addClass('active');
+        $('.rs-tab__content').hide();
+        $('.rs-tab__contents').find('.rs-tab__content:first').show();
+
+        // Click function
+        $('.rs-tab__nav li').click(function() {
+            $('.rs-tab__nav li').removeClass('active');
+            $(this).addClass('active');
+            $('.rs-tab__content').hide();
+
+            var activeTab = $(this).find('a').attr('href');
+            $(activeTab).fadeIn();
+            return false;
+
+        });
+    };
+
+    /**
+     * Lazy Load Youtube Video
+     */
+    spaceName.lazyYoutube = function() {
+        $('.js-lazyYT').lazyYT({
+            youtube_parameters: 'rel=0',
+            loading_text      : 'Loading...',
+            display_title     : false,
+            default_ratio     : '16:9',
+            display_duration  : false,
+            video_loaded_class: 'lazyYT-video-loaded',
+            container_class   : 'lazyYT-container',
         });
     };
 
