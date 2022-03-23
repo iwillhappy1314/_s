@@ -58,14 +58,14 @@ if ( ! function_exists('_s_render_product_nav')) {
 
         $html .= '<ul class="flex flex-wrap lg:flex-nowrap space-between static w-full rs-tab__nav">';
         foreach ($terms as $term) {
-            $html .= '<li class="flex-grow w-full text-center"><a href="#pid-' . $term->term_id . '">' . $term->name . '</a></li>';
+            $html .= '<li class="flex-grow w-full text-center"><a href="#js-term-' . $term->term_id . '">' . $term->name . '</a></li>';
         }
         $html .= '</ul>';
 
         $html .= '<div class="rs-tab__contents">';
 
         foreach ($terms as $term) {
-            $html .= '<div id="pid-' . $term->term_id . '" class="rs-tab__content">';
+            $html .= '<div id="js-term-' . $term->term_id . '" class="rs-tab__content">';
 
             $terms_children = get_terms([
                 'taxonomy'   => 'product_cat',
@@ -167,7 +167,7 @@ if ( ! function_exists('_s_render_product_nav')) {
             }
 
 
-            $html .= '<div class="rs-prouct-nav-addon py-2 flex">';
+            $html .= '<div class="rs-prouct-nav-addon py-2 flex flex-wrap lg:flex-nowrap">';
             $html .= '<a class="c-more" href="' . get_term_link($term) . '">More Products</a>';
             $html .= '<a class="c-more" href="' . home_url('comparison?term=' . $term->slug) . '">Product Comparison</a>';
             $html .= '<a class="c-more" href="' . home_url('solution-finder') . '">Solution Finder</a>';

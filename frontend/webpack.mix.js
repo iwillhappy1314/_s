@@ -17,7 +17,8 @@ mix.sass('assets/styles/main.scss', 'dist/styles').
     sass('assets/styles/woocommerce.scss', 'dist/styles').
     tailwind();
 
-mix.js('assets/scripts/main.js', 'dist/scripts').
+mix.js('assets/scripts/vendors.js', 'dist/scripts').
+    js('assets/scripts/main.js', 'dist/scripts').
     js('assets/scripts/customizer.js', 'dist/scripts').
     js('assets/scripts/woocommerce.js', 'dist/scripts');
 

@@ -1,4 +1,7 @@
 <?php
+
+define('SPACENAME', '1.1.2');
+
 /**
  * _s functions and definitions
  *

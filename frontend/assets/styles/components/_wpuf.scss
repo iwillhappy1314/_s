@@ -18,6 +18,11 @@ ul.wpuf-form {
         @apply w-full;
     }
 
+    input[type=checkbox],
+    input[type=radio]{
+        @apply w-auto;
+    }
+
     .wp-editor-container {
         border: 0 !important;
     }

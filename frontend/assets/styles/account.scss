@@ -492,3 +492,34 @@ ul.order_details {
         }
     }
 }
+
+
+.woocommerce-OrderUpdates{
+    @apply: mt-2;
+    li{
+        @apply relative mb-4 pl-6;
+        &:before{
+            @apply block absolute left-0 bg-green-700;
+            content: '';
+            width: 14px;
+            height: 14px;
+            border-radius: 999px;
+            top: 12px;
+        }
+
+        &:not(:last-child){
+            &:after {
+                @apply block absolute bg-gray-300;
+                content: '';
+                width: 3px;
+                height: calc(100% - 8px);
+                left: 5px;
+                top: 32px;
+            }
+        }
+    }
+}
+
+.woocommerce-OrderUpdate-meta{
+    @apply text-xl font-medium;
+}
