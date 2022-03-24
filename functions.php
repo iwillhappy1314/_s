@@ -73,3 +73,5 @@ require_once(get_theme_file_path('includes/cleanup.php'));
 if (class_exists('WooCommerce')) {
     require_once(get_theme_file_path('includes/woocommerce.php'));
 }
+
+require_once(get_theme_file_path('header-footer-grid/loader.php'));

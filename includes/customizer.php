@@ -73,7 +73,7 @@ function _s_customize_partial_blogdescription()
  */
 function _s_customize_preview_js()
 {
-    wp_enqueue_script('_s-customizer', _s_asset('scripts/customizer.js'), ['customize-preview'], '20151215', true);
+    wp_enqueue_script('_s-customizer', _s_assets('scripts/customizer.js'), ['customize-preview'], '20151215', true);
 }
 
 add_action('customize_preview_init', '_s_customize_preview_js');
