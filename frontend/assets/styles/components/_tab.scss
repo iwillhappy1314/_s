@@ -9,3 +9,30 @@ ul.rs-tab__nav {
 .rs-tab__content {
     @apply mb-4 pt-6 pb-0;
 }
+
+.sm-menu {
+    li.sm-mega-menu {
+        position: static !important;
+
+        .rs-mega-menu {
+            left: 0;
+        }
+    }
+
+    &>li.sm-mega-menu,
+    &>li.menu-item-has-children {
+
+        .rs-mega-menu,
+        .sub-menu {
+            border-top: 3px solid theme('colors.blue.700');
+        }
+
+        &:hover {
+
+            .rs-mega-menu,
+            .sub-menu {
+                display: block;
+            }
+        }
+    }
+}
