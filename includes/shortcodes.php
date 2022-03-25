@@ -167,7 +167,7 @@ if ( ! function_exists('_s_render_product_nav')) {
             }
 
 
-            $html .= '<div class="rs-prouct-nav-addon py-2 flex flex-wrap lg:flex-nowrap">';
+            $html .= '<div class="rs-product-nav-addon py-2 flex flex-wrap lg:flex-nowrap">';
             $html .= '<a class="c-more" href="' . get_term_link($term) . '">More Products</a>';
             $html .= '<a class="c-more" href="' . home_url('comparison?term=' . $term->slug) . '">Product Comparison</a>';
             $html .= '<a class="c-more" href="' . home_url('solution-finder') . '">Solution Finder</a>';

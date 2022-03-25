@@ -1,5 +1,32 @@
 @import "tab";
 
+.sm-menu {
+    li.sm-mega-menu {
+        position: static !important;
+
+        .rs-mega-menu {
+            left: 0;
+        }
+    }
+
+    &>li.sm-mega-menu,
+    &>li.menu-item-has-children {
+
+        .rs-mega-menu,
+        .sub-menu {
+            border-top: 3px solid theme('colors.blue.700');
+        }
+
+        &:hover {
+
+            .rs-mega-menu,
+            .sub-menu {
+                display: block;
+            }
+        }
+    }
+}
+
 .rs-product-nav {
     border-bottom: 1px solid $border-200;
     @apply mb-4 pb-4;
@@ -21,7 +48,7 @@
     padding: 0 !important;
 }
 
-.rs-prouct-nav-addon {
+.rs-product-nav-addon {
     a {
         @apply mr-6;
         color: $primary !important;
