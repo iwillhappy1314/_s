@@ -2,6 +2,7 @@ let mix = require('laravel-mix');
 
 require('laravel-mix-tailwind');
 require('laravel-mix-versionhash');
+require('laravel-mix-copy-watched');
 
 mix.setPublicPath('./');
 
@@ -22,8 +23,8 @@ mix.js('assets/scripts/vendors.js', 'dist/scripts').
     js('assets/scripts/customizer.js', 'dist/scripts').
     js('assets/scripts/woocommerce.js', 'dist/scripts');
 
-mix.copy('assets/images', 'dist/images').
-    copy('assets/fonts', 'dist/fonts');
+mix.copyWatched('assets/images', 'dist/images').
+    copyWatched('assets/fonts', 'dist/fonts');
 
 if (mix.inProduction()) {
     mix.versionHash();

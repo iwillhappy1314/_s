@@ -9,6 +9,7 @@
         "cssnano": "^5.0.15",
         "fork-ts-checker-webpack-plugin": "^6.5.0",
         "laravel-mix": "^6.0.39",
+        "laravel-mix-copy-watched": "^2.3.1",
         "laravel-mix-tailwind": "^0.1.2",
         "laravel-mix-versionhash": "^2.0.1",
         "postcss": "^8.4.5",
