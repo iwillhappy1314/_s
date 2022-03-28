@@ -445,49 +445,49 @@ ul.order_details {
 
     &--dashboard {
         &:after {
-            content: '\e06a';
+            content: $icon-speedometer2;
             font-family: icomoon, sans-serif;
         }
     }
 
     &--orders {
         &:after {
-            content: '\e601';
+            content: $icon-bars2;
             font-family: icomoon, sans-serif;
         }
     }
 
     &--payment-methods {
         &:after {
-            content: '\e025';
+            content: $icon-wallet;
             font-family: icomoon, sans-serif;
         }
     }
 
     &--downloads {
         &:after {
-            content: '\e083';
+            content: $icon-download;
             font-family: icomoon, sans-serif;
         }
     }
 
     &--edit-address {
         &:after {
-            content: '\e033';
+            content: $icon-map;
             font-family: icomoon, sans-serif;
         }
     }
 
     &--edit-account {
         &:after {
-            content: '\e005';
+            content: $icon-user;
             font-family: icomoon, sans-serif;
         }
     }
 
     &--customer-logout {
         &:after {
-            content: '\e065';
+            content: $icon-box-arrow-left;
             font-family: icomoon, sans-serif;
         }
     }

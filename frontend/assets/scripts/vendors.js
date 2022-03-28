@@ -1,4 +1,5 @@
 'use strict';
 
-import './plugins/navigation';
-import './plugins/skip-link-focus-fix';
+require('script-loader!smartmenus');
+//require('script-loader!theia-sticky-sidebar');
+//require('script-loader!./plugins/lazyYT');

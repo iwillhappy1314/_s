@@ -165,11 +165,22 @@ ul.wp-block-gallery {
 .nav-previous,
 .previous-image {
     @apply float-left w-1/2;
+
+    &:before{
+        @apply mr-2;
+        font-family: icomoon, sans-serif;
+        content: $icon-arrow-left;
+    }
 }
 
 .nav-next,
 .next-image {
     @apply float-right w-1/2 text-right;
+    &:after{
+        @apply ml-2;
+        font-family: icomoon, sans-serif;
+        content: $icon-arrow-right;
+    }
 }
 
 .nav-single + .comments-area,

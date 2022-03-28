@@ -18,6 +18,14 @@ $text-hover-color: $text-highlight;
     }
 }
 
+.rs-widgets--below-content{
+    @apply flex -mx-4 flex-wrap;
+
+    &>.widget{
+        @apply mx-4;
+    }
+}
+
 .rs-widgets--footer {
     @apply flex -mx-4 flex-wrap;
     color: $text-color;

@@ -9,6 +9,7 @@ module.exports = {
          '../src/**/*.php',
          '../templates/**/*.php',
          '../woocommerce/**/*.php',
+        //'../*.php',
     ],
     safelist: purgecssWhiteList.whitelist.concat([
         'ln-letters',
@@ -18,10 +19,12 @@ module.exports = {
         'mb-2',
         'mb-6',
         'mb-4',
+        'py-16',
         'block',
         'flex',
         'inline-block',
         'items-center',
+        'justify-center',
         'text-primary',
         {
             pattern: /bg-(red|green|blue)-(100|200|300)|rs-.+|flex-*|mr-2/,

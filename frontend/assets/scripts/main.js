@@ -1,10 +1,7 @@
 'use strict';
 
 require('script-loader!./plugins/navigation');
-//require('script-loader!./plugins/lazyYT');
 require('script-loader!./plugins/skip-link-focus-fix');
-require('script-loader!smartmenus');
-//require('script-loader!theia-sticky-sidebar');
 
 (function($) {
 
