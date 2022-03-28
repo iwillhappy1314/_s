@@ -1,9 +1,10 @@
 'use strict';
 
-import './plugins/navigation';
-import './plugins/skip-link-focus-fix';
-import 'smartmenus';
-import 'theia-sticky-sidebar';
+require('script-loader!./plugins/navigation');
+//require('script-loader!./plugins/lazyYT');
+require('script-loader!./plugins/skip-link-focus-fix');
+require('script-loader!smartmenus');
+//require('script-loader!theia-sticky-sidebar');
 
 (function($) {
 
@@ -23,11 +24,10 @@ import 'theia-sticky-sidebar';
         this.lazyYoutube();
     };
 
-    
     /**
      * 判断是否为移动端
      */
-    spaceName.isMobile = function (opts) {
+    spaceName.isMobile = function(opts) {
         const mobileRE = /(android|bb\d+|meego).+mobile|armv7l|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series[46]0|samsungbrowser|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i;
         const notMobileRE = /CrOS/;
 
@@ -42,8 +42,8 @@ import 'theia-sticky-sidebar';
         if (typeof ua !== 'string') return false;
 
         let result =
-            (mobileRE.test(ua) && !notMobileRE.test(ua)) ||
-            (!!opts.tablet && tabletRE.test(ua));
+                (mobileRE.test(ua) && !notMobileRE.test(ua)) ||
+                (!!opts.tablet && tabletRE.test(ua));
 
         if (
             !result &&
@@ -96,7 +96,7 @@ import 'theia-sticky-sidebar';
      * div.js-sticky-left>div.theiaStickySidebar | div.js-sticky-right>div
      */
     spaceName.stickySidebar = function() {
-        if ($(document).width() > 1024) {
+        if ($(document).width() > 1024 && $.isFunction($.fn.theiaStickySidebar)) {
             $('.js-sticky-left, .js-sticky-right').theiaStickySidebar({
                 additionalMarginTop: 32,
             });
@@ -157,15 +157,19 @@ import 'theia-sticky-sidebar';
      * Lazy Load Youtube Video
      */
     spaceName.lazyYoutube = function() {
-        $('.js-lazyYT').lazyYT({
-            youtube_parameters: 'rel=0',
-            loading_text      : 'Loading...',
-            display_title     : false,
-            default_ratio     : '16:9',
-            display_duration  : false,
-            video_loaded_class: 'lazyYT-video-loaded',
-            container_class   : 'lazyYT-container',
-        });
+
+        if ($.isFunction($.fn.lazyYT)) {
+            $('.js-lazyYT').lazyYT({
+                youtube_parameters: 'rel=0',
+                loading_text      : 'Loading...',
+                display_title     : false,
+                default_ratio     : '16:9',
+                display_duration  : false,
+                video_loaded_class: 'lazyYT-video-loaded',
+                container_class   : 'lazyYT-container',
+            });
+        }
+
     };
 
     /**
