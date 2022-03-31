@@ -4,6 +4,12 @@
     }
 }
 
+@screen lg {
+    body.show-sticky-cart-bar {
+        padding-bottom: 66px;
+    }
+}
+
 .container {
     @apply mx-auto px-4;
 
