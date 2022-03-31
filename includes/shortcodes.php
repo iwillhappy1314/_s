@@ -54,7 +54,7 @@ if ( ! function_exists('_s_render_product_nav')) {
         ]);
 
         $html = '<div class="container">';
-        $html .= '<div class="rs-tabs">';
+        $html .= '<div class="w-full rs-tabs">';
 
         $html .= '<ul class="flex flex-wrap lg:flex-nowrap space-between static w-full rs-tab__nav">';
         foreach ($terms as $term) {

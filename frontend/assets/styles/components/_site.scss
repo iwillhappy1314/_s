@@ -1,3 +1,9 @@
+@include tablet {
+    body.show-mobile-nav {
+        padding-bottom: 60px;
+    }
+}
+
 .container {
     @apply mx-auto px-4;
 
