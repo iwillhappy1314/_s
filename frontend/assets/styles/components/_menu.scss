@@ -646,3 +646,40 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
         }
     }
 }
+
+
+.rs-theme--dark:not(.is-sticky) {
+    .sm-menu>li>a {
+        @apply text-white;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.highlighted {
+            @apply text-white;
+        }
+    }
+
+    .sm-menu li.current-menu-ancestor>a,
+    .sm-menu li.current-menu-item>a,
+    .sm-menu li.current-menu-parent>a {
+        @apply text-white;
+    }
+
+    .sm-menu>li.menu-item-has-children>a:after,
+    .sm-menu>li.sm-mega-menu>a:after {
+        @apply border-t-white;
+    }
+
+    a.cart-contents {
+        @apply text-white;
+    }
+
+    .site-header-cart a.cart-contents .count {
+        @apply border-white text-white;
+    }
+
+    .site-header-cart a.cart-contents .count:after {
+        @apply border-white;
+    }
+}

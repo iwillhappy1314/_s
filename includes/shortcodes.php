@@ -9,8 +9,10 @@
 
 add_shortcode('_s_elementor_block', '_s_render_elementor_block');
 add_shortcode('_s_product_nav', '_s_render_product_nav');
+add_shortcode('_s_account_menu', '_s_render_account_menu');
 
-if ( ! function_exists('_s_render_elementor_block')) {
+
+if (!function_exists('_s_render_elementor_block')) {
     /**
      * 在任何地方渲染 elementor 模版
      *
@@ -24,14 +26,14 @@ if ( ! function_exists('_s_render_elementor_block')) {
         // Enable support for WPML & Polylang
         $language_support = apply_filters('ae_multilingual_support', false);
 
-        if ( ! class_exists('Elementor\Plugin')) {
+        if (!class_exists('Elementor\Plugin')) {
             return '';
         }
-        if ( ! isset($atts[ 'id' ]) || empty($atts[ 'id' ])) {
+        if (!isset($atts['id']) || empty($atts['id'])) {
             return '';
         }
 
-        $post_id = $atts[ 'id' ];
+        $post_id = $atts['id'];
 
         if ($language_support) {
             $post_id = apply_filters('wpml_object_id', $post_id, 'ae_global_templates');
@@ -42,10 +44,10 @@ if ( ! function_exists('_s_render_elementor_block')) {
 }
 
 
-if ( ! function_exists('_s_render_product_nav')) {
+if (!function_exists('_s_render_product_nav')) {
     function _s_render_product_nav($atts)
     {
-        $parent = $atts[ 'parent' ];
+        $parent = $atts['parent'];
 
         $terms = get_terms([
             'taxonomy'   => 'product_cat',
@@ -109,7 +111,6 @@ if ( ! function_exists('_s_render_product_nav')) {
                                 $html .= '</div>';
                                 $html .= '</div>';
                             }
-
                         }
                         $html .= '</div>';
 
@@ -154,7 +155,6 @@ if ( ! function_exists('_s_render_product_nav')) {
                         $html .= '</div>';
                         $html .= '</div>';
                     }
-
                 }
                 $html .= '</div>';
 
@@ -178,6 +178,27 @@ if ( ! function_exists('_s_render_product_nav')) {
 
         $html .= '</div>';
         $html .= '</div>';
+
+        return $html;
+    }
+}
+
+
+if (!function_exists('_s_render_account_menu')) {
+    function _s_render_account_menu($atts)
+    {
+        $html = '<ul class="sub-menu has-submenu">';
+
+        if (is_user_logged_in()) {
+            $html .= '<li class="menu-item"><a href="' . wc_get_account_endpoint_url('dashboard') . '">My Account</a></li>';
+        } else {
+            $html .= '<li class="menu-item"><a href="' . wc_get_account_endpoint_url('dashboard') . '">Login</a></li>';
+            $html .= '<li class="menu-item"><a href="' . wc_get_account_endpoint_url('dashboard') . '">Register</a></li>';
+        }
+
+        $html .= '<li class="menu-item"><a href="' . home_url('track-your-order') . '">Track Order</a></li>';
+
+        $html .= '</ul>';
 
         return $html;
     }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * These functions can be replaced via plugins. If plugins do not redefine these
  * functions, then these will be used instead.
@@ -11,8 +12,10 @@ add_filter('walker_nav_menu_start_el', '_s_render_mega_menu_content', 10, 4);
 add_filter('nav_menu_submenu_css_class', '_s_submenu_css_class');
 add_filter('widget_nav_menu_args', '_s_widget_menu_args');
 add_filter('nav_menu_item_title', '_s_render_shortcode_in_menu_title');
+add_filter('nav_menu_item_args', '_s_append_shortcode_to_menu', 10, 3);
 
-if ( ! function_exists('_s_submenu_css_class')) {
+
+if (!function_exists('_s_submenu_css_class')) {
     /**
      * 导航菜单子菜单添加 CSS 类
      *
@@ -29,7 +32,7 @@ if ( ! function_exists('_s_submenu_css_class')) {
 }
 
 
-if ( ! function_exists('_s_widget_menu_args')) {
+if (!function_exists('_s_widget_menu_args')) {
     /**
      * 导航菜单添加 CSS 类
      *
@@ -39,14 +42,14 @@ if ( ! function_exists('_s_widget_menu_args')) {
      */
     function _s_widget_menu_args($nav_menu_args)
     {
-        $nav_menu_args[ 'menu_class' ] = 'sm sm-vertical sm-menu nav-menu';
+        $nav_menu_args['menu_class'] = 'sm sm-vertical sm-menu nav-menu';
 
         return $nav_menu_args;
     }
 }
 
 
-if ( ! function_exists('_s_menu_css_class')) {
+if (!function_exists('_s_menu_css_class')) {
     /**
      * Add mega menu class to nav menu
      *
@@ -59,8 +62,14 @@ if ( ! function_exists('_s_menu_css_class')) {
      */
     function _s_menu_css_class($classes, $item, $args, $depth)
     {
-        if (_s_has_shortcode($item)) {
+        $is_mega_menu = get_post_meta($item->ID, 'is_mega_menu', true);
+
+        if ($is_mega_menu) {
             $classes[] = 'sm-mega-menu';
+        }
+
+        if (wp_has_shortcode($menu_item)) {
+            $classes[] = 'menu-item-has-children';
         }
 
         return $classes;
@@ -68,17 +77,18 @@ if ( ! function_exists('_s_menu_css_class')) {
 }
 
 
-if(!function_exists('_s_render_shortcode_in_menu_title')){
+if (!function_exists('_s_render_shortcode_in_menu_title')) {
     /**
-     * Render shortcode in menu titler
+     * Render shortcode in menu title
      */
-    function _s_render_shortcode_in_menu_title($title){
+    function _s_render_shortcode_in_menu_title($title)
+    {
         return do_shortcode($title);
     }
 }
 
 
-if ( ! function_exists('_s_render_mega_menu_content')) {
+if (!function_exists('_s_render_mega_menu_content')) {
     /**
      * 渲染自定义到导航菜单内容
      *
@@ -92,16 +102,32 @@ if ( ! function_exists('_s_render_mega_menu_content')) {
     function _s_render_mega_menu_content($item_output, $item, $depth, $args)
     {
         $html = '';
-        if (_s_has_shortcode($item)) {
+        $is_mega_menu = get_post_meta($item->ID, 'is_mega_menu', true);
+
+        if ($is_mega_menu) {
             $html .= '<ul class="rs-mega-menu">';
             $html .= '<li>';
-        
+
             $html .= do_shortcode($item->post_content);
-        
+
             $html .= '</ul>';
             $html .= '</li>';
         }
-        
+
         return $item_output . $html;
     }
+}
+
+
+/**
+ * Append shortcode content
+ */
+function _s_append_shortcode_to_menu($args, $menu_item, $depth) {
+    $is_mega_menu = get_post_meta($menu_item->ID, 'is_mega_menu', true);
+
+    if (!$is_mega_menu && wp_has_shortcode($menu_item)) {
+        $args->after = do_shortcode($menu_item->post_content);
+    }
+
+    return $args;
 }

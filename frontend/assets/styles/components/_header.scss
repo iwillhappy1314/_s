@@ -12,6 +12,10 @@
             @apply flex justify-between items-center;
         }
 
+        &.is-sticky {
+            @apply fixed bg-white;
+        }
+
         @screen md {
             height: 75px;
         }
