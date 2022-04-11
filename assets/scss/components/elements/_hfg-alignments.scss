@@ -1,0 +1,16 @@
+.hfg-is-group {
+	display: flex;
+	align-items: center;
+}
+
+.nav-ul a,
+.builder-item--footer-menu,
+.component-wrap,
+.palette-icon-wrapper,
+.site-logo,
+.menu-item-nav-search,
+footer .nav-ul,
+.item--inner {
+	justify-content: var(--justify, flex-start);
+	text-align: var(--textAlign, left);
+}
