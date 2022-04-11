@@ -1,5 +1,5 @@
 {
-  "name": "wenprise/_s",
+  "name": "wenprise/s",
   "description": "Wenprise WordPress theme framework",
   "type": "wordpress-theme",
   "require": {
@@ -14,7 +14,8 @@
   },
   "autoload": {
     "psr-4": {
-      "SpaceName\\": "src/"
+      "SpaceName\\": "src/",
+      "HFG\\": "header-footer-grid/"
     },
     "files": [
     ]

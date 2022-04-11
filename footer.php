@@ -11,31 +11,49 @@
 ?>
 <?php do_action('_s_before_footer'); ?>
 
-<?php if (is_active_sidebar('sidebar-below-content')) : ?>
-    <div class="container">
-        <div class='rs-widgets rs-widgets--below-content'>
-            <?php dynamic_sidebar('sidebar-below-content'); ?>
-        </div>
-    </div>
-<?php endif; ?>
-
 <footer id="colophon" class="site__footer">
 
-    <?php if (is_active_sidebar('sidebar-footer')): ?>
-        <div class="content__footer">
-            <section class="container">
-                <div class="rs-widgets rs-widgets--footer">
-                    <?php dynamic_sidebar('sidebar-footer'); ?>
-                </div>
-            </section>
-        </div>
-    <?php endif; ?>
+    <?php
 
-    <div class="py-4 site__info">
-        <div class="container">
-            Copyright &copy; <?= date('Y'); ?> <a href="<?= home_url(); ?>"><?php bloginfo('name'); ?></a>
-        </div>
-    </div>
+    /**
+     * Executes actions after main tag is closed.
+     *
+     * @since 1.0.4
+     */
+    do_action( 'neve_after_primary' );
+
+    /**
+     * Filters the content parts.
+     *
+     * @since 1.0.9
+     *
+     * @param bool   $status Whether the component should be displayed or not.
+     * @param string $context The context name.
+     */
+    if ( apply_filters( 'neve_filter_toggle_content_parts', true, 'footer' ) === true ) {
+
+        /**
+         * Executes actions before the footer was rendered.
+         *
+         * @since 1.0.0
+         */
+        do_action( 'neve_before_footer_hook' );
+
+        /**
+         * Executes the rendering function for the footer.
+         *
+         * @since 1.0.0
+         */
+        do_action( 'neve_do_footer' );
+
+        /**
+         * Executes actions after the footer was rendered.
+         *
+         * @since 1.0.0
+         */
+        do_action( 'neve_after_footer_hook' );
+    }
+    ?>
 
 </footer>
 

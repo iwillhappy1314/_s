@@ -1,6 +1,16 @@
 <?php
 
 define('SPACENAME', '1.1.2');
+define( 'NEVE_VERSION', '3.2.2' );
+define( 'NEVE_INC_DIR', trailingslashit( get_template_directory() ) . 'inc/' );
+define( 'NEVE_ASSETS_URL', trailingslashit( get_template_directory_uri() ) . 'assets/' );
+define( 'NEVE_MAIN_DIR', get_template_directory() . '/' );
+
+if ( ! defined( 'NEVE_DEBUG' ) ) {
+    define( 'NEVE_DEBUG', false );
+}
+
+define( 'NEVE_NEW_DYNAMIC_STYLE', true );
 
 /**
  * _s functions and definitions
@@ -73,3 +83,10 @@ require_once(get_theme_file_path('includes/cleanup.php'));
 if (class_exists('WooCommerce')) {
     require_once(get_theme_file_path('includes/woocommerce.php'));
 }
+
+require_once 'globals/migrations.php';
+require_once 'globals/utilities.php';
+require_once 'globals/hooks.php';
+require_once 'globals/sanitize-functions.php';
+require_once get_theme_file_path('start.php');
+require_once get_theme_file_path('header-footer-grid/loader.php');

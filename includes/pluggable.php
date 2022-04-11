@@ -68,7 +68,7 @@ if (!function_exists('_s_menu_css_class')) {
             $classes[] = 'sm-mega-menu';
         }
 
-        if (_s_has_shortcode($menu_item)) {
+        if (_s_has_shortcode($item)) {
             $classes[] = 'menu-item-has-children';
         }
 
