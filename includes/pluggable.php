@@ -68,7 +68,7 @@ if (!function_exists('_s_menu_css_class')) {
             $classes[] = 'sm-mega-menu';
         }
 
-        if (wp_has_shortcode($menu_item)) {
+        if (_s_has_shortcode($menu_item)) {
             $classes[] = 'menu-item-has-children';
         }
 
@@ -125,7 +125,7 @@ if (!function_exists('_s_render_mega_menu_content')) {
 function _s_append_shortcode_to_menu($args, $menu_item, $depth) {
     $is_mega_menu = get_post_meta($menu_item->ID, 'is_mega_menu', true);
 
-    if (!$is_mega_menu && wp_has_shortcode($menu_item)) {
+    if (!$is_mega_menu && _s_has_shortcode($menu_item)) {
         $args->after = do_shortcode($menu_item->post_content);
     }
 

@@ -10,6 +10,7 @@
 add_shortcode('_s_elementor_block', '_s_render_elementor_block');
 add_shortcode('_s_product_nav', '_s_render_product_nav');
 add_shortcode('_s_account_menu', '_s_render_account_menu');
+add_shortcode('_s_dropdown_search', '_s_render_dropdown_search');
 
 
 if (!function_exists('_s_render_elementor_block')) {
@@ -201,5 +202,22 @@ if (!function_exists('_s_render_account_menu')) {
         $html .= '</ul>';
 
         return $html;
+    }
+}
+
+
+if (!function_exists('_s_render_dropdown_search')) {
+    function _s_render_dropdown_search($atts)
+    {
+        ob_start();
+        echo '<ul class="sub-menu has-submenu">';
+        echo '<li class="menu-item">';
+        echo '<div class="px-4" style="min-width: 320px;">';
+        get_search_form();
+        echo '</div>';
+        echo '</li>';
+        echo '</ul>';
+
+        return ob_get_clean();
     }
 }
