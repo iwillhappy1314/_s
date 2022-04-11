@@ -82,7 +82,7 @@ class Admin {
 	 * Register script for react components.
 	 */
 	public function register_react_components() {
-		$deps = include trailingslashit( NEVE_MAIN_DIR ) . 'assets/apps/components/build/components.asset.php';
+		$deps = include trailingslashit( SPACENAME_MAIN_DIR ) . 'assets/apps/components/build/components.asset.php';
 
 		wp_register_script( 'neve-components', trailingslashit( NEVE_ASSETS_URL ) . 'apps/components/build/components.js', $deps['dependencies'], $deps['version'], false );
 		wp_localize_script(

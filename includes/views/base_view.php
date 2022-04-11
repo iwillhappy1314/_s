@@ -36,7 +36,7 @@ abstract class Base_View {
 
 		$args = apply_filters( 'neve_filter_view_data_' . $view_slug, $vars );
 
-		$rest_of_path = 'views/' . $view_slug . '.php';
+		$rest_of_path = 'templates/views/' . $view_slug . '.php';
 
 		$path = trailingslashit( get_stylesheet_directory() ) . $rest_of_path;
 
