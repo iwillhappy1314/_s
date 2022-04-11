@@ -25,12 +25,12 @@ if (!function_exists('_s_render_elementor_block')) {
     {
 
         // Enable support for WPML & Polylang
-        $language_support = apply_filters('ae_multilingual_support', false);
+        $language_support = apply_filters('_s_multilingual_support', false);
 
         if (!class_exists('Elementor\Plugin')) {
             return '';
         }
-        if (!isset($atts['id']) || empty($atts['id'])) {
+        if (empty($atts['id'])) {
             return '';
         }
 
