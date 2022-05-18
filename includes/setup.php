@@ -94,8 +94,8 @@ if ( ! function_exists('_s_setup')) :
         $GLOBALS[ 'content_width' ] = apply_filters('_s_content_width', 640);
         
         
-        wprs_types("video", __("Video", 'wprs'), false, true, false, 'dashicons-video-alt2');
-        wprs_tax("video_type", 'video', __("Video Tag", 'wprs'), true, false);
+        wprs_types("video", __("Video", '_s'), false, true, false, 'dashicons-video-alt2');
+        wprs_tax("video_type", 'video', __("Video Tag", '_s'), true, false);
     }
 endif;
 
@@ -113,7 +113,7 @@ add_action('add_meta_boxes', function ()
 
 add_filter('manage_elementor_library_posts_columns', function ($columns)
 {
-    $columns[ 'shortcode' ] = __('Shortcode');
+    $columns[ 'shortcode' ] = __('Shortcode', '_s');
 
     return $columns;
 });
@@ -121,7 +121,7 @@ add_filter('manage_elementor_library_posts_columns', function ($columns)
 add_action('manage_elementor_library_posts_custom_column', function ($column, $post_id)
 {
     if ('shortcode' === $column) {
-        echo '<input style="min-width: 256px;" type="text" readonly="" onfocus="this.select()" value="[ezviz_elementor_block id=' . $post_id . ']"><br/>';
+        echo '<input style="min-width: 256px;" type="text" readonly="" onfocus="this.select()" value="[_s_elementor_block id=' . $post_id . ']"><br/>';
     }
 }, 10, 2);
 

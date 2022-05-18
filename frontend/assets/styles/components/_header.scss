@@ -3,10 +3,11 @@
 
 .site {
     &__header {
-        @apply flex justify-between items-center w-full border-b;
+        @apply flex justify-between items-center w-full border-b relative;
         background-color: $bg-base;
         border-color: $border-base;
         height: 64px;
+        z-index: 99;
 
         .container {
             @apply flex justify-between items-center;
@@ -89,9 +90,11 @@
         }
 
         &.is-toggled {
-            .nav-menu {
-                @apply flex w-full;
-                box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
+            @include below(768px) {
+                .nav-menu {
+                    @apply flex w-full;
+                    box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
+                }
             }
         }
     }
