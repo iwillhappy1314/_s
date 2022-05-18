@@ -92,8 +92,23 @@ if ( ! function_exists('_s_setup')) :
         ]);
 
         $GLOBALS[ 'content_width' ] = apply_filters('_s_content_width', 640);
+        
+        
+        wprs_types("video", __("Video", 'wprs'), false, true, false, 'dashicons-video-alt2');
+        wprs_tax("video_type", 'video', __("Video Tag", 'wprs'), true, false);
     }
 endif;
+
+
+add_action('add_meta_boxes', function ()
+{
+    remove_meta_box('pageparentdiv', 'video', 'side');
+    remove_meta_box('slugdiv', 'video', 'normal');
+    remove_meta_box('pageparentdiv', 'press', 'side');
+    remove_meta_box('slugdiv', 'press', 'normal');
+    remove_meta_box('pageparentdiv', 'slider', 'side');
+    remove_meta_box('slugdiv', 'slider', 'normal');
+});
 
 
 add_filter('manage_elementor_library_posts_columns', function ($columns)

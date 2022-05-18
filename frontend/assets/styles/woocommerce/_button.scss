@@ -1,5 +1,3 @@
-
-
 //===================================
 // 按钮
 //===================================
@@ -35,8 +33,8 @@
         }
 
         &.alt {
-            @include button-bg(#3bb54a, darken(#3bb54a, 3%), darken(#3bb54a, 6%));
-            @include button-border(darken(#3bb54a, 3%), darken(#3bb54a, 6%), darken(#3bb54a, 9%));
+            @include button-bg($woocommerce, darken($woocommerce, 3%), darken($woocommerce, 6%));
+            @include button-border(darken($woocommerce, 3%), darken($woocommerce, 6%), darken($woocommerce, 9%));
             @apply text-white;
         }
     }

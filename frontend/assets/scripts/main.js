@@ -169,6 +169,24 @@ require('script-loader!./plugins/skip-link-focus-fix');
 
     };
 
+
+    /**
+     * Play video in manigicPopup
+     */
+    ezviz.popup = function() {
+        if ($.isFunction($.fn.magnificPopup)) {
+            $('.js-popup-youtube').magnificPopup({
+                disableOn   : 700,
+                type        : 'iframe',
+                mainClass   : 'mfp-fade',
+                removalDelay: 160,
+                preloader   : false,
+
+                fixedContentPos: false,
+            });
+        }
+    };
+
     /**
      * Header sticky
      */

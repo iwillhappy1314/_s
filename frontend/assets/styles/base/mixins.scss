@@ -132,6 +132,11 @@
     margin-bottom: $gap;
 }
 
+@mixin between($min-breakpoint, $max-breakpoint) {
+    @media (min-width: $min-breakpoint + 1) and (max-width: $max-breakpoint - 1) {
+        @content;
+    }
+}
 
 @mixin below($max-breakpoint) {
     @media (max-width: $max-breakpoint - 1) {
