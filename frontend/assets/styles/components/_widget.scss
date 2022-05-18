@@ -3,7 +3,6 @@ $text-color: $text-base;
 $text-hover-color: darken($text-base, 5%);
 
 .widget{
-    @apply mb-10;
     &-title{
         @apply text-lg font-medium mb-4;
     }
@@ -18,5 +17,18 @@ $text-hover-color: darken($text-base, 5%);
                 color: $text-hover-color;
             }
         }
+    }
+}
+
+
+.o-mini-widgets{
+    .wp-block-columns{
+        @apply m-0;
+    }
+}
+
+.content__secondary{
+    .widget{
+        @apply mb-6;
     }
 }

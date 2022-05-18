@@ -30,8 +30,7 @@
 img.header-image,
 .author-avatar img,
 img.wp-post-image {
-    @apply rounded;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    //@apply rounded;
 }
 
 .wp-caption {

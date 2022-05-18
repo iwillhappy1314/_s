@@ -167,13 +167,17 @@ require('script-loader!./plugins/skip-link-focus-fix');
             });
         }
 
+
+        // 给 iframe 添加 wrap, 以实现自适应
+         $('.type-docs iframe').wrap("<div class='rs-iframe-wrap' />");
+
     };
 
 
     /**
      * Play video in manigicPopup
      */
-    ezviz.popup = function() {
+    spaceName.popup = function() {
         if ($.isFunction($.fn.magnificPopup)) {
             $('.js-popup-youtube').magnificPopup({
                 disableOn   : 700,

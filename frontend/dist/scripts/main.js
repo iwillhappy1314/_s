@@ -264,6 +264,26 @@ __webpack_require__(/*! script-loader!./plugins/skip-link-focus-fix */ "./node_m
         video_loaded_class: 'lazyYT-video-loaded',
         container_class: 'lazyYT-container'
       });
+    } // 给 iframe 添加 wrap, 以实现自适应
+
+
+    $('.type-docs iframe').wrap("<div class='rs-iframe-wrap' />");
+  };
+  /**
+   * Play video in manigicPopup
+   */
+
+
+  spaceName.popup = function () {
+    if ($.isFunction($.fn.magnificPopup)) {
+      $('.js-popup-youtube').magnificPopup({
+        disableOn: 700,
+        type: 'iframe',
+        mainClass: 'mfp-fade',
+        removalDelay: 160,
+        preloader: false,
+        fixedContentPos: false
+      });
     }
   };
   /**

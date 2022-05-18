@@ -27,43 +27,45 @@
     </a>
 
     <?php
-    /**
-     * Filters the header classes.
-     *
-     * @param string $header_classes Header classes.
-     *
-     * @since 2.3.7
-     */
-    $header_classes = apply_filters( 'nv_header_classes', 'header' );
-
     do_action('_s_before_site');
     do_action('_s_before_header');
     ?>
 
-    <header class="<?php echo esc_attr($header_classes); ?>" role='banner' next-page-hide>
-        <a class='neve-skip-link show-on-focus' href='#content'>
-            <?php echo __('Skip to content', 'neve'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-        </a>
-        <?php
+    <?php if (is_active_sidebar('sidebar-top-bar')): ?>
+        <div class="o-mini-widgets">
+            <?php dynamic_sidebar('sidebar-top-bar'); ?>
+        </div>
+    <?php endif; ?>
 
-        /**
-         * Executes actions before the header ( navigation ) area.
-         *
-         * @since 1.0.0
-         */
-        do_action('neve_before_header_hook');
+    <header id="masthead" class="site__header">
+        <div class="container">
+            <div class="site__branding">
+                <?php the_custom_logo(); ?>
 
-        if (apply_filters('neve_filter_toggle_content_parts', true, 'header') === true) {
-            do_action('neve_do_header');
-        }
+                <?php if ( ! has_custom_logo()) : ?>
+                    <h1><a href="<?= home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+                <?php endif; ?>
+            </div>
 
-        /**
-         * Executes actions after the header ( navigation ) area.
-         *
-         * @since 1.0.0
-         */
-        do_action('neve_after_header_hook');
-        ?>
+            <?php do_action('_s_before_navigation'); ?>
+
+            <nav id="site-navigation" class="site__nav main-navigation">
+                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                    <span><?php esc_html_e('Menu', '_s'); ?></span>
+                </button>
+                <?php
+                wp_nav_menu([
+                    'theme_location' => 'menu-primary',
+                    'menu_id'        => 'primary-menu',
+                    'menu_class'     => 'sm sm-menu nav-menu',
+                    'fallback_cb'    => '_s_page_menu',
+                ]);
+                ?>
+            </nav>
+
+            <?php do_action('_s_after_navigation'); ?>
+
+        </div>
     </header>
 
     <?php do_action('_s_after_header'); ?>

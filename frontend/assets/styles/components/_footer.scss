@@ -4,6 +4,39 @@ $text-hover-color: $text-highlight;
 
 .site__footer {
     background-color: $bg;
+
+    ul{
+        @apply m-0 p-0 list-none;
+    }
+
+    .wp-block-columns{
+        @apply mb-0;
+    }
+
+    .widget {
+        @apply w-full flex-grow;
+
+        @screen lg {
+            @apply mb-0 flex-grow;
+        }
+
+        &:last-child{
+            @apply mb-0 pb-0;
+        }
+
+        img {
+            @apply rounded-none shadow-none;
+        }
+
+        li {
+            a {
+                color: $text-color;
+                &:hover{
+                    color: $text-hover-color;
+                }
+            }
+        }
+    }
 }
 
 .site__info {
@@ -32,26 +65,5 @@ $text-hover-color: $text-highlight;
 
     @screen lg {
         @apply flex-nowrap;
-    }
-
-    .widget {
-        @apply mx-4 w-full flex-grow;
-
-        @screen lg {
-            @apply mb-0 flex-grow;
-        }
-
-        img {
-            @apply rounded-none shadow-none;
-        }
-
-        li {
-            a {
-                color: $text-color;
-                &:hover{
-                    color: $text-hover-color;
-                }
-            }
-        }
     }
 }

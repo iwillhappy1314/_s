@@ -144,8 +144,8 @@ if ( ! function_exists('_s_widgets_init')) {
             'after_title'   => '</span></h2>',
         ]);
         register_sidebar([
-            'name'          => esc_html__('Below Content Widgets  Area', '_s'),
-            'id'            => 'sidebar-below-content',
+            'name'          => esc_html__('Top bar Widgets', '_s'),
+            'id'            => 'sidebar-top-bar',
             'description'   => esc_html__('Add widgets here.', '_s'),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',

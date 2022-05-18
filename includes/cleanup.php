@@ -14,7 +14,7 @@ add_action('wp_print_styles', function ()
        wp_deregister_style('dashicons');
    }
        
-    wp_deregister_style('wp-block-library');
+    // wp_deregister_style('wp-block-library');
 });
 
 
@@ -72,7 +72,7 @@ add_action('after_switch_theme', function ()
 });
 
 // Disable widget block editor
-add_filter('use_widgets_block_editor', '__return_false');
+// add_filter('use_widgets_block_editor', '__return_false');
 
 // Remove WordPress generator info
 remove_action('wp_head', 'wp_generator');

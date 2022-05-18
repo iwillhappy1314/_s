@@ -84,9 +84,9 @@ if (class_exists('WooCommerce')) {
     require_once(get_theme_file_path('includes/woocommerce.php'));
 }
 
-require_once 'includes/migrations.php';
-require_once 'includes/utilities.php';
-require_once 'includes/hooks.php';
-require_once 'includes/sanitize-functions.php';
-require_once get_theme_file_path('start.php');
-require_once get_theme_file_path('header-footer-grid/loader.php');
+// require_once 'includes/migrations.php';
+// require_once 'includes/utilities.php';
+// require_once 'includes/hooks.php';
+// require_once 'includes/sanitize-functions.php';
+// require_once get_theme_file_path('start.php');
+// require_once get_theme_file_path('header-footer-grid/loader.php');

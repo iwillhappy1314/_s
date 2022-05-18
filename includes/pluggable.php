@@ -42,7 +42,7 @@ if (!function_exists('_s_widget_menu_args')) {
      */
     function _s_widget_menu_args($nav_menu_args)
     {
-        $nav_menu_args['menu_class'] = 'sm sm-vertical sm-menu nav-menu';
+        // $nav_menu_args['menu_class'] = 'sm sm-vertical sm-menu nav-menu';
 
         return $nav_menu_args;
     }
