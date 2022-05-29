@@ -19,6 +19,7 @@ require('script-loader!./plugins/skip-link-focus-fix');
         this.accordion();
         this.tab();
         this.lazyYoutube();
+        this.initIsotope();
     };
 
     /**
@@ -86,6 +87,33 @@ require('script-loader!./plugins/skip-link-focus-fix');
             hideTimeout : 100,
         });
     };
+
+
+    spaceName.initIsotope = {
+        if ($(".js-gallery-items").length) {
+            var jQuerygrid = jQuery(".gallery-items").isotope({
+                singleMode: true,
+                columnWidth: ".grid-sizer, .grid-sizer-second, .grid-sizer-three",
+                itemSelector: ".gallery-item, .gallery-item-second, .gallery-item-three",
+                resizable: true,
+                transformsEnabled: true,
+                transitionDuration: "700ms"
+            });
+            jQuerygrid.imagesLoaded(function () {
+                jQuerygrid.isotope("layout");
+            });
+            jQuery(".gallery-filters").on("click", "a.gallery-filter", function (b) {
+                b.preventDefault();
+                var c = jQuery(this).attr("data-filter");
+                jQuerygrid.isotope({
+                    filter: c
+                });
+                jQuery(".gallery-filters a").removeClass("gallery-filter-active");
+                jQuery(this).addClass("gallery-filter-active");
+            });
+        }
+    }
+
 
     /**
      * Sticky Sidebar

@@ -292,3 +292,19 @@
         }
     }
 }
+
+.rswc-card__inner{
+    @apply flex items-center;
+}
+
+.rswc-card__body{
+    @apply pl-4;
+}
+
+.woocommerce ul.products.columns-3 li.product{
+    width: 100% !important;
+}
+
+.rs-wc-card__action{
+    @apply absolute;
+}

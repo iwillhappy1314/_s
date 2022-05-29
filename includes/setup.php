@@ -181,7 +181,7 @@ if ( ! function_exists('_s_elementor_widgets_init')) {
                 ]
             );
 
-            $elementor_instance->widgets_manager->register_widget_type(new \SpaceName\Elementor\Widgets\ServiceWidgets());
+            $elementor_instance->widgets_manager->register(new \SpaceName\Elementor\Widgets\ServiceWidgets());
 
         }
     }
