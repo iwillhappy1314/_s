@@ -30,7 +30,9 @@
         "@tailwindcss/line-clamp": "^0.3.1",
         "@tailwindcss/typography": "^0.5.2",
         "@wenprise/purgecss-with-wordpress": "^1.0.4",
+        "mix-white-sass-icons": "^0.2.0",
         "smartmenus": "^1.1.1",
+        "tabslet": "^1.7.3",
         "tailwindcss": "^3.0.13",
         "theia-sticky-sidebar": "^1.7.0"
     }

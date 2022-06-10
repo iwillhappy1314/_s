@@ -5,7 +5,6 @@
   "require": {
     "php": ">=7.1",
     "wenprise/content-types": "^1.0",
-    "htmlburger/carbon-fields": "^3.1",
     "proteusthemes/wp-customizer-utilities": "^2.7"
   },
   "require-dev": {
@@ -14,8 +13,7 @@
   },
   "autoload": {
     "psr-4": {
-      "SpaceName\\": "src/",
-      "HFG\\": "header-footer-grid/"
+      "SpaceName\\": "src/"
     },
     "files": [
     ]

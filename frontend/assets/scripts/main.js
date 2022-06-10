@@ -12,6 +12,7 @@ require('script-loader!./plugins/skip-link-focus-fix');
 
     spaceName.init = function() {
         this.ajaxLoading();
+        this.slider();
         this.smartMenu();
         this.closeCartDrawer();
         this.navTree();
@@ -89,9 +90,115 @@ require('script-loader!./plugins/skip-link-focus-fix');
     };
 
 
-    spaceName.initIsotope = {
-        if ($(".js-gallery-items").length) {
-            var jQuerygrid = jQuery(".gallery-items").isotope({
+    spaceName.slider = function(){
+        /*------------------------------------
+     3. Slider
+ --------------------------------------*/
+
+        /*---------------------
+        Main Slider
+        -----------------------*/
+        if ($(".swiper-main-slider").length !== 0) {
+            //Slider Animated Caption
+            var swiper = new Swiper('.swiper-container', {
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    dynamicBullets: true,
+                },
+                paginationClickable: true,
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+                spaceBetween: 0,
+                loop: true,
+                simulateTouch: true,
+                autoplay: 5000,
+                speed: 1000,
+                onSlideChangeEnd: function (swiper) {
+                    $('.swiper-slide').each(function () {
+                        if ($(this).index() === swiper.activeIndex) {
+                            // Fadein in active slide
+                            $(this).find('.slider-content').fadeIn(300);
+                        } else {
+                            // Fadeout in inactive slides
+                            $(this).find('.slider-content').fadeOut(300);
+                        }
+                    });
+                }
+            });
+        }
+
+        /*---------------------
+        Main Slider Fade Effect
+        -----------------------*/
+        if ($(".swiper-main-slider-fade").length !== 0) {
+            //Slider Animated Caption
+            var swiper = new Swiper('.swiper-container', {
+                effect: 'fade',
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    dynamicBullets: true,
+                },
+                paginationClickable: true,
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+                spaceBetween: 0,
+                loop: true,
+                simulateTouch: true,
+                autoplay: 5000,
+                speed: 1000,
+                onSlideChangeEnd: function (swiper) {
+                    $('.swiper-slide').each(function () {
+                        if ($(this).index() === swiper.activeIndex) {
+                            // Fadein in active slide
+                            $(this).find('.slider-content').fadeIn(300);
+                        } else {
+                            // Fadeout in inactive slides
+                            $(this).find('.slider-content').fadeOut(300);
+                        }
+                    });
+                }
+            });
+        }
+
+        /*---------------------
+        Parallax Slider
+        -----------------------*/
+        if ($("#swiper-parallax").length !== 0) {
+            var swiper = new Swiper('.swiper-container', {
+                parallax: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    dynamicBullets: true,
+                },
+                paginationClickable: true,
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+                spaceBetween: 0,
+                loop: false,
+                simulateTouch: true,
+                autoplay: false,
+                speed: 1000,
+            });
+        }
+    };
+
+
+    spaceName.initIsotope = function(){
+        if ($(".js-gallery-items").length > 0) {
+
+            var jQuerygrid = $(".gallery-items").isotope({
                 singleMode: true,
                 columnWidth: ".grid-sizer, .grid-sizer-second, .grid-sizer-three",
                 itemSelector: ".gallery-item, .gallery-item-second, .gallery-item-three",
@@ -99,18 +206,21 @@ require('script-loader!./plugins/skip-link-focus-fix');
                 transformsEnabled: true,
                 transitionDuration: "700ms"
             });
+
             jQuerygrid.imagesLoaded(function () {
                 jQuerygrid.isotope("layout");
             });
-            jQuery(".gallery-filters").on("click", "a.gallery-filter", function (b) {
+
+            $(".gallery-filters").on("click", "a.gallery-filter", function (b) {
                 b.preventDefault();
-                var c = jQuery(this).attr("data-filter");
+                var c = $(this).attr("data-filter");
                 jQuerygrid.isotope({
                     filter: c
                 });
-                jQuery(".gallery-filters a").removeClass("gallery-filter-active");
-                jQuery(this).addClass("gallery-filter-active");
+                $(".gallery-filters a").removeClass("gallery-filter-active");
+                $(this).addClass("gallery-filter-active");
             });
+
         }
     }
 

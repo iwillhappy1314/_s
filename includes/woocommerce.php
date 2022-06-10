@@ -664,3 +664,15 @@ add_filter('woocommerce_breadcrumb_defaults', function ($args)
 
     return $args;
 }, 10, 1);
+
+
+add_action('woocommerce_before_shop_loop', function ()
+{
+    ?>
+        <div class="inline-flex">
+            <span class=""></span>
+            <span class=""></span>
+            <span class=""></span>
+        </div>
+    <?php
+}, 25, 1);

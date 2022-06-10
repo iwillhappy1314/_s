@@ -103,3 +103,159 @@ $default-grid-gutter: 2rem;
     color: #999;
     font-size: 16px
 }
+
+.swiper-container {
+    width: 100%;
+    height: 90%;
+}
+
+@media screen and (max-width: 767px) {
+    .swiper-container {
+        height: auto;
+    }
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: transparent;
+    background-position: center;
+    background-size: cover;
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.medium-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.6;
+}
+
+/*-----------------------------------------
+  Slider Control Buttons, Paginations
+-------------------------------------------*/
+.swiper-button-next {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+}
+
+.swiper-button-prev {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+}
+
+.swiper-pagination-bullet-active {
+    background: #fff;
+}
+
+
+/*-----------------------------------------
+  Overlays For Slides
+-------------------------------------------*/
+.wprs-light-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.5;
+}
+
+.wprs-medium-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.6;
+}
+
+.wprs-dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.7;
+}
+
+
+/*-----------------------------------------
+  Slider Content Captions
+-------------------------------------------*/
+.slider-content {
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+
+@media screen and (max-width: 767px) {
+    .slider-content {
+        padding: 70px 30px;
+    }
+}
+
+.slider-content h2 {
+    font-size: 50px;
+    color: #fff;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 767px) {
+    .slider-content h2 {
+        font-size: 25px;
+        color: #fff;
+        line-height: 1.4;
+        font-weight: 600;
+    }
+}
+
+.slider-content h3 {
+    font-size: 45px;
+    color: #fff;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.slider-content p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, .7);
+    line-height: 1.9;
+    font-weight: 400;
+    max-width: 100%;
+    margin-top: 10px;
+    word-wrap: break-word;
+}
+
+@media screen and (max-width: 767px) {
+    .slider-content p {
+        width: auto;
+    }
+}
+
+
+/*-----------------------------------------
+  Slider Parallax
+-------------------------------------------*/
+.parallax-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 130%;
+    height: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
