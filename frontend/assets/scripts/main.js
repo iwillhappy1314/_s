@@ -100,7 +100,7 @@ require('script-loader!./plugins/skip-link-focus-fix');
         -----------------------*/
         if ($(".swiper-main-slider").length !== 0) {
             //Slider Animated Caption
-            var swiper = new Swiper('.swiper-container', {
+            var swiper = new Swiper('.wprs-swiper-container', {
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
@@ -118,16 +118,20 @@ require('script-loader!./plugins/skip-link-focus-fix');
                 autoplay: 5000,
                 speed: 1000,
                 onSlideChangeEnd: function (swiper) {
-                    $('.swiper-slide').each(function () {
-                        if ($(this).index() === swiper.activeIndex) {
-                            // Fadein in active slide
-                            $(this).find('.slider-content').fadeIn(300);
-                        } else {
-                            // Fadeout in inactive slides
-                            $(this).find('.slider-content').fadeOut(300);
-                        }
-                    });
+
                 }
+            });
+
+            swiper.on('slideChange', function () {
+                $('.swiper-slide').each(function () {
+                    if ($(this).index() === swiper.activeIndex) {
+                        // Fadein in active slide
+                        $(this).find('.slider-content').fadeIn(300);
+                    } else {
+                        // Fadeout in inactive slides
+                        $(this).find('.slider-content').fadeOut(300);
+                    }
+                });
             });
         }
 
@@ -136,7 +140,7 @@ require('script-loader!./plugins/skip-link-focus-fix');
         -----------------------*/
         if ($(".swiper-main-slider-fade").length !== 0) {
             //Slider Animated Caption
-            var swiper = new Swiper('.swiper-container', {
+            var swiper = new Swiper('.wprs-swiper-container', {
                 effect: 'fade',
                 navigation: {
                     nextEl: '.swiper-button-next',
@@ -154,17 +158,18 @@ require('script-loader!./plugins/skip-link-focus-fix');
                 simulateTouch: true,
                 autoplay: 5000,
                 speed: 1000,
-                onSlideChangeEnd: function (swiper) {
-                    $('.swiper-slide').each(function () {
-                        if ($(this).index() === swiper.activeIndex) {
-                            // Fadein in active slide
-                            $(this).find('.slider-content').fadeIn(300);
-                        } else {
-                            // Fadeout in inactive slides
-                            $(this).find('.slider-content').fadeOut(300);
-                        }
-                    });
-                }
+            });
+
+            swiper.on('slideChange', function () {
+                $('.swiper-slide').each(function () {
+                    if ($(this).index() === swiper.activeIndex) {
+                        // Fadein in active slide
+                        $(this).find('.slider-content').fadeIn(300);
+                    } else {
+                        // Fadeout in inactive slides
+                        $(this).find('.slider-content').fadeOut(300);
+                    }
+                });
             });
         }
 
@@ -172,7 +177,7 @@ require('script-loader!./plugins/skip-link-focus-fix');
         Parallax Slider
         -----------------------*/
         if ($("#swiper-parallax").length !== 0) {
-            var swiper = new Swiper('.swiper-container', {
+            var swiper = new Swiper('.wprs-swiper-container', {
                 parallax: true,
                 navigation: {
                     nextEl: '.swiper-button-next',
@@ -446,6 +451,16 @@ require('script-loader!./plugins/skip-link-focus-fix');
                     });
                 }
             });
+        }
+    };
+
+
+    /**
+     * Play video in manigicPopup
+     */
+    spaceName.wow = function() {
+        if ($.isClass('WOW')) {
+            new WOW().init();
         }
     };
 

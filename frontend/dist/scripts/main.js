@@ -203,7 +203,7 @@ __webpack_require__(/*! script-loader!./plugins/skip-link-focus-fix */ "./node_m
     -----------------------*/
     if ($(".swiper-main-slider").length !== 0) {
       //Slider Animated Caption
-      var swiper = new Swiper('.swiper-container', {
+      var swiper = new Swiper('.wprs-swiper-container', {
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
@@ -220,17 +220,18 @@ __webpack_require__(/*! script-loader!./plugins/skip-link-focus-fix */ "./node_m
         simulateTouch: true,
         autoplay: 5000,
         speed: 1000,
-        onSlideChangeEnd: function onSlideChangeEnd(swiper) {
-          $('.swiper-slide').each(function () {
-            if ($(this).index() === swiper.activeIndex) {
-              // Fadein in active slide
-              $(this).find('.slider-content').fadeIn(300);
-            } else {
-              // Fadeout in inactive slides
-              $(this).find('.slider-content').fadeOut(300);
-            }
-          });
-        }
+        onSlideChangeEnd: function onSlideChangeEnd(swiper) {}
+      });
+      swiper.on('slideChange', function () {
+        $('.swiper-slide').each(function () {
+          if ($(this).index() === swiper.activeIndex) {
+            // Fadein in active slide
+            $(this).find('.slider-content').fadeIn(300);
+          } else {
+            // Fadeout in inactive slides
+            $(this).find('.slider-content').fadeOut(300);
+          }
+        });
       });
     }
     /*---------------------
@@ -240,7 +241,7 @@ __webpack_require__(/*! script-loader!./plugins/skip-link-focus-fix */ "./node_m
 
     if ($(".swiper-main-slider-fade").length !== 0) {
       //Slider Animated Caption
-      var swiper = new Swiper('.swiper-container', {
+      var swiper = new Swiper('.wprs-swiper-container', {
         effect: 'fade',
         navigation: {
           nextEl: '.swiper-button-next',
@@ -257,18 +258,18 @@ __webpack_require__(/*! script-loader!./plugins/skip-link-focus-fix */ "./node_m
         loop: true,
         simulateTouch: true,
         autoplay: 5000,
-        speed: 1000,
-        onSlideChangeEnd: function onSlideChangeEnd(swiper) {
-          $('.swiper-slide').each(function () {
-            if ($(this).index() === swiper.activeIndex) {
-              // Fadein in active slide
-              $(this).find('.slider-content').fadeIn(300);
-            } else {
-              // Fadeout in inactive slides
-              $(this).find('.slider-content').fadeOut(300);
-            }
-          });
-        }
+        speed: 1000
+      });
+      swiper.on('slideChange', function () {
+        $('.swiper-slide').each(function () {
+          if ($(this).index() === swiper.activeIndex) {
+            // Fadein in active slide
+            $(this).find('.slider-content').fadeIn(300);
+          } else {
+            // Fadeout in inactive slides
+            $(this).find('.slider-content').fadeOut(300);
+          }
+        });
       });
     }
     /*---------------------
@@ -277,7 +278,7 @@ __webpack_require__(/*! script-loader!./plugins/skip-link-focus-fix */ "./node_m
 
 
     if ($("#swiper-parallax").length !== 0) {
-      var swiper = new Swiper('.swiper-container', {
+      var swiper = new Swiper('.wprs-swiper-container', {
         parallax: true,
         navigation: {
           nextEl: '.swiper-button-next',
@@ -502,6 +503,16 @@ __webpack_require__(/*! script-loader!./plugins/skip-link-focus-fix */ "./node_m
           });
         }
       });
+    }
+  };
+  /**
+   * Play video in manigicPopup
+   */
+
+
+  spaceName.wow = function () {
+    if ($.isClass('WOW')) {
+      new WOW().init();
     }
   };
 
