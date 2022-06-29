@@ -17,8 +17,12 @@ mix.sass('assets/styles/main.scss', 'dist/styles').
     sass('assets/styles/products.scss', 'dist/styles').
     sass('assets/styles/review.scss', 'dist/styles').
     sass('assets/styles/woocommerce.scss', 'dist/styles').
-    tailwind();
-
+    tailwind().
+    options({
+        postCss: [
+            require('css-mqpacker'),
+        ],
+    });
 
 mix.js('assets/scripts/vendors.js', 'dist/scripts').
     js('assets/scripts/main.js', 'dist/scripts').
