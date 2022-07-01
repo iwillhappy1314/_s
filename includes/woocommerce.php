@@ -121,6 +121,7 @@ add_action('woocommerce_single_product_summary', '_s_product_content_wrapper_end
  */
 add_action('woocommerce_before_shop_loop', '_s_sorting_wrapper', 9);
 add_action('woocommerce_before_shop_loop', '_s_sorting_wrapper_close', 31);
+// add_action('woocommerce_before_shop_loop', '_s_layout_switcher', 31);
 
 
 /**
@@ -545,8 +546,22 @@ if ( ! function_exists('_s_sorting_wrapper_close')) {
      */
     function _s_sorting_wrapper_close()
     {
+        // echo '<div class="rs-layout-switcher">';
+        // echo '<span class="icon-bars1"></span><span class="icon-layout"></span>';
+        // echo '</div>';
+
         echo '</div>';
     }
+}
+
+/**
+ * @return void
+ */
+function _s_layout_switcher()
+{
+    echo '<div class="rs-layout-switcher">';
+    echo '<span class="icon-bars1"></span><span class="icon-layout"></span>';
+    echo '</div>';
 }
 
 
@@ -669,10 +684,10 @@ add_filter('woocommerce_breadcrumb_defaults', function ($args)
 add_action('woocommerce_before_shop_loop', function ()
 {
     ?>
-        <div class="inline-flex">
-            <span class=""></span>
-            <span class=""></span>
-            <span class=""></span>
-        </div>
+    <div class="inline-flex">
+        <span class=""></span>
+        <span class=""></span>
+        <span class=""></span>
+    </div>
     <?php
 }, 25, 1);
