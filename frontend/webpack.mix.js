@@ -1,4 +1,5 @@
 let mix = require('laravel-mix');
+let webpack = require('webpack');
 
 require('laravel-mix-tailwind');
 require('laravel-mix-versionhash');
@@ -6,6 +7,18 @@ require('laravel-mix-copy-watched');
 require('mix-white-sass-icons');
 
 mix.setPublicPath('./');
+
+mix.webpackConfig({
+    externals: {
+        jquery: 'jQuery',
+    },
+    plugins  : [
+        new webpack.ProvidePlugin({
+            $              : 'jquery',
+            jQuery         : 'jquery',
+            'window.jQuery': 'jquery',
+        })],
+});
 
 mix.sass('assets/styles/main.scss', 'dist/styles').
     sass('assets/styles/account.scss', 'dist/styles').

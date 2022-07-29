@@ -5,8 +5,9 @@
 /*!********************************************!*\
   !*** ./assets/scripts/plugins/quantity.js ***!
   \********************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
+/* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ "jquery");
 var $j = jQuery.noConflict();
 $j(window).on('load', function () {
   'use strict'; // Woo quantity buttons
@@ -90,6 +91,17 @@ function _s_wc_quantity_buttons($quantitySelector) {
   }
 }
 
+/***/ }),
+
+/***/ "jquery":
+/*!*************************!*\
+  !*** external "jQuery" ***!
+  \*************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = jQuery;
+
 /***/ })
 
 /******/ 	});
@@ -170,6 +182,7 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _plugins_quantity__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./plugins/quantity */ "./assets/scripts/plugins/quantity.js");
 /* harmony import */ var _plugins_quantity__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_plugins_quantity__WEBPACK_IMPORTED_MODULE_0__);
+/* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ "jquery");
 
 
 (function ($) {

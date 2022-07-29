@@ -2,14 +2,25 @@ const purgecssWhiteList = require('@wenprise/purgecss-with-wordpress');
 
 module.exports = {
     content   : [
-         '../frontend/assets/scripts/**/*.js',
-         '../bbpress/**/*.php',
-         '../includes/**/*.php',
-         '../related-post-plugin/**/*.php',
-         '../src/**/*.php',
-         '../templates/**/*.php',
-         '../woocommerce/**/*.php',
-        //'../*.php',
+        '../frontend/assets/scripts/**/*.js',
+        '../bbpress/**/*.php',
+        '../includes/**/*.php',
+        '../related-post-plugin/**/*.php',
+        '../src/**/*.php',
+        '../templates/**/*.php',
+        '../woocommerce/**/*.php',
+        '../functions.php',
+        '../header.php',
+        '../footer.php',
+        '../index.php',
+        '../archive.php',
+        '../author.php',
+        '../search.php',
+        '../sidebar.php',
+        '../page.php',
+        '../single.php',
+        '../comments.php',
+        '../404.php',
     ],
     safelist: purgecssWhiteList.whitelist.concat([
         'ln-letters',
@@ -51,9 +62,6 @@ module.exports = {
     },
     variants: {
         extend: {},
-    },
-    corePlugins: {
-        preflight: false,
     },
     plugins : [
         require('@tailwindcss/typography'),
