@@ -14,7 +14,7 @@
 
         <div class="rs-empty__icon">
             <div class="rs-empty__icon">
-                <img src="<?= _s_assets('images/empty.svg'); ?>" alt="Nothing found" />
+                <img src="<?= _s_assets('dist/images/empty.svg'); ?>" alt="Nothing found" />
             </div>
         </div>
 

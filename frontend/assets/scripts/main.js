@@ -6,13 +6,13 @@ require('script-loader!./plugins/skip-link-focus-fix');
 import {isMobile} from './components/helpers';
 import {navTree} from './components/nav-tree';
 import {smartMenu} from './components/nav/smart-menu';
+import {stickyNav} from './components/nav/sticky';
 //import {mainSwiper} from './components/swiper';
 import {isotope} from './components/isotope';
+import {stickySidebar} from './components/sticky-sidebar';
+import {lazyYoutube} from './components/lazy-youtube';
 
 (function($) {
-
-    const header = document.getElementById('masthead');
-    const body = document.getElementsByTagName('body')[0];
 
     const spaceName = {};
 
@@ -24,13 +24,12 @@ import {isotope} from './components/isotope';
         //meanMenu();
         this.closeCartDrawer();
         navTree();
-        this.stickySidebar();
+        stickySidebar();
         this.accordion();
         this.tab();
-        this.lazyYoutube();
+        lazyYoutube();
         isotope();
     };
-
 
     /**
      * Ajax loading style
@@ -43,19 +42,6 @@ import {isotope} from './components/isotope';
         }).ajaxStop(function() {
             $loading.hide();
         });
-    };
-
-    /**
-     * Sticky Sidebar
-     *
-     * div.js-sticky-left>div.theiaStickySidebar | div.js-sticky-right>div
-     */
-    spaceName.stickySidebar = function() {
-        if ($(document).width() > 1024 && $.isFunction($.fn.theiaStickySidebar)) {
-            $('.js-sticky-left, .js-sticky-right').theiaStickySidebar({
-                additionalMarginTop: 32,
-            });
-        }
     };
 
     /**
@@ -109,30 +95,6 @@ import {isotope} from './components/isotope';
     };
 
     /**
-     * Lazy Load Youtube Video
-     */
-    spaceName.lazyYoutube = function() {
-
-        if ($.isFunction($.fn.lazyYT)) {
-            $('.js-lazyYT').lazyYT({
-                youtube_parameters: 'rel=0',
-                loading_text      : 'Loading...',
-                display_title     : false,
-                default_ratio     : '16:9',
-                display_duration  : false,
-                video_loaded_class: 'lazyYT-video-loaded',
-                container_class   : 'lazyYT-container',
-            });
-        }
-
-
-        // 给 iframe 添加 wrap, 以实现自适应
-         $('.type-docs iframe').wrap("<div class='rs-iframe-wrap' />");
-
-    };
-
-
-    /**
      * Play video in manigicPopup
      */
     spaceName.popup = function() {
@@ -150,21 +112,6 @@ import {isotope} from './components/isotope';
     };
 
     /**
-     * Header sticky
-     */
-    spaceName.navSticky = function() {
-        const sticky = header.offsetTop + 100;
-
-        if (window.scrollY > sticky) {
-            header.classList.add('is-sticky');
-            body.classList.add('is-sticky');
-        } else {
-            header.classList.remove('is-sticky');
-            body.classList.remove('is-sticky');
-        }
-    };
-
-    /**
      * Close cart drawer
      */
     spaceName.closeCartDrawer = function() {
@@ -172,7 +119,6 @@ import {isotope} from './components/isotope';
             $('body').removeClass('mobile-toggled').removeClass('drawer-open');
         });
     };
-
 
     /**
      * Play video in manigicPopup
@@ -188,7 +134,7 @@ import {isotope} from './components/isotope';
     });
 
     window.onscroll = function() {
-        spaceName.navSticky();
+        stickyNav();
     };
 
 })(jQuery);
