@@ -126,27 +126,21 @@ $cleaner->remove_menu([
 ]);
 
 $cleaner->remove_submenu('index.php', 10)
-        ->remove_submenu('themes.php', [6, 15, 20])
         ->remove_submenu('woocommerce', 'report')
         ->remove_submenu('elementor', 'go_elementor_pro')
         ->remove_submenu('elementor', 'go_knowledge_base_site')
-        ->remove_submenu('elementor', 'elementor-getting-started')
-        ->remove_submenu('options-general.php', [10, 15, 20, 25, 30, 40]);
+        ->remove_submenu('elementor', 'elementor-getting-started');
 
 //Remove post metabox
-$cleaner->remove_meta_box('commentsdiv', 'post', 'side');
-
-//Remove Dashboard widget
-$cleaner->remove_dashboard_widget('dashboard_primary')
-        ->remove_dashboard_widget('dashboard_site_health')
-        ->remove_dashboard_widget('e-dashboard-overview')
-        ->remove_dashboard_widget('dashboard_incoming_links')
-        ->remove_dashboard_widget('dashboard_plugins')
-        ->remove_dashboard_widget('dashboard_activity')
-        ->remove_dashboard_widget('themeisle');
+$cleaner->remove_meta_box('e-dashboard-overview', 'dashboard', 'normal')
+        ->remove_meta_box('dashboard_primary', 'dashboard', 'normal')
+        ->remove_meta_box('dashboard_right_now', 'dashboard', 'normal')
+        ->remove_meta_box('themeisle', 'dashboard', 'normal');
 
 //Remove admin bar links
-$cleaner->remove_admin_bar_menu('wp-logo');
+$cleaner->remove_admin_bar_menu('wp-logo')
+        ->remove_admin_bar_menu('view-site')
+        ->remove_admin_bar_menu('view-store');
 
 if ( ! current_user_can('administrator')) {
     $cleaner->remove_submenu('edit.php?post_type=staff11', [15]);
