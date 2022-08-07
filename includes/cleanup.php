@@ -10,10 +10,10 @@
  */
 add_action('wp_print_styles', function ()
 {
-   if ( ! is_user_logged_in()) {
-       wp_deregister_style('dashicons');
-   }
-       
+    if ( ! is_user_logged_in()) {
+        wp_deregister_style('dashicons');
+    }
+
     // wp_deregister_style('wp-block-library');
 });
 
@@ -56,18 +56,18 @@ add_action('after_switch_theme', function ()
 
     // Remove default sample comment.
     wp_delete_comment(1, true);
-    
+
     // Set WooCommerce page template to app template
     if (class_exists('WooCommerce')) {
-       $page_ids = [
-          get_option( 'woocommerce_cart_page_id' ),
-          get_option( 'woocommerce_checkout_page_id' ),
-          get_option( 'woocommerce_myaccount_page_id' ),
-       ];
-       
-       foreach($page_ids as $page_id){
-          update_post_meta($page_id, '_wp_page_template', 'template-app.php');
-       }
+        $page_ids = [
+            get_option('woocommerce_cart_page_id'),
+            get_option('woocommerce_checkout_page_id'),
+            get_option('woocommerce_myaccount_page_id'),
+        ];
+
+        foreach ($page_ids as $page_id) {
+            update_post_meta($page_id, '_wp_page_template', 'template-app.php');
+        }
     }
 });
 
@@ -118,37 +118,36 @@ add_action('elementor/frontend/after_register_styles', function ()
 // Disable xmlrpc
 add_filter('xmlrpc_enabled', '__return_false');
 
+$cleaner = new Wenprise\Cleaner();
 
-/**
- * Remove WordPress links in menubar
- */
-add_action('wp_before_admin_bar_render', function ()
-{
-    global $wp_admin_bar;
+//Remove top level menu
+$cleaner->remove_menu([
+    'uploader.php',
+]);
 
-    $wp_admin_bar->remove_menu('wp-logo');
-    $wp_admin_bar->remove_menu('about');
-    $wp_admin_bar->remove_menu('wporg');
-    $wp_admin_bar->remove_menu('documentation');
-    $wp_admin_bar->remove_menu('support-forums');
-    $wp_admin_bar->remove_menu('feedback');
-    $wp_admin_bar->remove_menu('view-site');
-});
+$cleaner->remove_submenu('index.php', 10)
+        ->remove_submenu('themes.php', [6, 15, 20])
+        ->remove_submenu('woocommerce', 'report')
+        ->remove_submenu('elementor', 'go_elementor_pro')
+        ->remove_submenu('elementor', 'go_knowledge_base_site')
+        ->remove_submenu('elementor', 'elementor-getting-started')
+        ->remove_submenu('options-general.php', [10, 15, 20, 25, 30, 40]);
 
+//Remove post metabox
+$cleaner->remove_meta_box('commentsdiv', 'post', 'side');
 
-/**
- * Remove dashboard metabox
- */
-add_action('wp_before_admin_bar_render', function ()
-{
-    global $wp_meta_boxes;
+//Remove Dashboard widget
+$cleaner->remove_dashboard_widget('dashboard_primary')
+        ->remove_dashboard_widget('dashboard_site_health')
+        ->remove_dashboard_widget('e-dashboard-overview')
+        ->remove_dashboard_widget('dashboard_incoming_links')
+        ->remove_dashboard_widget('dashboard_plugins')
+        ->remove_dashboard_widget('dashboard_activity')
+        ->remove_dashboard_widget('themeisle');
 
-    unset($wp_meta_boxes[ 'dashboard' ][ 'side' ][ 'core' ][ 'dashboard_recent_drafts' ]);
-    unset($wp_meta_boxes[ 'dashboard' ][ 'side' ][ 'core' ][ 'dashboard_primary' ]);
-    unset($wp_meta_boxes[ 'dashboard' ][ 'side' ][ 'core' ][ 'dashboard_secondary' ]);
-    unset($wp_meta_boxes[ 'dashboard' ][ 'normal' ][ 'core' ][ 'dashboard_site_health' ]);
-    unset($wp_meta_boxes[ 'dashboard' ][ 'normal' ][ 'core' ][ 'e-dashboard-overview' ]);
-    unset($wp_meta_boxes[ 'dashboard' ][ 'normal' ][ 'core' ][ 'dashboard_recent_comments' ]);
-    unset($wp_meta_boxes[ 'dashboard' ][ 'normal' ][ 'core' ][ 'dashboard_incoming_links' ]);
-    unset($wp_meta_boxes[ 'dashboard' ][ 'normal' ][ 'core' ][ 'dashboard_plugins' ]);
-});
+//Remove admin bar links
+$cleaner->remove_admin_bar_menu('wp-logo');
+
+if ( ! current_user_can('administrator')) {
+    $cleaner->remove_submenu('edit.php?post_type=staff11', [15]);
+}

@@ -92,10 +92,9 @@ if ( ! function_exists('_s_setup')) :
         ]);
 
         $GLOBALS[ 'content_width' ] = apply_filters('_s_content_width', 640);
-        
-        
-        wprs_types("video", __("Video", '_s'), false, true, false, 'dashicons-video-alt2');
-        wprs_tax("video_type", 'video', __("Video Tag", '_s'), true, false);
+
+        WenpriseContentTypes\ContentType::register("video", __("Video", '_s'), false, true, false, 'dashicons-video-alt2');
+        WenpriseContentTypes\Taxonomy::register("video_type", 'video', __("Video Tag", '_s'), true, false);
     }
 endif;
 
@@ -163,7 +162,6 @@ if ( ! function_exists('_s_widgets_init')) {
         ]);
     }
 }
-
 
 
 if ( ! function_exists('_s_elementor_widgets_init')) {
