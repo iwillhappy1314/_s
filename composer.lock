@@ -4,11 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "67a03ff8e77f757bb943ea9b5d2cc4f7",
+    "content-hash": "2c1c095a74817909c7c04cb7e15d8716",
     "packages": [
         {
             "name": "doctrine/inflector",
-            "version": "1.1.x-dev",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
@@ -327,12 +327,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/iwillhappy1314/wenprise-content-types.git",
-                "reference": "1db65dc0d13c497af64a10ee9151bce864a84b60"
+                "reference": "7c97016b7396ce23f88dcbb7feb0f8ff6b3fd90e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/iwillhappy1314/wenprise-content-types/zipball/1db65dc0d13c497af64a10ee9151bce864a84b60",
-                "reference": "1db65dc0d13c497af64a10ee9151bce864a84b60",
+                "url": "https://api.github.com/repos/iwillhappy1314/wenprise-content-types/zipball/7c97016b7396ce23f88dcbb7feb0f8ff6b3fd90e",
+                "reference": "7c97016b7396ce23f88dcbb7feb0f8ff6b3fd90e",
                 "shasum": ""
             },
             "require": {
@@ -389,9 +389,9 @@
             "description": "Create WordPress content types and taxonomies more easier.",
             "support": {
                 "issues": "https://github.com/iwillhappy1314/wenprise-content-types/issues",
-                "source": "https://github.com/iwillhappy1314/wenprise-content-types/tree/master"
+                "source": "https://github.com/iwillhappy1314/wenprise-content-types/tree/2.0.4"
             },
-            "time": "2022-08-13T17:51:37+00:00"
+            "time": "2022-08-13T17:53:47+00:00"
         },
         {
             "name": "wenprise/wordpress-cleaner",
@@ -945,7 +945,7 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "dev-main",
+            "version": "v1.26.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
@@ -966,7 +966,6 @@
             "suggest": {
                 "ext-mbstring": "For best performance"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1029,7 +1028,7 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "3.4.x-dev",
+            "version": "v3.4.47",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
@@ -1090,7 +1089,7 @@
                 "dump"
             ],
             "support": {
-                "source": "https://github.com/symfony/var-dumper/tree/3.4"
+                "source": "https://github.com/symfony/var-dumper/tree/v3.4.47"
             },
             "funding": [
                 {
@@ -1154,7 +1153,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {
         "wenprise/wordpress-cleaner": 20,
         "htmlburger/carbon-fields": 10,
