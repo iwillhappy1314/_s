@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2022-05-18 22:35+0800\n"
-"PO-Revision-Date: 2022-05-18 22:36+0800\n"
+"POT-Creation-Date: 2022-08-14 02:26+0800\n"
+"PO-Revision-Date: 2022-08-14 02:26+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -47,6 +47,22 @@ msgstr "跳至内容"
 msgid "Menu"
 msgstr "菜单"
 
+#: includes/blocks.php:18
+msgid "My Shiny Gutenberg Block"
+msgstr ""
+
+#: includes/blocks.php:20
+msgid "Block Heading"
+msgstr "块标题"
+
+#: includes/blocks.php:21
+msgid "Block Image"
+msgstr "块图像"
+
+#: includes/blocks.php:22
+msgid "Block Content"
+msgstr "块内容"
+
 #: includes/customizer.php:27
 msgid "Colors and Background"
 msgstr "颜色和背景"
@@ -55,87 +71,87 @@ msgstr "颜色和背景"
 msgid "Archive Settings"
 msgstr "存档设置"
 
-#: includes/fields.php:36 includes/fields.php:52
+#: includes/fields.php:37 includes/fields.php:42 includes/fields.php:58
 msgid "Cover image"
 msgstr "封面图像"
 
-#: includes/fields.php:37
+#: includes/fields.php:38 includes/fields.php:43
 msgid "Cover text"
 msgstr "封面文字"
 
-#: includes/fields.php:38
+#: includes/fields.php:39 includes/fields.php:44
 msgid "Archive Title"
 msgstr "存档标题"
 
-#: includes/fields.php:39
+#: includes/fields.php:40 includes/fields.php:45
 msgid "Archive Description"
 msgstr "存档描述"
 
-#: includes/fields.php:47
+#: includes/fields.php:53
 msgid "Category Settings"
 msgstr "分类设置"
 
-#: includes/fields.php:53
+#: includes/fields.php:59
 msgid "Banner Text"
 msgstr "横幅文本"
 
-#: includes/fields.php:54
+#: includes/fields.php:60
 msgid "Posts Per Page"
 msgstr "每页文章数"
 
-#: includes/fields.php:60
+#: includes/fields.php:66
 msgid "Page Settings"
 msgstr "页面设置"
 
-#: includes/fields.php:65
+#: includes/fields.php:71
 msgid "Page Layouts"
 msgstr "页面布局"
 
-#: includes/fields.php:76
+#: includes/fields.php:82
 msgid "Case Data"
 msgstr "案例数据"
 
-#: includes/fields.php:81
+#: includes/fields.php:87
 msgid "Demo url"
 msgstr "演示网址"
 
-#: includes/fields.php:88
+#: includes/fields.php:94
 msgid "Theme Options"
 msgstr "主题选项"
 
-#: includes/fields.php:90
+#: includes/fields.php:96
 msgid "General Options"
 msgstr "常规选项"
 
-#: includes/fields.php:91
+#: includes/fields.php:97
 msgid "Clean up useless menus for normal user"
 msgstr "清理后台菜单"
 
-#: includes/fields.php:92
+#: includes/fields.php:98
 msgid "Deny modify files in backend"
 msgstr "禁止在后台修改文件"
 
-#: includes/fields.php:94
+#: includes/fields.php:100
 msgid "Footer Options"
 msgstr "页脚选项"
 
-#: includes/fields.php:95
+#: includes/fields.php:101
 msgid "Beian number"
 msgstr "备案号"
 
-#: includes/fields.php:96
+#: includes/fields.php:102
 msgid "Copyright text"
 msgstr "版权内容"
 
-#: includes/fields.php:98
+#: includes/fields.php:104
 msgid "Code Option"
 msgstr "代码选项"
 
-#: includes/fields.php:99
+#: includes/fields.php:105
 msgid "Code before </head>"
 msgstr "</head> 前代码"
 
-#: includes/fields.php:100
+#: includes/fields.php:106
 msgid "Code before </body>"
 msgstr "</body> 前代码"
 
@@ -143,77 +159,77 @@ msgstr "</body> 前代码"
 msgid "Primary"
 msgstr "主要"
 
-#: includes/setup.php:97
-msgid "Video"
+#: includes/setup.php:96
+msgid "Videos"
 msgstr "视频"
 
-#: includes/setup.php:98
-msgid "Video Tag"
+#: includes/setup.php:97
+msgid "Video Tags"
 msgstr "视频标签"
 
-#: includes/setup.php:116
+#: includes/setup.php:115
 msgid "Shortcode"
 msgstr "短代码"
 
-#: includes/setup.php:138
+#: includes/setup.php:137
 msgid "Primary Widgets Area"
 msgstr "主要小工具区域"
 
-#: includes/setup.php:140 includes/setup.php:149 includes/setup.php:158
-#: includes/woocommerce.php:176 includes/woocommerce.php:186
-#: includes/woocommerce.php:196 includes/woocommerce.php:206
+#: includes/setup.php:139 includes/setup.php:148 includes/setup.php:157
+#: includes/woocommerce.php:177 includes/woocommerce.php:187
+#: includes/woocommerce.php:197 includes/woocommerce.php:207
 msgid "Add widgets here."
 msgstr "在这里添加小工具。"
 
-#: includes/setup.php:147
+#: includes/setup.php:146
 msgid "Top bar Widgets"
 msgstr "顶部小工具区域"
 
-#: includes/setup.php:156
+#: includes/setup.php:155
 msgid "Footer Widgets Area"
 msgstr "页脚小工具区域"
 
-#: includes/setup.php:179
+#: includes/setup.php:177
 msgid "_s Addon"
-msgstr ""
+msgstr "_s 附加组件"
 
-#: includes/template-tags.php:62
+#: includes/template-tags.php:65
 msgid ", "
 msgstr ", "
 
-#: includes/template-tags.php:65
+#: includes/template-tags.php:68
 #, php-format
 msgid "Posted in %1$s"
 msgstr "发表在 %1$s"
 
-#: includes/template-tags.php:72
+#: includes/template-tags.php:75
 #, php-format
 msgid "Tagged %1$s"
 msgstr "标签 %1$s"
 
-#: includes/template-tags.php:82
+#: includes/template-tags.php:85
 #, php-format
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr "<span class=\"screen-reader-text\">在 %s </span>发表评论"
 
-#: includes/template-tags.php:99
+#: includes/template-tags.php:102
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr "编辑<span class=\"screen-reader-text\">%s</span>"
 
-#: includes/woocommerce.php:174
+#: includes/woocommerce.php:175
 msgid "WooCommerce Widget Area"
 msgstr "WooCommerce小工具区域"
 
-#: includes/woocommerce.php:184
+#: includes/woocommerce.php:185
 msgid "Single Product Custom area"
 msgstr "产品摘要小工具区域"
 
-#: includes/woocommerce.php:194
+#: includes/woocommerce.php:195
 msgid "Cart Widgets Area"
 msgstr "购物车小工具区域"
 
-#: includes/woocommerce.php:204
+#: includes/woocommerce.php:205
 msgid "Checkout Widgets Area"
 msgstr "结账小工具区域"
 
@@ -282,7 +298,7 @@ msgstr "删除此项"
 
 #: woocommerce/cart/cart.php:91 woocommerce/cart/cart.php:112
 msgid "Available on backorder"
-msgstr ""
+msgstr "可预订"
 
 #: woocommerce/cart/cart.php:172
 msgid "Coupon:"

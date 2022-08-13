@@ -93,8 +93,8 @@ if ( ! function_exists('_s_setup')) :
 
         $GLOBALS[ 'content_width' ] = apply_filters('_s_content_width', 640);
 
-        WenpriseContentTypes\ContentType::register("video", __("Video", '_s'), false, true, false, 'dashicons-video-alt2');
-        WenpriseContentTypes\Taxonomy::register("video_type", 'video', __("Video Tag", '_s'), true, false);
+        WenpriseContentTypes\ContentType::register("video", __("Videos", '_s'), false, true, false, 'dashicons-video-alt2');
+        WenpriseContentTypes\Taxonomy::register("video_type", 'video', __("Video Tags", '_s'), true, false);
     }
 endif;
 

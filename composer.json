@@ -6,8 +6,8 @@
     "php": ">=7.1",
     "proteusthemes/wp-customizer-utilities": "^2.7",
     "wenprise/wordpress-cleaner": "dev-master",
-    "htmlburger/carbon-fields": "^3.4@beta",
-    "wenprise/content-types": "dev-master"
+    "htmlburger/carbon-fields": "^3.3",
+    "wenprise/content-types": "^2.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master",

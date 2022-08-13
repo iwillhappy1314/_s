@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2c1c095a74817909c7c04cb7e15d8716",
+    "content-hash": "0edc8353c93641458bd11dd8282ce384",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -78,16 +78,16 @@
         },
         {
             "name": "htmlburger/carbon-fields",
-            "version": "v3.4.0-beta.1",
+            "version": "v3.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/htmlburger/carbon-fields.git",
-                "reference": "00ce47dd3a0c19e4058aa542d1c0e3f51708897e"
+                "reference": "2ae6773c004b873a1b0456613b14852c1a436a96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/htmlburger/carbon-fields/zipball/00ce47dd3a0c19e4058aa542d1c0e3f51708897e",
-                "reference": "00ce47dd3a0c19e4058aa542d1c0e3f51708897e",
+                "url": "https://api.github.com/repos/htmlburger/carbon-fields/zipball/2ae6773c004b873a1b0456613b14852c1a436a96",
+                "reference": "2ae6773c004b873a1b0456613b14852c1a436a96",
                 "shasum": ""
             },
             "require": {
@@ -213,7 +213,7 @@
                 "issues": "https://github.com/htmlburger/carbon-fields/issues",
                 "source": "https://github.com/htmlburger/carbon-fields"
             },
-            "time": "2021-07-28T15:53:49+00:00"
+            "time": "2022-05-05T14:49:59+00:00"
         },
         {
             "name": "mexitek/phpcolors",
@@ -323,16 +323,16 @@
         },
         {
             "name": "wenprise/content-types",
-            "version": "dev-master",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iwillhappy1314/wenprise-content-types.git",
-                "reference": "7c97016b7396ce23f88dcbb7feb0f8ff6b3fd90e"
+                "reference": "9fe9fba9e5277c00208b66dc936286276c1f0911"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/iwillhappy1314/wenprise-content-types/zipball/7c97016b7396ce23f88dcbb7feb0f8ff6b3fd90e",
-                "reference": "7c97016b7396ce23f88dcbb7feb0f8ff6b3fd90e",
+                "url": "https://api.github.com/repos/iwillhappy1314/wenprise-content-types/zipball/9fe9fba9e5277c00208b66dc936286276c1f0911",
+                "reference": "9fe9fba9e5277c00208b66dc936286276c1f0911",
                 "shasum": ""
             },
             "require": {
@@ -342,7 +342,6 @@
             "require-dev": {
                 "brianhenryie/strauss": "^0.11.0"
             },
-            "default-branch": true,
             "type": "library",
             "extra": {
                 "strauss": {
@@ -389,9 +388,9 @@
             "description": "Create WordPress content types and taxonomies more easier.",
             "support": {
                 "issues": "https://github.com/iwillhappy1314/wenprise-content-types/issues",
-                "source": "https://github.com/iwillhappy1314/wenprise-content-types/tree/2.0.4"
+                "source": "https://github.com/iwillhappy1314/wenprise-content-types/tree/2.0.5"
             },
-            "time": "2022-08-13T17:53:47+00:00"
+            "time": "2022-08-13T18:31:35+00:00"
         },
         {
             "name": "wenprise/wordpress-cleaner",
@@ -1156,8 +1155,6 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "wenprise/wordpress-cleaner": 20,
-        "htmlburger/carbon-fields": 10,
-        "wenprise/content-types": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,
