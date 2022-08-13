@@ -4,77 +4,146 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f48492f13c33281796359cde5b4eaa1f",
+    "content-hash": "9707c3051a5bb7462f727f57f38b1f6a",
     "packages": [
         {
-            "name": "doctrine/inflector",
-            "version": "1.1.x-dev",
+            "name": "htmlburger/carbon-fields",
+            "version": "v3.4.0-beta.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/doctrine/inflector.git",
-                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae"
+                "url": "https://github.com/htmlburger/carbon-fields.git",
+                "reference": "00ce47dd3a0c19e4058aa542d1c0e3f51708897e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/90b2128806bfde671b6952ab8bea493942c1fdae",
-                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae",
+                "url": "https://api.github.com/repos/htmlburger/carbon-fields/zipball/00ce47dd3a0c19e4058aa542d1c0e3f51708897e",
+                "reference": "00ce47dd3a0c19e4058aa542d1c0e3f51708897e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "php": ">=5.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.*"
+                "mockery/mockery": "^0.9.7",
+                "phpunit/phpunit": "~4.8"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1.x-dev"
-                }
-            },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Inflector\\": "lib/"
+                "psr-4": {
+                    "Carbon_Fields\\": "core/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "GPL-2.0-only"
             ],
             "authors": [
                 {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
+                    "name": "htmlBurger",
+                    "email": "wordpress@htmlburger.com",
+                    "homepage": "https://htmlburger.com/",
+                    "role": "Developer"
                 },
                 {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
+                    "name": "Miroslav Mitev",
+                    "email": "mmitev.2create@gmail.com",
+                    "role": "Developer"
                 },
                 {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
+                    "name": "Atanas Angelov",
+                    "email": "atanas.angelov.dev@gmail.com",
+                    "role": "Developer"
                 },
                 {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
+                    "name": "Georgi Stoyanov",
+                    "email": "stoyanov.gs@gmail.com",
+                    "role": "Developer"
                 },
                 {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
+                    "name": "Plamen Kostadinov",
+                    "email": "pkostadinov.2create@gmail.com",
+                    "homepage": "http://plasmen.info/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Stanimir Panchev",
+                    "email": "Stan4omir@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Marin Atanasov",
+                    "email": "contact@marinatanasov.com",
+                    "homepage": "http://marinatanasov.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Siyan Panayotov",
+                    "homepage": "http://siyanpanayotov.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Peter Petrov",
+                    "email": "peter.petrov89@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Stanimir Stoyanov",
+                    "email": "stanimir.k.stoyanov@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Kaloyan Ivanov",
+                    "email": "kaloyanxivanov@gmail.com",
+                    "homepage": "http://vilepixels.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Georgi Popov",
+                    "homepage": "http://magadanski.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "German Velchev",
+                    "email": "germozy@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Rashko Petrov",
+                    "email": "brutalenemy666@gmail.com",
+                    "homepage": "http://errorfactory.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Alexander Panayotov",
+                    "email": "alexander.panayotov@gmail.com",
+                    "homepage": "http://alexanderpanayotov.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Viktor Vasilev",
+                    "email": "liberalcho@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Georgi Georgiev",
+                    "email": "george.georgiev96@gmail.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Atanas Vasilev",
+                    "email": "atanasvasilev91@gmail.com",
+                    "role": "Developer"
                 }
             ],
-            "description": "Common String Manipulations with regard to casing and singular/plural rules.",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "inflection",
-                "pluralize",
-                "singularize",
-                "string"
-            ],
+            "description": "WordPress developer-friendly custom fields for post types, taxonomy terms, users, comments, widgets, options and more.",
+            "homepage": "http://carbonfields.net/",
             "support": {
-                "source": "https://github.com/doctrine/inflector/tree/master"
+                "docs": "http://carbonfields.net/docs/",
+                "email": "wordpress@htmlburger.com",
+                "issues": "https://github.com/htmlburger/carbon-fields/issues",
+                "source": "https://github.com/htmlburger/carbon-fields"
             },
-            "time": "2015-11-06T14:35:42+00:00"
+            "time": "2021-07-28T15:53:49+00:00"
         },
         {
             "name": "mexitek/phpcolors",
@@ -183,58 +252,17 @@
             "time": "2022-05-06T21:49:53+00:00"
         },
         {
-            "name": "wenprise/content-types",
-            "version": "2.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/iwillhappy1314/wenprise-content-types.git",
-                "reference": "1997cc679fcefd9efb9cc3266a1223d27ae42035"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/iwillhappy1314/wenprise-content-types/zipball/1997cc679fcefd9efb9cc3266a1223d27ae42035",
-                "reference": "1997cc679fcefd9efb9cc3266a1223d27ae42035",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/inflector": "~1.1.0",
-                "php": ">=5.6"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "WenpriseContentTypes\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Amos Lee",
-                    "email": "iwillhappy1314@gmail.com"
-                }
-            ],
-            "description": "Create WordPress content types and taxonomies more easier.",
-            "support": {
-                "issues": "https://github.com/iwillhappy1314/wenprise-content-types/issues",
-                "source": "https://github.com/iwillhappy1314/wenprise-content-types/tree/2.0.2"
-            },
-            "time": "2022-06-06T04:33:06+00:00"
-        },
-        {
             "name": "wenprise/wordpress-cleaner",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/iwillhappy1314/wordpress-cleaner.git",
-                "reference": "043f13835c92d6bd9f4de7278ffb974c246a21a9"
+                "reference": "9245fa3ca2813a930c221fb2a52506e5a7084058"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/iwillhappy1314/wordpress-cleaner/zipball/043f13835c92d6bd9f4de7278ffb974c246a21a9",
-                "reference": "043f13835c92d6bd9f4de7278ffb974c246a21a9",
+                "url": "https://api.github.com/repos/iwillhappy1314/wordpress-cleaner/zipball/9245fa3ca2813a930c221fb2a52506e5a7084058",
+                "reference": "9245fa3ca2813a930c221fb2a52506e5a7084058",
                 "shasum": ""
             },
             "default-branch": true,
@@ -252,9 +280,9 @@
             "description": "WordPress admin ui cleaner.",
             "support": {
                 "issues": "https://github.com/iwillhappy1314/wordpress-cleaner/issues",
-                "source": "https://github.com/iwillhappy1314/wordpress-cleaner/tree/0.3"
+                "source": "https://github.com/iwillhappy1314/wordpress-cleaner/tree/master"
             },
-            "time": "2022-08-07T15:26:26+00:00"
+            "time": "2022-08-07T16:03:28+00:00"
         }
     ],
     "packages-dev": [
@@ -264,12 +292,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "8b99cfd0a6224d0fc7b223603210d48e36a79966"
+                "reference": "773292d413a97c357a0b49635afd5fdb1d4f314a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/8b99cfd0a6224d0fc7b223603210d48e36a79966",
-                "reference": "8b99cfd0a6224d0fc7b223603210d48e36a79966",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/773292d413a97c357a0b49635afd5fdb1d4f314a",
+                "reference": "773292d413a97c357a0b49635afd5fdb1d4f314a",
                 "shasum": ""
             },
             "conflict": {
@@ -479,7 +507,7 @@
                 "mautic/core": "<4.3|= 2.13.1",
                 "mediawiki/core": ">=1.27,<1.27.6|>=1.29,<1.29.3|>=1.30,<1.30.2|>=1.31,<1.31.9|>=1.32,<1.32.6|>=1.32.99,<1.33.3|>=1.33.99,<1.34.3|>=1.34.99,<1.35",
                 "mezzio/mezzio-swoole": "<3.7|>=4,<4.3",
-                "microweber/microweber": "<1.3",
+                "microweber/microweber": "<1.3.1",
                 "miniorange/miniorange-saml": "<1.4.3",
                 "mittwald/typo3_forum": "<1.2.1",
                 "modx/revolution": "<= 2.8.3-pl|<2.8",
@@ -771,7 +799,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-06T06:06:57+00:00"
+            "time": "2022-08-12T16:04:45+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -987,6 +1015,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "wenprise/wordpress-cleaner": 20,
+        "htmlburger/carbon-fields": 10,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,

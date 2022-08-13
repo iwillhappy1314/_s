@@ -32,11 +32,17 @@ add_action('carbon_fields_register_fields', static function () {
     foreach ($types as $type) {
         Container::make('theme_options', '_s_archive_settings', __('Archive Settings', '_s'))
             ->set_page_parent('edit.php?post_type=' . $type)
+            // ->set_layout('tabbed-vertical')
             ->add_fields([
                 Field::make('image', $type . '_banner_image', __('Cover image', '_s')),
                 Field::make('text', $type . '_banner_text', __('Cover text', '_s')),
                 Field::make('text', $type . '_title', __('Archive Title', '_s')),
                 Field::make('textarea', $type . '_description', __('Archive Description', '_s')),
+            ])->add_fields([
+                Field::make('image', $type . '_banner_image1', __('Cover image', '_s')),
+                Field::make('text', $type . '_banner_text2', __('Cover text', '_s')),
+                Field::make('text', $type . '_title3', __('Archive Title', '_s')),
+                Field::make('textarea', $type . '_description4', __('Archive Description', '_s')),
             ]);
     }
 
