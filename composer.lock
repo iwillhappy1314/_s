@@ -4,8 +4,78 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9707c3051a5bb7462f727f57f38b1f6a",
+    "content-hash": "67a03ff8e77f757bb943ea9b5d2cc4f7",
     "packages": [
+        {
+            "name": "doctrine/inflector",
+            "version": "1.1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/inflector.git",
+                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/90b2128806bfde671b6952ab8bea493942c1fdae",
+                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Common\\Inflector\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "Common String Manipulations with regard to casing and singular/plural rules.",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "inflection",
+                "pluralize",
+                "singularize",
+                "string"
+            ],
+            "support": {
+                "source": "https://github.com/doctrine/inflector/tree/master"
+            },
+            "time": "2015-11-06T14:35:42+00:00"
+        },
         {
             "name": "htmlburger/carbon-fields",
             "version": "v3.4.0-beta.1",
@@ -250,6 +320,78 @@
                 "source": "https://github.com/proteusthemes/wp-customizer-utilities/tree/v2.7.3"
             },
             "time": "2022-05-06T21:49:53+00:00"
+        },
+        {
+            "name": "wenprise/content-types",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/iwillhappy1314/wenprise-content-types.git",
+                "reference": "1db65dc0d13c497af64a10ee9151bce864a84b60"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/iwillhappy1314/wenprise-content-types/zipball/1db65dc0d13c497af64a10ee9151bce864a84b60",
+                "reference": "1db65dc0d13c497af64a10ee9151bce864a84b60",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/inflector": "~1.1.0",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "brianhenryie/strauss": "^0.11.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "strauss": {
+                    "target_directory": "src/Vendor",
+                    "namespace_prefix": "WenpriseContentTypes\\Vendor\\",
+                    "classmap_prefix": "WenpriseContentTypes_Vendor",
+                    "constant_prefix": "WenpriseContentTypes_",
+                    "packages": [],
+                    "override_autoload": [],
+                    "exclude_from_copy": {
+                        "packages": [],
+                        "namespaces": [],
+                        "file_patterns": []
+                    },
+                    "exclude_from_prefix": {
+                        "packages": [],
+                        "namespaces": [],
+                        "file_patterns": [
+                            "/^psr.*$/"
+                        ]
+                    },
+                    "namespace_replacement_patterns": [],
+                    "delete_vendor_files": true
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "WenpriseContentTypes\\": "src/"
+                },
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Amos Lee",
+                    "email": "iwillhappy1314@gmail.com"
+                }
+            ],
+            "description": "Create WordPress content types and taxonomies more easier.",
+            "support": {
+                "issues": "https://github.com/iwillhappy1314/wenprise-content-types/issues",
+                "source": "https://github.com/iwillhappy1314/wenprise-content-types/tree/master"
+            },
+            "time": "2022-08-13T17:51:37+00:00"
         },
         {
             "name": "wenprise/wordpress-cleaner",
@@ -1016,6 +1158,7 @@
     "stability-flags": {
         "wenprise/wordpress-cleaner": 20,
         "htmlburger/carbon-fields": 10,
+        "wenprise/content-types": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,
