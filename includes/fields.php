@@ -78,26 +78,28 @@ add_action('carbon_fields_register_fields', static function ()
     /**
      * 主题设置
      */
-    Container::make('theme_options', '_s_theme_options', __('Theme Options', '_s'))
-             ->set_page_parent('themes.php')
-             ->add_tab(__('General Options', '_s'), [
-                 Field::make('checkbox', 'is_cleanup', __('Clean up useless menus for normal user', '_s')),
-                 Field::make('checkbox', 'deny_modify', __('Deny modify files in backend', '_s')),
-             ])
-             ->add_tab(__('Footer Options', '_s'), [
-                 Field::make('text', 'beian', __('Beian number', '_s')),
-                 Field::make('text', 'copyright', __('Copyright text', '_s')),
-             ])
-             ->add_tab(__('Code Option', '_s'), [
-                 Field::make('header_scripts', 'code_before_head', __('Code before </head>', '_s')),
-                 Field::make('footer_scripts', 'code_before_body', __('Code before </body>', '_s')),
-             ]);
+    global $wenprise_settings_fields;
 
-    global $wenprise_fields;
+    $wenprise_settings_fields = Container::make('theme_options', '_s_theme_options', __('Theme Options', '_s'))
+                                  ->set_page_parent('themes.php')
+                                  ->add_tab(__('General Options', '_s'), [
+                                      Field::make('checkbox', 'is_cleanup', __('Clean up useless menus for normal user', '_s')),
+                                      Field::make('checkbox', 'deny_modify', __('Deny modify files in backend', '_s')),
+                                  ])
+                                  ->add_tab(__('Footer Options', '_s'), [
+                                      Field::make('text', 'beian', __('Beian number', '_s')),
+                                      Field::make('text', 'copyright', __('Copyright text', '_s')),
+                                  ])
+                                  ->add_tab(__('Code Option', '_s'), [
+                                      Field::make('header_scripts', 'code_before_head', __('Code before </head>', '_s')),
+                                      Field::make('footer_scripts', 'code_before_body', __('Code before </body>', '_s')),
+                                  ]);
+
 
     /**
      * 页面通用设置
      */
+    global $wenprise_fields;
     $wenprise_fields = Container::make('post_meta', '_s_content_options', __('Page Settings', '_s'))
                                 ->set_priority('core')
                                 ->add_tab(__('Page Header Style', '_s'), [
