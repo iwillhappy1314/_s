@@ -102,16 +102,18 @@ if ( ! function_exists('_s_has_shortcode')) {
  *
  * @return mixed
  */
-function _s_get_video_id_from_url($video_url)
-{
-    $url_components = parse_url($video_url);
-    parse_str($url_components[ 'query' ], $params);
+if ( ! function_exists('_s_get_video_id_from_url')) {
+    function _s_get_video_id_from_url($video_url)
+    {
+        $url_components = parse_url($video_url);
+        parse_str($url_components[ 'query' ], $params);
 
-    if (isset($params[ 'v' ])) {
-        return $params[ 'v' ];
+        if (isset($params[ 'v' ])) {
+            return $params[ 'v' ];
+        }
+
+        return substr($url_components[ 'path' ], 1);
     }
-
-    return substr($url_components[ 'path' ], 1);
 }
 
 
@@ -123,11 +125,28 @@ function _s_get_video_id_from_url($video_url)
  *
  * @return string
  */
-function _s_get_embed_vide_url($video_url, $is_mobile): string
-{
-    if ($is_mobile) {
-        return 'https://www.youtube.com/embed/' . _s_get_video_id_from_url($video_url);
+if ( ! function_exists('_s_get_embed_vide_url')) {
+    function _s_get_embed_vide_url($video_url, $is_mobile): string
+    {
+        if ($is_mobile) {
+            return 'https://www.youtube.com/embed/' . _s_get_video_id_from_url($video_url);
+        }
+
+        return 'https://www.youtube.com/embed/watch?v=' . _s_get_video_id_from_url($video_url);
     }
 
-    return 'https://www.youtube.com/embed/watch?v=' . _s_get_video_id_from_url($video_url);
+}
+
+
+if ( ! function_exists('_s_get_archive_option')) {
+    function _s_get_archive_option($type, $name, $default = '')
+    {
+        $value = get_option('_' . $type . $name);
+
+        if ( ! $value) {
+            $value = $default;
+        }
+
+        return $value;
+    }
 }

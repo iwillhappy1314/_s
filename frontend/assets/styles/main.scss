@@ -118,12 +118,12 @@ $default-grid-gutter: 2rem;
 
 
 .site__banner{
-    background-color: var(--bg-color);
-    background-image: var(--bg-image);
+    background-color: var(--wprs-bg-color);
+    background-image: var(--wprs-bg-image);
     min-height: 300px;
     @apply flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat;
 
     h1,p,span,a{
-        color: var(--text-color);
+        color: var(--wprs-text-color);
     }
 }
