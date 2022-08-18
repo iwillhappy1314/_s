@@ -32,6 +32,14 @@ add_action('wp_footer', function ()
 }, PHP_INT_MAX);
 
 
+add_action('body_class', function ($classes)
+{
+    $classes[] = str_replace('_', '-', _s_get_page_settings('_page_layouts'));
+
+    return $classes;
+});
+
+
 if ( ! function_exists('_s_submenu_css_class')) {
     /**
      * 导航菜单子菜单添加 CSS 类

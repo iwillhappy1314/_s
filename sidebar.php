@@ -6,8 +6,9 @@
  *
  * @package _s
  */
+$page_layout = _s_get_page_settings('_page_layouts');
 
-if ( ! is_active_sidebar('sidebar-primary') || get_theme_mod('rs_global_layout', 'sidebar-none') === 'sidebar-none') {
+if ( ! is_active_sidebar('sidebar-primary') || $page_layout === 'sidebar_none') {
     return;
 }
 ?>

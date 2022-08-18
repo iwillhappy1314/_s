@@ -70,10 +70,10 @@ ul.products li.product .price ins {
     &.quantity-up:before {
         @apply h-full text-sm flex items-center justify-center;
         font-family: icomoon, sans-serif;
-        content: "\e607"
+        content: "\e9a8"
     }
 
     &.quantity-down:before {
-        content: "\e604"
+        content: "\e9a4"
     }
 }
