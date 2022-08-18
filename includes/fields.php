@@ -50,20 +50,6 @@ add_action('carbon_fields_register_fields', static function ()
 
 
     /**
-     * 文章类型和分类法数据
-     */
-    Container::make('term_meta', '_s_category_settings', __('Category Settings', '_s'))
-             ->where('term_taxonomy', '=', 'category')
-             ->or_where('term_taxonomy', '=', 'post_tag')
-             ->or_where('term_taxonomy', '=', 'handbook')
-             ->add_fields([
-                 Field::make('image', 'banner_image', __('Cover image', '_s')),
-                 Field::make('text', 'banner_text', __('Banner Text', '_s')),
-                 Field::make('text', 'per_page', __('Posts Per Page', '_s')),
-             ]);
-
-
-    /**
      * 案例参数
      */
     Container::make('post_meta', '_s_case_meta', __('Case Data', '_s'))
@@ -81,20 +67,45 @@ add_action('carbon_fields_register_fields', static function ()
     global $wenprise_settings_fields;
 
     $wenprise_settings_fields = Container::make('theme_options', '_s_theme_options', __('Theme Options', '_s'))
-                                  ->set_page_parent('themes.php')
-                                  ->add_tab(__('General Options', '_s'), [
-                                      Field::make('checkbox', 'is_cleanup', __('Clean up useless menus for normal user', '_s')),
-                                      Field::make('checkbox', 'deny_modify', __('Deny modify files in backend', '_s')),
-                                  ])
-                                  ->add_tab(__('Footer Options', '_s'), [
-                                      Field::make('text', 'beian', __('Beian number', '_s')),
-                                      Field::make('text', 'copyright', __('Copyright text', '_s')),
-                                  ])
-                                  ->add_tab(__('Code Option', '_s'), [
-                                      Field::make('header_scripts', 'code_before_head', __('Code before </head>', '_s')),
-                                      Field::make('footer_scripts', 'code_before_body', __('Code before </body>', '_s')),
-                                  ]);
+                                         ->set_page_parent('themes.php')
+                                         ->add_tab(__('General Options', '_s'), [
+                                             Field::make('checkbox', 'is_cleanup', __('Clean up useless menus for normal user', '_s')),
+                                             Field::make('checkbox', 'deny_modify', __('Deny modify files in backend', '_s')),
+                                         ])
+                                         ->add_tab(__('Footer Options', '_s'), [
+                                             Field::make('text', 'beian', __('Beian number', '_s')),
+                                             Field::make('text', 'copyright', __('Copyright text', '_s')),
+                                         ])
+                                         ->add_tab(__('Code Option', '_s'), [
+                                             Field::make('header_scripts', 'code_before_head', __('Code before </head>', '_s')),
+                                             Field::make('footer_scripts', 'code_before_body', __('Code before </body>', '_s')),
+                                         ]);
 
+
+    $page_header_settings = [
+        Field::make('checkbox', 'wprs_disable_page_header', __('Disable Page Header', '_s')),
+        Field::make('text', 'wprs_title', __('Page Title', '_s')),
+        Field::make('color', 'wprs_page_header_text_color', __('Page Header Text Color', '_s')),
+        Field::make('color', 'wprs_page_header_bg_color', __('Page Header Background Color', '_s')),
+        Field::make('image', 'wprs_page_header_bg_image', __('Page Header Background Image', '_s')),
+    ];
+
+    $page_layout_settings = [
+        Field::make('radio_image', 'page_layouts', __('Page Layouts', '_s'))
+             ->set_options([
+                 'sidebar_none'  => _s_assets('dist/images/sidebar-none.png'),
+                 'sidebar_left'  => _s_assets('dist/images/sidebar-left.png'),
+                 'sidebar_right' => _s_assets('dist/images/sidebar-right.png'),
+             ]),
+    ];
+
+
+    /**
+     * 分类方法通用设置
+     */
+    Container::make('term_meta', '_s_category_settings', __('Category Settings', '_s'))
+             ->add_fields($page_header_settings)
+             ->add_fields($page_layout_settings);
 
     /**
      * 页面通用设置
@@ -102,21 +113,8 @@ add_action('carbon_fields_register_fields', static function ()
     global $wenprise_fields;
     $wenprise_fields = Container::make('post_meta', '_s_content_options', __('Page Settings', '_s'))
                                 ->set_priority('core')
-                                ->add_tab(__('Page Header Style', '_s'), [
-                                    Field::make('checkbox', 'wprs_disable_page_header', __('Disable Page Header', '_s')),
-                                    Field::make('text', 'wprs_title', __('Page Title', '_s')),
-                                    Field::make('color', 'wprs_page_header_text_color', __('Page Header Text Color', '_s')),
-                                    Field::make('color', 'wprs_page_header_bg_color', __('Page Header Background Color', '_s')),
-                                    Field::make('image', 'wprs_page_header_bg_image', __('Page Header Background Image', '_s')),
-                                ])
-                                ->add_tab(__('Page Layout', '_s'), [
-                                    Field::make('radio_image', 'page_layouts', __('Page Layouts', '_s'))
-                                         ->set_options([
-                                             'sidebar_none'  => _s_assets('dist/images/sidebar-none.png'),
-                                             'sidebar_left'  => _s_assets('dist/images/sidebar-left.png'),
-                                             'sidebar_right' => _s_assets('dist/images/sidebar-right.png'),
-                                         ]),
-                                ]);
+                                ->add_tab(__('Page Header Style', '_s'), $page_header_settings)
+                                ->add_tab(__('Page Layout', '_s'), $page_layout_settings);
 
 }, 1);
 

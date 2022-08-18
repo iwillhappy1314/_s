@@ -10,6 +10,18 @@
     }
 }
 
+.cf-container-term-meta{
+    .cf-container__tabs{
+        padding: 0;
+        background: none;
+    }
+
+    .cf-container__tabs-item{
+        margin: 0 -1px 0 0;
+    }
+}
+
+
 .postbox,
 .carbon-theme-options {
     &.carbon-box {
@@ -85,108 +97,4 @@
 
 .cf-radio-image .cf-radio__list-item {
     flex: 0 0 auto !important;
-}
-
-.post-type-press,
-.post-type-video {
-    #postbox-container-2 {
-        .postbox {
-            border: 0;
-            box-shadow: none;
-            background: transparent;
-            display: flex;
-            align-items: flex-start;
-
-            & + .postbox {
-                border-top: 1px solid #ddd;
-                padding-top: 12px;
-            }
-        }
-
-        .postbox-header {
-            border: 0;
-            padding-top: 8px;
-            width: 160px;
-            flex-shrink: 0;
-        }
-
-        .hndle {
-            padding: 0;
-            //position: relative;
-            //display: inline-block;
-            //width: auto;
-            //flex-grow: 0;
-            //border-bottom: 2px solid #ccc;
-            //font-size: 16px;
-            //font-weight: 500;
-        }
-
-        .handle-actions {
-            display: none;
-        }
-
-        .inside {
-            padding: 0;
-            flex-grow: 1;
-        }
-
-        #minor-publishing-actions,
-        #misc-publishing-actions {
-            display: none;
-        }
-
-        .csf-metabox {
-            margin: 0;
-
-            .csf-field {
-                padding: 0;
-
-                .csf-fieldset,
-                .csf-title {
-                    width: 100%;
-                    float: none;
-                }
-
-                .csf-title {
-                    margin-bottom: 8px;
-                }
-            }
-        }
-
-        #submitdiv {
-            padding-left: 160px;
-
-            .postbox-header {
-                display: none;
-            }
-        }
-
-        #major-publishing-actions {
-            background: transparent;
-            border: 0;
-        }
-
-        #publishing-action {
-            .button-primary {
-                position: absolute;
-                left: 0;
-            }
-        }
-
-        #delete-action {
-            margin-left: 86px;
-        }
-
-        #advanced-sortables {
-            background: #fff;
-            border: 1px solid #c3c4c7;
-            box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
-            padding: 24px 28px 1px;
-        }
-
-        .closed .inside {
-            display: block !important;
-        }
-    }
-
 }
