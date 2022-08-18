@@ -14,8 +14,10 @@ add_filter('widget_nav_menu_args', '_s_widget_menu_args');
 add_filter('nav_menu_item_title', '_s_render_shortcode_in_menu_title');
 add_filter('nav_menu_item_args', '_s_append_shortcode_to_menu', 10, 3);
 
+add_filter('_s_after_header', '_s_render_page_header', 10, 3);
 
-if (!function_exists('_s_submenu_css_class')) {
+
+if ( ! function_exists('_s_submenu_css_class')) {
     /**
      * 导航菜单子菜单添加 CSS 类
      *
@@ -32,7 +34,7 @@ if (!function_exists('_s_submenu_css_class')) {
 }
 
 
-if (!function_exists('_s_widget_menu_args')) {
+if ( ! function_exists('_s_widget_menu_args')) {
     /**
      * 导航菜单添加 CSS 类
      *
@@ -49,7 +51,7 @@ if (!function_exists('_s_widget_menu_args')) {
 }
 
 
-if (!function_exists('_s_menu_css_class')) {
+if ( ! function_exists('_s_menu_css_class')) {
     /**
      * Add mega menu class to nav menu
      *
@@ -77,7 +79,7 @@ if (!function_exists('_s_menu_css_class')) {
 }
 
 
-if (!function_exists('_s_render_shortcode_in_menu_title')) {
+if ( ! function_exists('_s_render_shortcode_in_menu_title')) {
     /**
      * Render shortcode in menu title
      */
@@ -88,7 +90,7 @@ if (!function_exists('_s_render_shortcode_in_menu_title')) {
 }
 
 
-if (!function_exists('_s_render_mega_menu_content')) {
+if ( ! function_exists('_s_render_mega_menu_content')) {
     /**
      * 渲染自定义到导航菜单内容
      *
@@ -101,7 +103,7 @@ if (!function_exists('_s_render_mega_menu_content')) {
      */
     function _s_render_mega_menu_content($item_output, $item, $depth, $args)
     {
-        $html = '';
+        $html         = '';
         $is_mega_menu = get_post_meta($item->ID, 'is_mega_menu', true);
 
         if ($is_mega_menu) {
@@ -122,12 +124,69 @@ if (!function_exists('_s_render_mega_menu_content')) {
 /**
  * Append shortcode content
  */
-function _s_append_shortcode_to_menu($args, $menu_item, $depth) {
+function _s_append_shortcode_to_menu($args, $menu_item, $depth)
+{
     $is_mega_menu = get_post_meta($menu_item->ID, 'is_mega_menu', true);
 
-    if (!$is_mega_menu && _s_has_shortcode($menu_item)) {
+    if ( ! $is_mega_menu && _s_has_shortcode($menu_item)) {
         $args->after = do_shortcode($menu_item->post_content);
     }
 
     return $args;
+}
+
+
+/**
+ * 显示页面页头
+ *
+ * @return false|void
+ */
+function _s_render_page_header()
+{
+    // Not single / home page / Elementor Page
+    if ( ! is_singular() || is_front_page() || is_home() || get_post_meta(get_queried_object_id(), '_elementor_edit_mode', true) === 'builder') {
+        return false;
+    }
+
+    // WooCommerce functions page
+    if (function_exists('is_account_page')) {
+        if (is_account_page() || is_cart() || is_checkout()) {
+            return false;
+        }
+    }
+
+    // Disabled in page settings
+    $disabled = get_post_meta(get_the_ID(), '_wprs_disable_page_header', true);
+
+    if ($disabled === 'yes') {
+        return false;
+    }
+    ?>
+
+    <style>
+        .site__banner {
+            --wprs-text-color: <?= get_post_meta(get_the_ID(), '_wprs_page_header_text_color', true); ?>;
+            --wprs-bg-color: <?= get_post_meta(get_the_ID(), '_wprs_page_header_bg_color', true); ?>;
+            --wprs-bg-image: url("<?= wp_get_attachment_url(get_post_meta(get_the_ID(), '_wprs_page_header_bg_image', true)); ?>");
+        }
+    </style>
+
+    <div class='site__banner py-8'>
+        <div class='container text-center'>
+            <div class='site__banner--inner'>
+                <div class='date'>
+                    <span class='site__banner--date mb-2'>
+                        <?= get_the_time(get_option('date_format'), get_the_ID()); ?>
+                    </span>
+                </div>
+                <h1 class="text-4xl"><?= wprs_get_page_title(); ?></h1>
+            </div>
+        </div>
+        <div class='breadcrumbs creote'>
+
+        </div>
+    </div>
+
+    <?php
+
 }

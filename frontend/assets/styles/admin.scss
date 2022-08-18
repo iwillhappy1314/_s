@@ -1,4 +1,22 @@
+.postbox {
+    .cf-container__fields {
+        width: calc(100% - 250px);
+    }
+}
+
 .carbon-theme-options {
+    .cf-container__fields {
+        width: calc(100% - 250px);
+    }
+}
+
+.postbox,
+.carbon-theme-options {
+    &.carbon-box {
+        fieldset {
+            background: #fbfbfc;
+        }
+    }
 
     .cf-container__tabs {
         padding: 0;
@@ -10,7 +28,7 @@
         }
 
         @media screen and (min-width: 1360px) {
-            min-width: 300px;
+            width: 200px;
         }
     }
 
@@ -19,22 +37,30 @@
         width: 100%;
         border: 0;
         margin: 0;
-        padding: 10px 12px;
         border-bottom: 1px solid #eee;
 
+        button {
+            width: 100%;
+            padding: 12px;
+            text-align: left;
+            cursor: pointer;
+        }
+
         &:hover {
-            background: #f6f6f6;
+            button {
+                background: #ddd;
+            }
         }
     }
 
     .cf-container__tabs-item--current {
-        background: #eee;
+        background: #ddd;
     }
 
     .cf-container__fields {
         margin: 0;
         border-left: 1px solid #eee;
-        padding: 16px 24px;
+        padding: 8px 24px;
         align-content: flex-start;
 
         @media screen and (min-width: 769px) {
@@ -50,14 +76,16 @@
 }
 
 
-.menu-item-settings .cf-container{
-    .cf-field{
+.menu-item-settings .cf-container {
+    .cf-field {
         border: 0;
         padding: 6px 0;
     }
 }
 
-
+.cf-radio-image .cf-radio__list-item {
+    flex: 0 0 auto !important;
+}
 
 .post-type-press,
 .post-type-video {
@@ -69,7 +97,7 @@
             display: flex;
             align-items: flex-start;
 
-            &+.postbox{
+            & + .postbox {
                 border-top: 1px solid #ddd;
                 padding-top: 12px;
             }
@@ -127,6 +155,7 @@
 
         #submitdiv {
             padding-left: 160px;
+
             .postbox-header {
                 display: none;
             }
@@ -155,7 +184,7 @@
             padding: 24px 28px 1px;
         }
 
-        .closed .inside{
+        .closed .inside {
             display: block !important;
         }
     }

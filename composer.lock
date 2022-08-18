@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0edc8353c93641458bd11dd8282ce384",
+    "content-hash": "76643d5e185c1d35c698a4a20e8b0fe5",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -269,6 +269,159 @@
             "time": "2021-11-26T13:19:08+00:00"
         },
         {
+            "name": "nette/finder",
+            "version": "v2.5.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nette/finder.git",
+                "reference": "64dc25b7929b731e72a1bc84a9e57727f5d5d3e8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nette/finder/zipball/64dc25b7929b731e72a1bc84a9e57727f5d5d3e8",
+                "reference": "64dc25b7929b731e72a1bc84a9e57727f5d5d3e8",
+                "shasum": ""
+            },
+            "require": {
+                "nette/utils": "^2.4 || ^3.0",
+                "php": ">=7.1"
+            },
+            "conflict": {
+                "nette/nette": "<2.2"
+            },
+            "require-dev": {
+                "nette/tester": "^2.0",
+                "phpstan/phpstan": "^0.12",
+                "tracy/tracy": "^2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0-only",
+                "GPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "https://davidgrudl.com"
+                },
+                {
+                    "name": "Nette Community",
+                    "homepage": "https://nette.org/contributors"
+                }
+            ],
+            "description": "🔍 Nette Finder: find files and directories with an intuitive API.",
+            "homepage": "https://nette.org",
+            "keywords": [
+                "filesystem",
+                "glob",
+                "iterator",
+                "nette"
+            ],
+            "support": {
+                "issues": "https://github.com/nette/finder/issues",
+                "source": "https://github.com/nette/finder/tree/v2.5.3"
+            },
+            "time": "2021-12-12T17:43:24+00:00"
+        },
+        {
+            "name": "nette/utils",
+            "version": "v2.5.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nette/utils.git",
+                "reference": "d272f87cd6491377231702b1ccd920b6e981b713"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nette/utils/zipball/d272f87cd6491377231702b1ccd920b6e981b713",
+                "reference": "d272f87cd6491377231702b1ccd920b6e981b713",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "conflict": {
+                "nette/nette": "<2.2"
+            },
+            "require-dev": {
+                "nette/tester": "~2.0",
+                "tracy/tracy": "^2.3"
+            },
+            "suggest": {
+                "ext-gd": "to use Image",
+                "ext-iconv": "to use Strings::webalize() and toAscii()",
+                "ext-intl": "for script transliteration in Strings::webalize() and toAscii()",
+                "ext-json": "to use Nette\\Utils\\Json",
+                "ext-mbstring": "to use Strings::lower() etc...",
+                "ext-xml": "to use Strings::length() etc. when mbstring is not available"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/loader.php"
+                ],
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "https://davidgrudl.com"
+                },
+                {
+                    "name": "Nette Community",
+                    "homepage": "https://nette.org/contributors"
+                }
+            ],
+            "description": "🛠 Nette Utils: lightweight utilities for string & array manipulation, image handling, safe JSON encoding/decoding, validation, slug or strong password generating etc.",
+            "homepage": "https://nette.org",
+            "keywords": [
+                "array",
+                "core",
+                "datetime",
+                "images",
+                "json",
+                "nette",
+                "paginator",
+                "password",
+                "slugify",
+                "string",
+                "unicode",
+                "utf-8",
+                "utility",
+                "validation"
+            ],
+            "support": {
+                "issues": "https://github.com/nette/utils/issues",
+                "source": "https://github.com/nette/utils/tree/v2.5.7"
+            },
+            "time": "2020-12-13T14:12:17+00:00"
+        },
+        {
             "name": "proteusthemes/wp-customizer-utilities",
             "version": "v2.7.3",
             "source": {
@@ -391,6 +544,55 @@
                 "source": "https://github.com/iwillhappy1314/wenprise-content-types/tree/2.0.5"
             },
             "time": "2022-08-13T18:31:35+00:00"
+        },
+        {
+            "name": "wenprise/theme-helper",
+            "version": "2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/iwillhappy1314/wenprise-theme-helper.git",
+                "reference": "2458a02636252b17f7e4d7d9ece92c69a5adfc6b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/iwillhappy1314/wenprise-theme-helper/zipball/2458a02636252b17f7e4d7d9ece92c69a5adfc6b",
+                "reference": "2458a02636252b17f7e4d7d9ece92c69a5adfc6b",
+                "shasum": ""
+            },
+            "require": {
+                "nette/finder": "^2.4",
+                "nette/utils": "^2.4",
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/helpers.php",
+                    "src/conditional.php",
+                    "src/template-tags.php",
+                    "src/data-options.php",
+                    "src/images.php",
+                    "src/languages.php",
+                    "src/deprecated.php"
+                ],
+                "psr-4": []
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Amos Lee",
+                    "email": "iwillhappy1314@gmail.com"
+                }
+            ],
+            "description": "Most used helper functions to develop WordPress theme.",
+            "support": {
+                "issues": "https://github.com/iwillhappy1314/wenprise-theme-helper/issues",
+                "source": "https://github.com/iwillhappy1314/wenprise-theme-helper/tree/2.0.4"
+            },
+            "time": "2022-08-16T19:08:01+00:00"
         },
         {
             "name": "wenprise/wordpress-cleaner",

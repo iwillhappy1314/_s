@@ -23,6 +23,18 @@
 @import "components/wpuf";
 @import "components/fonts";
 
+:root{
+    --wprs-bg-color: #f6f6f6;
+    --wprs-bg-image: url('');
+    --wprs-primary-accent: #229db8;
+    --wprs-secondary-accent: #ff8f20;
+    --wprs-site-bg: #ffffff;
+    --wprs-light-bg: #fbfbfb;
+    --wprs-dark-bg: #011267;
+    --wprs-text-color: #121212;
+    --wprs-text-dark-bg: #ffffff;
+}
+
 .woocommerce-product-search {
     @extend .search-form;
 }
@@ -102,4 +114,16 @@ $default-grid-gutter: 2rem;
     left: 20px;
     color: #999;
     font-size: 16px
+}
+
+
+.site__banner{
+    background-color: var(--bg-color);
+    background-image: var(--bg-image);
+    min-height: 300px;
+    @apply flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat;
+
+    h1,p,span,a{
+        color: var(--text-color);
+    }
 }

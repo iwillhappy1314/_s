@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2022-08-14 02:26+0800\n"
-"PO-Revision-Date: 2022-08-14 02:26+0800\n"
+"POT-Creation-Date: 2022-08-19 00:21+0800\n"
+"PO-Revision-Date: 2022-08-19 00:22+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -67,93 +67,121 @@ msgstr "块内容"
 msgid "Colors and Background"
 msgstr "颜色和背景"
 
-#: includes/fields.php:33
+#: includes/fields.php:35
 msgid "Archive Settings"
 msgstr "存档设置"
 
-#: includes/fields.php:37 includes/fields.php:42 includes/fields.php:58
+#: includes/fields.php:39 includes/fields.php:44 includes/fields.php:60
 msgid "Cover image"
 msgstr "封面图像"
 
-#: includes/fields.php:38 includes/fields.php:43
+#: includes/fields.php:40 includes/fields.php:45
 msgid "Cover text"
 msgstr "封面文字"
 
-#: includes/fields.php:39 includes/fields.php:44
+#: includes/fields.php:41 includes/fields.php:46
 msgid "Archive Title"
 msgstr "存档标题"
 
-#: includes/fields.php:40 includes/fields.php:45
+#: includes/fields.php:42 includes/fields.php:47
 msgid "Archive Description"
 msgstr "存档描述"
 
-#: includes/fields.php:53
+#: includes/fields.php:55
 msgid "Category Settings"
 msgstr "分类设置"
 
-#: includes/fields.php:59
+#: includes/fields.php:61
 msgid "Banner Text"
 msgstr "横幅文本"
 
-#: includes/fields.php:60
+#: includes/fields.php:62
 msgid "Posts Per Page"
 msgstr "每页文章数"
 
-#: includes/fields.php:66
-msgid "Page Settings"
-msgstr "页面设置"
-
-#: includes/fields.php:71
-msgid "Page Layouts"
-msgstr "页面布局"
-
-#: includes/fields.php:82
+#: includes/fields.php:69
 msgid "Case Data"
 msgstr "案例数据"
 
-#: includes/fields.php:87
+#: includes/fields.php:74
 msgid "Demo url"
 msgstr "演示网址"
 
-#: includes/fields.php:94
+#: includes/fields.php:81
 msgid "Theme Options"
 msgstr "主题选项"
 
-#: includes/fields.php:96
+#: includes/fields.php:83
 msgid "General Options"
 msgstr "常规选项"
 
-#: includes/fields.php:97
+#: includes/fields.php:84
 msgid "Clean up useless menus for normal user"
 msgstr "清理后台菜单"
 
-#: includes/fields.php:98
+#: includes/fields.php:85
 msgid "Deny modify files in backend"
 msgstr "禁止在后台修改文件"
 
-#: includes/fields.php:100
+#: includes/fields.php:87
 msgid "Footer Options"
 msgstr "页脚选项"
 
-#: includes/fields.php:101
+#: includes/fields.php:88
 msgid "Beian number"
 msgstr "备案号"
 
-#: includes/fields.php:102
+#: includes/fields.php:89
 msgid "Copyright text"
 msgstr "版权内容"
 
-#: includes/fields.php:104
+#: includes/fields.php:91
 msgid "Code Option"
 msgstr "代码选项"
 
-#: includes/fields.php:105
+#: includes/fields.php:92
 msgid "Code before </head>"
 msgstr "</head> 前代码"
 
-#: includes/fields.php:106
+#: includes/fields.php:93
 msgid "Code before </body>"
 msgstr "</body> 前代码"
+
+#: includes/fields.php:100
+msgid "Page Settings"
+msgstr "页面设置"
+
+#: includes/fields.php:102
+msgid "Page Header Style"
+msgstr "页头样式"
+
+#: includes/fields.php:103
+msgid "Disable Page Header"
+msgstr "禁用页头"
+
+#: includes/fields.php:104
+msgid "Page Title"
+msgstr "页面标题"
+
+#: includes/fields.php:105
+msgid "Page Header Text Color"
+msgstr "页头文字颜色"
+
+#: includes/fields.php:106
+msgid "Page Header Background Color"
+msgstr "页头背景颜色"
+
+#: includes/fields.php:107
+msgid "Page Header Background Image"
+msgstr "页头背景图像"
+
+#: includes/fields.php:109
+msgid "Page Layout"
+msgstr "页面布局"
+
+#: includes/fields.php:111
+msgid "Page Layouts"
+msgstr "页面布局"
 
 #: includes/setup.php:50
 msgid "Primary"

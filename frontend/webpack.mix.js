@@ -30,6 +30,7 @@ mix.sass('assets/styles/main.scss', 'dist/styles').
     sass('assets/styles/products.scss', 'dist/styles').
     sass('assets/styles/review.scss', 'dist/styles').
     sass('assets/styles/woocommerce.scss', 'dist/styles').
+    sass('assets/styles/admin.scss', 'dist/styles').
     tailwind().
     options({
         postCss: [
