@@ -50,15 +50,18 @@ function wprs_get_page_layout_fields($prefix = 'wprs')
 
 add_action('carbon_fields_register_fields', static function ()
 {
-    $types = ['case', 'codex', 'video'];
+    $types = ['post', 'product'];
     $types = apply_filters('wprs_type_archive_support', $types);
 
     /**
      * 分类法存档设置
      */
     foreach ($types as $type) {
+
+        $page_parent = $type === 'post' ? 'edit.php' : 'edit.php?post_type=' . $type;
+
         Container::make('theme_options', '_s_archive_settings', __('Archive Settings', '_s'))
-                 ->set_page_parent('edit.php?post_type=' . $type)
+                 ->set_page_parent($page_parent)
                  ->add_tab(__('Page Header Style', '_s'), wprs_get_page_heading_fields($type))
                  ->add_tab(__('Page Layout', '_s'), wprs_get_page_layout_fields($type));
     }

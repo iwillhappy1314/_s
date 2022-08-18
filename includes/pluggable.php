@@ -14,9 +14,22 @@ add_filter('widget_nav_menu_args', '_s_widget_menu_args');
 add_filter('nav_menu_item_title', '_s_render_shortcode_in_menu_title');
 add_filter('nav_menu_item_args', '_s_append_shortcode_to_menu', 10, 3);
 
+// Page headers
 add_filter('_s_after_header', '_s_render_page_header', 10, 3);
 add_filter('_s_after_header', '_s_render_archive_header', 10, 3);
 add_filter('_s_after_header', '_s_render_taxonomy_header', 10, 3);
+
+// Code in header and footer
+add_action('wp_head', function ()
+{
+    echo get_option('code_before_head');
+}, PHP_INT_MAX);
+
+
+add_action('wp_footer', function ()
+{
+    echo get_option('code_before_body');
+}, PHP_INT_MAX);
 
 
 if ( ! function_exists('_s_submenu_css_class')) {
@@ -146,7 +159,7 @@ function _s_append_shortcode_to_menu($args, $menu_item, $depth)
 function _s_render_page_header()
 {
     // Not single / home page / Elementor Page
-    if ( ! is_singular() || is_front_page() || is_home() || get_post_meta(get_queried_object_id(), '_elementor_edit_mode', true) === 'builder') {
+    if ( ! is_singular() || is_front_page() || is_home() || get_post_meta(get_queried_object_id(), '_elementor_edit_mode', true) === 'builder' || is_shop()) {
         return false;
     }
 
@@ -157,30 +170,30 @@ function _s_render_page_header()
         }
     }
 
-    // Disabled in page settings
-    $disabled = get_post_meta(get_the_ID(), '_wprs_header_disabled', true);
-
-    if ($disabled === 'yes') {
-        return false;
-    }
-
     $post_id   = get_queried_object()->ID;
     $post_type = get_queried_object()->post_type;
 
+    // Disabled in page settings
+    $disabled     = get_post_meta(get_the_ID(), '_wprs_header_disabled', true);
     $text_color   = get_post_meta($post_id, '_wprs_header_text_color', true);
     $bg_color     = get_post_meta($post_id, '_wprs_header_bg_color', true);
     $bg_image     = get_post_meta($post_id, '_wprs_header_bg_image', true);
     $header_title = get_post_meta($post_id, '_wprs_header_title', true);
 
-    if ( ! $header_title) {
-        $header_title = get_the_title();
-    }
-
     // 如果分类方法的各种选项都没有设置，沿用对应文章类型的
     if ( ! $text_color && ! $bg_color && ! $bg_image) {
+        $disabled   = _s_get_archive_option($post_type, '_header_disabled');
         $text_color = _s_get_archive_option($post_type, '_header_text_color');
         $bg_color   = _s_get_archive_option($post_type, '_header_bg_color');
         $bg_image   = _s_get_archive_option($post_type, '_header_bg_image');
+    }
+
+    if ($disabled === 'yes') {
+        return false;
+    }
+
+    if ( ! $header_title) {
+        $header_title = get_the_title();
     }
     ?>
 
@@ -224,7 +237,7 @@ function _s_render_archive_header()
     $post_type = get_queried_object()->name;
 
     // Disabled in page settings
-    $disabled = wprs_get_archive_option($post_type, '_header_disabled');
+    $disabled = _s_get_archive_option($post_type, '_header_disabled');
 
     if ($disabled === 'yes') {
         return false;
@@ -257,6 +270,11 @@ function _s_render_archive_header()
 }
 
 
+/**
+ * 显示分类法项目页头
+ *
+ * @return false|void
+ */
 function _s_render_taxonomy_header()
 {
     if ( ! is_tax()) {
@@ -267,12 +285,7 @@ function _s_render_taxonomy_header()
     $post_type = wprs_get_taxonomy_type();
 
     // Disabled in page settings
-    $disabled = get_term_meta($term_id, '_wprs_header_disabled', true);
-
-    if ($disabled === 'yes') {
-        return false;
-    }
-
+    $disabled     = get_term_meta($term_id, '_wprs_header_disabled', true);
     $text_color   = get_term_meta($term_id, '_wprs_header_text_color', true);
     $bg_color     = get_term_meta($term_id, '_wprs_header_bg_color', true);
     $bg_image     = get_term_meta($term_id, '_wprs_header_bg_image', true);
@@ -280,10 +293,15 @@ function _s_render_taxonomy_header()
 
     // 如果分类方法的各种选项都没有设置，沿用对应文章类型的
     if ( ! $text_color && ! $bg_color && ! $bg_image) {
+        $disabled     = _s_get_archive_option($post_type, '_header_disabled');
         $text_color   = _s_get_archive_option($post_type, '_header_text_color');
         $bg_color     = _s_get_archive_option($post_type, '_header_bg_color');
         $bg_image     = _s_get_archive_option($post_type, '_header_bg_image');
         $header_title = _s_get_archive_option($post_type, '_header_title');
+    }
+
+    if ($disabled === 'yes') {
+        return false;
     }
     ?>
 
