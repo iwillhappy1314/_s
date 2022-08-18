@@ -33,19 +33,19 @@ $default-grid-gutter: 2rem;
     @include clearfix;
 }
 
-.grid {
-    @include grid($default-grid-gutter);
-
-    @screen lg {
-        > .grid__col-3 {
-            @include grid-col(3, $default-grid-gutter);
-        }
-
-        > .grid__col-9 {
-            @include grid-col(9, $default-grid-gutter);
-        }
-    }
-}
+// .grid {
+//     @include grid($default-grid-gutter);
+//
+//     @screen lg {
+//         > .grid__col-3 {
+//             @include grid-col(3, $default-grid-gutter);
+//         }
+//
+//         > .grid__col-9 {
+//             @include grid-col(9, $default-grid-gutter);
+//         }
+//     }
+// }
 
 
 .post-type-archive .site__shop,

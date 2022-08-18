@@ -115,22 +115,22 @@
 }
 
 
-@mixin grid($gap) {
-    display: flex;
-    margin-left: $gap / 2 * -1;
-    margin-right: $gap / 2 * -1;
-}
-
-@mixin grid-col($col, $gap) {
-    $grid-columns: 12;
-    $flex-basis: percentage($col / $grid-columns);
-    $flex-basis: calc( #{$flex-basis} - #{$gap});
-
-    flex: 0 0 $flex-basis;
-    margin-left: $gap / 2;
-    margin-right: $gap / 2;
-    margin-bottom: $gap;
-}
+// @mixin grid($gap) {
+//     display: flex;
+//     margin-left: $gap / 2 * -1;
+//     margin-right: $gap / 2 * -1;
+// }
+//
+// @mixin grid-col($col, $gap) {
+//     $grid-columns: 12;
+//     $flex-basis: percentage($col / $grid-columns);
+//     $flex-basis: calc( #{$flex-basis} - #{$gap});
+//
+//     flex: 0 0 $flex-basis;
+//     margin-left: $gap / 2;
+//     margin-right: $gap / 2;
+//     margin-bottom: $gap;
+// }
 
 @mixin between($min-breakpoint, $max-breakpoint) {
     @media (min-width: $min-breakpoint + 1) and (max-width: $max-breakpoint - 1) {
