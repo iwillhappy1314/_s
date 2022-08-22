@@ -90,6 +90,15 @@ add_action('carbon_fields_register_fields', static function ()
                                              Field::make('checkbox', 'is_cleanup', __('Clean up useless menus for normal user', '_s')),
                                              Field::make('checkbox', 'deny_modify', __('Deny modify files in backend', '_s')),
                                          ])
+                                         ->add_tab(__('Global Style', '_s'), [
+                                             Field::make('color', 'wprs-primary-accent', __('Primary Accent', '_s')),
+                                             Field::make('color', 'wprs-secondary-accent', __('Secondary Accent', '_s')),
+                                             Field::make('color', 'wprs-site-bg', __('Site Background', '_s')),
+                                             Field::make('color', 'wprs-light-bg', __('Light Background', '_s')),
+                                             Field::make('color', 'wprs-dark-bg', __('Dark Background', '_s')),
+                                             Field::make('color', 'wprs-text-color', __('Text Color', '_s')),
+                                             Field::make('color', 'wprs-text-dark-bg', __('Text Dark Background', '_s')),
+                                         ])
                                          ->add_tab(__('Footer Options', '_s'), [
                                              Field::make('text', 'beian', __('Beian number', '_s')),
                                              Field::make('text', 'copyright', __('Copyright text', '_s')),

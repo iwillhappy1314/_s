@@ -47,7 +47,8 @@ if ( ! function_exists('_s_setup')) :
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus([
-            'menu-primary' => esc_html__('Primary', '_s'),
+            'menu-primary' => esc_html__('Primary Menu', '_s'),
+            'menu-footer' => esc_html__('Footer Menu', '_s'),
         ]);
 
         /*
@@ -160,27 +161,5 @@ if ( ! function_exists('_s_widgets_init')) {
             'before_title'  => '<h2 class="widget-title"><span>',
             'after_title'   => '</span></h2>',
         ]);
-    }
-}
-
-
-if ( ! function_exists('_s_elementor_widgets_init')) {
-    function _s_elementor_widgets_init()
-    {
-        if (defined('ELEMENTOR_PATH') && class_exists('Elementor\Widget_Base')) {
-
-            $elementor_instance = \Elementor\Plugin::instance();
-
-            $elementor_instance->elements_manager->add_category(
-                'wenprise-addons',
-                [
-                    'title' => __('_s Addon', 'mld'),
-                    'icon'  => 'fa fa-plug',
-                ]
-            );
-
-            $elementor_instance->widgets_manager->register(new \SpaceName\Elementor\Widgets\ServiceWidgets());
-
-        }
     }
 }

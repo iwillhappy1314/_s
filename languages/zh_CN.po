@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2022-08-19 00:21+0800\n"
-"PO-Revision-Date: 2022-08-19 00:22+0800\n"
+"POT-Creation-Date: 2022-08-22 18:30+0800\n"
+"PO-Revision-Date: 2022-08-22 18:31+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -28,7 +28,7 @@ msgstr "抱歉！此页面不存在。"
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
-msgstr "这里好像什么都没有，试试搜索功能吧"
+msgstr "这里好像什么都没有，试试搜索功能？"
 
 #: comments.php:35
 #, php-format
@@ -67,159 +67,167 @@ msgstr "块内容"
 msgid "Colors and Background"
 msgstr "颜色和背景"
 
-#: includes/fields.php:35
-msgid "Archive Settings"
-msgstr "存档设置"
-
-#: includes/fields.php:39 includes/fields.php:44 includes/fields.php:60
-msgid "Cover image"
-msgstr "封面图像"
-
-#: includes/fields.php:40 includes/fields.php:45
-msgid "Cover text"
-msgstr "封面文字"
-
-#: includes/fields.php:41 includes/fields.php:46
-msgid "Archive Title"
-msgstr "存档标题"
-
-#: includes/fields.php:42 includes/fields.php:47
-msgid "Archive Description"
-msgstr "存档描述"
-
-#: includes/fields.php:55
-msgid "Category Settings"
-msgstr "分类设置"
-
-#: includes/fields.php:61
-msgid "Banner Text"
-msgstr "横幅文本"
-
-#: includes/fields.php:62
-msgid "Posts Per Page"
-msgstr "每页文章数"
-
-#: includes/fields.php:69
-msgid "Case Data"
-msgstr "案例数据"
-
-#: includes/fields.php:74
-msgid "Demo url"
-msgstr "演示网址"
-
-#: includes/fields.php:81
-msgid "Theme Options"
-msgstr "主题选项"
-
-#: includes/fields.php:83
-msgid "General Options"
-msgstr "常规选项"
-
-#: includes/fields.php:84
-msgid "Clean up useless menus for normal user"
-msgstr "清理后台菜单"
-
-#: includes/fields.php:85
-msgid "Deny modify files in backend"
-msgstr "禁止在后台修改文件"
-
-#: includes/fields.php:87
-msgid "Footer Options"
-msgstr "页脚选项"
-
-#: includes/fields.php:88
-msgid "Beian number"
-msgstr "备案号"
-
-#: includes/fields.php:89
-msgid "Copyright text"
-msgstr "版权内容"
-
-#: includes/fields.php:91
-msgid "Code Option"
-msgstr "代码选项"
-
-#: includes/fields.php:92
-msgid "Code before </head>"
-msgstr "</head> 前代码"
-
-#: includes/fields.php:93
-msgid "Code before </body>"
-msgstr "</body> 前代码"
-
-#: includes/fields.php:100
-msgid "Page Settings"
-msgstr "页面设置"
-
-#: includes/fields.php:102
-msgid "Page Header Style"
-msgstr "页头样式"
-
-#: includes/fields.php:103
+#: includes/fields.php:29
 msgid "Disable Page Header"
 msgstr "禁用页头"
 
-#: includes/fields.php:104
+#: includes/fields.php:30
 msgid "Page Title"
 msgstr "页面标题"
 
-#: includes/fields.php:105
+#: includes/fields.php:31
 msgid "Page Header Text Color"
 msgstr "页头文字颜色"
 
-#: includes/fields.php:106
+#: includes/fields.php:32
 msgid "Page Header Background Color"
 msgstr "页头背景颜色"
 
-#: includes/fields.php:107
+#: includes/fields.php:33
 msgid "Page Header Background Image"
 msgstr "页头背景图像"
 
-#: includes/fields.php:109
-msgid "Page Layout"
-msgstr "页面布局"
-
-#: includes/fields.php:111
+#: includes/fields.php:41
 msgid "Page Layouts"
 msgstr "页面布局"
 
-#: includes/setup.php:50
-msgid "Primary"
-msgstr "主要"
+#: includes/fields.php:63
+msgid "Archive Settings"
+msgstr "存档设置"
 
-#: includes/setup.php:96
+#: includes/fields.php:65 includes/fields.php:125
+msgid "Page Header Style"
+msgstr "页头样式"
+
+#: includes/fields.php:66 includes/fields.php:126
+msgid "Page Layout"
+msgstr "页面布局"
+
+#: includes/fields.php:73
+msgid "Case Data"
+msgstr "案例数据"
+
+#: includes/fields.php:78
+msgid "Demo url"
+msgstr "演示网址"
+
+#: includes/fields.php:87
+msgid "Theme Options"
+msgstr "主题选项"
+
+#: includes/fields.php:89
+msgid "General Options"
+msgstr "常规选项"
+
+#: includes/fields.php:90
+msgid "Clean up useless menus for normal user"
+msgstr "清理后台菜单"
+
+#: includes/fields.php:91
+msgid "Deny modify files in backend"
+msgstr "禁止在后台修改文件"
+
+#: includes/fields.php:93
+msgid "Global Style"
+msgstr "全局样式"
+
+#: includes/fields.php:94
+msgid "Primary Accent"
+msgstr "主要颜色"
+
+#: includes/fields.php:95
+msgid "Secondary Accent"
+msgstr "次色调"
+
+#: includes/fields.php:96
+msgid "Site Background"
+msgstr "站点背景"
+
+#: includes/fields.php:97
+msgid "Light Background"
+msgstr "浅色背景"
+
+#: includes/fields.php:98
+msgid "Dark Background"
+msgstr "深色背景"
+
+#: includes/fields.php:99
+msgid "Text Color"
+msgstr "文字颜色"
+
+#: includes/fields.php:100
+msgid "Text Dark Background"
+msgstr "深色文字背景"
+
+#: includes/fields.php:102
+msgid "Footer Options"
+msgstr "页脚选项"
+
+#: includes/fields.php:103
+msgid "Beian number"
+msgstr "备案号"
+
+#: includes/fields.php:104
+msgid "Copyright text"
+msgstr "版权内容"
+
+#: includes/fields.php:106
+msgid "Code Option"
+msgstr "代码选项"
+
+#: includes/fields.php:107
+msgid "Code before </head>"
+msgstr "</head> 前代码"
+
+#: includes/fields.php:108
+msgid "Code before </body>"
+msgstr "</body> 前代码"
+
+#: includes/fields.php:115
+msgid "Category Settings"
+msgstr "分类设置"
+
+#: includes/fields.php:123
+msgid "Page Settings"
+msgstr "页面设置"
+
+#: includes/setup.php:50
+msgid "Primary Menu"
+msgstr "主菜单"
+
+#: includes/setup.php:51
+msgid "Footer Menu"
+msgstr "页脚菜单"
+
+#: includes/setup.php:97
 msgid "Videos"
 msgstr "视频"
 
-#: includes/setup.php:97
+#: includes/setup.php:98
 msgid "Video Tags"
 msgstr "视频标签"
 
-#: includes/setup.php:115
+#: includes/setup.php:116
 msgid "Shortcode"
 msgstr "短代码"
 
-#: includes/setup.php:137
+#: includes/setup.php:138
 msgid "Primary Widgets Area"
 msgstr "主要小工具区域"
 
-#: includes/setup.php:139 includes/setup.php:148 includes/setup.php:157
+#: includes/setup.php:140 includes/setup.php:149 includes/setup.php:158
 #: includes/woocommerce.php:177 includes/woocommerce.php:187
 #: includes/woocommerce.php:197 includes/woocommerce.php:207
 msgid "Add widgets here."
 msgstr "在这里添加小工具。"
 
-#: includes/setup.php:146
+#: includes/setup.php:147
 msgid "Top bar Widgets"
 msgstr "顶部小工具区域"
 
-#: includes/setup.php:155
+#: includes/setup.php:156
 msgid "Footer Widgets Area"
 msgstr "页脚小工具区域"
-
-#: includes/setup.php:177
-msgid "_s Addon"
-msgstr "_s 附加组件"
 
 #: includes/template-tags.php:65
 msgid ", "
@@ -336,6 +344,27 @@ msgstr "优惠券："
 msgid "Update cart"
 msgstr "更新购物车"
 
+#~ msgid "Cover image"
+#~ msgstr "封面图像"
+
+#~ msgid "Cover text"
+#~ msgstr "封面文字"
+
+#~ msgid "Archive Title"
+#~ msgstr "存档标题"
+
+#~ msgid "Archive Description"
+#~ msgstr "存档描述"
+
+#~ msgid "Banner Text"
+#~ msgstr "横幅文本"
+
+#~ msgid "Posts Per Page"
+#~ msgstr "每页文章数"
+
+#~ msgid "_s Addon"
+#~ msgstr "_s 附加组件"
+
 #~ msgid "Menu Type"
 #~ msgstr "菜单类型"
 
@@ -365,9 +394,6 @@ msgstr "更新购物车"
 
 #~ msgid "Single Product Page Settings"
 #~ msgstr "产品详情页面设置"
-
-#~ msgid "Primary color"
-#~ msgstr "主要颜色"
 
 #~ msgid "Show Sidebar"
 #~ msgstr "显示侧边栏"

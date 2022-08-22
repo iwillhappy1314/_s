@@ -74,10 +74,6 @@
 .content {
     &__primary {
         @apply flex-grow w-full;
-
-        @screen lg {
-            @apply order-2;
-        }
     }
 
     &__secondary {
@@ -96,36 +92,42 @@
 }
 
 .sidebar-left {
-    .content {
-        &__secondary {
-            @screen lg {
-                @apply order-1;
-            }
+    .content__primary {
+        @screen lg {
+            @apply order-2;
+        }
+    }
+    .content__secondary {
+        @screen lg {
+            @apply order-1;
         }
     }
 }
 
 
 .sidebar-right {
-    .content {
-        &__secondary {
-            @screen lg {
-                @apply order-3;
-            }
+    .content__primary {
+        @screen lg {
+            @apply order-1;
+        }
+    }
+    .content__secondary {
+        @screen lg {
+            @apply order-3;
         }
     }
 }
 
-body{
-    &.sidebar-left{
+body {
+    &.sidebar-left {
 
     }
 
-    &.sidebar-right{
+    &.sidebar-right {
 
     }
 
-    &.sidebar-none{
+    &.sidebar-none {
 
     }
 }

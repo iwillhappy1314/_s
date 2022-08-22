@@ -61,7 +61,7 @@
     @apply flex flex-wrap w-full;
 
     @screen lg {
-        @apply flex-nowrap;
+        @apply flex-nowrap gap-6;
     }
 }
 

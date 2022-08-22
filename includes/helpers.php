@@ -169,7 +169,11 @@ if ( ! function_exists('_s_get_page_settings')) {
 
         $global_settings = get_option($name);
 
-        if (is_singular()) {
+        $query = get_queried_object();
+
+        // dd($query);
+
+        if (is_singular() || is_single()|| is_page()) {
 
             $post     = get_queried_object();
             $settings = get_post_meta($post->ID, '_wprs' . $name, true);
@@ -178,12 +182,14 @@ if ( ! function_exists('_s_get_page_settings')) {
                 $settings = get_post_meta($post->post_parent, '_wprs' . $name, true);
             }
 
+            return $settings;
+
         } elseif (is_category() || is_tag() || is_tax()) {
 
             $settings = get_post_meta(get_queried_object_id(), '_wprs' . $name, true);
 
             if ( ! $settings) {
-                $settings = _s_get_archive_option(wprs_get_term_post_type(), '_wprs' . $name);
+                $settings = _s_get_archive_option(wprs_get_term_post_type(), $name);
             }
 
         } elseif (is_post_type_archive()) {
