@@ -13,6 +13,7 @@ module.exports = {
         '../header.php',
         '../footer.php',
         '../index.php',
+        '../home.php',
         '../archive.php',
         '../author.php',
         '../search.php',

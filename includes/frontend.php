@@ -27,10 +27,6 @@ function _s_scripts()
     }
 }
 
-
- wp_enqueue_script('wprs-swiper');
-
-
 /**
  * Enqueue scripts and styles in wp-admin
  */
@@ -38,18 +34,3 @@ add_action('admin_enqueue_scripts', function ()
 {
     wp_enqueue_style('_s-admin', _s_assets('dist/styles/admin.css'));
 });
-
-
-/**
- * Enqueue live-reload scripts and styles.
- */
-add_action('wp_footer', function ()
-{
-    if (SCRIPT_DEBUG) {
-        echo '<script id="__bs_script__">//<![CDATA[
-    document.write("<script async src=\'http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.7\'><\/script>".replace("HOST", location.hostname));
-//]]></script>
-';
-    }
-});
-

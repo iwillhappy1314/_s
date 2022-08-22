@@ -159,9 +159,7 @@ add_action('carbon_fields_register_fields', static function ()
                                 ->add_tab(__('Page Header Style', '_s'), wprs_get_page_heading_fields())
                                 ->add_tab(__('Page Layout', '_s'), wprs_get_page_layout_fields());
 
-    $post_type = isset($_GET[ 'post' ]) ? get_post_type($_GET[ 'post' ]) : $_GET[ 'post_type' ];
-
-    if ($post_type === 'page') {
+    if (_s_get_editor_post_type() === 'page') {
         $wenprise_fields->add_tab(__('Content Source', '_s'), [
             Field::make('select', 'wprs_post_type', __('Post Type', '_s'))->set_options(wprs_data_post_types()),
             Field::make('select', 'wprs_taxonomy', __('Taxonomy', '_s'))->set_options(wprs_data_taxonomies()),

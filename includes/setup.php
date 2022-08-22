@@ -163,3 +163,25 @@ if ( ! function_exists('_s_widgets_init')) {
         ]);
     }
 }
+
+
+if ( ! function_exists('_s_elementor_widgets_init')) {
+    function _s_elementor_widgets_init()
+    {
+        if (defined('ELEMENTOR_PATH') && class_exists('Elementor\Widget_Base')) {
+
+            $elementor_instance = \Elementor\Plugin::instance();
+
+            $elementor_instance->elements_manager->add_category(
+                'wenprise-addons',
+                [
+                    'title' => __('Foreign Language Press Addon', 'mld'),
+                    'icon'  => 'fa fa-plug',
+                ]
+            );
+
+            $elementor_instance->widgets_manager->register(new \SpaceName\Elementor\Widgets\ServiceWidgets());
+
+        }
+    }
+}

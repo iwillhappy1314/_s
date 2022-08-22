@@ -173,7 +173,7 @@ if ( ! function_exists('_s_get_page_settings')) {
 
         // dd($query);
 
-        if (is_singular() || is_single()|| is_page()) {
+        if (is_singular() || is_single() || is_page()) {
 
             $post     = get_queried_object();
             $settings = get_post_meta($post->ID, '_wprs' . $name, true);
@@ -214,3 +214,22 @@ if ( ! function_exists('_s_get_page_settings')) {
         return $settings;
     }
 }
+
+
+function _s_get_editor_post_type()
+{
+    global $pagenow;
+
+    if ($pagenow === 'post.php') {
+        $post_type = isset($_GET[ 'post' ]) ? get_post_type($_GET[ 'post' ]) : $_GET[ 'post_type' ];
+
+        if ( ! $post_type) {
+            $post_type = $_POST[ 'post_type' ];
+        }
+
+        return $post_type;
+    }
+
+    return false;
+}
+
