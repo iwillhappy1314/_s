@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2022-08-22 18:30+0800\n"
-"PO-Revision-Date: 2022-08-22 18:31+0800\n"
+"POT-Creation-Date: 2022-08-22 23:04+0800\n"
+"PO-Revision-Date: 2022-08-22 23:04+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -72,122 +72,130 @@ msgid "Disable Page Header"
 msgstr "禁用页头"
 
 #: includes/fields.php:30
-msgid "Page Title"
-msgstr "页面标题"
-
-#: includes/fields.php:31
 msgid "Page Header Text Color"
 msgstr "页头文字颜色"
 
-#: includes/fields.php:32
+#: includes/fields.php:31
 msgid "Page Header Background Color"
 msgstr "页头背景颜色"
 
-#: includes/fields.php:33
+#: includes/fields.php:32
 msgid "Page Header Background Image"
 msgstr "页头背景图像"
 
+#: includes/fields.php:40
+msgid "Page Title"
+msgstr "页面标题"
+
 #: includes/fields.php:41
+msgid "Page Description"
+msgstr "页面摘要"
+
+#: includes/fields.php:49
 msgid "Page Layouts"
 msgstr "页面布局"
 
-#: includes/fields.php:63
+#: includes/fields.php:71
 msgid "Archive Settings"
 msgstr "存档设置"
 
-#: includes/fields.php:65 includes/fields.php:125
+#: includes/fields.php:73 includes/fields.php:134
+msgid "Page Content"
+msgstr "页面内容"
+
+#: includes/fields.php:74 includes/fields.php:135
 msgid "Page Header Style"
 msgstr "页头样式"
 
-#: includes/fields.php:66 includes/fields.php:126
+#: includes/fields.php:75 includes/fields.php:136
 msgid "Page Layout"
 msgstr "页面布局"
 
-#: includes/fields.php:73
+#: includes/fields.php:82
 msgid "Case Data"
 msgstr "案例数据"
 
-#: includes/fields.php:78
+#: includes/fields.php:87
 msgid "Demo url"
 msgstr "演示网址"
 
-#: includes/fields.php:87
+#: includes/fields.php:96
 msgid "Theme Options"
 msgstr "主题选项"
 
-#: includes/fields.php:89
+#: includes/fields.php:98
 msgid "General Options"
 msgstr "常规选项"
 
-#: includes/fields.php:90
+#: includes/fields.php:99
 msgid "Clean up useless menus for normal user"
 msgstr "清理后台菜单"
 
-#: includes/fields.php:91
+#: includes/fields.php:100
 msgid "Deny modify files in backend"
 msgstr "禁止在后台修改文件"
 
-#: includes/fields.php:93
+#: includes/fields.php:102
 msgid "Global Style"
 msgstr "全局样式"
 
-#: includes/fields.php:94
+#: includes/fields.php:103
 msgid "Primary Accent"
 msgstr "主要颜色"
 
-#: includes/fields.php:95
+#: includes/fields.php:104
 msgid "Secondary Accent"
 msgstr "次色调"
 
-#: includes/fields.php:96
+#: includes/fields.php:105
 msgid "Site Background"
 msgstr "站点背景"
 
-#: includes/fields.php:97
+#: includes/fields.php:106
 msgid "Light Background"
 msgstr "浅色背景"
 
-#: includes/fields.php:98
+#: includes/fields.php:107
 msgid "Dark Background"
 msgstr "深色背景"
 
-#: includes/fields.php:99
+#: includes/fields.php:108
 msgid "Text Color"
 msgstr "文字颜色"
 
-#: includes/fields.php:100
+#: includes/fields.php:109
 msgid "Text Dark Background"
 msgstr "深色文字背景"
 
-#: includes/fields.php:102
+#: includes/fields.php:111
 msgid "Footer Options"
 msgstr "页脚选项"
 
-#: includes/fields.php:103
+#: includes/fields.php:112
 msgid "Beian number"
 msgstr "备案号"
 
-#: includes/fields.php:104
+#: includes/fields.php:113
 msgid "Copyright text"
 msgstr "版权内容"
 
-#: includes/fields.php:106
+#: includes/fields.php:115
 msgid "Code Option"
 msgstr "代码选项"
 
-#: includes/fields.php:107
+#: includes/fields.php:116
 msgid "Code before </head>"
 msgstr "</head> 前代码"
 
-#: includes/fields.php:108
+#: includes/fields.php:117
 msgid "Code before </body>"
 msgstr "</body> 前代码"
 
-#: includes/fields.php:115
+#: includes/fields.php:124
 msgid "Category Settings"
 msgstr "分类设置"
 
-#: includes/fields.php:123
+#: includes/fields.php:132
 msgid "Page Settings"
 msgstr "页面设置"
 
@@ -352,9 +360,6 @@ msgstr "更新购物车"
 
 #~ msgid "Archive Title"
 #~ msgstr "存档标题"
-
-#~ msgid "Archive Description"
-#~ msgstr "存档描述"
 
 #~ msgid "Banner Text"
 #~ msgstr "横幅文本"

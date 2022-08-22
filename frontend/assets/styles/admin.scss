@@ -1,12 +1,14 @@
-.postbox {
-    .cf-container__fields {
-        width: calc(100% - 250px);
+@media screen and (min-width: 1360px) {
+    .postbox {
+        .cf-container__fields {
+            width: calc(100% - 250px);
+        }
     }
-}
 
-.carbon-theme-options {
-    .cf-container__fields {
-        width: calc(100% - 250px);
+    .carbon-theme-options {
+        .cf-container__fields {
+            width: calc(100% - 250px);
+        }
     }
 }
 
@@ -34,7 +36,7 @@
         padding: 0;
         border-bottom: 0;
 
-        @media screen and (min-width: 769px) {
+        @media screen and (min-width: 1360px) {
             float: left;
             min-height: 500px;
         }
@@ -46,16 +48,21 @@
 
     .cf-container__tabs-item {
         flex-grow: 1;
-        width: 100%;
         border: 0;
         margin: 0;
         border-bottom: 1px solid #eee;
 
-        button {
+        button{
             width: 100%;
-            padding: 12px;
-            text-align: left;
-            cursor: pointer;
+        }
+
+        @media screen and (min-width: 1360px) {
+            width: 100%;
+            button {
+                padding: 12px;
+                text-align: left;
+                cursor: pointer;
+            }
         }
 
         &:hover {
@@ -75,7 +82,7 @@
         padding: 8px 24px;
         align-content: flex-start;
 
-        @media screen and (min-width: 769px) {
+        @media screen and (min-width: 1360px) {
             float: left;
             min-height: 500px;
         }
@@ -87,6 +94,9 @@
     }
 }
 
+.cf-container .cf-field+.cf-field.cf-field--has-width{
+    border-top-width: 0;
+}
 
 .menu-item-settings .cf-container {
     .cf-field {

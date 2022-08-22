@@ -27,11 +27,20 @@ function wprs_get_page_heading_fields($prefix = 'wprs')
 {
     return [
         Field::make('checkbox', ($prefix ?? 'wprs') . '_header_disabled', __('Disable Page Header', '_s')),
-        Field::make('text', ($prefix ?? 'wprs') . '_header_title', __('Page Title', '_s')),
-        Field::make('textarea', ($prefix ?? 'wprs') . '_header_description', __('Page Description', '_s')),
         Field::make('color', ($prefix ?? 'wprs') . '_header_text_color', __('Page Header Text Color', '_s')),
         Field::make('color', ($prefix ?? 'wprs') . '_header_bg_color', __('Page Header Background Color', '_s')),
         Field::make('image', ($prefix ?? 'wprs') . '_header_bg_image', __('Page Header Background Image', '_s')),
+    ];
+}
+
+
+function wprs_get_page_content_fields($prefix = 'wprs')
+{
+    return [
+        Field::make('image', ($prefix ?? 'wprs') . '_thumbnail', __('Page Thumbnail', '_s'))->set_width(20),
+        Field::make('media_gallery', ($prefix ?? 'wprs') . '_gallery', __('Page Gallery', '_s'))->set_width(80),
+        Field::make('text', ($prefix ?? 'wprs') . '_title', __('Page Title', '_s')),
+        Field::make('textarea', ($prefix ?? 'wprs') . '_description', __('Page Description', '_s')),
     ];
 }
 
@@ -63,6 +72,7 @@ add_action('carbon_fields_register_fields', static function ()
 
         Container::make('theme_options', '_s_archive_settings', __('Archive Settings', '_s'))
                  ->set_page_parent($page_parent)
+                 ->add_tab(__('Page Content', '_s'), wprs_get_page_content_fields($type))
                  ->add_tab(__('Page Header Style', '_s'), wprs_get_page_heading_fields($type))
                  ->add_tab(__('Page Layout', '_s'), wprs_get_page_layout_fields($type));
     }
@@ -123,6 +133,7 @@ add_action('carbon_fields_register_fields', static function ()
     global $wenprise_fields;
     $wenprise_fields = Container::make('post_meta', '_s_content_options', __('Page Settings', '_s'))
                                 ->set_priority('core')
+                                ->add_tab(__('Page Content', '_s'), wprs_get_page_content_fields())
                                 ->add_tab(__('Page Header Style', '_s'), wprs_get_page_heading_fields())
                                 ->add_tab(__('Page Layout', '_s'), wprs_get_page_layout_fields());
 
@@ -160,4 +171,7 @@ add_action('carbon_fields_post_meta_container_saved', function ($post_id, $conta
         'ID'           => $post_id,
         'post_excerpt' => carbon_get_post_meta($post_id, 'wprs_header_description'),
     ]);
+
+    update_post_meta($post_id, '_thumbnail_id', carbon_get_post_meta($post_id, 'wprs_thumbnail'));
+
 }, 10, 2);
