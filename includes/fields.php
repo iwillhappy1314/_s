@@ -39,8 +39,8 @@ function wprs_get_page_heading_fields($prefix = 'wprs')
 function wprs_get_page_content_fields($prefix = 'wprs')
 {
     $fields = [
-        Field::make('image', ($prefix ?? 'wprs') . '_thumbnail', __('Content Thumbnail', '_s'))->set_width(20),
-        Field::make('media_gallery', ($prefix ?? 'wprs') . '_gallery', __('Content Gallery', '_s'))->set_width(80),
+        Field::make('image', 'thumbnail_id', __('Content Thumbnail', '_s'))->set_width(20),
+        Field::make('media_gallery', 'gallery', __('Content Gallery', '_s'))->set_width(80),
         Field::make('text', ($prefix ?? 'wprs') . '_title', __('Content Title', '_s')),
         Field::make('textarea', ($prefix ?? 'wprs') . '_description', __('Content Description', '_s')),
         Field::make('text', ($prefix ?? 'wprs') . '_link', __('Content Link', '_s')),
@@ -86,18 +86,6 @@ add_action('carbon_fields_register_fields', static function ()
                  ->add_tab(__('Page Header Style', '_s'), wprs_get_page_heading_fields($type))
                  ->add_tab(__('Page Layout', '_s'), wprs_get_page_layout_fields($type));
     }
-
-
-    /**
-     * 案例参数
-     */
-    Container::make('post_meta', '_s_case_meta', __('Case Data', '_s'))
-             ->where('post_type', '=', 'product')
-             ->set_context('side')
-             ->set_priority('low')
-             ->add_fields([
-                 Field::make('text', 'link', __('Demo url', '_s')),
-             ]);
 
 
     /**
@@ -203,7 +191,5 @@ add_action('carbon_fields_post_meta_container_saved', function ($post_id, $conta
         'ID'           => $post_id,
         'post_excerpt' => carbon_get_post_meta($post_id, 'wprs_header_description'),
     ]);
-
-    update_post_meta($post_id, '_thumbnail_id', carbon_get_post_meta($post_id, 'wprs_thumbnail'));
 
 }, 10, 2);

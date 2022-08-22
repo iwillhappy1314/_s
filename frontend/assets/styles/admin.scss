@@ -23,6 +23,13 @@
     }
 }
 
+.cf-container .cf-field{
+    border: 0 !important;
+    .cf-field__head{
+        border-top: 1px solid #eee;
+        padding-top: 8px;
+    }
+}
 
 .postbox,
 .carbon-theme-options {
@@ -89,13 +96,8 @@
     }
 
     .cf-container .cf-field {
-        padding: 16px 0;
         border-right: 0;
     }
-}
-
-.cf-container .cf-field.cf-field--has-width {
-    border-top-width: 1px !important;
 }
 
 .menu-item-settings .cf-container {
@@ -114,8 +116,4 @@
     .cf-field {
         padding: 12px !important;
     }
-}
-
-.cf-field--has-width + .cf-field--has-width {
-    padding-left: 16px !important;
 }
