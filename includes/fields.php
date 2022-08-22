@@ -25,29 +25,33 @@ add_action('after_setup_theme', static function ()
 
 function wprs_get_page_heading_fields($prefix = 'wprs')
 {
-    return [
+    $fields = [
         Field::make('checkbox', ($prefix ?? 'wprs') . '_header_disabled', __('Disable Page Header', '_s')),
         Field::make('color', ($prefix ?? 'wprs') . '_header_text_color', __('Page Header Text Color', '_s')),
         Field::make('color', ($prefix ?? 'wprs') . '_header_bg_color', __('Page Header Background Color', '_s')),
         Field::make('image', ($prefix ?? 'wprs') . '_header_bg_image', __('Page Header Background Image', '_s')),
     ];
+
+    return apply_filters('wprs_heading_fields', $fields);
 }
 
 
 function wprs_get_page_content_fields($prefix = 'wprs')
 {
-    return [
+    $fields = [
         Field::make('image', ($prefix ?? 'wprs') . '_thumbnail', __('Page Thumbnail', '_s'))->set_width(20),
         Field::make('media_gallery', ($prefix ?? 'wprs') . '_gallery', __('Page Gallery', '_s'))->set_width(80),
         Field::make('text', ($prefix ?? 'wprs') . '_title', __('Page Title', '_s')),
         Field::make('textarea', ($prefix ?? 'wprs') . '_description', __('Page Description', '_s')),
     ];
+
+    return apply_filters('wprs_page_content_fields', $fields);
 }
 
 
 function wprs_get_page_layout_fields($prefix = 'wprs')
 {
-    return [
+    $fields = [
         Field::make('radio_image', ($prefix ?? 'wprs') . '_page_layouts', __('Page Layouts', '_s'))
              ->set_options([
                  'sidebar_none'  => _s_assets('dist/images/sidebar-none.png'),
@@ -55,6 +59,8 @@ function wprs_get_page_layout_fields($prefix = 'wprs')
                  'sidebar_right' => _s_assets('dist/images/sidebar-right.png'),
              ]),
     ];
+
+    return apply_filters('wprs_layout_fields', $fields);
 }
 
 
@@ -126,6 +132,18 @@ add_action('carbon_fields_register_fields', static function ()
     Container::make('term_meta', '_s_category_settings', __('Category Settings', '_s'))
              ->add_fields(wprs_get_page_heading_fields())
              ->add_fields(wprs_get_page_layout_fields());
+
+    // add_filter('wprs_page_content_fields', function ($fields)
+    // {
+    //     $fields[] = Field::make('complex', 'features', __('Features'))
+    //                      ->add_fields([
+    //                          Field::make('image', 'photo', __('Feature Image'))->set_width(33),
+    //                          Field::make('text', 'title', __('Feature Title'))->set_width(33),
+    //                          Field::make('textarea', 'description', __('Feature Description'))->set_width(33),
+    //                      ]);
+    //
+    //     return $fields;
+    // });
 
     /**
      * 页面通用设置
