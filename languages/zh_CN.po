@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2022-08-22 23:04+0800\n"
-"PO-Revision-Date: 2022-08-22 23:04+0800\n"
+"POT-Creation-Date: 2022-08-23 00:04+0800\n"
+"PO-Revision-Date: 2022-08-23 00:04+0800\n"
 "Last-Translator: Amos Lee <iwillhappy1314@gmail.com>\n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -83,121 +83,169 @@ msgstr "页头背景颜色"
 msgid "Page Header Background Image"
 msgstr "页头背景图像"
 
-#: includes/fields.php:40
-msgid "Page Title"
-msgstr "页面标题"
+#: includes/fields.php:42
+msgid "Content Thumbnail"
+msgstr "缩略图"
 
-#: includes/fields.php:41
-msgid "Page Description"
-msgstr "页面摘要"
+#: includes/fields.php:43
+msgid "Content Gallery"
+msgstr "相册"
 
-#: includes/fields.php:49
+#: includes/fields.php:44
+msgid "Content Title"
+msgstr "内容标题"
+
+#: includes/fields.php:45
+msgid "Content Description"
+msgstr "内容摘要"
+
+#: includes/fields.php:46
+msgid "Content Link"
+msgstr "内容链接"
+
+#: includes/fields.php:47
+msgid "Form Shortcode"
+msgstr "表单短代码"
+
+#: includes/fields.php:57
 msgid "Page Layouts"
 msgstr "页面布局"
 
-#: includes/fields.php:71
+#: includes/fields.php:81
 msgid "Archive Settings"
 msgstr "存档设置"
 
-#: includes/fields.php:73 includes/fields.php:134
+#: includes/fields.php:83 includes/fields.php:156
 msgid "Page Content"
 msgstr "页面内容"
 
-#: includes/fields.php:74 includes/fields.php:135
+#: includes/fields.php:84 includes/fields.php:157
 msgid "Page Header Style"
 msgstr "页头样式"
 
-#: includes/fields.php:75 includes/fields.php:136
+#: includes/fields.php:85 includes/fields.php:158
 msgid "Page Layout"
 msgstr "页面布局"
 
-#: includes/fields.php:82
+#: includes/fields.php:92
 msgid "Case Data"
 msgstr "案例数据"
 
-#: includes/fields.php:87
+#: includes/fields.php:97
 msgid "Demo url"
 msgstr "演示网址"
 
-#: includes/fields.php:96
+#: includes/fields.php:106
 msgid "Theme Options"
 msgstr "主题选项"
 
-#: includes/fields.php:98
+#: includes/fields.php:108
 msgid "General Options"
 msgstr "常规选项"
 
-#: includes/fields.php:99
+#: includes/fields.php:109
 msgid "Clean up useless menus for normal user"
 msgstr "清理后台菜单"
 
-#: includes/fields.php:100
+#: includes/fields.php:110
 msgid "Deny modify files in backend"
 msgstr "禁止在后台修改文件"
 
-#: includes/fields.php:102
+#: includes/fields.php:112
 msgid "Global Style"
 msgstr "全局样式"
 
-#: includes/fields.php:103
+#: includes/fields.php:113
 msgid "Primary Accent"
 msgstr "主要颜色"
 
-#: includes/fields.php:104
+#: includes/fields.php:114
 msgid "Secondary Accent"
 msgstr "次色调"
 
-#: includes/fields.php:105
+#: includes/fields.php:115
 msgid "Site Background"
 msgstr "站点背景"
 
-#: includes/fields.php:106
+#: includes/fields.php:116
 msgid "Light Background"
 msgstr "浅色背景"
 
-#: includes/fields.php:107
+#: includes/fields.php:117
 msgid "Dark Background"
 msgstr "深色背景"
 
-#: includes/fields.php:108
+#: includes/fields.php:118
 msgid "Text Color"
 msgstr "文字颜色"
 
-#: includes/fields.php:109
+#: includes/fields.php:119
 msgid "Text Dark Background"
 msgstr "深色文字背景"
 
-#: includes/fields.php:111
+#: includes/fields.php:121
 msgid "Footer Options"
 msgstr "页脚选项"
 
-#: includes/fields.php:112
+#: includes/fields.php:122
 msgid "Beian number"
 msgstr "备案号"
 
-#: includes/fields.php:113
+#: includes/fields.php:123
 msgid "Copyright text"
 msgstr "版权内容"
 
-#: includes/fields.php:115
+#: includes/fields.php:125
 msgid "Code Option"
 msgstr "代码选项"
 
-#: includes/fields.php:116
+#: includes/fields.php:126
 msgid "Code before </head>"
 msgstr "</head> 前代码"
 
-#: includes/fields.php:117
+#: includes/fields.php:127
 msgid "Code before </body>"
 msgstr "</body> 前代码"
 
-#: includes/fields.php:124
+#: includes/fields.php:134
 msgid "Category Settings"
 msgstr "分类设置"
 
-#: includes/fields.php:132
+#: includes/fields.php:154
 msgid "Page Settings"
 msgstr "页面设置"
+
+#: includes/fields.php:163
+msgid "Content Source"
+msgstr "内容来源"
+
+#: includes/fields.php:164
+msgid "Post Type"
+msgstr "文章类型"
+
+#: includes/fields.php:165
+msgid "Taxonomy"
+msgstr "分类方法"
+
+#: includes/fields.php:166
+msgid "Term"
+msgstr "分类项目"
+
+#: includes/fields.php:167
+msgid "Order By"
+msgstr "排序方式"
+
+#: includes/fields.php:167
+msgid "Menu Order"
+msgstr "菜单顺序"
+
+#: includes/fields.php:167
+msgid "Post Date"
+msgstr "发布日期"
+
+#: includes/fields.php:168
+msgid "Order"
+msgstr "排序方向"
 
 #: includes/setup.php:50
 msgid "Primary Menu"
@@ -352,6 +400,12 @@ msgstr "优惠券："
 msgid "Update cart"
 msgstr "更新购物车"
 
+#~ msgid "Page Title"
+#~ msgstr "页面标题"
+
+#~ msgid "Page Link"
+#~ msgstr "页面链接"
+
 #~ msgid "Cover image"
 #~ msgstr "封面图像"
 
@@ -369,9 +423,6 @@ msgstr "更新购物车"
 
 #~ msgid "_s Addon"
 #~ msgstr "_s 附加组件"
-
-#~ msgid "Menu Type"
-#~ msgstr "菜单类型"
 
 #~ msgid "Normal"
 #~ msgstr "常规"

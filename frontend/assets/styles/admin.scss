@@ -94,8 +94,8 @@
     }
 }
 
-.cf-container .cf-field+.cf-field.cf-field--has-width{
-    border-top-width: 0;
+.cf-container .cf-field.cf-field--has-width{
+    border-top-width: 1px !important;
 }
 
 .menu-item-settings .cf-container {

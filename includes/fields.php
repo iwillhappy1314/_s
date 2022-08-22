@@ -39,10 +39,14 @@ function wprs_get_page_heading_fields($prefix = 'wprs')
 function wprs_get_page_content_fields($prefix = 'wprs')
 {
     $fields = [
-        Field::make('image', ($prefix ?? 'wprs') . '_thumbnail', __('Page Thumbnail', '_s'))->set_width(20),
-        Field::make('media_gallery', ($prefix ?? 'wprs') . '_gallery', __('Page Gallery', '_s'))->set_width(80),
-        Field::make('text', ($prefix ?? 'wprs') . '_title', __('Page Title', '_s')),
-        Field::make('textarea', ($prefix ?? 'wprs') . '_description', __('Page Description', '_s')),
+        Field::make('image', ($prefix ?? 'wprs') . '_thumbnail', __('Content Thumbnail', '_s'))->set_width(20),
+        Field::make('media_gallery', ($prefix ?? 'wprs') . '_gallery', __('Content Gallery', '_s'))->set_width(80),
+        Field::make('text', ($prefix ?? 'wprs') . '_title', __('Content Title', '_s')),
+        Field::make('textarea', ($prefix ?? 'wprs') . '_description', __('Content Description', '_s')),
+        Field::make('text', ($prefix ?? 'wprs') . '_link', __('Content Link', '_s')),
+        Field::make('text', ($prefix ?? 'wprs') . '_form_short_code', __('Form Shortcode', '_s')),
+        Field::make('file', ($prefix ?? 'wprs') . '_video_file', __('Video File', '_s'))->set_width(20),
+        Field::make('textarea', ($prefix ?? 'wprs') . '_video_link', __('Embed Video Link', '_s'))->set_width(80),
     ];
 
     return apply_filters('wprs_page_content_fields', $fields);
@@ -154,6 +158,18 @@ add_action('carbon_fields_register_fields', static function ()
                                 ->add_tab(__('Page Content', '_s'), wprs_get_page_content_fields())
                                 ->add_tab(__('Page Header Style', '_s'), wprs_get_page_heading_fields())
                                 ->add_tab(__('Page Layout', '_s'), wprs_get_page_layout_fields());
+
+    $post_type = isset($_GET[ 'post' ]) ? get_post_type($_GET[ 'post' ]) : $_GET[ 'post_type' ];
+
+    if ($post_type === 'page') {
+        $wenprise_fields->add_tab(__('Content Source', '_s'), [
+            Field::make('select', 'wprs_post_type', __('Post Type', '_s'))->set_options(wprs_data_post_types()),
+            Field::make('select', 'wprs_taxonomy', __('Taxonomy', '_s'))->set_options(wprs_data_taxonomies()),
+            Field::make('text', 'wprs_term', __('Term', '_s')),
+            Field::make('select', 'wprs_order_by', __('Order By', '_s'))->set_options(['menu_order' => __('Menu Order', '_s'), 'post_date' => __('Post Date', '_s')]),
+            Field::make('select', 'wprs_order', __('Order', '_s'))->set_options(['DESC', 'ASC']),
+        ], 2);
+    }
 
 }, 1);
 
