@@ -153,3 +153,11 @@ if (class_exists('CSF')) {
         ],
     ]);
 }
+
+add_action('carbon_fields_post_meta_container_saved', function ($post_id, $container)
+{
+    wp_update_post([
+        'ID'           => $post_id,
+        'post_excerpt' => carbon_get_post_meta($post_id, 'wprs_header_description'),
+    ]);
+}, 10, 2);

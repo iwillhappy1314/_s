@@ -136,11 +136,17 @@ $cleaner->remove_meta_box('e-dashboard-overview', 'dashboard', 'normal')
         ->remove_meta_box('dashboard_primary', 'dashboard', 'normal')
         ->remove_meta_box('dashboard_right_now', 'dashboard', 'normal')
         ->remove_meta_box('revisionsdiv', 'post', 'normal')
+        ->remove_meta_box('revisionsdiv', 'page', 'normal')
         ->remove_meta_box('commentstatusdiv', 'post', 'normal')
+        ->remove_meta_box('commentstatusdiv', 'page', 'normal')
+        ->remove_meta_box('commentsdiv', 'page', 'normal')
         ->remove_meta_box('trackbacksdiv', 'post', 'normal')
         ->remove_meta_box('postcustom', 'post', 'normal')
+        ->remove_meta_box('postcustom', 'page', 'normal')
         ->remove_meta_box('slugdiv', 'post', 'normal')
+        ->remove_meta_box('slugdiv', 'page', 'normal')
         ->remove_meta_box('authordiv', 'post', 'normal')
+        ->remove_meta_box('authordiv', 'page', 'normal')
         ->remove_meta_box('themeisle', 'dashboard', 'normal');
 
 //Remove admin bar links
