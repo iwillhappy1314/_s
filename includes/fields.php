@@ -28,6 +28,7 @@ function wprs_get_page_heading_fields($prefix = 'wprs')
     return [
         Field::make('checkbox', ($prefix ?? 'wprs') . '_header_disabled', __('Disable Page Header', '_s')),
         Field::make('text', ($prefix ?? 'wprs') . '_header_title', __('Page Title', '_s')),
+        Field::make('textarea', ($prefix ?? 'wprs') . '_header_description', __('Page Description', '_s')),
         Field::make('color', ($prefix ?? 'wprs') . '_header_text_color', __('Page Header Text Color', '_s')),
         Field::make('color', ($prefix ?? 'wprs') . '_header_bg_color', __('Page Header Background Color', '_s')),
         Field::make('image', ($prefix ?? 'wprs') . '_header_bg_image', __('Page Header Background Image', '_s')),
