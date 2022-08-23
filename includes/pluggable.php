@@ -167,7 +167,11 @@ function _s_append_shortcode_to_menu($args, $menu_item, $depth)
 function _s_render_page_header()
 {
     // Not single / home page / Elementor Page
-    if ( ! is_singular() || is_front_page() || is_home() || get_post_meta(get_queried_object_id(), '_elementor_edit_mode', true) === 'builder' || is_shop()) {
+    if ( ! is_singular() || is_front_page() || is_home() || get_post_meta(get_queried_object_id(), '_elementor_edit_mode', true) === 'builder') {
+        return false;
+    }
+
+    if (function_exists('is_shop') && is_shop()) {
         return false;
     }
 

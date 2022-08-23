@@ -7,6 +7,10 @@
  * @package _s
  */
 
+if ( ! function_exists('is_shop')) {
+    return false;
+}
+
 
 /**
  * Modify WooCommerce Wrap
