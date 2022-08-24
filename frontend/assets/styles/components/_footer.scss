@@ -1,9 +1,9 @@
-$bg: $bg-highlight;
-$text-color: $text-highlight;
-$text-hover-color: $text-highlight;
-
 .site__footer {
-    background-color: $bg;
+    --bg-color: #004178;
+    --text-color: #fff;
+    --text-hover-color: #fff;
+
+    background-color: var(--bg-color);
 
     ul{
         @apply m-0 p-0 list-none;
@@ -30,9 +30,9 @@ $text-hover-color: $text-highlight;
 
         li {
             a {
-                color: $text-color;
+                color: var(--text-color);
                 &:hover{
-                    color: $text-hover-color;
+                    color: var(--text-hover-color);
                 }
             }
         }
@@ -41,12 +41,12 @@ $text-hover-color: $text-highlight;
 
 .site__info {
     @apply mx-auto;
-    color: $text-color;
+    color: var(--text-color);
 
     a {
-        color: $text-color;
+        color: var(--text-color);
         &:hover{
-            color: $text-hover-color;
+            color: var(--text-hover-color);
         }
     }
 }
@@ -61,7 +61,7 @@ $text-hover-color: $text-highlight;
 
 .rs-widgets--footer {
     @apply flex -mx-4 flex-wrap;
-    color: $text-color;
+    color: var(--text-color);
 
     @screen lg {
         @apply flex-nowrap;
