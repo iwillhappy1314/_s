@@ -101,6 +101,9 @@ add_action('carbon_fields_register_fields', static function ()
                                          ])
                                          ->add_tab(__('Header Options', '_s'), [
                                              Field::make('checkbox', 'wprs_enable_sticky', __('Enable Sticky Header', '_s')),
+                                             Field::make('color', 'wprs-header-bg', __('Header Background Color', '_s')),
+                                             Field::make('color', 'wprs-header-bg-darken', __('Darker Header Background Color', '_s')),
+                                             Field::make('color', 'wprs-header-text-color', __('Text Color In Header', '_s')),
                                          ])
                                          ->add_tab(__('Global Style', '_s'), [
                                              Field::make('color', 'wprs-primary-accent', __('Primary Accent', '_s')),

@@ -2,25 +2,29 @@
 @import "menu-toggle";
 
 body {
-    --site-header-height: 64px; // 移动端页头高度
-    --site-notice-height: 0px; // 移动端通知条高度
-    --admin-bar-height: 46px; // 管理工具条高度
+    --header-bg: #fff;
+    --header-text-color: #333;
+    --header-border-color: #f3f3f3;
+
+    --header-h: 64px; // 移动端页头高度
+    --notice-h: 0px; // 移动端通知条高度
+    --admin-bar-h: 46px; // 管理工具条高度
     --logo-h: 48px; // 移动端Logo高度
 
-    --site-header-sticky-height: 75px; // 固定移动端页头高度
+    --header-sticky-h: 75px; // 固定移动端页头高度
     --sticky-logo-h: 48px; // 固定Logo高度
     --header-z: 99;
 
     @screen md {
-        --site-header-height: 75px; // 平板端页头高度
-        --site-notice-height: 0;    // 平板端通知条高度
+        --header-h: 75px; // 平板端页头高度
+        --notice-h: 0;    // 平板端通知条高度
         --logo-h: 48px;             // 平板端Logo高度
     }
 
     @screen lg {
-        --site-header-height: 100px;    // PC端页头高度
-        --site-notice-height: 45px;     // PC端通知条高度
-        --admin-bar-height: 32px;       // PC端管理工具条高度
+        --header-h: 100px;    // PC端页头高度
+        --notice-h: 45px;     // PC端通知条高度
+        --admin-bar-h: 32px;       // PC端管理工具条高度
         --logo-h: 64px;                 // PC端Logo高度
     }
 }
@@ -28,7 +32,7 @@ body {
 .site__notice {
     @apply w-full hidden;
     z-index: var(--header-z);
-    height: var(--site-notice-height);
+    height: var(--notice-h);
 
     @screen lg {
         @apply block;
@@ -37,9 +41,9 @@ body {
 
 .site__header {
     @apply flex flex-wrap justify-between items-center w-full border-b;
-    background-color: $bg-base;
-    border-color: $border-base;
-    height: var(--site-header-height);
+    background-color: var(--header-bg);
+    border-color: var(--header-border-color);
+    height: var(--header-h);
     z-index: var(--header-z);
     transition: all .3s;
 
@@ -77,7 +81,7 @@ body {
     }
     .nav-menu {
         @apply hidden flex-wrap m-0 left-0 absolute;
-        top: var(--site-header-height);
+        top: var(--header-h);
         z-index: 98;
 
         @screen lg {
@@ -121,13 +125,13 @@ body.rs-sticky {
     }
 
     .site__header {
-        top: var(--site-notice-height);
+        top: var(--notice-h);
     }
 
     .elementor,
     .site__banner,
     .site__content {
-        margin-top: calc(var(--site-notice-height) + var(--site-header-height));
+        margin-top: calc(var(--notice-h) + var(--header-h));
     }
 
     .site__banner + .site__content {
@@ -138,10 +142,10 @@ body.rs-sticky {
 
 body.rs-sticky.is-sticky {
     .site__header {
-        @apply fixed bg-white;
+        @apply fixed;
         top: 0;
         @screen lg {
-            height: var(--site-header-sticky-height);
+            height: var(--header-sticky-h);
         }
 
         .custom-logo-link {
@@ -159,12 +163,12 @@ body.rs-sticky.is-sticky {
 
 body.rs-sticky.admin-bar {
     .site__notice {
-        top: var(--admin-bar-height);
+        top: var(--admin-bar-h);
     }
 
     .site__header {
-        @apply fixed bg-white;
-        top: calc(var(--admin-bar-height) + var(--site-notice-height));
+        @apply fixed;
+        top: calc(var(--admin-bar-h) + var(--notice-h));
     }
 }
 
@@ -174,7 +178,7 @@ body.rs-sticky.admin-bar.is-sticky {
     }
 
     .site__header {
-        @apply fixed bg-white;
-        top: var(--admin-bar-height);
+        @apply fixed;
+        top: var(--admin-bar-h);
     }
 }

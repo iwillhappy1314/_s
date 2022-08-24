@@ -2,18 +2,18 @@ $bg: $bg-base;
 $text-color: $text-base;
 $text-hover-color: darken($text-base, 5%);
 
-.widget{
-    &-title{
+.widget {
+    &-title {
         @apply text-lg font-medium mb-4;
     }
 
-    li{
+    li {
         @apply text-sm leading-relaxed leading-6;
-        a{
+        a {
             @apply inline-block;
             color: $text-color;
 
-            &:hover{
+            &:hover {
                 color: $text-hover-color;
             }
         }
@@ -21,21 +21,21 @@ $text-hover-color: darken($text-base, 5%);
 }
 
 
-.o-mini-widgets{
-    .wp-block-columns{
+.o-mini-widgets {
+    .wp-block-columns {
         @apply m-0;
     }
 
-    .menu{
+    .menu {
         @apply flex gap-4;
-        li{
+        li {
             @apply my-0 text-sm;
         }
     }
 }
 
-.content__secondary{
-    .widget{
+.content__secondary {
+    .widget {
         @apply mb-6;
     }
 }
@@ -68,15 +68,17 @@ $text-hover-color: darken($text-base, 5%);
 /**
  * 侧边栏主要小工具样式
  */
-.widget_categories{
-    ul{
+.widget_categories {
+    ul {
         border-top: 1px solid #eee;
         border-radius: 2px;
-        li{
+
+        li {
             margin-top: 0;
             margin-bottom: 0;
-            a{
 
+            a {
+                @apply block bg-white;
                 display: block;
                 padding: 12px 35px 12px 15px;
                 border-left: 1px solid #eee;
@@ -89,7 +91,8 @@ $text-hover-color: darken($text-base, 5%);
                 font-size: 15px;
                 font-weight: 400;
                 transition: all .3s ease-in-out 0s;
-                &:after{
+
+                &:after {
                     content: "\e9a7";
                     font-family: 'icomoon';
                     font-size: 11px;
@@ -101,9 +104,10 @@ $text-hover-color: darken($text-base, 5%);
                     transition: all .3s ease-in-out 0s;
                 }
             }
+
             &.current-cat,
-            &.current_page_item{
-                a{
+            &.current_page_item {
+                a {
                     background-color: #f7f7f7;
                     border-color: #eee;
                 }
@@ -111,7 +115,6 @@ $text-hover-color: darken($text-base, 5%);
         }
     }
 }
-
 
 
 .rs-submenu {
@@ -142,7 +145,7 @@ $text-hover-color: darken($text-base, 5%);
         -moz-opacity: .15;
         opacity: .15;
         -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=15);
-        filter: alpha(opacity = 15);
+        filter: alpha(opacity=15);
     }
 
     &:after {

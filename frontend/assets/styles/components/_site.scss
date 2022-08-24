@@ -1,3 +1,7 @@
+body{
+    background: var(--wprs-site-bg);
+}
+
 @include tablet {
     body.show-mobile-nav {
         padding-bottom: 60px;

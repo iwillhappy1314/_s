@@ -23,18 +23,6 @@
 @import "components/wpuf";
 @import "components/fonts";
 
-:root{
-    --wprs-bg-color: #f6f6f6;
-    --wprs-bg-image: url('');
-    --wprs-primary-accent: #229db8;
-    --wprs-secondary-accent: #ff8f20;
-    --wprs-site-bg: #ffffff;
-    --wprs-light-bg: #fbfbfb;
-    --wprs-dark-bg: #011267;
-    --wprs-text-color: #121212;
-    --wprs-text-dark-bg: #ffffff;
-}
-
 .woocommerce-product-search {
     @extend .search-form;
 }

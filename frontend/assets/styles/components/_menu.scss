@@ -24,10 +24,10 @@
 // 一般情况下只需要更新这几个变量即可
 // ----------------------------------------------------------
 
-$sm-menu__white: $bg-base !default; // 背景颜色
-$sm-menu__black: $text-base !default; // 文字颜色
-$sm-menu__green: #fff !default; // 下拉盒子背景颜色
-$sm-menu__green-dark: $text-base !default; // 菜单激活状态背景颜色
+$sm-menu__white: var(--header-bg) !default; // 背景颜色
+$sm-menu__black: var(--header-text-color) !default; // 文字颜色
+$sm-menu__green: var(--header-bg) !default; // 下拉盒子背景颜色
+$sm-menu__green-dark: var(--header-bg-darken) !default; // 菜单激活状态背景颜色
 
 $sm-menu__box-shadow: rgba(0, 0, 0, 0.25) !default;
 
@@ -42,12 +42,10 @@ $sm-menu__desktop-vp: 1024px !default; // switch from collapsible to desktop
 // ----------------------------------------------------------
 // :: 1.3. 字体排版
 // ----------------------------------------------------------
-
 $sm-menu__font-family: $family-sans-serif !default;
 $sm-menu__font-size-base: 16px !default;
 $sm-menu__font-size-small: 16px !default;
 $sm-menu__line-height: 17px !default;
-
 
 // ----------------------------------------------------------
 // :: 1.4. 边框
@@ -62,12 +60,12 @@ $sm-menu__border-radius-base: 0 !default;
 // ----------------------------------------------------------
 
 // 菜单盒子
-$sm-menu__collapsible-bg: $sm-menu__white !default;
+$sm-menu__collapsible-bg: $sm-menu__green !default;
 $sm-menu__collapsible-border-color: $border-base !default;
 
 // 菜单项
 $sm-menu__collapsible-item-color: $sm-menu__black !default;
-$sm-menu__collapsible-item-disabled-color: darken($sm-menu__white, 20%) !default;
+$sm-menu__collapsible-item-disabled-color: #999 !default;
 $sm-menu__collapsible-item-padding-vertical: 13px !default;
 $sm-menu__collapsible-item-padding-horizontal: 20px !default;
 
@@ -96,19 +94,19 @@ $sm-menu__collapsible-sub-item-indentation: 8px !default;
 $sm-menu__desktop-bg: transparent !default;
 
 // Items
-$sm-menu__desktop-item-color: $sm-menu__black !default;
-$sm-menu__desktop-item-hover-color: $primary !default;
+$sm-menu__desktop-item-color: var(--header-text-color) !default;
+$sm-menu__desktop-item-hover-color: var(--header-text-color) !default;
 $sm-menu__desktop-item-hover-bg: $sm-menu__green-dark !default;
 $sm-menu__desktop-item-highlighted-color: $sm-menu__black !default;
 $sm-menu__desktop-item-highlighted-bg: $sm-menu__green !default;
 $sm-menu__desktop-item-highlighted-box-shadow: 0 4px 3px $sm-menu__box-shadow !default;
-$sm-menu__desktop-item-disabled-color: darken($sm-menu__white, 20%) !default;
+$sm-menu__desktop-item-disabled-color: #999 !default;
 $sm-menu__desktop-item-padding-vertical: 11px !default;
 $sm-menu__desktop-item-padding-horizontal: 20px !default;
 
 // 子菜单指示
 $sm-menu__desktop-arrow-size: 6px !default; // border-width
-$sm-menu__desktop-arrow-color: $sm-menu__green-dark !default;
+$sm-menu__desktop-arrow-color: $sm-menu__black !default;
 $sm-menu__desktop-arrow-hover-color: $sm-menu__white !default;
 $sm-menu__desktop-arrow-highlighted-color: $sm-menu__green-dark !default;
 $sm-menu__desktop-arrow-spacing: 6px !default;
@@ -134,7 +132,7 @@ $sm-menu__desktop-sub-padding-horizontal: 0 !default;
 $sm-menu__desktop-sub-item-color: $sm-menu__black !default;
 $sm-menu__desktop-sub-item-hover-color: $sm-menu__white !default;
 $sm-menu__desktop-sub-item-hover-bg: $sm-menu__green-dark !default;
-$sm-menu__desktop-sub-item-disabled-color: lighten($sm-menu__black, 50%) !default;
+$sm-menu__desktop-sub-item-disabled-color: #999 !default;
 $sm-menu__desktop-sub-item-padding-vertical: 10px !default;
 $sm-menu__desktop-sub-item-padding-horizontal: 20px !default;
 
@@ -635,18 +633,6 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
         }
     }
 }
-
-
-.admin-bar {
-    .site__nav .sm-menu {
-        top: 110px;
-
-        @screen md {
-            top: 121px;
-        }
-    }
-}
-
 
 .rs-theme--dark:not(.is-sticky) {
     .sm-menu>li>a {
