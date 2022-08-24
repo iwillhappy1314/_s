@@ -99,6 +99,9 @@ add_action('carbon_fields_register_fields', static function ()
                                              Field::make('checkbox', 'is_cleanup', __('Clean up useless menus for normal user', '_s')),
                                              Field::make('checkbox', 'deny_modify', __('Deny modify files in backend', '_s')),
                                          ])
+                                         ->add_tab(__('Header Options', '_s'), [
+                                             Field::make('checkbox', 'wprs_enable_sticky', __('Enable Sticky Header', '_s')),
+                                         ])
                                          ->add_tab(__('Global Style', '_s'), [
                                              Field::make('color', 'wprs-primary-accent', __('Primary Accent', '_s')),
                                              Field::make('color', 'wprs-secondary-accent', __('Secondary Accent', '_s')),

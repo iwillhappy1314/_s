@@ -36,6 +36,10 @@ add_action('body_class', function ($classes)
 {
     $classes[] = str_replace('_', '-', _s_get_page_settings('_page_layouts'));
 
+    if(get_option('_wprs_enable_sticky') === 'yes'){
+        $classes[] = 'rs-sticky';
+    }
+
     return $classes;
 });
 

@@ -3,10 +3,12 @@ function stickyNav() {
     const body = document.getElementsByTagName('body')[0];
     const sticky = header.offsetTop + 100;
 
-    if (window.scrollY > sticky) {
-        body.classList.add('is-sticky');
-    } else {
-        body.classList.remove('is-sticky');
+    if (body.classList.contains('rs-sticky')) {
+        if (window.scrollY > sticky) {
+            body.classList.add('is-sticky');
+        } else {
+            body.classList.remove('is-sticky');
+        }
     }
 }
 

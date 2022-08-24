@@ -6,7 +6,10 @@ body {
     --site-notice-height: 0px; // 移动端通知条高度
     --admin-bar-height: 46px; // 管理工具条高度
     --logo-h: 48px; // 移动端Logo高度
+
+    --site-header-sticky-height: 75px; // 固定移动端页头高度
     --sticky-logo-h: 48px; // 固定Logo高度
+    --header-z: 99;
 
     @screen md {
         --site-header-height: 75px; // 平板端页头高度
@@ -23,8 +26,8 @@ body {
 }
 
 .site__notice {
-    @apply fixed w-full hidden;
-    z-index: 99;
+    @apply w-full hidden;
+    z-index: var(--header-z);
     height: var(--site-notice-height);
 
     @screen lg {
@@ -33,13 +36,12 @@ body {
 }
 
 .site__header {
-    @apply flex flex-wrap justify-between items-center w-full border-b fixed;
+    @apply flex flex-wrap justify-between items-center w-full border-b;
     background-color: $bg-base;
     border-color: $border-base;
     height: var(--site-header-height);
-    z-index: 99;
+    z-index: var(--header-z);
     transition: all .3s;
-    top: var(--site-notice-height);
 
     .container {
         @apply flex justify-between items-center;
@@ -49,7 +51,7 @@ body {
 
 .site__branding {
     @apply flex-grow;
-    z-index: 99;
+    z-index: var(--header-z);
     @screen lg {
         @apply flex-grow-0;
     }
@@ -112,22 +114,34 @@ body {
     }
 }
 
-.elementor,
-.site__banner,
-.site__content {
-    margin-top: calc(var(--site-notice-height) + var(--site-header-height));
+body.rs-sticky {
+    .site__notice,
+    .site__header {
+        @apply fixed;
+    }
+
+    .site__header {
+        top: var(--site-notice-height);
+    }
+
+    .elementor,
+    .site__banner,
+    .site__content {
+        margin-top: calc(var(--site-notice-height) + var(--site-header-height));
+    }
+
+    .site__banner + .site__content {
+        margin-top: 0;
+    }
 }
 
-.site__banner + .site__content {
-    margin-top: 0;
-}
 
-body.is-sticky {
+body.rs-sticky.is-sticky {
     .site__header {
         @apply fixed bg-white;
         top: 0;
         @screen lg {
-            height: 75px;
+            height: var(--site-header-sticky-height);
         }
 
         .custom-logo-link {
@@ -143,7 +157,7 @@ body.is-sticky {
 }
 
 
-body.admin-bar {
+body.rs-sticky.admin-bar {
     .site__notice {
         top: var(--admin-bar-height);
     }
@@ -154,7 +168,7 @@ body.admin-bar {
     }
 }
 
-body.admin-bar.is-sticky {
+body.rs-sticky.admin-bar.is-sticky {
     .site__notice {
         top: 0;
     }
