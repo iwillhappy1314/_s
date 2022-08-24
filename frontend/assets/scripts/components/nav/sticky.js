@@ -4,10 +4,8 @@ function stickyNav() {
     const sticky = header.offsetTop + 100;
 
     if (window.scrollY > sticky) {
-        header.classList.add('is-sticky');
         body.classList.add('is-sticky');
     } else {
-        header.classList.remove('is-sticky');
         body.classList.remove('is-sticky');
     }
 }

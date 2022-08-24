@@ -32,7 +32,7 @@
     ?>
 
     <?php if (is_active_sidebar('sidebar-top-bar')): ?>
-        <div class="o-mini-widgets">
+        <div class="site__notice o-mini-widgets">
             <?php dynamic_sidebar('sidebar-top-bar'); ?>
         </div>
     <?php endif; ?>
