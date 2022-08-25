@@ -117,6 +117,20 @@ body {
     }
 }
 
+
+.site__banner{
+    background-color: var(--banner-bg-color);
+    background-image: var(--banner-bg-image);
+    border-color: var(--banner-border-color);
+    min-height: 300px;
+    @apply flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat;
+
+    h1,p,span,a{
+        color: var(--banner-text-color);
+    }
+}
+
+
 body.rs-sticky {
     .site__notice,
     .site__header {

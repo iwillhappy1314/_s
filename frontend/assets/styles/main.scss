@@ -103,15 +103,3 @@ $default-grid-gutter: 2rem;
     color: #999;
     font-size: 16px
 }
-
-
-.site__banner{
-    background-color: var(--wprs-bg-color);
-    background-image: var(--wprs-bg-image);
-    min-height: 300px;
-    @apply flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat;
-
-    h1,p,span,a{
-        color: var(--wprs-text-color);
-    }
-}

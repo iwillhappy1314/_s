@@ -36,7 +36,7 @@ add_action('body_class', function ($classes)
 {
     $classes[] = str_replace('_', '-', _s_get_page_settings('_page_layouts'));
 
-    if(get_option('_wprs_enable_sticky') === 'yes'){
+    if (get_option('_wprs_enable_sticky') === 'yes') {
         $classes[] = 'rs-sticky';
     }
 
@@ -186,40 +186,13 @@ function _s_render_page_header()
         }
     }
 
-    $post_id   = get_queried_object()->ID;
-    $post_type = get_queried_object()->post_type;
-
     // Disabled in page settings
-    $disabled     = get_post_meta(get_the_ID(), '_wprs_header_disabled', true);
-    $text_color   = get_post_meta($post_id, '_wprs_header_text_color', true);
-    $bg_color     = get_post_meta($post_id, '_wprs_header_bg_color', true);
-    $bg_image     = get_post_meta($post_id, '_wprs_header_bg_image', true);
-    $header_title = get_post_meta($post_id, '_wprs_header_title', true);
-
-    // 如果分类方法的各种选项都没有设置，沿用对应文章类型的
-    if ( ! $text_color && ! $bg_color && ! $bg_image) {
-        $disabled   = _s_get_archive_option($post_type, '_header_disabled');
-        $text_color = _s_get_archive_option($post_type, '_header_text_color');
-        $bg_color   = _s_get_archive_option($post_type, '_header_bg_color');
-        $bg_image   = _s_get_archive_option($post_type, '_header_bg_image');
-    }
+    $disabled = get_post_meta(get_the_ID(), '_wprs_header_disabled', true);
 
     if ($disabled === 'yes') {
         return false;
     }
-
-    if ( ! $header_title) {
-        $header_title = get_the_title();
-    }
     ?>
-
-    <style>
-        .site__banner {
-            --wprs-text-color: <?= $text_color; ?>;
-            --wprs-bg-color: <?= $bg_color; ?>;
-            --wprs-bg-image: url("<?= wp_get_attachment_url($bg_image); ?>");
-        }
-    </style>
 
     <div class='site__banner py-8'>
         <div class='container text-center'>
@@ -229,7 +202,10 @@ function _s_render_page_header()
                         <?= get_the_time(get_option('date_format'), get_the_ID()); ?>
                     </span>
                 </div>
-                <h1 class="text-4xl"><?= $header_title; ?></h1>
+                <h1 class="text-4xl"><?= \WenpriseContentComponents\Helpers::get_page_title(); ?></h1>
+                <?php if (\WenpriseContentComponents\Helpers::get_page_description()) : ?>
+                    <div class="mt-2"><?= \WenpriseContentComponents\Helpers::get_page_description(); ?></div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -258,25 +234,15 @@ function _s_render_archive_header()
     if ($disabled === 'yes') {
         return false;
     }
-
-    $text_color   = _s_get_archive_option($post_type, '_header_text_color');
-    $bg_color     = _s_get_archive_option($post_type, '_header_bg_color');
-    $bg_image     = _s_get_archive_option($post_type, '_header_bg_image');
-    $header_title = _s_get_archive_option($post_type, '_header_title');
     ?>
-
-    <style>
-        .site__banner {
-            --wprs-text-color: <?= $text_color; ?>;
-            --wprs-bg-color: <?= $bg_color; ?>;
-            --wprs-bg-image: url("<?= wp_get_attachment_url($bg_image); ?>");
-        }
-    </style>
 
     <div class='site__banner py-8'>
         <div class='container text-center'>
             <div class='site__banner--inner'>
-                <h1 class="text-4xl"><?= $header_title; ?></h1>
+                <h1 class="text-4xl"><?= \WenpriseContentComponents\Helpers::get_page_title(); ?></h1>
+                <?php if (\WenpriseContentComponents\Helpers::get_page_description()) : ?>
+                    <div class="mt-2"><?= \WenpriseContentComponents\Helpers::get_page_description(); ?></div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -301,19 +267,12 @@ function _s_render_taxonomy_header()
     $post_type = wprs_get_taxonomy_type();
 
     // Disabled in page settings
-    $disabled     = get_term_meta($term_id, '_wprs_header_disabled', true);
-    $text_color   = get_term_meta($term_id, '_wprs_header_text_color', true);
-    $bg_color     = get_term_meta($term_id, '_wprs_header_bg_color', true);
-    $bg_image     = get_term_meta($term_id, '_wprs_header_bg_image', true);
-    $header_title = get_term_meta($term_id, '_wprs_header_title', true);
+    $disabled     = get_term_meta($term_id, '_wprs_banner_disabled', true);
+    $header_title = \WenpriseContentComponents\Helpers::get_page_title();
 
     // 如果分类方法的各种选项都没有设置，沿用对应文章类型的
-    if ( ! $text_color && ! $bg_color && ! $bg_image) {
-        $disabled     = _s_get_archive_option($post_type, '_header_disabled');
-        $text_color   = _s_get_archive_option($post_type, '_header_text_color');
-        $bg_color     = _s_get_archive_option($post_type, '_header_bg_color');
-        $bg_image     = _s_get_archive_option($post_type, '_header_bg_image');
-        $header_title = _s_get_archive_option($post_type, '_header_title');
+    if ($header_title) {
+        $disabled = _s_get_archive_option($post_type, '_banner_disabled');
     }
 
     if ($disabled === 'yes') {
@@ -321,18 +280,13 @@ function _s_render_taxonomy_header()
     }
     ?>
 
-    <style>
-        .site__banner {
-            --wprs-text-color: <?= $text_color; ?>;
-            --wprs-bg-color: <?= $bg_color; ?>;
-            --wprs-bg-image: url("<?= wp_get_attachment_url($bg_image); ?>");
-        }
-    </style>
-
     <div class='site__banner py-8'>
         <div class='container text-center'>
             <div class='site__banner--inner'>
-                <h1 class="text-4xl"><?= $header_title; ?></h1>
+                <h1 class="text-4xl"><?= \WenpriseContentComponents\Helpers::get_page_title(); ?></h1>
+                <?php if (\WenpriseContentComponents\Helpers::get_page_description()) : ?>
+                    <div class="mt-2"><?= \WenpriseContentComponents\Helpers::get_page_description(); ?></div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
