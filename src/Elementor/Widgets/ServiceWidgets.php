@@ -34,7 +34,7 @@ class ServiceWidgets extends \Elementor\Widget_Base
      */
     public function get_title()
     {
-        return __('Widget Title', '_s');
+        return __('Widget Title', 'wenprise-content-components');
     }
 
     /**
@@ -81,7 +81,7 @@ class ServiceWidgets extends \Elementor\Widget_Base
         $this->start_controls_section(
             'content_section',
             [
-                'label' => __('Content', '_s'),
+                'label' => __('Content', 'wenprise-content-components'),
                 'tab'   => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -89,10 +89,10 @@ class ServiceWidgets extends \Elementor\Widget_Base
         $this->add_control(
             'url',
             [
-                'label'       => __('URL to embed', '_s'),
+                'label'       => __('URL to embed', 'wenprise-content-components'),
                 'type'        => Controls_Manager::TEXT,
                 'input_type'  => 'url',
-                'placeholder' => __('https://your-link.com', '_s'),
+                'placeholder' => __('https://your-link.com', 'wenprise-content-components'),
             ]
         );
 

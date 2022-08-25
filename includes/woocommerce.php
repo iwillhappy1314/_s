@@ -176,9 +176,9 @@ if ( ! function_exists('_s_woocommerce_widgets_init')) {
     function _s_woocommerce_widgets_init()
     {
         register_sidebar([
-            'name'          => esc_html__('WooCommerce Widget Area', '_s'),
+            'name'          => esc_html__('WooCommerce Widget Area', 'wenprise-content-components'),
             'id'            => 'sidebar-woo',
-            'description'   => esc_html__('Add widgets here.', '_s'),
+            'description'   => esc_html__('Add widgets here.', 'wenprise-content-components'),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h2 class="widget-title"><span>',
@@ -186,9 +186,9 @@ if ( ! function_exists('_s_woocommerce_widgets_init')) {
         ]);
 
         register_sidebar([
-            'name'          => esc_html__('Single Product Custom area', '_s'),
+            'name'          => esc_html__('Single Product Custom area', 'wenprise-content-components'),
             'id'            => 'widget-area-product',
-            'description'   => esc_html__('Add widgets here.', '_s'),
+            'description'   => esc_html__('Add widgets here.', 'wenprise-content-components'),
             'before_widget' => '<section id="%1$s" class="rswc-widget rswc-%2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h2 class="widget-title"><span>',
@@ -196,9 +196,9 @@ if ( ! function_exists('_s_woocommerce_widgets_init')) {
         ]);
 
         register_sidebar([
-            'name'          => esc_html__('Cart Widgets Area', '_s'),
+            'name'          => esc_html__('Cart Widgets Area', 'wenprise-content-components'),
             'id'            => 'widget-area-cart',
-            'description'   => esc_html__('Add widgets here.', '_s'),
+            'description'   => esc_html__('Add widgets here.', 'wenprise-content-components'),
             'before_widget' => '<section id="%1$s" class="rswc-widget rswc-%2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h2 class="widget-title"><span>',
@@ -206,9 +206,9 @@ if ( ! function_exists('_s_woocommerce_widgets_init')) {
         ]);
 
         register_sidebar([
-            'name'          => esc_html__('Checkout Widgets Area', '_s'),
+            'name'          => esc_html__('Checkout Widgets Area', 'wenprise-content-components'),
             'id'            => 'widget-area-checkout',
-            'description'   => esc_html__('Add widgets here.', '_s'),
+            'description'   => esc_html__('Add widgets here.', 'wenprise-content-components'),
             'before_widget' => '<section id="%1$s" class="rswc-widget rswc-%2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h2 class="widget-title"><span>',
@@ -358,11 +358,11 @@ if ( ! function_exists('_s_woocommerce_cart_link')) {
     function _s_woocommerce_cart_link()
     {
         ?>
-        <a class="cart-contents" href="<?= esc_url(wc_get_cart_url()); ?>" title="<?php esc_attr_e('View your shopping cart', '_s'); ?>">
+        <a class="cart-contents" href="<?= esc_url(wc_get_cart_url()); ?>" title="<?php esc_attr_e('View your shopping cart', 'wenprise-content-components'); ?>">
             <?php
             $item_count_text = sprintf(
             /* translators: number of items in the mini cart. */
-                _n('%d', '%d', WC()->cart->get_cart_contents_count(), '_s'),
+                _n('%d', '%d', WC()->cart->get_cart_contents_count(), 'wenprise-content-components'),
                 WC()->cart->get_cart_contents_count()
             );
             ?>

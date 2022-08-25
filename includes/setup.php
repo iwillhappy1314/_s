@@ -21,9 +21,9 @@ if ( ! function_exists('_s_setup')) :
          * Make theme available for translation.
          * Translations can be filed in the /languages/ directory.
          * If you're building a theme based on _s, use a find and replace
-         * to change '_s' to the name of your theme in all the template files.
+         * to change 'wenprise-content-components' to the name of your theme in all the template files.
          */
-        load_theme_textdomain('_s', get_template_directory() . '/languages');
+        load_theme_textdomain('wenprise-content-components', get_template_directory() . '/languages');
 
         // Add default posts and comments RSS feed links to head.
         add_theme_support('automatic-feed-links');
@@ -47,8 +47,8 @@ if ( ! function_exists('_s_setup')) :
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus([
-            'menu-primary' => esc_html__('Primary Menu', '_s'),
-            'menu-footer' => esc_html__('Footer Menu', '_s'),
+            'menu-primary' => esc_html__('Primary Menu', 'wenprise-content-components'),
+            'menu-footer' => esc_html__('Footer Menu', 'wenprise-content-components'),
         ]);
 
         /*
@@ -94,8 +94,8 @@ if ( ! function_exists('_s_setup')) :
 
         $GLOBALS[ 'content_width' ] = apply_filters('_s_content_width', 640);
 
-        // WenpriseContentTypes\ContentType::register("video", __("Videos", '_s'), false, true, false, 'dashicons-video-alt2');
-        // WenpriseContentTypes\Taxonomy::register("video_type", 'video', __("Video Tags", '_s'), true, false);
+        // WenpriseContentTypes\ContentType::register("video", __("Videos", 'wenprise-content-components'), false, true, false, 'dashicons-video-alt2');
+        // WenpriseContentTypes\Taxonomy::register("video_type", 'video', __("Video Tags", 'wenprise-content-components'), true, false);
     }
 endif;
 
@@ -113,7 +113,7 @@ add_action('add_meta_boxes', function ()
 
 add_filter('manage_elementor_library_posts_columns', function ($columns)
 {
-    $columns[ 'shortcode' ] = __('Shortcode', '_s');
+    $columns[ 'shortcode' ] = __('Shortcode', 'wenprise-content-components');
 
     return $columns;
 });
@@ -135,27 +135,27 @@ if ( ! function_exists('_s_widgets_init')) {
     function _s_widgets_init()
     {
         register_sidebar([
-            'name'          => esc_html__('Primary Widgets Area', '_s'),
+            'name'          => esc_html__('Primary Widgets Area', 'wenprise-content-components'),
             'id'            => 'sidebar-primary',
-            'description'   => esc_html__('Add widgets here.', '_s'),
+            'description'   => esc_html__('Add widgets here.', 'wenprise-content-components'),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h2 class="widget-title"><span>',
             'after_title'   => '</span></h2>',
         ]);
         register_sidebar([
-            'name'          => esc_html__('Top bar Widgets', '_s'),
+            'name'          => esc_html__('Top bar Widgets', 'wenprise-content-components'),
             'id'            => 'sidebar-top-bar',
-            'description'   => esc_html__('Add widgets here.', '_s'),
+            'description'   => esc_html__('Add widgets here.', 'wenprise-content-components'),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h2 class="widget-title"><span>',
             'after_title'   => '</span></h2>',
         ]);
         register_sidebar([
-            'name'          => esc_html__('Footer Widgets Area', '_s'),
+            'name'          => esc_html__('Footer Widgets Area', 'wenprise-content-components'),
             'id'            => 'sidebar-footer',
-            'description'   => esc_html__('Add widgets here.', '_s'),
+            'description'   => esc_html__('Add widgets here.', 'wenprise-content-components'),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h2 class="widget-title"><span>',
