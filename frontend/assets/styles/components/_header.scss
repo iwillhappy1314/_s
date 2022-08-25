@@ -30,7 +30,7 @@ body {
 }
 
 .site__notice {
-    @apply w-full hidden;
+    @apply w-full hidden transition-all duration-300;
     z-index: var(--header-z);
     height: var(--notice-h);
 
@@ -40,12 +40,11 @@ body {
 }
 
 .site__header {
-    @apply flex flex-wrap justify-between items-center w-full border-b;
+    @apply flex flex-wrap justify-between items-center w-full border-b transition-all duration-300;
     background-color: var(--header-bg);
-    border-color: var(--header-border-color);
+    border-bottom-color: var(--header-border-color);
     height: var(--header-h);
     z-index: var(--header-z);
-    transition: all .3s;
 
     .container {
         @apply flex justify-between items-center;
@@ -132,6 +131,7 @@ body.rs-sticky {
     .site__banner,
     .site__content {
         margin-top: calc(var(--notice-h) + var(--header-h));
+        transition: all .3s;
     }
 
     .site__banner + .site__content {

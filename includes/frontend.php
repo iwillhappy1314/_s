@@ -53,6 +53,7 @@ add_action('wp_head', function ()
             --header-bg: <?= get_option('_wprs-header-bg'); ?>;
             --header-bg-darken: <?= get_option('_wprs-header-bg-darken'); ?>;
             --header-text-color: <?= get_option('_wprs-header-text-color'); ?>;
+            --header-border-color: <?= get_option('_wprs-header-border-color'); ?>;
         }
     </style>
 

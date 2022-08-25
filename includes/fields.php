@@ -22,34 +22,29 @@ add_action('after_setup_theme', static function ()
     }
 });
 
+function wprs_get_page_content_fields($prefix = 'wprs')
+{
+    $fields = [];
+
+    return apply_filters('wprs_page_content_fields', $fields);
+}
+
 
 function wprs_get_page_heading_fields($prefix = 'wprs')
 {
     $fields = [
+        Field::make('html', 'wprs-header-style')->set_html(__('<h2>Header Style</h2>')),
         Field::make('checkbox', ($prefix ?? 'wprs') . '_header_disabled', __('Disable Page Header', '_s')),
         Field::make('color', ($prefix ?? 'wprs') . '_header_text_color', __('Page Header Text Color', '_s')),
         Field::make('color', ($prefix ?? 'wprs') . '_header_bg_color', __('Page Header Background Color', '_s')),
         Field::make('image', ($prefix ?? 'wprs') . '_header_bg_image', __('Page Header Background Image', '_s')),
+        Field::make('html', 'crb_html')->set_html(__('<h2>Header Content</h2>')),
+        Field::make('text', ($prefix ?? 'wprs') . '_title', __('Content Title', '_s')),
+        Field::make('text', ($prefix ?? 'wprs') . '_link', __('Content Link', '_s')),
+        Field::make('textarea', ($prefix ?? 'wprs') . '_description', __('Content Description', '_s')),
     ];
 
     return apply_filters('wprs_heading_fields', $fields);
-}
-
-
-function wprs_get_page_content_fields($prefix = 'wprs')
-{
-    $fields = [
-        Field::make('image', 'thumbnail_id', __('Content Thumbnail', '_s'))->set_width(20),
-        Field::make('media_gallery', 'gallery', __('Content Gallery', '_s'))->set_width(80),
-        Field::make('text', ($prefix ?? 'wprs') . '_title', __('Content Title', '_s')),
-        Field::make('textarea', ($prefix ?? 'wprs') . '_description', __('Content Description', '_s')),
-        Field::make('text', ($prefix ?? 'wprs') . '_link', __('Content Link', '_s')),
-        Field::make('text', ($prefix ?? 'wprs') . '_form_short_code', __('Form Shortcode', '_s')),
-        Field::make('file', ($prefix ?? 'wprs') . '_video_file', __('Video File', '_s'))->set_width(20),
-        Field::make('textarea', ($prefix ?? 'wprs') . '_video_link', __('Embed Video Link', '_s'))->set_width(80),
-    ];
-
-    return apply_filters('wprs_page_content_fields', $fields);
 }
 
 
@@ -103,6 +98,7 @@ add_action('carbon_fields_register_fields', static function ()
                                              Field::make('checkbox', 'wprs_enable_sticky', __('Enable Sticky Header', '_s')),
                                              Field::make('color', 'wprs-header-bg', __('Header Background Color', '_s')),
                                              Field::make('color', 'wprs-header-bg-darken', __('Darker Header Background Color', '_s')),
+                                             Field::make('color', 'wprs-header-border-color', __('Header Border Color', '_s')),
                                              Field::make('color', 'wprs-header-text-color', __('Text Color In Header', '_s')),
                                          ])
                                          ->add_tab(__('Global Style', '_s'), [

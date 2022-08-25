@@ -234,7 +234,7 @@ __webpack_require__.r(__webpack_exports__);
 function stickyNav() {
   var header = document.getElementById('masthead');
   var body = document.getElementsByTagName('body')[0];
-  var sticky = header.offsetTop + 100;
+  var sticky = header.offsetTop + 0;
 
   if (body.classList.contains('rs-sticky')) {
     if (window.scrollY > sticky) {
