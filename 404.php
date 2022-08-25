@@ -22,11 +22,11 @@ get_header();
                         </div>
 
                         <header class="rs-empty__title">
-                            <?php esc_html_e('Oops! That page can&rsquo;t be found.', 'wenprise-content-components'); ?>
+                            <?php esc_html_e('Oops! That page can&rsquo;t be found.', '_s'); ?>
                         </header><!-- .page-header -->
 
                         <p class="rs-empty__subtitle">
-                            <?php esc_html_e('It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'wenprise-content-components'); ?>
+                            <?php esc_html_e('It looks like nothing was found at this location. Maybe try one of the links below or a search?', '_s'); ?>
                         </p>
 
                         <div class="rs-empty__action input-group input-inline">

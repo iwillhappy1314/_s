@@ -24,7 +24,7 @@ function _s_customize_register($wp_customize)
 
     $wp_customize->add_section('colors_background', [
         'priority' => 25,
-        'title'    => __('Colors and Background', 'wenprise-content-components'),
+        'title'    => __('Colors and Background', '_s'),
     ]);
 
     $wp_customize->get_control('header_textcolor')->section = 'colors_background';
