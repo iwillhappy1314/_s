@@ -41,7 +41,7 @@ body {
 
 .site__header {
     @apply flex flex-wrap justify-between items-center w-full border-b transition-all duration-300;
-    background-color: var(--header-bg);
+    background-color: var(--header-bg-color);
     border-bottom-color: var(--header-border-color);
     height: var(--header-h);
     z-index: var(--header-z);

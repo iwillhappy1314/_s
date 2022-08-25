@@ -14,45 +14,35 @@
     }
 }
 
+
 // -----------------------------------------------------------------------------------------------------------------
 // 1. 主题快速设置 ( SASS 变量)
+// --menu-bg-color: <?= get_option('_menu_bg_color'); ?>;
+// --menu-highlight-bg-color: <?= get_option('_menu_highlighted_bg_color'); ?>;
+// --menu-text-color: <?= get_option('_menu_text_color'); ?>;
+// --menu-highlight-text-color: <?= get_option('_menu_highlighted_text_color'); ?>;
 // -----------------------------------------------------------------------------------------------------------------
-
-
-// ----------------------------------------------------------
-// :: 1.1. 颜色
-// 一般情况下只需要更新这几个变量即可
-// ----------------------------------------------------------
-
-$sm-menu__white: var(--header-bg) !default; // 背景颜色
-$sm-menu__black: var(--header-text-color) !default; // 文字颜色
-$sm-menu__green: var(--header-bg) !default; // 下拉盒子背景颜色
-$sm-menu__green-dark: var(--header-bg-darken) !default; // 菜单激活状态背景颜色
-
-$sm-menu__box-shadow: rgba(0, 0, 0, 0.25) !default;
-
 
 // ----------------------------------------------------------
 // :: 1.2. 自适应端点
 // ----------------------------------------------------------
 
-$sm-menu__desktop-vp: 1024px !default; // switch from collapsible to desktop
+$sm-menu__desktop-vp: 1024px; // switch from collapsible to desktop
 
 
 // ----------------------------------------------------------
 // :: 1.3. 字体排版
 // ----------------------------------------------------------
-$sm-menu__font-family: $family-sans-serif !default;
-$sm-menu__font-size-base: 16px !default;
-$sm-menu__font-size-small: 16px !default;
-$sm-menu__line-height: 17px !default;
+$sm-menu__font-family: $family-sans-serif;
+$sm-menu__font-size-base: 16px;
+$sm-menu__font-size-small: 16px;
+$sm-menu__line-height: 17px;
 
 // ----------------------------------------------------------
 // :: 1.4. 边框
 // ----------------------------------------------------------
-
-$sm-menu__border-width: 1px !default;
-$sm-menu__border-radius-base: 0 !default;
+$sm-menu__border-width: 1px;
+$sm-menu__border-radius-base: 0;
 
 
 // ----------------------------------------------------------
@@ -60,62 +50,35 @@ $sm-menu__border-radius-base: 0 !default;
 // ----------------------------------------------------------
 
 // 菜单盒子
-$sm-menu__collapsible-bg: $sm-menu__green !default;
-$sm-menu__collapsible-border-color: $border-base !default;
+$sm-menu__collapsible-border-color: var(--menu-border-color);
 
 // 菜单项
-$sm-menu__collapsible-item-color: $sm-menu__black !default;
-$sm-menu__collapsible-item-disabled-color: #999 !default;
-$sm-menu__collapsible-item-padding-vertical: 13px !default;
-$sm-menu__collapsible-item-padding-horizontal: 20px !default;
+$sm-menu__collapsible-item-disabled-color: rgba(var(--menu-text-color), 0.75);
+$sm-menu__collapsible-item-padding-vertical: 13px;
+$sm-menu__collapsible-item-padding-horizontal: 20px;
 
 // 菜单分隔
-$sm-menu__collapsible-separators-color: rgba($sm-menu__green-dark, 0.2) !default;
-
-// 切换按钮 (sub menu indicators)
-$sm-menu__collapsible-toggle-bg: transpatent;
-
-// ----------------------------------------------------------
-// :: 1.6. 折叠子菜单
-// ----------------------------------------------------------
-
-// 菜单盒子
-$sm-menu__collapsible-sub-bg: rgba($sm-menu__green-dark, 0.2) !default;
-
-// 项目文本缩进为更深层
-$sm-menu__collapsible-sub-item-indentation: 8px !default;
-
+$sm-menu__collapsible-separators-color: var(--menu-border-color);
 
 // ----------------------------------------------------------
 // :: 1.7. 桌面主菜单
 // ----------------------------------------------------------
 
-// Menu box
-$sm-menu__desktop-bg: transparent !default;
-
 // Items
-$sm-menu__desktop-item-color: var(--header-text-color) !default;
-$sm-menu__desktop-item-hover-color: var(--header-text-color) !default;
-$sm-menu__desktop-item-hover-bg: $sm-menu__green-dark !default;
-$sm-menu__desktop-item-highlighted-color: $sm-menu__black !default;
-$sm-menu__desktop-item-highlighted-bg: $sm-menu__green !default;
-$sm-menu__desktop-item-highlighted-box-shadow: 0 4px 3px $sm-menu__box-shadow !default;
-$sm-menu__desktop-item-disabled-color: #999 !default;
-$sm-menu__desktop-item-padding-vertical: 11px !default;
-$sm-menu__desktop-item-padding-horizontal: 20px !default;
+$sm-menu__desktop-item-highlighted-box-shadow: 0 4px 3px rgba(0, 0, 0, 0.25);
+$sm-menu__desktop-item-disabled-color: #999;
+$sm-menu__desktop-item-padding-vertical: 11px;
+$sm-menu__desktop-item-padding-horizontal: 20px;
 
 // 子菜单指示
-$sm-menu__desktop-arrow-size: 6px !default; // border-width
-$sm-menu__desktop-arrow-color: $sm-menu__black !default;
-$sm-menu__desktop-arrow-hover-color: $sm-menu__white !default;
-$sm-menu__desktop-arrow-highlighted-color: $sm-menu__green-dark !default;
-$sm-menu__desktop-arrow-spacing: 6px !default;
+$sm-menu__desktop-arrow-size: 6px; // border-width
+$sm-menu__desktop-arrow-color: var(--menu-text-color);
+$sm-menu__desktop-arrow-hover-color: var(--menu-highlight-text-color);
+$sm-menu__desktop-arrow-spacing: 6px;
 
 // 垂直项目
-$sm-menu__desktop-vertical-item-highlighted-color: $sm-menu__desktop-item-hover-color !default;
-$sm-menu__desktop-vertical-item-highlighted-bg: $sm-menu__desktop-item-hover-bg !default;
-$sm-menu__desktop-vertical-item-padding-vertical: 10px !default;
-$sm-menu__desktop-vertical-item-padding-horizontal: 20px !default;
+$sm-menu__desktop-vertical-item-padding-vertical: 10px;
+$sm-menu__desktop-vertical-item-padding-horizontal: 20px;
 
 
 // ----------------------------------------------------------
@@ -123,29 +86,15 @@ $sm-menu__desktop-vertical-item-padding-horizontal: 20px !default;
 // ----------------------------------------------------------
 
 // 菜单盒子
-$sm-menu__desktop-sub-bg: $sm-menu__green !default;
-$sm-menu__desktop-sub-box-shadow: 0 4px 3px $sm-menu__box-shadow !default;
-$sm-menu__desktop-sub-padding-vertical: 8px !default;
-$sm-menu__desktop-sub-padding-horizontal: 0 !default;
+$sm-menu__desktop-sub-box-shadow: 0 4px 3px rgba(0, 0, 0, 0.25);
 
 // 菜单项
-$sm-menu__desktop-sub-item-color: $sm-menu__black !default;
-$sm-menu__desktop-sub-item-hover-color: $sm-menu__white !default;
-$sm-menu__desktop-sub-item-hover-bg: $sm-menu__green-dark !default;
-$sm-menu__desktop-sub-item-disabled-color: #999 !default;
-$sm-menu__desktop-sub-item-padding-vertical: 10px !default;
-$sm-menu__desktop-sub-item-padding-horizontal: 20px !default;
-
-
-// -----------------------------------------------------------------------------------------------------------------
-// 2. 主题 CSS
-// -----------------------------------------------------------------------------------------------------------------
-
+$sm-menu__desktop-sub-item-padding-vertical: 10px;
+$sm-menu__desktop-sub-item-padding-horizontal: 20px;
 
 // ----------------------------------------------------------
 // :: 2.1. 折叠模式 (移动优先)
 // ----------------------------------------------------------
-
 // 计算菜单项目高度和子菜单指示尺寸
 $sm-menu__item-height: $sm-menu__line-height + $sm-menu__collapsible-item-padding-vertical * 2;
 
@@ -155,9 +104,7 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
 
 // Main menu box
 .sm-menu {
-    //border-top: $sm-menu__border-width solid $sm-menu__collapsible-border-color;
-    //border-bottom: $sm-menu__border-width solid $sm-menu__collapsible-border-color;
-    background: $sm-menu__collapsible-bg;
+    background: var(--menu-bg-color);
     position: relative;
 
     // Main menu items
@@ -171,7 +118,7 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
             padding: $sm-menu__collapsible-item-padding-vertical $sm-menu__collapsible-item-padding-horizontal;
             /* make room for the toggle button (sub indicator) */
             padding-right: $sm-menu__collapsible-item-padding-horizontal + $sm-menu__toggle-size + $sm-menu__toggle-spacing;
-            color: $sm-menu__collapsible-item-color;
+            color: var(--menu-text-color);
             font-family: $sm-menu__font-family;
             font-size: $sm-menu__font-size-base;
             font-weight: normal;
@@ -200,7 +147,6 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
             font: bold #{$sm-menu__font-size-small}/#{$sm-menu__toggle-size} monospace !important;
             text-align: center;
             text-shadow: none;
-            background: $sm-menu__collapsible-toggle-bg;
             border-radius: $sm-menu__border-radius-base;
         }
 
@@ -215,14 +161,33 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
 
     // Main menu items separators
     li {
-        border-top: 1px solid $sm-menu__collapsible-separators-color;
+        border-top: 1px solid var(--menu-border-color);
 
         &.current-menu-ancestor,
         &.current-menu-parent,
         &.current-menu-item {
             & > a {
                 @apply font-bold;
+                color: var(--menu-highlight-text-color);
             }
+        }
+    }
+
+    & > li {
+        &.current-menu-ancestor,
+        &.current-menu-parent,
+        &.current-menu-item {
+            & > a {
+                .sub-arrow {
+                    border-color: var(--menu-highlight-text-color) transparent transparent transparent;
+                }
+            }
+        }
+    }
+
+    ul {
+        li {
+            border-top: 1px solid var(--menu-highlight-border-color);
         }
     }
 
@@ -232,7 +197,7 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
 
     // Sub menus box
     ul {
-        background: $sm-menu__collapsible-sub-bg;
+        background: var(--menu-highlight-bg-color);
         display: none;
         z-index: 999;
 
@@ -244,12 +209,24 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
             &:active {
                 font-size: $sm-menu__font-size-small;
                 // add indentation for sub menus text
-                border-left: $sm-menu__collapsible-sub-item-indentation solid transparent;
+                border-left: 8px solid transparent;
+            }
+        }
+
+        & > li {
+            &.current-menu-ancestor,
+            &.current-menu-parent,
+            &.current-menu-item {
+                & > a {
+                    .sub-arrow {
+                        border-color: transparent var(--menu-highlight-text-color) transparent;
+                    }
+                }
             }
         }
 
         // Add indentation for sub menus text for deeper levels
-        @include sm-menu__sub-items-indentation($sm-menu__collapsible-sub-item-indentation);
+        @include sm-menu__sub-items-indentation(8px);
     }
 
     &.sm-vertical {
@@ -299,7 +276,6 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
     // Main menu box
     .sm-menu {
         border-top: 0;
-        background: $sm-menu__desktop-bg;
 
         // Main menu items
         a {
@@ -309,20 +285,18 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
             &:active,
             &.highlighted {
                 padding: $sm-menu__desktop-item-padding-vertical $sm-menu__desktop-item-padding-horizontal;
-                color: $sm-menu__desktop-item-color;
+                // color: var(--header-text-color);
                 border-radius: $sm-menu__border-radius-base $sm-menu__border-radius-base 0 0;
             }
 
             &:hover,
             &:focus,
-            &:active {
-                //background: $sm-menu__desktop-item-hover-bg;
-                color: $sm-menu__desktop-item-hover-color;
+            &:active, {
+                color: var(--menu-highlight-text-color);
             }
 
             &.highlighted {
-                //background: $sm-menu__desktop-item-highlighted-bg;
-                color: $sm-menu__desktop-item-highlighted-color;
+                color: var(--menu-highlight-text-color);
                 box-shadow: $sm-menu__desktop-item-highlighted-box-shadow;
             }
 
@@ -354,11 +328,11 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
             &:hover .sub-arrow,
             &:focus .sub-arrow,
             &:active .sub-arrow {
-                border-color: $sm-menu__desktop-arrow-hover-color transparent transparent transparent;
+                border-color: var(--menu-highlight-text-color) transparent transparent transparent;
             }
 
             &.highlighted .sub-arrow {
-                border-color: $sm-menu__desktop-arrow-highlighted-color transparent transparent transparent;
+                border-color: var(--menu-highlight-text-color) transparent transparent transparent;
             }
 
             &.disabled .sub-arrow {
@@ -379,14 +353,18 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
         // 子菜单盒子
         ul {
             border: 0;
-            padding: $sm-menu__desktop-sub-padding-vertical $sm-menu__desktop-sub-padding-horizontal;
-            background: $sm-menu__desktop-sub-bg;
+            padding: 8px 0;
+            background: var(--menu-bg-color);
             border-radius: 0 $sm-menu__border-radius-base $sm-menu__border-radius-base $sm-menu__border-radius-base;
             box-shadow: $sm-menu__desktop-sub-box-shadow;
 
             // 2+ sub levels need rounding of all corners
             ul {
                 border-radius: $sm-menu__border-radius-base;
+            }
+
+            li {
+                border-top: 0;
             }
 
             // 子菜单项目
@@ -398,7 +376,7 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
                 &.highlighted {
                     border: 0 !important;
                     padding: $sm-menu__desktop-sub-item-padding-vertical $sm-menu__desktop-sub-item-padding-horizontal;
-                    color: $sm-menu__desktop-sub-item-color;
+                    // color: var(--header-text-color);
                     border-radius: 0;
                 }
 
@@ -406,14 +384,14 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
                 &:focus,
                 &:active,
                 &.highlighted {
-                    background: $sm-menu__desktop-sub-item-hover-bg;
-                    color: $sm-menu__desktop-sub-item-hover-color;
+                    background: var(--menu-highlight-bg-color);
+                    // color: var(--header-text-color);
                     box-shadow: none;
                 }
 
                 &.disabled {
                     background: transparent;
-                    color: $sm-menu__desktop-sub-item-disabled-color;
+                    color: rgba(var(--menu-text-color), 0.75);
                 }
 
                 // No need for additional room for the sub arrows
@@ -450,7 +428,7 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
             display: none;
             visibility: hidden;
             overflow: hidden;
-            background: $sm-menu__desktop-sub-bg;
+            background: var(--menu-bg-color);
             height: 20px;
             // width and position will be set automatically by the script
         }
@@ -576,7 +554,7 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
         &.sm-vertical {
             border-bottom: 0;
             border: $sm-menu__border-width solid $sm-menu__collapsible-border-color;
-            background: $sm-menu__green;
+            background: var(--menu-bg-color);
 
             // Main menu items
             a {
@@ -589,8 +567,7 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
                 &:focus,
                 &:active,
                 &.highlighted {
-                    background: $sm-menu__desktop-item-hover-bg;
-                    color: $sm-menu__desktop-item-hover-color;
+                    color: var(--menu-highlight-text-color);
                     box-shadow: none;
                 }
 
@@ -635,7 +612,7 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
 }
 
 .rs-theme--dark:not(.is-sticky) {
-    .sm-menu>li>a {
+    .sm-menu > li > a {
         @apply text-white;
 
         &:hover,
@@ -646,14 +623,14 @@ $sm-menu__toggle-spacing: floor($sm-menu__item-height * 0.1);
         }
     }
 
-    .sm-menu li.current-menu-ancestor>a,
-    .sm-menu li.current-menu-item>a,
-    .sm-menu li.current-menu-parent>a {
+    .sm-menu li.current-menu-ancestor > a,
+    .sm-menu li.current-menu-item > a,
+    .sm-menu li.current-menu-parent > a {
         @apply text-white;
     }
 
-    .sm-menu>li.menu-item-has-children>a:after,
-    .sm-menu>li.sm-mega-menu>a:after {
+    .sm-menu > li.menu-item-has-children > a:after,
+    .sm-menu > li.sm-mega-menu > a:after {
         @apply border-t-white;
     }
 
