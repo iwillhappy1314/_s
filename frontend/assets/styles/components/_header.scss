@@ -158,8 +158,11 @@ body.rs-sticky {
     .elementor,
     .site__banner,
     .site__content {
-        margin-top: calc(var(--notice-h) + var(--header-h));
         transition: all .3s;
+    }
+
+    .site__header-holder{
+        height: calc(var(--notice-h) + var(--header-h));
     }
 
     .site__banner + .site__content {

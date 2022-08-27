@@ -68,4 +68,6 @@
         </div>
     </header>
 
+    <div class="site__header-holder"></div>
+
     <?php do_action('_s_after_header'); ?>
