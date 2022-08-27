@@ -125,7 +125,7 @@ body {
     min-height: 300px;
     @apply flex flex-col justify-center items-center bg-cover bg-center bg-no-repeat;
 
-    h1, p, span, a {
+    * {
         color: var(--banner-text-color);
     }
 }
