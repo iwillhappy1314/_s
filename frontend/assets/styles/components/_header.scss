@@ -17,7 +17,7 @@ body {
 
     @screen md {
         --header-h: 75px; // 平板端页头高度
-        --notice-h: 0;    // 平板端通知条高度
+        --notice-h: 0px;    // 平板端通知条高度
         --logo-h: 48px;             // 平板端Logo高度
     }
 
@@ -48,6 +48,10 @@ body {
 
     .container {
         @apply flex justify-between items-center;
+    }
+
+    &-holder{
+        @apply transition-all duration-300;
     }
 }
 
@@ -184,6 +188,10 @@ body.rs-sticky.is-sticky {
                 height: var(--sticky-logo-h);
             }
         }
+    }
+
+    .site__header-holder{
+        height: var(--header-sticky-h);
     }
 
     .site__notice {
