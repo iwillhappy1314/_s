@@ -1,7 +1,7 @@
 const purgecssWhiteList = require('@wenprise/purgecss-with-wordpress');
 
 module.exports = {
-    content   : [
+    content : [
         '../frontend/assets/scripts/**/*.js',
         '../bbpress/**/*.php',
         '../includes/**/*.php',
@@ -45,7 +45,16 @@ module.exports = {
         },
     ]),
     theme   : {
-        extend: {
+        container: {
+            screens: {
+                minsm: { min: '640px' },
+                minmd: { min: '768px' },
+                minlg: { min: '1024px' },
+                minxl: { min: '1280px' },
+                min2xl: { min: '1360px' },
+            },
+        },
+        extend   : {
             colors: {
                 primary  : '#e50011',
                 secondary: '#9e7b07',
