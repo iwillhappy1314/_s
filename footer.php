@@ -11,13 +11,17 @@
 ?>
 <?php do_action('_s_before_footer'); ?>
 
-<footer id="colophon" class="site__footer">
+<?php
+do_action( 'kadence_before_footer' );
+/**
+ * Kadence footer hook.
+ *
+ * @hooked Kadence/footer_markup - 10
+ */
+do_action( 'kadence_footer' );
 
-    <?php if (is_active_sidebar('sidebar-footer')): ?>
-        <?php dynamic_sidebar('sidebar-footer'); ?>
-    <?php endif; ?>
-
-</footer>
+do_action( 'kadence_after_footer' );
+?>
 
 </div><!-- #page -->
 

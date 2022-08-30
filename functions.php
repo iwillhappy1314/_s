@@ -76,3 +76,24 @@ require_once(get_theme_file_path('includes/cleanup.php'));
 if (class_exists('WooCommerce')) {
     require_once(get_theme_file_path('includes/woocommerce.php'));
 }
+
+define( 'KADENCE_VERSION', '1.1.26' );
+define( 'KADENCE_MINIMUM_WP_VERSION', '5.4' );
+define( 'KADENCE_MINIMUM_PHP_VERSION', '7.2' );
+
+// Bail if requirements are not met.
+if ( version_compare( $GLOBALS['wp_version'], KADENCE_MINIMUM_WP_VERSION, '<' ) || version_compare( phpversion(), KADENCE_MINIMUM_PHP_VERSION, '<' ) ) {
+    require get_template_directory() . '/inc/back-compat.php';
+    return;
+}
+// Include WordPress shims.
+require get_template_directory() . '/inc/wordpress-shims.php';
+
+// Load the `kadence()` entry point function.
+require get_template_directory() . '/inc/class-theme.php';
+
+// Load the `kadence()` entry point function.
+require get_template_directory() . '/inc/functions.php';
+
+// Initialize the theme.
+call_user_func( 'Kadence\kadence' );

@@ -158,12 +158,10 @@ ul.wp-block-gallery {
 
 .nav-links {
     @apply mb-8;
-    @include clearfix;
 }
 
 .nav-previous,
 .previous-image {
-    @apply float-left w-1/2;
 
     &:before{
         @apply mr-2;
@@ -174,7 +172,7 @@ ul.wp-block-gallery {
 
 .nav-next,
 .next-image {
-    @apply float-right w-1/2 text-right;
+    @apply text-right;
     &:after{
         @apply ml-2;
         font-family: icomoon, sans-serif;

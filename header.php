@@ -22,23 +22,37 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-    <a class="skip-link screen-reader-text" href="#content">
-        <?php esc_html_e('Skip to content', '_s'); ?>
-    </a>
-
     <?php
-    do_action('_s_before_site');
-    do_action('_s_before_header');
+    // do_action('_s_before_site');
+    // do_action('_s_before_header');
     ?>
 
-    <?php if (is_active_sidebar('sidebar-top-bar')): ?>
-        <div class="site__notice o-mini-widgets">
-            <?php dynamic_sidebar('sidebar-top-bar'); ?>
-        </div>
-    <?php endif; ?>
+    <?php
+    /**
+     * Kadence before header hook.
+     *
+     * @hooked kadence_do_skip_to_content_link - 2
+     */
+    do_action( 'kadence_before_header' );
 
-    <?php get_template_part('templates/header/style2') ?>
+    /**
+     * Kadence header hook.
+     *
+     * @hooked Kadence/header_markup - 10
+     */
+    do_action( 'kadence_header' );
 
-    <div class="site__header-holder"></div>
+    do_action( 'kadence_after_header' );
+    ?>
+
+    <?php //if (is_active_sidebar('sidebar-top-bar')): ?>
+    <!--    <div class="site__notice o-mini-widgets">-->
+    <!--        --><?php //dynamic_sidebar('sidebar-top-bar'); ?>
+    <!--    </div>-->
+    <?php //endif; ?>
+
+    <?php //get_template_part('template-parts/header/style1') ?>
+
+<!--    <div class="site__header-holder"></div>-->
 
     <?php do_action('wprs_after_header'); ?>
