@@ -4,35 +4,12 @@
 
 // 内容
 .rs-entry {
-    @apply flex flex-wrap;
-
-    @screen md{
-        @apply flex-nowrap;
-    }
-
     @screen lg{
         @apply px-0;
     }
 
     &__image{
         min-width: 200px;
-
-        &+{
-            .rs-entry__body{
-
-                @screen md{
-                    @apply ml-6;
-                }
-            }
-        }
-    }
-
-    &__body{
-        @apply flex-grow mt-4;
-
-        @screen md{
-            @apply mt-0;
-        }
     }
 
     &__title{
