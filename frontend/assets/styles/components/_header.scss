@@ -22,7 +22,8 @@ body {
     }
 
     @screen lg {
-        --header-h: 100px;    // PC端页头高度
+        // --header-h: 100px;    // PC端页头高度
+        --header-h: 140px;    // PC端页头高度
         --notice-h: 45px;     // PC端通知条高度
         --admin-bar-h: 32px;       // PC端管理工具条高度
         --logo-h: 64px;                 // PC端Logo高度
@@ -40,7 +41,7 @@ body {
 }
 
 .site__header {
-    @apply flex flex-wrap justify-between items-center w-full border-b transition-all duration-300;
+    @apply border-b transition-all duration-300;
     background-color: var(--header-bg-color);
     border-bottom-color: var(--header-border-color);
     height: var(--header-h);
