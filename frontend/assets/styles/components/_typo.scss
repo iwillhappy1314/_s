@@ -56,7 +56,8 @@
     }
 
     a:not(.button):hover {
-        @apply no-underline text-primary border-b border-gray-500;
+        @apply no-underline border-b border-gray-500;
+        color: var(--wprs-primary-color);
     }
 
     /* 同 ul/ol，在文章中应用 table 基本格式 */

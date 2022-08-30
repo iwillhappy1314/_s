@@ -44,8 +44,8 @@
             content: "";
         }
 
-        &.active.last{
-            &:after{
+        &.active.last {
+            &:after {
                 width: 60%;
                 border-radius: 6px;
             }
@@ -80,7 +80,8 @@
 
 .rs-checkout-bar {
     li.visited::after, &::before {
-        @apply absolute bg-primary left-0;
+        @apply absolute left-0;
+        background-color: var(--wprs-primary-color);
         width: 17%;
         height: 6px;
         border-radius: 6px;
@@ -103,7 +104,7 @@
 
 .woocommerce-checkout {
     .rs-checkout-bar li.active::after {
-        @apply bg-primary;
+        background-color: var(--wprs-primary-color);
     }
 
     ul.rs-checkout-bar li.next {

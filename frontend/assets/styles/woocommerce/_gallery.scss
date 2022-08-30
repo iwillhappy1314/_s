@@ -82,7 +82,7 @@ div.images {
 
             &.flex-active,
             &:hover {
-                @apply border-primary;
+                border-color: var(--wprs-primary-color);
             }
         }
     }
