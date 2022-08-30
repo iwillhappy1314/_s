@@ -5,6 +5,7 @@ require('script-loader!./plugins/skip-link-focus-fix');
 
 import {isMobile} from './components/helpers';
 import {navTree} from './components/nav-tree';
+import RevealHeader from './components/nav/reveal-header';
 import {smartMenu} from './components/nav/smart-menu';
 import {stickyNav} from './components/nav/sticky';
 //import {mainSwiper} from './components/swiper';
@@ -24,6 +25,7 @@ import {lazyYoutube} from './components/lazy-youtube';
         //meanMenu();
         this.closeCartDrawer();
         navTree();
+        RevealHeader();
         stickySidebar();
         this.accordion();
         this.tab();

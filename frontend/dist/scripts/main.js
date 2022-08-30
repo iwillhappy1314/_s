@@ -190,6 +190,46 @@ function navTree() {
 
 /***/ }),
 
+/***/ "./assets/scripts/components/nav/reveal-header.js":
+/*!********************************************************!*\
+  !*** ./assets/scripts/components/nav/reveal-header.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ RevealHeader)
+/* harmony export */ });
+function RevealHeader() {
+  var body = document.body;
+  var scrollUp = 'scroll-up';
+  var scrollDown = 'scroll-down';
+  var lastScroll = 0;
+  window.addEventListener('scroll', function () {
+    var currentScroll = window.pageYOffset;
+
+    if (currentScroll <= 0) {
+      body.classList.remove(scrollUp);
+      return;
+    }
+
+    if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
+      // down
+      body.classList.remove(scrollUp);
+      body.classList.add(scrollDown);
+    } else if (currentScroll < lastScroll && body.classList.contains(scrollDown)) {
+      // up
+      body.classList.remove(scrollDown);
+      body.classList.add(scrollUp);
+    }
+
+    lastScroll = currentScroll;
+  });
+}
+
+/***/ }),
+
 /***/ "./assets/scripts/components/nav/smart-menu.js":
 /*!*****************************************************!*\
   !*** ./assets/scripts/components/nav/smart-menu.js ***!
@@ -469,17 +509,19 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/helpers */ "./assets/scripts/components/helpers.js");
 /* harmony import */ var _components_nav_tree__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/nav-tree */ "./assets/scripts/components/nav-tree.js");
-/* harmony import */ var _components_nav_smart_menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/nav/smart-menu */ "./assets/scripts/components/nav/smart-menu.js");
-/* harmony import */ var _components_nav_sticky__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/nav/sticky */ "./assets/scripts/components/nav/sticky.js");
-/* harmony import */ var _components_isotope__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/isotope */ "./assets/scripts/components/isotope.js");
-/* harmony import */ var _components_sticky_sidebar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/sticky-sidebar */ "./assets/scripts/components/sticky-sidebar.js");
-/* harmony import */ var _components_lazy_youtube__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/lazy-youtube */ "./assets/scripts/components/lazy-youtube.js");
+/* harmony import */ var _components_nav_reveal_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/nav/reveal-header */ "./assets/scripts/components/nav/reveal-header.js");
+/* harmony import */ var _components_nav_smart_menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/nav/smart-menu */ "./assets/scripts/components/nav/smart-menu.js");
+/* harmony import */ var _components_nav_sticky__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/nav/sticky */ "./assets/scripts/components/nav/sticky.js");
+/* harmony import */ var _components_isotope__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/isotope */ "./assets/scripts/components/isotope.js");
+/* harmony import */ var _components_sticky_sidebar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/sticky-sidebar */ "./assets/scripts/components/sticky-sidebar.js");
+/* harmony import */ var _components_lazy_youtube__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/lazy-youtube */ "./assets/scripts/components/lazy-youtube.js");
 /* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ "jquery");
 
 
 __webpack_require__(/*! script-loader!./plugins/navigation */ "./node_modules/.pnpm/script-loader@0.7.2/node_modules/script-loader/index.js!./assets/scripts/plugins/navigation.js");
 
 __webpack_require__(/*! script-loader!./plugins/skip-link-focus-fix */ "./node_modules/.pnpm/script-loader@0.7.2/node_modules/script-loader/index.js!./assets/scripts/plugins/skip-link-focus-fix.js");
+
 
 
 
@@ -496,16 +538,17 @@ __webpack_require__(/*! script-loader!./plugins/skip-link-focus-fix */ "./node_m
   spaceName.init = function () {
     this.ajaxLoading(); //mainSwiper();
 
-    (0,_components_nav_smart_menu__WEBPACK_IMPORTED_MODULE_2__.smartMenu)(); //menuToggle();
+    (0,_components_nav_smart_menu__WEBPACK_IMPORTED_MODULE_3__.smartMenu)(); //menuToggle();
     //meanMenu();
 
     this.closeCartDrawer();
     (0,_components_nav_tree__WEBPACK_IMPORTED_MODULE_1__.navTree)();
-    (0,_components_sticky_sidebar__WEBPACK_IMPORTED_MODULE_5__.stickySidebar)();
+    (0,_components_nav_reveal_header__WEBPACK_IMPORTED_MODULE_2__["default"])();
+    (0,_components_sticky_sidebar__WEBPACK_IMPORTED_MODULE_6__.stickySidebar)();
     this.accordion();
     this.tab();
-    (0,_components_lazy_youtube__WEBPACK_IMPORTED_MODULE_6__.lazyYoutube)();
-    (0,_components_isotope__WEBPACK_IMPORTED_MODULE_4__.isotope)();
+    (0,_components_lazy_youtube__WEBPACK_IMPORTED_MODULE_7__.lazyYoutube)();
+    (0,_components_isotope__WEBPACK_IMPORTED_MODULE_5__.isotope)();
   };
   /**
    * Ajax loading style
@@ -607,7 +650,7 @@ __webpack_require__(/*! script-loader!./plugins/skip-link-focus-fix */ "./node_m
   });
 
   window.onscroll = function () {
-    (0,_components_nav_sticky__WEBPACK_IMPORTED_MODULE_3__.stickyNav)();
+    (0,_components_nav_sticky__WEBPACK_IMPORTED_MODULE_4__.stickyNav)();
   };
 })(jQuery);
 })();
