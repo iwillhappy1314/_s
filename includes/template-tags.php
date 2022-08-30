@@ -164,32 +164,3 @@ function _s_page_menu()
         ]
     );
 }
-
-
-/**
- * 显示页面Banner
- *
- * @return void
- */
-add_action('_s_after_header1', '_s_page_banner');
-function _s_page_banner()
-{
-    ?>
-    <section class="py-8">
-        <div class="container">
-            <?php wprs_get_page_title(); ?>
-        </div>
-    </section>
-    <?php
-}
-
-
-/**
- * 显示面包屑导航
- *
- * @return void
- */
-function _s_breadcrumb()
-{
-
-}

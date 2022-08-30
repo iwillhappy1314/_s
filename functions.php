@@ -76,12 +76,3 @@ require_once(get_theme_file_path('includes/cleanup.php'));
 if (class_exists('WooCommerce')) {
     require_once(get_theme_file_path('includes/woocommerce.php'));
 }
-
-
-add_action('_s_after_header1', function(){
-    $widget = new wizhi_submenus();
-
-    echo '<div class="relative">';
-    $widget->render_menu([],[]);
-    echo '</div>';
-});

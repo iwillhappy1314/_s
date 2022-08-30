@@ -70,4 +70,4 @@
 
     <div class="site__header-holder"></div>
 
-    <?php do_action('_s_after_header'); ?>
+    <?php do_action('wprs_after_header'); ?>

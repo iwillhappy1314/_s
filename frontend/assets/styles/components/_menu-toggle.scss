@@ -1,6 +1,6 @@
 .menu-toggle {
     @apply mx-3 relative overflow-hidden;
-    color: var(--wprs-primary-color);
+    color: var(--menu-text-color);
 
     svg {
         @apply mr-2;
@@ -17,7 +17,7 @@
         content: '';
         width: 32px;
         height: 2px;
-        background-color: $text-light;
+        background-color: var(--menu-text-color);
         margin: 8px 0;
         transition: 0.4s;
     }
