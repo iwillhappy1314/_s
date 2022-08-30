@@ -19,16 +19,10 @@ body{
 
     @screen md {
         @apply px-6;
-        //max-width: $tablet - 48px;
-    }
-
-    @screen lg {
-        //max-width: $desktop - 64px;
     }
 
     @screen xl {
         @apply px-0;
-        max-width: $widescreen - 64px;
     }
 
     &--focus {
@@ -38,12 +32,13 @@ body{
     }
 }
 
+
 .site {
     @apply flex flex-col;
     min-height: 100vh;
 
     &__content {
-        @apply w-full flex flex-wrap flex-grow mx-auto p-4 gap-8;
+        @apply container w-full flex flex-wrap flex-grow mx-auto p-4 gap-8;
         @extend .container;
 
         @screen md {
