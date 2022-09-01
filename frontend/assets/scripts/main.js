@@ -3,11 +3,11 @@
 require('script-loader!./plugins/navigation');
 require('script-loader!./plugins/skip-link-focus-fix');
 
-import {isMobile} from './components/helpers';
 import {navTree} from './components/nav-tree';
 import RevealHeader from './components/nav/reveal-header';
 import {smartMenu} from './components/nav/smart-menu';
 import {stickyNav} from './components/nav/sticky';
+import footerNav from './components/footer';
 //import {mainSwiper} from './components/swiper';
 import {isotope} from './components/isotope';
 import {stickySidebar} from './components/sticky-sidebar';
@@ -30,6 +30,7 @@ import {lazyYoutube} from './components/lazy-youtube';
         this.accordion();
         this.tab();
         lazyYoutube();
+        footerNav();
         isotope();
     };
 

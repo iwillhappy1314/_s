@@ -37,6 +37,7 @@
     },
     "dependencies": {
         "@tailwindcss/forms": "^0.5.2",
+        "is-mobile": "^3.1.1",
         "smartmenus": "^1.1.1",
         "tabslet": "^1.7.3",
         "theia-sticky-sidebar": "^1.7.0"

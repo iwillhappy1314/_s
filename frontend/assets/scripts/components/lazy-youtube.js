@@ -15,7 +15,7 @@ function lazyYoutube() {
     }
 
     // 给 iframe 添加 wrap, 以实现自适应
-    $('.type-docs iframe').wrap('<div class=\'rs-iframe-wrap\' />');
+    $('.type-docs iframe').wrap('<div class="rs-iframe-wrap" />');
 
 }
 

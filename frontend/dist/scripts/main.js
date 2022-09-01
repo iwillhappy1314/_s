@@ -1,45 +1,28 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./assets/scripts/components/helpers.js":
-/*!**********************************************!*\
-  !*** ./assets/scripts/components/helpers.js ***!
-  \**********************************************/
+/***/ "./assets/scripts/components/footer.js":
+/*!*********************************************!*\
+  !*** ./assets/scripts/components/footer.js ***!
+  \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "isMobile": () => (/* binding */ isMobile)
+/* harmony export */   "default": () => (/* binding */ footerNav)
 /* harmony export */ });
-/**
- *  判断是否为移动端
- * @param opts
- * @returns {boolean}
- */
-function isMobile(opts) {
-  var mobileRE = /(android|bb\d+|meego).+mobile|armv7l|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series[46]0|samsungbrowser|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i;
-  var notMobileRE = /CrOS/;
-  var tabletRE = /android|ipad|playbook|silk/i;
-  if (!opts) opts = {};
-  var ua = opts.ua;
-  if (!ua && typeof navigator !== 'undefined') ua = navigator.userAgent;
+/* harmony import */ var is_mobile__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! is-mobile */ "./node_modules/.pnpm/is-mobile@3.1.1/node_modules/is-mobile/index.js");
+/* harmony import */ var is_mobile__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(is_mobile__WEBPACK_IMPORTED_MODULE_0__);
+/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "jquery");
 
-  if (ua && ua.headers && typeof ua.headers['user-agent'] === 'string') {
-    ua = ua.headers['user-agent'];
+function footerNav() {
+  if (is_mobile__WEBPACK_IMPORTED_MODULE_0__.isMobile) {
+    $('.footer-widget-area .widget-title').click(function () {
+      $(this).next().slideToggle();
+    });
   }
-
-  if (typeof ua !== 'string') return false;
-  var result = mobileRE.test(ua) && !notMobileRE.test(ua) || !!opts.tablet && tabletRE.test(ua);
-
-  if (!result && opts.tablet && opts.featureDetect && navigator && navigator.maxTouchPoints > 1 && ua.indexOf('Macintosh') !== -1 && ua.indexOf('Safari') !== -1) {
-    result = true;
-  }
-
-  return result;
 }
-
-
 
 /***/ }),
 
@@ -112,7 +95,7 @@ function lazyYoutube() {
   } // 给 iframe 添加 wrap, 以实现自适应
 
 
-  $('.type-docs iframe').wrap('<div class=\'rs-iframe-wrap\' />');
+  $('.type-docs iframe').wrap('<div class="rs-iframe-wrap" />');
 }
 
 
@@ -315,6 +298,55 @@ function stickySidebar() {
 
 /***/ }),
 
+/***/ "./node_modules/.pnpm/is-mobile@3.1.1/node_modules/is-mobile/index.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/.pnpm/is-mobile@3.1.1/node_modules/is-mobile/index.js ***!
+  \****************************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+module.exports = isMobile
+module.exports.isMobile = isMobile
+module.exports["default"] = isMobile
+
+const mobileRE = /(android|bb\d+|meego).+mobile|armv7l|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series[46]0|samsungbrowser|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i
+const notMobileRE = /CrOS/
+
+const tabletRE = /android|ipad|playbook|silk/i
+
+function isMobile (opts) {
+  if (!opts) opts = {}
+  let ua = opts.ua
+  if (!ua && typeof navigator !== 'undefined') ua = navigator.userAgent
+  if (ua && ua.headers && typeof ua.headers['user-agent'] === 'string') {
+    ua = ua.headers['user-agent']
+  }
+  if (typeof ua !== 'string') return false
+
+  let result =
+    (mobileRE.test(ua) && !notMobileRE.test(ua)) ||
+    (!!opts.tablet && tabletRE.test(ua))
+
+  if (
+    !result &&
+    opts.tablet &&
+    opts.featureDetect &&
+    navigator &&
+    navigator.maxTouchPoints > 1 &&
+    ua.indexOf('Macintosh') !== -1 &&
+    ua.indexOf('Safari') !== -1
+  ) {
+    result = true
+  }
+
+  return result
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/.pnpm/raw-loader@0.5.1/node_modules/raw-loader/index.js!./node_modules/.pnpm/babel-loader@8.2.5_xc6oct4hcywdrbo4ned6ytbybm/node_modules/babel-loader/lib/index.js??ruleSet[1].rules[4].use[0]!./assets/scripts/plugins/lazyYT.js":
 /*!*******************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/.pnpm/raw-loader@0.5.1/node_modules/raw-loader/index.js!./node_modules/.pnpm/babel-loader@8.2.5_xc6oct4hcywdrbo4ned6ytbybm/node_modules/babel-loader/lib/index.js??ruleSet[1].rules[4].use[0]!./assets/scripts/plugins/lazyYT.js ***!
@@ -470,6 +502,18 @@ module.exports = jQuery;
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -507,11 +551,11 @@ var __webpack_exports__ = {};
   !*** ./assets/scripts/main.js ***!
   \********************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/helpers */ "./assets/scripts/components/helpers.js");
-/* harmony import */ var _components_nav_tree__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/nav-tree */ "./assets/scripts/components/nav-tree.js");
-/* harmony import */ var _components_nav_reveal_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/nav/reveal-header */ "./assets/scripts/components/nav/reveal-header.js");
-/* harmony import */ var _components_nav_smart_menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/nav/smart-menu */ "./assets/scripts/components/nav/smart-menu.js");
-/* harmony import */ var _components_nav_sticky__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/nav/sticky */ "./assets/scripts/components/nav/sticky.js");
+/* harmony import */ var _components_nav_tree__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/nav-tree */ "./assets/scripts/components/nav-tree.js");
+/* harmony import */ var _components_nav_reveal_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/nav/reveal-header */ "./assets/scripts/components/nav/reveal-header.js");
+/* harmony import */ var _components_nav_smart_menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/nav/smart-menu */ "./assets/scripts/components/nav/smart-menu.js");
+/* harmony import */ var _components_nav_sticky__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/nav/sticky */ "./assets/scripts/components/nav/sticky.js");
+/* harmony import */ var _components_footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/footer */ "./assets/scripts/components/footer.js");
 /* harmony import */ var _components_isotope__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/isotope */ "./assets/scripts/components/isotope.js");
 /* harmony import */ var _components_sticky_sidebar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/sticky-sidebar */ "./assets/scripts/components/sticky-sidebar.js");
 /* harmony import */ var _components_lazy_youtube__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/lazy-youtube */ "./assets/scripts/components/lazy-youtube.js");
@@ -538,16 +582,17 @@ __webpack_require__(/*! script-loader!./plugins/skip-link-focus-fix */ "./node_m
   spaceName.init = function () {
     this.ajaxLoading(); //mainSwiper();
 
-    (0,_components_nav_smart_menu__WEBPACK_IMPORTED_MODULE_3__.smartMenu)(); //menuToggle();
+    (0,_components_nav_smart_menu__WEBPACK_IMPORTED_MODULE_2__.smartMenu)(); //menuToggle();
     //meanMenu();
 
     this.closeCartDrawer();
-    (0,_components_nav_tree__WEBPACK_IMPORTED_MODULE_1__.navTree)();
-    (0,_components_nav_reveal_header__WEBPACK_IMPORTED_MODULE_2__["default"])();
+    (0,_components_nav_tree__WEBPACK_IMPORTED_MODULE_0__.navTree)();
+    (0,_components_nav_reveal_header__WEBPACK_IMPORTED_MODULE_1__["default"])();
     (0,_components_sticky_sidebar__WEBPACK_IMPORTED_MODULE_6__.stickySidebar)();
     this.accordion();
     this.tab();
     (0,_components_lazy_youtube__WEBPACK_IMPORTED_MODULE_7__.lazyYoutube)();
+    (0,_components_footer__WEBPACK_IMPORTED_MODULE_4__["default"])();
     (0,_components_isotope__WEBPACK_IMPORTED_MODULE_5__.isotope)();
   };
   /**
@@ -650,7 +695,7 @@ __webpack_require__(/*! script-loader!./plugins/skip-link-focus-fix */ "./node_m
   });
 
   window.onscroll = function () {
-    (0,_components_nav_sticky__WEBPACK_IMPORTED_MODULE_4__.stickyNav)();
+    (0,_components_nav_sticky__WEBPACK_IMPORTED_MODULE_3__.stickyNav)();
   };
 })(jQuery);
 })();

@@ -5,11 +5,11 @@
 
     background-color: var(--bg-color);
 
-    ul{
+    ul {
         @apply m-0 p-0 list-none;
     }
 
-    .wp-block-columns{
+    .wp-block-columns {
         @apply mb-0;
     }
 
@@ -20,7 +20,7 @@
             @apply mb-0 flex-grow;
         }
 
-        &:last-child{
+        &:last-child {
             @apply mb-0 pb-0;
         }
 
@@ -31,7 +31,8 @@
         li {
             a {
                 color: var(--text-color);
-                &:hover{
+
+                &:hover {
                     color: var(--text-hover-color);
                 }
             }
@@ -45,16 +46,17 @@
 
     a {
         color: var(--text-color);
-        &:hover{
+
+        &:hover {
             color: var(--text-hover-color);
         }
     }
 }
 
-.rs-widgets--below-content{
+.rs-widgets--below-content {
     @apply flex -mx-4 flex-wrap;
 
-    &>.widget{
+    & > .widget {
         @apply mx-4;
     }
 }
@@ -65,5 +67,52 @@
 
     @screen lg {
         @apply flex-nowrap;
+    }
+}
+
+
+@media screen and (max-width: 1023px) {
+    .site-footer-middle-section-1 {
+        @apply mb-4;
+        .widget {
+            border: 0;
+            @apply px-4;
+        }
+    }
+    .site-footer {
+        .site-container {
+            padding: 0;
+        }
+
+        .widget-title {
+            @apply px-4;
+        }
+
+        .widget {
+            & > div {
+                @apply hidden px-4 pb-4;
+            }
+        }
+    }
+    .widget-area.footer-widget-area {
+        .widget {
+            @apply border-b border-gray-300;
+        }
+
+        .widget-title {
+            @apply flex items-center justify-between mb-4;
+            &:after {
+                font-family: icomoon, sans-serif;
+                content: '\e9a4';
+            }
+        }
+
+        .menu-item {
+            @apply leading-normal;
+        }
+    }
+
+    .footer-html {
+        @apply px-4;
     }
 }
