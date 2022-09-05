@@ -10,6 +10,14 @@
 get_header();
 ?>
 
+    <button type='button' class='btn btn-secondary rs-popover'
+            data-bs-toggle='popover' data-bs-placement='right'
+            data-bs-custom-class='custom-popover'
+            data-bs-title='Custom popover'
+            data-bs-content='This popover is themed via CSS variables.'>
+        Custom popover
+    </button>
+
     <div id="content" class="site__content">
 
         <div id="primary" class="content__primary">

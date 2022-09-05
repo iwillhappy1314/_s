@@ -20,6 +20,10 @@ function _s_customize_register($wp_customize)
      * Combine colors and background to same section
      */
     $wp_customize->remove_section('background_image');
+    $wp_customize->remove_section('title');
+    $wp_customize->remove_section('header_image');
+    $wp_customize->remove_section('static_front_page');
+
     $wp_customize->remove_panel('wpuf_panel');
 
     $wp_customize->add_section('colors_background', [

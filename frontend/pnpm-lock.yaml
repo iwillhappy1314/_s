@@ -1,12 +1,14 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@popperjs/core': ^2.11.5
   '@tailwindcss/aspect-ratio': ^0.4.0
   '@tailwindcss/forms': ^0.5.2
   '@tailwindcss/line-clamp': ^0.3.1
   '@tailwindcss/typography': ^0.5.2
   '@wenprise/purgecss-with-wordpress': ^1.0.4
   autoprefixer: ^10.4.2
+  bootstrap: ^5.2.0
   browser-sync: ^2.27.7
   browser-sync-webpack-plugin: ^2.3.0
   collect.js: ^4.28.6
@@ -14,6 +16,7 @@ specifiers:
   cssnano: ^5.0.15
   fork-ts-checker-webpack-plugin: ^6.5.0
   is-mobile: ^3.1.1
+  jquery-smarttab: ^4.0.2
   laravel-mix: ^6.0.39
   laravel-mix-copy-watched: ^2.3.1
   laravel-mix-tailwind: ^0.1.2
@@ -26,19 +29,22 @@ specifiers:
   sass-loader: ^12.4.0
   script-loader: ^0.7.2
   smartmenus: ^1.1.1
-  tabslet: ^1.7.3
   tailwindcss: ^3.0.13
   theia-sticky-sidebar: ^1.7.0
+  tippy.js: ^6.3.7
   typescript: '>= 2.7'
   webpack: ^5.0.0
   webpack-livereload-plugin: '1'
 
 dependencies:
+  '@popperjs/core': 2.11.6
   '@tailwindcss/forms': 0.5.2_tailwindcss@3.1.7
+  bootstrap: 5.2.0_@popperjs+core@2.11.6
   is-mobile: 3.1.1
+  jquery-smarttab: 4.0.2
   smartmenus: 1.1.1
-  tabslet: 1.7.3
   theia-sticky-sidebar: 1.7.0
+  tippy.js: 6.3.7
 
 devDependencies:
   '@tailwindcss/aspect-ratio': 0.4.0_tailwindcss@3.1.7
@@ -1688,6 +1694,10 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
 
+  /@popperjs/core/2.11.6:
+    resolution: {integrity: sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==}
+    dev: false
+
   /@resvg/resvg-js-android-arm-eabi/2.1.0:
     resolution: {integrity: sha512-JtvWWtC6bYRhyth1qgUgcPQSP+jkwkmUzok/5b/IqKFb6cattMBFFdHnwM8AS+sgzXJKa8LhW48f3FmFQhfdrA==}
     engines: {node: '>= 10'}
@@ -2582,6 +2592,14 @@ packages:
   /boolbase/1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
     dev: true
+
+  /bootstrap/5.2.0_@popperjs+core@2.11.6:
+    resolution: {integrity: sha512-qlnS9GL6YZE6Wnef46GxGv1UpGGzAwO0aPL1yOjzDIJpeApeMvqV24iL+pjr2kU4dduoBA9fINKWKgMToobx9A==}
+    peerDependencies:
+      '@popperjs/core': ^2.11.5
+    dependencies:
+      '@popperjs/core': 2.11.6
+    dev: false
 
   /brace-expansion/1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
@@ -4695,6 +4713,10 @@ packages:
   /jpeg-js/0.4.2:
     resolution: {integrity: sha512-+az2gi/hvex7eLTMTlbRLOhH6P6WFdk2ITI8HJsaH2VqYO0I594zXSYEP+tf4FW+8Cy68ScDXoAsQdyQanv3sw==}
     dev: true
+
+  /jquery-smarttab/4.0.2:
+    resolution: {integrity: sha512-E0I0/rsltZFqfv1EFQi9KYv+cJ331fDTXgBTp0qwKhp559tGQFozZsEzFjQb7yz4lkApWyyJ/0W5LI5o+PxVSg==}
+    dev: false
 
   /jquery/3.6.0:
     resolution: {integrity: sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==}
@@ -6978,10 +7000,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /tabslet/1.7.3:
-    resolution: {integrity: sha512-jRCAEc/CVePgMQJMwIbYBfoFq+ZMiKoHN5WiZuwZ9h7TXS0T0cOKfQ23yUuYac93ZlYh0VPd/qiksuzfCfAbIg==}
-    dev: false
-
   /tailwindcss/3.1.7:
     resolution: {integrity: sha512-r7mgumZ3k0InfVPpGWcX8X/Ut4xBfv+1O/+C73ar/m01LxGVzWvPxF/w6xIUPEztrCoz7axfx0SMdh8FH8ZvRQ==}
     engines: {node: '>=12.13.0'}
@@ -7129,6 +7147,12 @@ packages:
   /tinycolor2/1.4.2:
     resolution: {integrity: sha512-vJhccZPs965sV/L2sU4oRQVAos0pQXwsvTLkWYdqJ+a8Q5kPFzJTuOFwy7UniPli44NKQGAglksjvOcpo95aZA==}
     dev: true
+
+  /tippy.js/6.3.7:
+    resolution: {integrity: sha512-E1d3oP2emgJ9dRQZdf3Kkn0qJgI6ZLpyS5z6ZkY1DF3kaQaBsGZsndEpHwx+eC+tYM41HaSNvNtLx8tU57FzTQ==}
+    dependencies:
+      '@popperjs/core': 2.11.6
+    dev: false
 
   /to-arraybuffer/1.0.1:
     resolution: {integrity: sha512-okFlQcoGTi4LQBG/PgSYblw9VOyptsz2KJZqc6qtgGdes8VktzUQkj4BI2blit072iS8VODNcMA+tvnS9dnuMA==}

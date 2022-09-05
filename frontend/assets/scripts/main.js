@@ -1,17 +1,31 @@
 'use strict';
 
-require('script-loader!./plugins/navigation');
-require('script-loader!./plugins/skip-link-focus-fix');
+//require('script-loader!./plugins/navigation');
+//require('script-loader!./plugins/skip-link-focus-fix');
 
-import {navTree} from './components/nav-tree';
-import RevealHeader from './components/nav/reveal-header';
-import {smartMenu} from './components/nav/smart-menu';
-import {stickyNav} from './components/nav/sticky';
-import footerNav from './components/footer';
+import Dropdown from 'bootstrap/js/dist/dropdown';
+import Popover from 'bootstrap/js/dist/popover';
+//import {navTree} from './components/nav-tree';
+//import RevealHeader from './components/nav/reveal-header';
+//import {smartMenu} from './components/nav/smart-menu';
+//import {stickyNav} from './components/nav/sticky';
+//import Tabs from './components/tab';
+//import Tooltip from './components/tooltip';
 //import {mainSwiper} from './components/swiper';
-import {isotope} from './components/isotope';
-import {stickySidebar} from './components/sticky-sidebar';
-import {lazyYoutube} from './components/lazy-youtube';
+//import {isotope} from './components/isotope';
+//import {stickySidebar} from './components/sticky-sidebar';
+//import {lazyYoutube} from './components/lazy-youtube';
+import footerNav from './components/footer';
+
+const dropdownElementList = document.querySelectorAll('.rs-dropdown-toggle');
+[...dropdownElementList].map(function(dropdownToggleEl) {
+    new Dropdown(dropdownToggleEl);
+});
+
+const popoverElementList = document.querySelectorAll('.rs-popover');
+[...popoverElementList].map(function(popoverEl) {
+    new Popover(popoverEl);
+});
 
 (function($) {
 
@@ -20,18 +34,20 @@ import {lazyYoutube} from './components/lazy-youtube';
     spaceName.init = function() {
         this.ajaxLoading();
         //mainSwiper();
-        smartMenu();
+        //smartMenu();
         //menuToggle();
         //meanMenu();
         this.closeCartDrawer();
-        navTree();
-        RevealHeader();
-        stickySidebar();
+        //navTree();
+        //RevealHeader();
+        //stickySidebar();
         this.accordion();
         this.tab();
-        lazyYoutube();
+        //lazyYoutube();
         footerNav();
-        isotope();
+        //Tabs();
+        //Tooltip();
+        //isotope();
     };
 
     /**
@@ -108,7 +124,6 @@ import {lazyYoutube} from './components/lazy-youtube';
                 mainClass   : 'mfp-fade',
                 removalDelay: 160,
                 preloader   : false,
-
                 fixedContentPos: false,
             });
         }
@@ -136,8 +151,8 @@ import {lazyYoutube} from './components/lazy-youtube';
         spaceName.init();
     });
 
-    window.onscroll = function() {
-        stickyNav();
-    };
+    //window.onscroll = function() {
+    //    stickyNav();
+    //};
 
 })(jQuery);
