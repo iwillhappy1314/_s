@@ -2,7 +2,7 @@
 // WordPress 样式
 //===================
 
-.wp-post-image {
+.wp-post-image:not(.object-cover) {
     @apply h-auto align-middle max-w-full;
 }
 
