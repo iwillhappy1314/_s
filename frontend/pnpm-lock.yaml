@@ -7,6 +7,7 @@ specifiers:
   '@tailwindcss/line-clamp': ^0.3.1
   '@tailwindcss/typography': ^0.5.2
   '@wenprise/purgecss-with-wordpress': ^1.0.4
+  accordion-js: ^3.3.2
   autoprefixer: ^10.4.2
   bootstrap: ^5.2.0
   browser-sync: ^2.27.7
@@ -31,6 +32,7 @@ specifiers:
   sass-loader: ^12.4.0
   script-loader: ^0.7.2
   smartmenus: ^1.1.1
+  swiper: ^8.3.2
   tailwindcss: ^3.0.13
   theia-sticky-sidebar: ^1.7.0
   tippy.js: ^6.3.7
@@ -41,12 +43,14 @@ specifiers:
 dependencies:
   '@popperjs/core': 2.11.6
   '@tailwindcss/forms': 0.5.2_tailwindcss@3.1.7
+  accordion-js: 3.3.2
   bootstrap: 5.2.0_@popperjs+core@2.11.6
   is-mobile: 3.1.1
   jquery-smarttab: 4.0.2
   loadjs: 4.2.0
   magnific-popup: 1.1.0
   smartmenus: 1.1.1
+  swiper: 8.3.2
   theia-sticky-sidebar: 1.7.0
   tippy.js: 6.3.7
 
@@ -2249,6 +2253,10 @@ packages:
       negotiator: 0.6.3
     dev: true
 
+  /accordion-js/3.3.2:
+    resolution: {integrity: sha512-Lu0fnrHy6BG6K+t7LdQxSfxMAnergGGYUxHNo5ESN9GdNWflKxJFyrXgc3PWrqkGysadrUpdOQFUs4KMSPtVag==}
+    dev: false
+
   /acorn-import-assertions/1.8.0_acorn@8.8.0:
     resolution: {integrity: sha512-m7VZ3jwz4eK6A4Vtt8Ew1/mNbP24u0FhdyfA7fSvnJR6LMdfOYnmuIrrJAgrYfYJ10F/otaHTtrtrtmHdMNzEw==}
     peerDependencies:
@@ -3614,6 +3622,12 @@ packages:
   /dom-walk/0.1.2:
     resolution: {integrity: sha512-6QvTW9mrGeIegrFXdtQi9pk7O/nSK6lSdXW2eqUspN5LWD7UTji2Fqw5V2YLjBpHEoU9Xl/eUWNpDeZvoyOv2w==}
     dev: true
+
+  /dom7/4.0.4:
+    resolution: {integrity: sha512-DSSgBzQ4rJWQp1u6o+3FVwMNnT5bzQbMb+o31TjYYeRi05uAcpF8koxdfzeoe5ElzPmua7W7N28YJhF7iEKqIw==}
+    dependencies:
+      ssr-window: 4.0.2
+    dev: false
 
   /domain-browser/1.2.0:
     resolution: {integrity: sha512-jnjyiM6eRyZl2H+W8Q/zLMA481hzi0eszAaBUzIVnmYVDBbnLxVNnfu1HgEBvCbL+71FrxMl3E6lpKH7Ge3OXA==}
@@ -6834,6 +6848,10 @@ packages:
       - supports-color
     dev: true
 
+  /ssr-window/4.0.2:
+    resolution: {integrity: sha512-ISv/Ch+ig7SOtw7G2+qkwfVASzazUnvlDTwypdLoPoySv+6MqlOV10VwPSE6EWkGjhW50lUmghPmpYZXMu/+AQ==}
+    dev: false
+
   /stable/0.1.8:
     resolution: {integrity: sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==}
     deprecated: 'Modern JS already guarantees Array#sort() is a stable sort, so this library is deprecated. See the compatibility table on MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#browser_compatibility'
@@ -7007,6 +7025,15 @@ packages:
   /svgpath/2.5.0:
     resolution: {integrity: sha512-o/vohwqjUO9nDAh4rcjE3KaW/v//At8UJu2LJMybXidf5QLQLVA4bxH0//4YCsr+1H4Gw1Wi/Jc62ynzSBYidw==}
     dev: true
+
+  /swiper/8.3.2:
+    resolution: {integrity: sha512-8wsC7ORYvVSnLUoxs2+xmfLrDPNjBVQXMCFbOlqtHeON6wtu/blOyySDr8TCBCdse1bdcIbn7m8xJNxVFL8o4Q==}
+    engines: {node: '>= 4.7.0'}
+    requiresBuild: true
+    dependencies:
+      dom7: 4.0.4
+      ssr-window: 4.0.2
+    dev: false
 
   /symbol-observable/1.0.1:
     resolution: {integrity: sha512-Kb3PrPYz4HanVF1LVGuAdW6LoVgIwjUYJGzFe7NDrBLCN4lsV/5J0MFurV+ygS4bRVwrCEt2c7MQ1R2a72oJDw==}

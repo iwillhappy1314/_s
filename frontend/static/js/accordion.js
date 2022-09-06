@@ -2,10 +2,29 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/.pnpm/css-loader@5.2.7_webpack@5.74.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[1]!./node_modules/.pnpm/postcss-loader@6.2.1_m6qh27jiicejwnzfgs742cokpe/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[2]!./node_modules/.pnpm/sass-loader@12.6.0_sass@1.54.0+webpack@5.74.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[3]!./assets/scripts/modules/lazy-youtube/lazy-youtube.scss":
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/.pnpm/css-loader@5.2.7_webpack@5.74.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[1]!./node_modules/.pnpm/postcss-loader@6.2.1_m6qh27jiicejwnzfgs742cokpe/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[2]!./node_modules/.pnpm/sass-loader@12.6.0_sass@1.54.0+webpack@5.74.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[3]!./assets/scripts/modules/lazy-youtube/lazy-youtube.scss ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/.pnpm/accordion-js@3.3.2/node_modules/accordion-js/dist/accordion.min.js":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/.pnpm/accordion-js@3.3.2/node_modules/accordion-js/dist/accordion.min.js ***!
+  \***********************************************************************************************/
+/***/ ((module) => {
+
+/**
+ * Accordion v3.3.2
+ * Lightweight and accessible accordion module created in pure Javascript
+ * https://github.com/michu2k/Accordion
+ * 
+ * Copyright (c) Michał Strumpf
+ * Published under MIT License
+ */
+
+!function(e){var t=0,n=function e(n,s){var i=this,o=this,a=!1;if(Array.isArray(n))return!!n.length&&n.map((function(t){return new e(t,s)}));var r={init:function(){this.options=Object.assign({duration:600,ariaEnabled:!0,collapse:!0,showMultiple:!1,onlyChildNodes:!0,openOnInit:[],elementClass:"ac",triggerClass:"ac-trigger",panelClass:"ac-panel",activeClass:"is-active",beforeOpen:function(){},onOpen:function(){},beforeClose:function(){},onClose:function(){}},s);var e="string"==typeof n;this.container=e?document.querySelector(n):n,this.createDefinitions(),o.attachEvents()},createDefinitions:function(){var e=this,n=this.options,s=n.elementClass,i=n.openOnInit,o=n.onlyChildNodes?this.container.childNodes:this.container.querySelectorAll(".".concat(s));this.elements=Array.from(o).filter((function(e){return e.classList&&e.classList.contains(s)})),this.firstElement=this.elements[0],this.lastElement=this.elements[this.elements.length-1],this.elements.filter((function(e){return!e.classList.contains("js-enabled")})).forEach((function(n){n.classList.add("js-enabled"),e.generateIDs(n),e.setARIA(n),e.setTransition(n);var s=e.elements.indexOf(n);t++,i.includes(s)?e.showElement(n,!1):e.closeElement(n,!1)}))},setTransition:function(e){var t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n=this.options,s=n.duration,i=n.panelClass,o=e.querySelector(".".concat(i)),a=c("transitionDuration");o.style[a]=t?null:"".concat(s,"ms")},generateIDs:function(e){var n=this.options,s=n.triggerClass,i=n.panelClass,o=e.querySelector(".".concat(s)),a=e.querySelector(".".concat(i));e.setAttribute("id","ac-".concat(t)),o.setAttribute("id","ac-trigger-".concat(t)),a.setAttribute("id","ac-panel-".concat(t))},removeIDs:function(e){var t=this.options,n=t.triggerClass,s=t.panelClass,i=e.querySelector(".".concat(n)),o=e.querySelector(".".concat(s));e.removeAttribute("id"),i.removeAttribute("id"),o.removeAttribute("id")},setARIA:function(e){var n=this.options,s=n.ariaEnabled,i=n.triggerClass,o=n.panelClass;if(s){var a=e.querySelector(".".concat(i)),r=e.querySelector(".".concat(o));a.setAttribute("role","button"),a.setAttribute("aria-controls","ac-panel-".concat(t)),a.setAttribute("aria-disabled",!1),a.setAttribute("aria-expanded",!1),r.setAttribute("role","region"),r.setAttribute("aria-labelledby","ac-trigger-".concat(t))}},updateARIA:function(e,t){var n=t.ariaExpanded,s=t.ariaDisabled,i=this.options,o=i.ariaEnabled,a=i.triggerClass;if(o){var r=e.querySelector(".".concat(a));r.setAttribute("aria-expanded",n),r.setAttribute("aria-disabled",s)}},removeARIA:function(e){var t=this.options,n=t.ariaEnabled,s=t.triggerClass,i=t.panelClass;if(n){var o=e.querySelector(".".concat(s)),a=e.querySelector(".".concat(i));o.removeAttribute("role"),o.removeAttribute("aria-controls"),o.removeAttribute("aria-disabled"),o.removeAttribute("aria-expanded"),a.removeAttribute("role"),a.removeAttribute("aria-labelledby")}},focus:function(e,t){e.preventDefault();var n=this.options.triggerClass;t.querySelector(".".concat(n)).focus()},focusFirstElement:function(e){this.focus(e,this.firstElement),this.currFocusedIdx=0},focusLastElement:function(e){this.focus(e,this.lastElement),this.currFocusedIdx=this.elements.length-1},focusNextElement:function(e){var t=this.currFocusedIdx+1;if(t>this.elements.length-1)return this.focusFirstElement(e);this.focus(e,this.elements[t]),this.currFocusedIdx=t},focusPrevElement:function(e){var t=this.currFocusedIdx-1;if(t<0)return this.focusLastElement(e);this.focus(e,this.elements[t]),this.currFocusedIdx=t},showElement:function(e){var t=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],n=this.options,s=n.panelClass,i=n.activeClass,o=n.collapse,a=n.beforeOpen;t&&a(e);var r=e.querySelector(".".concat(s)),c=r.scrollHeight;e.classList.add(i),requestAnimationFrame((function(){requestAnimationFrame((function(){r.style.height=t?"".concat(c,"px"):"auto"}))})),this.updateARIA(e,{ariaExpanded:!0,ariaDisabled:!o})},closeElement:function(e){var t=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],n=this.options,s=n.panelClass,i=n.activeClass,o=n.beforeClose,a=e.querySelector(".".concat(s)),r=a.scrollHeight;e.classList.remove(i),t?(o(e),requestAnimationFrame((function(){a.style.height="".concat(r,"px"),requestAnimationFrame((function(){a.style.height=0}))}))):a.style.height=0,this.updateARIA(e,{ariaExpanded:!1,ariaDisabled:!1})},toggleElement:function(e){var t=this.options,n=t.activeClass,s=t.collapse,i=e.classList.contains(n);if(!i||s)return i?this.closeElement(e):this.showElement(e)},closeElements:function(){var e=this,t=this.options,n=t.activeClass;t.showMultiple||this.elements.forEach((function(t,s){t.classList.contains(n)&&s!==e.currFocusedIdx&&e.closeElement(t)}))},handleClick:function(e){var t=this,n=e.currentTarget;this.elements.forEach((function(s,i){s.contains(n)&&"A"!==e.target.nodeName&&(t.currFocusedIdx=i,t.closeElements(),t.focus(e,s),t.toggleElement(s))}))},handleKeydown:function(e){var t=38,n=40,s=36,i=35;switch(e.keyCode){case t:return this.focusPrevElement(e);case n:return this.focusNextElement(e);case s:return this.focusFirstElement(e);case i:return this.focusLastElement(e);default:return null}},handleTransitionEnd:function(e){if("height"===e.propertyName){var t=this.options,n=t.onOpen,s=t.onClose,i=e.currentTarget,o=parseInt(i.style.height),a=this.elements.find((function(e){return e.contains(i)}));o>0?(i.style.height="auto",n(a)):s(a)}}};this.attachEvents=function(){if(!a){var e=r.options,t=e.triggerClass,n=e.panelClass;r.handleClick=r.handleClick.bind(r),r.handleKeydown=r.handleKeydown.bind(r),r.handleTransitionEnd=r.handleTransitionEnd.bind(r),r.elements.forEach((function(e){var s=e.querySelector(".".concat(t)),i=e.querySelector(".".concat(n));s.addEventListener("click",r.handleClick),s.addEventListener("keydown",r.handleKeydown),i.addEventListener("webkitTransitionEnd",r.handleTransitionEnd),i.addEventListener("transitionend",r.handleTransitionEnd)})),a=!0}},this.detachEvents=function(){if(a){var e=r.options,t=e.triggerClass,n=e.panelClass;r.elements.forEach((function(e){var s=e.querySelector(".".concat(t)),i=e.querySelector(".".concat(n));s.removeEventListener("click",r.handleClick),s.removeEventListener("keydown",r.handleKeydown),i.removeEventListener("webkitTransitionEnd",r.handleTransitionEnd),i.removeEventListener("transitionend",r.handleTransitionEnd)})),a=!1}},this.toggle=function(e){var t=r.elements[e];t&&r.toggleElement(t)},this.open=function(e){var t=r.elements[e];t&&r.showElement(t)},this.openAll=function(){var e=r.options,t=e.activeClass,n=e.onOpen;r.elements.forEach((function(e){e.classList.contains(t)||(r.showElement(e,!1),n(e))}))},this.close=function(e){var t=r.elements[e];t&&r.closeElement(t)},this.closeAll=function(){var e=r.options,t=e.activeClass,n=e.onClose;r.elements.forEach((function(e){e.classList.contains(t)&&(r.closeElement(e,!1),n(e))}))},this.destroy=function(){i.detachEvents(),i.openAll(),r.elements.forEach((function(e){r.removeIDs(e),r.removeARIA(e),r.setTransition(e,!0)})),a=!0},this.update=function(){r.createDefinitions(),i.detachEvents(),i.attachEvents()};var c=function(e){return"string"==typeof document.documentElement.style[e]?e:(e=l(e),e="webkit".concat(e))},l=function(e){return e.charAt(0).toUpperCase()+e.slice(1)};r.init()}; true&&void 0!==module.exports?module.exports=n:e.Accordion=n}(window);
+
+/***/ }),
+
+/***/ "./node_modules/.pnpm/css-loader@5.2.7_webpack@5.74.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[1]!./node_modules/.pnpm/postcss-loader@6.2.1_m6qh27jiicejwnzfgs742cokpe/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[2]!./node_modules/.pnpm/sass-loader@12.6.0_sass@1.54.0+webpack@5.74.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[3]!./assets/scripts/modules/accordion/accordion.scss":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/css-loader@5.2.7_webpack@5.74.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[1]!./node_modules/.pnpm/postcss-loader@6.2.1_m6qh27jiicejwnzfgs742cokpe/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[2]!./node_modules/.pnpm/sass-loader@12.6.0_sass@1.54.0+webpack@5.74.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[3]!./assets/scripts/modules/accordion/accordion.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -21,7 +40,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_pnpm_css_loader_5_2_7_webpack_5_74_0_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_pnpm_css_loader_5_2_7_webpack_5_74_0_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".lazyYT-container{background-color:#000;display:block;height:0;overflow:hidden;padding:0 0 56.25%;position:relative}.lazyYT-container iframe{border:0;bottom:0;height:100%;left:0;position:absolute;top:0;width:100%}.lazyYT-container .html5-title{padding-left:12px;padding-right:6px}.lazyYT-container .html5-title-text-wrapper{word-wrap:normal;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.lazyYT-container .html5-title-text{color:#ccc;font-size:13px;line-height:30px;text-decoration:none;width:100%}.lazyYT-container .html5-title-text:hover{color:#fff;text-decoration:underline}.ytp-thumbnail{background-position:50% 50%;background-repeat:no-repeat;background-size:cover;cursor:pointer;padding-bottom:inherit}.ytp-large-play-button{font-size:normal!important;font-weight:400!important;height:60px!important;left:50%!important;line-height:1!important;margin:-29px 0 0 -42px!important;opacity:.9;padding:0!important;position:absolute;top:50%!important;width:86px!important}.ytp-large-play-button-svg{fill:#1f1f1f;opacity:.9}.lazyYT-image-loaded:hover .ytp-large-play-button-svg,.ytp-large-play-button:focus .ytp-large-play-button-svg{fill:#cc181e;opacity:1}", "",{"version":3,"sources":["webpack://./assets/scripts/modules/lazy-youtube/lazy-youtube.scss"],"names":[],"mappings":"AAAA,kBACE,qBAAA,CACA,aAAA,CACA,QAAA,CACA,eAAA,CACA,kBAAA,CACA,iBACF,CAEA,yBACE,QAAA,CACA,QAAA,CACA,WAAA,CACA,MAAA,CACA,iBAAA,CACA,KAAA,CACA,UACF,CAEA,+BACE,iBAAA,CACA,iBACF,CAEA,4CACE,gBAAA,CACA,eAAA,CACA,sBAAA,CACA,kBACF,CAEA,oCACE,UAAA,CACA,cAAA,CACA,gBAAA,CACA,oBAAA,CACA,UACF,CAEA,0CACE,UAAA,CACA,yBACF,CAEA,eACE,2BAAA,CACA,2BAAA,CACA,qBAAA,CACA,cAAA,CACA,sBACF,CAEA,uBACE,0BAAA,CACA,yBAAA,CACA,qBAAA,CACA,kBAAA,CACA,uBAAA,CACA,gCAAA,CACA,UAAA,CACA,mBAAA,CACA,iBAAA,CACA,iBAAA,CACA,oBACF,CAEA,2BACE,YAAA,CACA,UACF,CAEA,8GACE,YAAA,CACA,SACF","sourcesContent":[".lazyYT-container {\n  background-color: #000;\n  display: block;\n  height: 0;\n  overflow: hidden;\n  padding: 0 0 56.25%;\n  position: relative\n}\n\n.lazyYT-container iframe {\n  border: 0;\n  bottom: 0;\n  height: 100%;\n  left: 0;\n  position: absolute;\n  top: 0;\n  width: 100%\n}\n\n.lazyYT-container .html5-title {\n  padding-left: 12px;\n  padding-right: 6px\n}\n\n.lazyYT-container .html5-title-text-wrapper {\n  word-wrap: normal;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap\n}\n\n.lazyYT-container .html5-title-text {\n  color: #ccc;\n  font-size: 13px;\n  line-height: 30px;\n  text-decoration: none;\n  width: 100%\n}\n\n.lazyYT-container .html5-title-text:hover {\n  color: #fff;\n  text-decoration: underline\n}\n\n.ytp-thumbnail {\n  background-position: 50% 50%;\n  background-repeat: no-repeat;\n  background-size: cover;\n  cursor: pointer;\n  padding-bottom: inherit\n}\n\n.ytp-large-play-button {\n  font-size: normal!important;\n  font-weight: 400!important;\n  height: 60px!important;\n  left: 50%!important;\n  line-height: 1!important;\n  margin: -29px 0 0 -42px!important;\n  opacity: .9;\n  padding: 0!important;\n  position: absolute;\n  top: 50%!important;\n  width: 86px!important\n}\n\n.ytp-large-play-button-svg {\n  fill: #1f1f1f;\n  opacity: .9\n}\n\n.lazyYT-image-loaded:hover .ytp-large-play-button-svg,.ytp-large-play-button:focus .ytp-large-play-button-svg {\n  fill: #cc181e;\n  opacity: 1\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "@charset \"UTF-8\";.ac{background-color:#fff;box-sizing:border-box}.ac .ac-header{margin:0;padding:0}.ac .ac-trigger{background-color:transparent;border:0;border-bottom:1px solid #eee;color:#111;cursor:pointer;display:block;font-size:16px;font-weight:600;margin:0;padding:16px 30px 16px 0;position:relative;text-align:left;text-decoration:none;transition:color .25s ease;width:100%}.ac .ac-trigger:active,.ac .ac-trigger:focus,.ac .ac-trigger:hover{box-shadow:none}.ac .ac-trigger:after{content:\"+\";position:absolute;right:10px;text-align:center;top:50%;transform:translateY(-50%);width:15px}.ac .ac-trigger:focus{color:#8a8a8a}.ac .ac-panel{overflow:hidden;transition-property:height,visibility;transition-timing-function:ease}.ac .ac-panel .ac-text{color:#111;font:15px/24px Arial,sans-serif;margin:0;padding:10px}.ac.js-enabled .ac-panel{visibility:hidden}.ac.is-active .ac-panel{visibility:visible}.ac.is-active>.ac-header .ac-trigger:after{content:\"–\"}", "",{"version":3,"sources":["webpack://./assets/scripts/modules/accordion/accordion.scss"],"names":[],"mappings":"AAoEA,gBACA,CArEA,IACE,qBAAA,CACA,qBAEF,CACA,eACE,QAAA,CACA,SAEF,CACA,gBASE,4BAAA,CAKA,QAAA,CACA,4BAAA,CAZA,UAAA,CAKA,cAAA,CADA,aAAA,CANA,cAAA,CACA,eAAA,CAWA,QAAA,CAPA,wBAAA,CAKA,iBAAA,CAPA,eAAA,CAQA,oBAAA,CAFA,0BAAA,CALA,UAYF,CADE,mEAGE,eACJ,CAGA,sBACE,WAAA,CAIA,iBAAA,CACA,UAAA,CAJA,iBAAA,CAKA,OAAA,CAHA,0BAAA,CADA,UAIF,CAGA,sBACE,aAAF,CAGA,cACE,eAAA,CACA,qCAAA,CACA,+BAAF,CAGA,uBAEE,UAAA,CADA,+BAAA,CAGA,QAAA,CADA,YACF,CAGA,yBACE,iBAAF,CAGA,wBACE,kBAAF,CAGA,2CACE,WAAF","sourcesContent":[".ac {\n  background-color: #fff;\n  box-sizing: border-box;\n}\n\n.ac .ac-header {\n  margin: 0;\n  padding: 0\n}\n\n.ac .ac-trigger {\n  font-size: 16px;\n  font-weight: 600;\n  color: #111;\n  text-align: left;\n  width: 100%;\n  padding: 16px 30px 16px 0;\n  display: block;\n  cursor: pointer;\n  background-color: transparent;\n  transition: color .25s ease;\n  position: relative;\n  text-decoration: none;\n  margin: 0;\n  border: 0;\n  border-bottom: 1px solid #eee;\n  &:hover,\n  &:focus,\n  &:active{\n    box-shadow: none;\n  }\n}\n\n.ac .ac-trigger::after {\n  content: \"+\";\n  text-align: center;\n  width: 15px;\n  transform: translate(0, -50%);\n  position: absolute;\n  right: 10px;\n  top: 50%\n}\n\n.ac .ac-trigger:focus {\n  color: #8a8a8a\n}\n\n.ac .ac-panel {\n  overflow: hidden;\n  transition-property: height, visibility;\n  transition-timing-function: ease\n}\n\n.ac .ac-panel .ac-text {\n  font: 15px/24px Arial, sans-serif;\n  color: #111;\n  padding: 10px;\n  margin: 0\n}\n\n.ac.js-enabled .ac-panel {\n  visibility: hidden\n}\n\n.ac.is-active .ac-panel {\n  visibility: visible\n}\n\n.ac.is-active > .ac-header .ac-trigger::after {\n  content: \"–\"\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -148,10 +167,10 @@ module.exports = function cssWithMappingToString(item) {
 
 /***/ }),
 
-/***/ "./assets/scripts/modules/lazy-youtube/lazy-youtube.scss":
-/*!***************************************************************!*\
-  !*** ./assets/scripts/modules/lazy-youtube/lazy-youtube.scss ***!
-  \***************************************************************/
+/***/ "./assets/scripts/modules/accordion/accordion.scss":
+/*!*********************************************************!*\
+  !*** ./assets/scripts/modules/accordion/accordion.scss ***!
+  \*********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -160,7 +179,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_pnpm_style_loader_2_0_0_webpack_5_74_0_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/.pnpm/style-loader@2.0.0_webpack@5.74.0/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/.pnpm/style-loader@2.0.0_webpack@5.74.0/node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_pnpm_style_loader_2_0_0_webpack_5_74_0_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_pnpm_style_loader_2_0_0_webpack_5_74_0_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_pnpm_css_loader_5_2_7_webpack_5_74_0_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_17_oneOf_1_use_1_node_modules_pnpm_postcss_loader_6_2_1_m6qh27jiicejwnzfgs742cokpe_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_17_oneOf_1_use_2_node_modules_pnpm_sass_loader_12_6_0_sass_1_54_0_webpack_5_74_0_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_17_oneOf_1_use_3_lazy_youtube_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/.pnpm/css-loader@5.2.7_webpack@5.74.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[1]!../../../../node_modules/.pnpm/postcss-loader@6.2.1_m6qh27jiicejwnzfgs742cokpe/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[2]!../../../../node_modules/.pnpm/sass-loader@12.6.0_sass@1.54.0+webpack@5.74.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[3]!./lazy-youtube.scss */ "./node_modules/.pnpm/css-loader@5.2.7_webpack@5.74.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[1]!./node_modules/.pnpm/postcss-loader@6.2.1_m6qh27jiicejwnzfgs742cokpe/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[2]!./node_modules/.pnpm/sass-loader@12.6.0_sass@1.54.0+webpack@5.74.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[3]!./assets/scripts/modules/lazy-youtube/lazy-youtube.scss");
+/* harmony import */ var _node_modules_pnpm_css_loader_5_2_7_webpack_5_74_0_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_17_oneOf_1_use_1_node_modules_pnpm_postcss_loader_6_2_1_m6qh27jiicejwnzfgs742cokpe_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_17_oneOf_1_use_2_node_modules_pnpm_sass_loader_12_6_0_sass_1_54_0_webpack_5_74_0_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_17_oneOf_1_use_3_accordion_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/.pnpm/css-loader@5.2.7_webpack@5.74.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[1]!../../../../node_modules/.pnpm/postcss-loader@6.2.1_m6qh27jiicejwnzfgs742cokpe/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[2]!../../../../node_modules/.pnpm/sass-loader@12.6.0_sass@1.54.0+webpack@5.74.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[3]!./accordion.scss */ "./node_modules/.pnpm/css-loader@5.2.7_webpack@5.74.0/node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[1]!./node_modules/.pnpm/postcss-loader@6.2.1_m6qh27jiicejwnzfgs742cokpe/node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[2]!./node_modules/.pnpm/sass-loader@12.6.0_sass@1.54.0+webpack@5.74.0/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[17].oneOf[1].use[3]!./assets/scripts/modules/accordion/accordion.scss");
 
             
 
@@ -169,11 +188,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_pnpm_style_loader_2_0_0_webpack_5_74_0_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_pnpm_css_loader_5_2_7_webpack_5_74_0_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_17_oneOf_1_use_1_node_modules_pnpm_postcss_loader_6_2_1_m6qh27jiicejwnzfgs742cokpe_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_17_oneOf_1_use_2_node_modules_pnpm_sass_loader_12_6_0_sass_1_54_0_webpack_5_74_0_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_17_oneOf_1_use_3_lazy_youtube_scss__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+var update = _node_modules_pnpm_style_loader_2_0_0_webpack_5_74_0_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_pnpm_css_loader_5_2_7_webpack_5_74_0_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_17_oneOf_1_use_1_node_modules_pnpm_postcss_loader_6_2_1_m6qh27jiicejwnzfgs742cokpe_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_17_oneOf_1_use_2_node_modules_pnpm_sass_loader_12_6_0_sass_1_54_0_webpack_5_74_0_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_17_oneOf_1_use_3_accordion_scss__WEBPACK_IMPORTED_MODULE_1__["default"], options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_pnpm_css_loader_5_2_7_webpack_5_74_0_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_17_oneOf_1_use_1_node_modules_pnpm_postcss_loader_6_2_1_m6qh27jiicejwnzfgs742cokpe_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_17_oneOf_1_use_2_node_modules_pnpm_sass_loader_12_6_0_sass_1_54_0_webpack_5_74_0_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_17_oneOf_1_use_3_lazy_youtube_scss__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_pnpm_css_loader_5_2_7_webpack_5_74_0_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_17_oneOf_1_use_1_node_modules_pnpm_postcss_loader_6_2_1_m6qh27jiicejwnzfgs742cokpe_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_17_oneOf_1_use_2_node_modules_pnpm_sass_loader_12_6_0_sass_1_54_0_webpack_5_74_0_node_modules_sass_loader_dist_cjs_js_ruleSet_1_rules_17_oneOf_1_use_3_accordion_scss__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -453,16 +472,6 @@ module.exports = function (list, options) {
   };
 };
 
-/***/ }),
-
-/***/ "jquery":
-/*!*************************!*\
-  !*** external "jQuery" ***!
-  \*************************/
-/***/ ((module) => {
-
-module.exports = jQuery;
-
 /***/ })
 
 /******/ 	});
@@ -541,150 +550,18 @@ module.exports = jQuery;
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!*************************************************************!*\
-  !*** ./assets/scripts/modules/lazy-youtube/lazy-youtube.js ***!
-  \*************************************************************/
+/*!*******************************************************!*\
+  !*** ./assets/scripts/modules/accordion/accordion.js ***!
+  \*******************************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _lazy_youtube_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lazy-youtube.scss */ "./assets/scripts/modules/lazy-youtube/lazy-youtube.scss");
-/* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ "jquery");
-/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "jquery");
+/* harmony import */ var accordion_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! accordion-js */ "./node_modules/.pnpm/accordion-js@3.3.2/node_modules/accordion-js/dist/accordion.min.js");
+/* harmony import */ var accordion_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(accordion_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _accordion_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./accordion.scss */ "./assets/scripts/modules/accordion/accordion.scss");
 
 
-
-/*!
-* lazyYT (lazy load YouTube videos)
-* v1.0.1 - 2014-12-30
-* (CC) This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
-* http://creativecommons.org/licenses/by-sa/4.0/
-* Contributors: https://github.com/tylerpearson/lazyYT/graphs/contributors || https://github.com/daugilas/lazyYT/graphs/contributors
-*
-* Usage: <div class="lazyYT" data-youtube-id="laknj093n" data-parameters="rel=0">loading...</div>
-*/
-
-;
-
-(function ($) {
-  'use strict';
-
-  function setUp($el, settings) {
-    var width = $el.data('width'),
-        height = $el.data('height'),
-        ratio = $el.data('ratio') ? $el.data('ratio') : settings.default_ratio,
-        id = $el.data('youtube-id'),
-        padding_bottom,
-        innerHtml = [],
-        $thumb,
-        thumb_img,
-        loading_text = $el.text() ? $el.text() : settings.loading_text,
-        youtube_parameters = $el.data('parameters') || '';
-    ratio = ratio.split(':'); // width and height might override default_ratio value
-
-    if (typeof width === 'number' && typeof height === 'number') {
-      $el.width(width);
-      padding_bottom = height + 'px';
-    } else if (typeof width === 'number') {
-      $el.width(width);
-      padding_bottom = width * ratio[1] / ratio[0] + 'px';
-    } else {
-      width = $el.width(); // no width means that container is fluid and will be the size of its parent
-
-      if (width == 0) {
-        width = $el.parent().width();
-      }
-
-      padding_bottom = ratio[1] / ratio[0] * 100 + '%';
-    } //
-    // This HTML will be placed inside 'lazyYT' container
-
-
-    innerHtml.push('<div class="ytp-thumbnail">'); // Play button from YouTube (exactly as it is in YouTube)
-
-    innerHtml.push('<div class="ytp-large-play-button"');
-    if (width <= 640) innerHtml.push(' style="transform: scale(0.563888888888889);"');
-    innerHtml.push('>');
-    innerHtml.push('<svg>');
-    innerHtml.push('<path fill-rule="evenodd" clip-rule="evenodd" fill="#1F1F1F" class="ytp-large-play-button-svg" d="M84.15,26.4v6.35c0,2.833-0.15,5.967-0.45,9.4c-0.133,1.7-0.267,3.117-0.4,4.25l-0.15,0.95c-0.167,0.767-0.367,1.517-0.6,2.25c-0.667,2.367-1.533,4.083-2.6,5.15c-1.367,1.4-2.967,2.383-4.8,2.95c-0.633,0.2-1.316,0.333-2.05,0.4c-0.767,0.1-1.3,0.167-1.6,0.2c-4.9,0.367-11.283,0.617-19.15,0.75c-2.434,0.034-4.883,0.067-7.35,0.1h-2.95C38.417,59.117,34.5,59.067,30.3,59c-8.433-0.167-14.05-0.383-16.85-0.65c-0.067-0.033-0.667-0.117-1.8-0.25c-0.9-0.133-1.683-0.283-2.35-0.45c-2.066-0.533-3.783-1.5-5.15-2.9c-1.033-1.067-1.9-2.783-2.6-5.15C1.317,48.867,1.133,48.117,1,47.35L0.8,46.4c-0.133-1.133-0.267-2.55-0.4-4.25C0.133,38.717,0,35.583,0,32.75V26.4c0-2.833,0.133-5.95,0.4-9.35l0.4-4.25c0.167-0.966,0.417-2.05,0.75-3.25c0.7-2.333,1.567-4.033,2.6-5.1c1.367-1.434,2.967-2.434,4.8-3c0.633-0.167,1.333-0.3,2.1-0.4c0.4-0.066,0.917-0.133,1.55-0.2c4.9-0.333,11.283-0.567,19.15-0.7C35.65,0.05,39.083,0,42.05,0L45,0.05c2.467,0,4.933,0.034,7.4,0.1c7.833,0.133,14.2,0.367,19.1,0.7c0.3,0.033,0.833,0.1,1.6,0.2c0.733,0.1,1.417,0.233,2.05,0.4c1.833,0.566,3.434,1.566,4.8,3c1.066,1.066,1.933,2.767,2.6,5.1c0.367,1.2,0.617,2.284,0.75,3.25l0.4,4.25C84,20.45,84.15,23.567,84.15,26.4z M33.3,41.4L56,29.6L33.3,17.75V41.4z"></path>');
-    innerHtml.push('<polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="33.3,41.4 33.3,17.75 56,29.6"></polygon>');
-    innerHtml.push('</svg>');
-    innerHtml.push('</div>'); // end of .ytp-large-play-button
-
-    innerHtml.push('</div>'); // end of .ytp-thumbnail
-    // Video title (info bar)
-
-    innerHtml.push('<div class="html5-info-bar">');
-    innerHtml.push('<div class="html5-title">');
-    innerHtml.push('<div class="html5-title-text-wrapper">');
-    innerHtml.push('<a id="lazyYT-title-', id, '" class="html5-title-text" target="_blank" tabindex="3100" href="//www.youtube.com/watch?v=', id, '">');
-    innerHtml.push(loading_text);
-    innerHtml.push('</a>');
-    innerHtml.push('</div>'); // .html5-title
-
-    innerHtml.push('</div>'); // .html5-title-text-wrapper
-
-    innerHtml.push('</div>'); // end of Video title .html5-info-bar
-
-    $el.css({
-      'padding-bottom': padding_bottom
-    }).html(innerHtml.join(''));
-
-    if (width > 640) {
-      thumb_img = 'maxresdefault.jpg';
-    } else if (width > 480) {
-      thumb_img = 'sddefault.jpg';
-    } else if (width > 320) {
-      thumb_img = 'hqdefault.jpg';
-    } else if (width > 120) {
-      thumb_img = 'mqdefault.jpg';
-    } else if (width == 0) {
-      // sometimes it fails on fluid layout
-      thumb_img = 'hqdefault.jpg';
-    } else {
-      thumb_img = 'default.jpg';
-    }
-
-    $thumb = $el.find('.ytp-thumbnail').css({
-      'background-image': ['url(//img.youtube.com/vi/', id, '/', thumb_img, ')'].join('')
-    }).addClass('lazyYT-image-loaded').on('click', function (e) {
-      e.preventDefault();
-
-      if (!$el.hasClass('lazyYT-video-loaded') && $thumb.hasClass('lazyYT-image-loaded')) {
-        $el.html('<iframe src="//www.youtube.com/embed/' + id + '?autoplay=1&' + youtube_parameters + '" frameborder="0" allowfullscreen></iframe>').addClass('lazyYT-video-loaded');
-      }
-    });
-    $.getJSON('//gdata.youtube.com/feeds/api/videos/' + id + '?v=2&alt=json', function (data) {
-      $el.find('#lazyYT-title-' + id).text(data.entry.title.$t);
-    });
-  }
-
-  $.fn.lazyYT = function (newSettings) {
-    var defaultSettings = {
-      loading_text: 'Loading...',
-      default_ratio: '16:9',
-      callback: null,
-      // ToDO execute callback if given
-      container_class: 'lazyYT-container'
-    };
-    var settings = $.extend(defaultSettings, newSettings);
-    return this.each(function () {
-      var $el = $(this).addClass(settings.container_class);
-      setUp($el, settings);
-    });
-  };
-})(jQuery);
-
-if (document.querySelectorAll('.rs-lazyYT').length > 0) {
-  $('.rs-lazyYT').lazyYT({
-    youtube_parameters: 'rel=0',
-    loading_text: 'Loading...',
-    display_title: false,
-    default_ratio: '16:9',
-    display_duration: false,
-    video_loaded_class: 'lazyYT-video-loaded',
-    container_class: 'lazyYT-container'
-  });
-}
+new (accordion_js__WEBPACK_IMPORTED_MODULE_0___default())('.rs-accordion-container');
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=lazy-youtube.js.map
+//# sourceMappingURL=accordion.js.map

@@ -39,19 +39,21 @@ __webpack_require__.r(__webpack_exports__);
 /* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ "jquery");
 
 
-var loadjs = __webpack_require__(/*! loadjs */ "./node_modules/.pnpm/loadjs@4.2.0/node_modules/loadjs/dist/loadjs.umd.js"); //import {navTree} from './components/nav-tree';
-//import Tooltip from './components/tooltip';
+var loadjs = __webpack_require__(/*! loadjs */ "./node_modules/.pnpm/loadjs@4.2.0/node_modules/loadjs/dist/loadjs.umd.js"); //import Tooltip from './components/tooltip';
 //import {mainSwiper} from './components/swiper';
 
 
 
 var dropdownEl = document.querySelectorAll('.rs-dropdown-toggle');
 var popoverEl = document.querySelectorAll('.rs-popover');
-var youtubeEl = document.querySelectorAll('.js-lazyYT');
+var youtubeEl = document.querySelectorAll('.rs-lazyYT');
 var navTreeEl = $('.widget_nav_menu, .widget_product_categories, .widget-nav_menu');
-var sidebarEL = $('.js-sticky-left, .js-sticky-right');
+var sidebarEL = $('.rs-sticky-left, .rs-sticky-right');
 var popupEL = $('.rs-popup');
-var isotopeEL = $('.js-gallery-items');
+var isotopeEL = $('.rs-gallery-items');
+var meanMenuEL = $('.rs-mean-menu');
+var accordionEL = $('.rs-accordion-container');
+var swiperEL = $('.rs-swiper-container');
 
 if (dropdownEl.length > 0) {
   loadjs([wenpriseSettings.staticPath + 'js/dropdown.js'], 'dropdown');
@@ -79,6 +81,18 @@ if (popupEL.length > 0) {
 
 if (isotopeEL.length > 0) {
   loadjs([wenpriseSettings.staticPath + 'js/isotope.js'], 'isotope');
+}
+
+if (accordionEL.length > 0) {
+  loadjs([wenpriseSettings.staticPath + 'js/accordion.js'], 'accordion');
+}
+
+if (meanMenuEL.length > 0) {
+  loadjs([wenpriseSettings.staticPath + 'js/accordion.js'], 'meanmenu');
+}
+
+if (swiperEL.length > 0) {
+  loadjs([wenpriseSettings.staticPath + 'js/swiper.js'], 'swiper');
 }
 
 (function ($) {

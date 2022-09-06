@@ -67,11 +67,14 @@
     "/dist/styles/products.css": "/dist/styles/products.css",
     "/dist/styles/review.css": "/dist/styles/review.css",
     "/dist/styles/woocommerce.css": "/dist/styles/woocommerce.css",
+    "/static/js/accordion.js": "/static/js/accordion.js",
     "/static/js/dropdown.js": "/static/js/dropdown.js",
     "/static/js/isotope.js": "/static/js/isotope.js",
     "/static/js/lazy-youtube.js": "/static/js/lazy-youtube.js",
     "/static/js/magnific-popup.js": "/static/js/magnific-popup.js",
+    "/static/js/meanmenu.js": "/static/js/meanmenu.js",
     "/static/js/nav-tree.js": "/static/js/nav-tree.js",
     "/static/js/popover.js": "/static/js/popover.js",
-    "/static/js/sticky-sidebar.js": "/static/js/sticky-sidebar.js"
+    "/static/js/sticky-sidebar.js": "/static/js/sticky-sidebar.js",
+    "/static/js/swiper.js": "/static/js/swiper.js"
 }

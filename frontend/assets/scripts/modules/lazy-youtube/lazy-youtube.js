@@ -1,5 +1,7 @@
 'use strict';
 
+import './lazy-youtube.scss';
+
 /*!
 * lazyYT (lazy load YouTube videos)
 * v1.0.1 - 2014-12-30
@@ -125,8 +127,8 @@
 
 }(jQuery));
 
-if (document.querySelectorAll('.js-lazyYT').length > 0) {
-    $('.js-lazyYT').lazyYT({
+if (document.querySelectorAll('.rs-lazyYT').length > 0) {
+    $('.rs-lazyYT').lazyYT({
         youtube_parameters: 'rel=0',
         loading_text      : 'Loading...',
         display_title     : false,

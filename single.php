@@ -13,7 +13,7 @@ get_header();
 
     <div id="content" class="site__content">
 
-        <div id="primary" class="js-sticky-left content__primary">
+        <div id="primary" class="rs-sticky-left content__primary">
             <main id="main" class="theiaStickySidebar site__main">
 
                 <?php while (have_posts()) : the_post(); ?>

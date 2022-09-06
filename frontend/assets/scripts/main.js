@@ -8,11 +8,14 @@ import footerNav from './components/footer';
 
 const dropdownEl = document.querySelectorAll('.rs-dropdown-toggle');
 const popoverEl = document.querySelectorAll('.rs-popover');
-const youtubeEl = document.querySelectorAll('.js-lazyYT');
+const youtubeEl = document.querySelectorAll('.rs-lazyYT');
 const navTreeEl = $('.widget_nav_menu, .widget_product_categories, .widget-nav_menu');
-const sidebarEL = $('.js-sticky-left, .js-sticky-right');
+const sidebarEL = $('.rs-sticky-left, .rs-sticky-right');
 const popupEL = $('.rs-popup');
-const isotopeEL = $('.js-gallery-items');
+const isotopeEL = $('.rs-gallery-items');
+const meanMenuEL = $('.rs-mean-menu');
+const accordionEL = $('.rs-accordion-container');
+const swiperEL = $('.rs-swiper-container');
 
 if (dropdownEl.length > 0) {
     loadjs([wenpriseSettings.staticPath + 'js/dropdown.js'], 'dropdown');
@@ -40,6 +43,18 @@ if (popupEL.length > 0) {
 
 if (isotopeEL.length > 0) {
     loadjs([wenpriseSettings.staticPath + 'js/isotope.js'], 'isotope');
+}
+
+if (accordionEL.length > 0) {
+    loadjs([wenpriseSettings.staticPath + 'js/accordion.js'], 'accordion');
+}
+
+if (meanMenuEL.length > 0) {
+    loadjs([wenpriseSettings.staticPath + 'js/accordion.js'], 'meanmenu');
+}
+
+if (swiperEL.length > 0) {
+    loadjs([wenpriseSettings.staticPath + 'js/swiper.js'], 'swiper');
 }
 
 

@@ -38,12 +38,14 @@
     "dependencies": {
         "@popperjs/core": "^2.11.5",
         "@tailwindcss/forms": "^0.5.2",
+        "accordion-js": "^3.3.2",
         "bootstrap": "^5.2.0",
         "is-mobile": "^3.1.1",
         "jquery-smarttab": "^4.0.2",
         "loadjs": "^4.2.0",
         "magnific-popup": "^1.1.0",
         "smartmenus": "^1.1.1",
+        "swiper": "^8.3.2",
         "theia-sticky-sidebar": "^1.7.0",
         "tippy.js": "^6.3.7"
     }

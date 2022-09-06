@@ -99,18 +99,6 @@ if ( ! function_exists('_s_setup')) :
     }
 endif;
 
-
-add_action('add_meta_boxes', function ()
-{
-    remove_meta_box('pageparentdiv', 'video', 'side');
-    remove_meta_box('slugdiv', 'video', 'normal');
-    remove_meta_box('pageparentdiv', 'press', 'side');
-    remove_meta_box('slugdiv', 'press', 'normal');
-    remove_meta_box('pageparentdiv', 'slider', 'side');
-    remove_meta_box('slugdiv', 'slider', 'normal');
-});
-
-
 add_filter('manage_elementor_library_posts_columns', function ($columns)
 {
     $columns[ 'shortcode' ] = __('Shortcode', '_s');
