@@ -10,6 +10,8 @@
 get_header();
 ?>
 
+    <a class='rs-popup rs-popup-video' href='http://www.youtube.com/watch?v=0O2aH4XLbto'>Open YouTube video</a>
+
     <div id="content" class="site__content">
 
         <div id="primary" class="content__primary">

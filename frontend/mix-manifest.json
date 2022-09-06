@@ -55,7 +55,6 @@
     "/dist/images/visa.svg": "/dist/images/visa.svg",
     "/dist/scripts/customizer.js": "/dist/scripts/customizer.js",
     "/dist/scripts/main.js": "/dist/scripts/main.js",
-    "/dist/scripts/vendors.js": "/dist/scripts/vendors.js",
     "/dist/scripts/woocommerce.js": "/dist/scripts/woocommerce.js",
     "/dist/styles/account.css": "/dist/styles/account.css",
     "/dist/styles/admin.css": "/dist/styles/admin.css",
@@ -69,7 +68,9 @@
     "/dist/styles/review.css": "/dist/styles/review.css",
     "/dist/styles/woocommerce.css": "/dist/styles/woocommerce.css",
     "/static/js/dropdown.js": "/static/js/dropdown.js",
+    "/static/js/isotope.js": "/static/js/isotope.js",
     "/static/js/lazy-youtube.js": "/static/js/lazy-youtube.js",
+    "/static/js/magnific-popup.js": "/static/js/magnific-popup.js",
     "/static/js/nav-tree.js": "/static/js/nav-tree.js",
     "/static/js/popover.js": "/static/js/popover.js",
     "/static/js/sticky-sidebar.js": "/static/js/sticky-sidebar.js"

@@ -5,7 +5,6 @@ var loadjs = require('loadjs');
 //import {navTree} from './components/nav-tree';
 //import Tooltip from './components/tooltip';
 //import {mainSwiper} from './components/swiper';
-import {isotope} from './components/isotope';
 import footerNav from './components/footer';
 
 const dropdownEl = document.querySelectorAll('.rs-dropdown-toggle');
@@ -13,6 +12,8 @@ const popoverEl = document.querySelectorAll('.rs-popover');
 const youtubeEl = document.querySelectorAll('.js-lazyYT');
 const navTreeEl = $('.widget_nav_menu, .widget_product_categories, .widget-nav_menu');
 const sidebarEL = $('.js-sticky-left, .js-sticky-right');
+const popupEL = $('.rs-popup');
+const isotopeEL = $('.js-gallery-items');
 
 if (dropdownEl.length > 0) {
     loadjs([wenpriseSettings.staticPath + 'js/dropdown.js'], 'dropdown');
@@ -34,6 +35,16 @@ if (sidebarEL.length > 0 && $(document).width() > 1024) {
     loadjs([wenpriseSettings.staticPath + 'js/sticky-sidebar.js'], 'sticky-sidebar');
 }
 
+if (popupEL.length > 0) {
+    loadjs([wenpriseSettings.staticPath + 'js/magnific-popup.js'], 'magnific-popup');
+}
+
+
+if (isotopeEL.length > 0) {
+    loadjs([wenpriseSettings.staticPath + 'js/isotope.js'], 'isotope');
+}
+
+
 (function($) {
 
     const spaceName = {};
@@ -41,7 +52,6 @@ if (sidebarEL.length > 0 && $(document).width() > 1024) {
     spaceName.init = function() {
         this.ajaxLoading();
         footerNav();
-        isotope();
     };
 
     /**
@@ -57,26 +67,6 @@ if (sidebarEL.length > 0 && $(document).width() > 1024) {
         });
     };
 
-
-    /**
-     * Play video in manigicPopup
-     */
-    spaceName.popup = function() {
-        if ($.isFunction($.fn.magnificPopup)) {
-            $('.js-popup-youtube').magnificPopup({
-                disableOn      : 700,
-                type           : 'iframe',
-                mainClass      : 'mfp-fade',
-                removalDelay   : 160,
-                preloader      : false,
-                fixedContentPos: false,
-            });
-        }
-    };
-
-    /**
-     * Play video in manigicPopup
-     */
     spaceName.wow = function() {
         if ($.isClass('WOW')) {
             new WOW().init();

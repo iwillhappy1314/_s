@@ -26,60 +26,92 @@ function footerNav() {
 
 /***/ }),
 
-/***/ "./assets/scripts/components/isotope.js":
-/*!**********************************************!*\
-  !*** ./assets/scripts/components/isotope.js ***!
-  \**********************************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ "./assets/scripts/main.js":
+/*!********************************!*\
+  !*** ./assets/scripts/main.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_footer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/footer */ "./assets/scripts/components/footer.js");
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "jquery");
-var loadjs = __webpack_require__(/*! loadjs */ "./node_modules/.pnpm/loadjs@4.2.0/node_modules/loadjs/dist/loadjs.umd.js");
+/* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ "jquery");
 
-if ($('.js-gallery-items').length > 0) {
-  loadjs([wenpriseSettings.staticPath + 'js/imagesloaded.pkgd.min.js', wenpriseSettings.staticPath + 'js/isotope.pkgd.min.js'], 'isotope');
-  loadjs.ready('isotope', function () {
-    var jQuerygrid = $('.gallery-items').isotope({
-      singleMode: true,
-      columnWidth: '.grid-sizer, .grid-sizer-second, .grid-sizer-three',
-      itemSelector: '.gallery-item, .gallery-item-second, .gallery-item-three',
-      resizable: true,
-      transformsEnabled: true,
-      transitionDuration: '700ms'
-    });
-    jQuerygrid.imagesLoaded(function () {
-      jQuerygrid.isotope('layout');
-    });
-    $('.gallery-filters').on('click', 'a.gallery-filter', function (b) {
-      b.preventDefault();
-      var c = $(this).attr('data-filter');
-      jQuerygrid.isotope({
-        filter: c
-      });
-      $('.gallery-filters a').removeClass('gallery-filter-active');
-      $(this).addClass('gallery-filter-active');
-    });
-    $('.gallery-container').imagesLoaded(function () {
-      $('.gallery-container').isotope({
-        itemSelector: '.filtr-item',
-        layoutMode: 'fitRows'
-      });
-      $('ul.simplefilter li').on('click', function () {
-        $('ul.simplefilter li').removeClass('active');
-        $(this).addClass('active');
-        var selector = $(this).attr('data-filter');
-        $('.gallery-container').isotope({
-          filter: selector,
-          animationOptions: {
-            duration: 750,
-            easing: 'linear',
-            queue: false
-          }
-        });
-        return false;
-      });
-    });
-  });
+
+var loadjs = __webpack_require__(/*! loadjs */ "./node_modules/.pnpm/loadjs@4.2.0/node_modules/loadjs/dist/loadjs.umd.js"); //import {navTree} from './components/nav-tree';
+//import Tooltip from './components/tooltip';
+//import {mainSwiper} from './components/swiper';
+
+
+
+var dropdownEl = document.querySelectorAll('.rs-dropdown-toggle');
+var popoverEl = document.querySelectorAll('.rs-popover');
+var youtubeEl = document.querySelectorAll('.js-lazyYT');
+var navTreeEl = $('.widget_nav_menu, .widget_product_categories, .widget-nav_menu');
+var sidebarEL = $('.js-sticky-left, .js-sticky-right');
+var popupEL = $('.rs-popup');
+var isotopeEL = $('.js-gallery-items');
+
+if (dropdownEl.length > 0) {
+  loadjs([wenpriseSettings.staticPath + 'js/dropdown.js'], 'dropdown');
 }
+
+if (popoverEl.length > 0) {
+  loadjs([wenpriseSettings.staticPath + 'js/popover.js'], 'popover');
+}
+
+if (youtubeEl.length > 0) {
+  loadjs([wenpriseSettings.staticPath + 'js/lazy-youtube.js'], 'lazy-youtube');
+}
+
+if (navTreeEl.length > 0) {
+  loadjs([wenpriseSettings.staticPath + 'js/nav-tree.js'], 'nav-tree');
+}
+
+if (sidebarEL.length > 0 && $(document).width() > 1024) {
+  loadjs([wenpriseSettings.staticPath + 'js/sticky-sidebar.js'], 'sticky-sidebar');
+}
+
+if (popupEL.length > 0) {
+  loadjs([wenpriseSettings.staticPath + 'js/magnific-popup.js'], 'magnific-popup');
+}
+
+if (isotopeEL.length > 0) {
+  loadjs([wenpriseSettings.staticPath + 'js/isotope.js'], 'isotope');
+}
+
+(function ($) {
+  var spaceName = {};
+
+  spaceName.init = function () {
+    this.ajaxLoading();
+    (0,_components_footer__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  };
+  /**
+   * Ajax loading style
+   */
+
+
+  spaceName.ajaxLoading = function () {
+    var $loading = $('#ajax-loading').hide();
+    $(document).ajaxStart(function () {
+      $loading.show();
+    }).ajaxStop(function () {
+      $loading.hide();
+    });
+  };
+
+  spaceName.wow = function () {
+    if ($.isClass('WOW')) {
+      new WOW().init();
+    }
+  };
+
+  $(document).ready(function () {
+    spaceName.init();
+  });
+})(jQuery);
 
 /***/ }),
 
@@ -457,6 +489,149 @@ return loadjs;
 
 /***/ }),
 
+/***/ "./assets/styles/iconfont.scss":
+/*!*************************************!*\
+  !*** ./assets/styles/iconfont.scss ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./assets/styles/post.scss":
+/*!*********************************!*\
+  !*** ./assets/styles/post.scss ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./assets/styles/products.scss":
+/*!*************************************!*\
+  !*** ./assets/styles/products.scss ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./assets/styles/review.scss":
+/*!***********************************!*\
+  !*** ./assets/styles/review.scss ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./assets/styles/woocommerce.scss":
+/*!****************************************!*\
+  !*** ./assets/styles/woocommerce.scss ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./assets/styles/admin.scss":
+/*!**********************************!*\
+  !*** ./assets/styles/admin.scss ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./assets/styles/main.scss":
+/*!*********************************!*\
+  !*** ./assets/styles/main.scss ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./assets/styles/account.scss":
+/*!************************************!*\
+  !*** ./assets/styles/account.scss ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./assets/styles/cart.scss":
+/*!*********************************!*\
+  !*** ./assets/styles/cart.scss ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./assets/styles/checkout.scss":
+/*!*************************************!*\
+  !*** ./assets/styles/checkout.scss ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./assets/styles/editor.scss":
+/*!***********************************!*\
+  !*** ./assets/styles/editor.scss ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "jquery":
 /*!*************************!*\
   !*** external "jQuery" ***!
@@ -494,7 +669,42 @@ module.exports = jQuery;
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -535,110 +745,89 @@ module.exports = jQuery;
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"/dist/scripts/main": 0,
+/******/ 			"dist/styles/editor": 0,
+/******/ 			"dist/styles/checkout": 0,
+/******/ 			"dist/styles/cart": 0,
+/******/ 			"dist/styles/account": 0,
+/******/ 			"dist/styles/main": 0,
+/******/ 			"dist/styles/admin": 0,
+/******/ 			"dist/styles/woocommerce": 0,
+/******/ 			"dist/styles/review": 0,
+/******/ 			"dist/styles/products": 0,
+/******/ 			"dist/styles/post": 0,
+/******/ 			"dist/styles/iconfont": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunkwenprise_frontend_tool"] = self["webpackChunkwenprise_frontend_tool"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
-(() => {
-"use strict";
-/*!********************************!*\
-  !*** ./assets/scripts/main.js ***!
-  \********************************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_isotope__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/isotope */ "./assets/scripts/components/isotope.js");
-/* harmony import */ var _components_isotope__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_components_isotope__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/footer */ "./assets/scripts/components/footer.js");
-/* provided dependency */ var $ = __webpack_require__(/*! jquery */ "jquery");
-/* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ "jquery");
-
-
-var loadjs = __webpack_require__(/*! loadjs */ "./node_modules/.pnpm/loadjs@4.2.0/node_modules/loadjs/dist/loadjs.umd.js"); //import {navTree} from './components/nav-tree';
-//import Tooltip from './components/tooltip';
-//import {mainSwiper} from './components/swiper';
-
-
-
-
-var dropdownEl = document.querySelectorAll('.rs-dropdown-toggle');
-var popoverEl = document.querySelectorAll('.rs-popover');
-var youtubeEl = document.querySelectorAll('.js-lazyYT');
-var navTreeEl = $('.widget_nav_menu, .widget_product_categories, .widget-nav_menu');
-var sidebarEL = $('.js-sticky-left, .js-sticky-right');
-
-if (dropdownEl.length > 0) {
-  loadjs([wenpriseSettings.staticPath + 'js/dropdown.js'], 'dropdown');
-}
-
-if (popoverEl.length > 0) {
-  loadjs([wenpriseSettings.staticPath + 'js/popover.js'], 'popover');
-}
-
-if (youtubeEl.length > 0) {
-  loadjs([wenpriseSettings.staticPath + 'js/lazy-youtube.js'], 'lazy-youtube');
-}
-
-if (navTreeEl.length > 0) {
-  loadjs([wenpriseSettings.staticPath + 'js/nav-tree.js'], 'nav-tree');
-}
-
-if (sidebarEL.length > 0 && $(document).width() > 1024) {
-  loadjs([wenpriseSettings.staticPath + 'js/sticky-sidebar.js'], 'sticky-sidebar');
-}
-
-(function ($) {
-  var spaceName = {};
-
-  spaceName.init = function () {
-    this.ajaxLoading();
-    (0,_components_footer__WEBPACK_IMPORTED_MODULE_1__["default"])();
-    (0,_components_isotope__WEBPACK_IMPORTED_MODULE_0__.isotope)();
-  };
-  /**
-   * Ajax loading style
-   */
-
-
-  spaceName.ajaxLoading = function () {
-    var $loading = $('#ajax-loading').hide();
-    $(document).ajaxStart(function () {
-      $loading.show();
-    }).ajaxStop(function () {
-      $loading.hide();
-    });
-  };
-  /**
-   * Play video in manigicPopup
-   */
-
-
-  spaceName.popup = function () {
-    if ($.isFunction($.fn.magnificPopup)) {
-      $('.js-popup-youtube').magnificPopup({
-        disableOn: 700,
-        type: 'iframe',
-        mainClass: 'mfp-fade',
-        removalDelay: 160,
-        preloader: false,
-        fixedContentPos: false
-      });
-    }
-  };
-  /**
-   * Play video in manigicPopup
-   */
-
-
-  spaceName.wow = function () {
-    if ($.isClass('WOW')) {
-      new WOW().init();
-    }
-  };
-
-  $(document).ready(function () {
-    spaceName.init();
-  });
-})(jQuery);
-})();
-
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	__webpack_require__.O(undefined, ["dist/styles/editor","dist/styles/checkout","dist/styles/cart","dist/styles/account","dist/styles/main","dist/styles/admin","dist/styles/woocommerce","dist/styles/review","dist/styles/products","dist/styles/post","dist/styles/iconfont"], () => (__webpack_require__("./assets/scripts/main.js")))
+/******/ 	__webpack_require__.O(undefined, ["dist/styles/editor","dist/styles/checkout","dist/styles/cart","dist/styles/account","dist/styles/main","dist/styles/admin","dist/styles/woocommerce","dist/styles/review","dist/styles/products","dist/styles/post","dist/styles/iconfont"], () => (__webpack_require__("./assets/styles/main.scss")))
+/******/ 	__webpack_require__.O(undefined, ["dist/styles/editor","dist/styles/checkout","dist/styles/cart","dist/styles/account","dist/styles/main","dist/styles/admin","dist/styles/woocommerce","dist/styles/review","dist/styles/products","dist/styles/post","dist/styles/iconfont"], () => (__webpack_require__("./assets/styles/account.scss")))
+/******/ 	__webpack_require__.O(undefined, ["dist/styles/editor","dist/styles/checkout","dist/styles/cart","dist/styles/account","dist/styles/main","dist/styles/admin","dist/styles/woocommerce","dist/styles/review","dist/styles/products","dist/styles/post","dist/styles/iconfont"], () => (__webpack_require__("./assets/styles/cart.scss")))
+/******/ 	__webpack_require__.O(undefined, ["dist/styles/editor","dist/styles/checkout","dist/styles/cart","dist/styles/account","dist/styles/main","dist/styles/admin","dist/styles/woocommerce","dist/styles/review","dist/styles/products","dist/styles/post","dist/styles/iconfont"], () => (__webpack_require__("./assets/styles/checkout.scss")))
+/******/ 	__webpack_require__.O(undefined, ["dist/styles/editor","dist/styles/checkout","dist/styles/cart","dist/styles/account","dist/styles/main","dist/styles/admin","dist/styles/woocommerce","dist/styles/review","dist/styles/products","dist/styles/post","dist/styles/iconfont"], () => (__webpack_require__("./assets/styles/editor.scss")))
+/******/ 	__webpack_require__.O(undefined, ["dist/styles/editor","dist/styles/checkout","dist/styles/cart","dist/styles/account","dist/styles/main","dist/styles/admin","dist/styles/woocommerce","dist/styles/review","dist/styles/products","dist/styles/post","dist/styles/iconfont"], () => (__webpack_require__("./assets/styles/iconfont.scss")))
+/******/ 	__webpack_require__.O(undefined, ["dist/styles/editor","dist/styles/checkout","dist/styles/cart","dist/styles/account","dist/styles/main","dist/styles/admin","dist/styles/woocommerce","dist/styles/review","dist/styles/products","dist/styles/post","dist/styles/iconfont"], () => (__webpack_require__("./assets/styles/post.scss")))
+/******/ 	__webpack_require__.O(undefined, ["dist/styles/editor","dist/styles/checkout","dist/styles/cart","dist/styles/account","dist/styles/main","dist/styles/admin","dist/styles/woocommerce","dist/styles/review","dist/styles/products","dist/styles/post","dist/styles/iconfont"], () => (__webpack_require__("./assets/styles/products.scss")))
+/******/ 	__webpack_require__.O(undefined, ["dist/styles/editor","dist/styles/checkout","dist/styles/cart","dist/styles/account","dist/styles/main","dist/styles/admin","dist/styles/woocommerce","dist/styles/review","dist/styles/products","dist/styles/post","dist/styles/iconfont"], () => (__webpack_require__("./assets/styles/review.scss")))
+/******/ 	__webpack_require__.O(undefined, ["dist/styles/editor","dist/styles/checkout","dist/styles/cart","dist/styles/account","dist/styles/main","dist/styles/admin","dist/styles/woocommerce","dist/styles/review","dist/styles/products","dist/styles/post","dist/styles/iconfont"], () => (__webpack_require__("./assets/styles/woocommerce.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["dist/styles/editor","dist/styles/checkout","dist/styles/cart","dist/styles/account","dist/styles/main","dist/styles/admin","dist/styles/woocommerce","dist/styles/review","dist/styles/products","dist/styles/post","dist/styles/iconfont"], () => (__webpack_require__("./assets/styles/admin.scss")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
 /******/ })()
 ;
 //# sourceMappingURL=main.js.map
