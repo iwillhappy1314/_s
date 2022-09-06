@@ -13,8 +13,8 @@ if ( ! is_active_sidebar('sidebar-primary') || $page_layout === 'sidebar_none') 
 }
 ?>
 
-<aside id="secondary" class="content__secondary">
-    <div class="rs-widgets rs-widgets--primary">
+<aside id="secondary" class="js-sticky-right content__secondary">
+    <div class="theiaStickySidebar rs-widgets rs-widgets--primary">
         <?php dynamic_sidebar('sidebar-primary'); ?>
     </div>
 </aside><!-- #secondary -->

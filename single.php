@@ -10,12 +10,11 @@
 get_header();
 ?>
 
-    <a class='rs-popup rs-popup-video' href='http://www.youtube.com/watch?v=0O2aH4XLbto'>Open YouTube video</a>
 
     <div id="content" class="site__content">
 
-        <div id="primary" class="content__primary">
-            <main id="main" class="site__main">
+        <div id="primary" class="js-sticky-left content__primary">
+            <main id="main" class="theiaStickySidebar site__main">
 
                 <?php while (have_posts()) : the_post(); ?>
 

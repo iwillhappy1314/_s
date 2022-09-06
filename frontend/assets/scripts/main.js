@@ -2,7 +2,6 @@
 
 var loadjs = require('loadjs');
 
-//import {navTree} from './components/nav-tree';
 //import Tooltip from './components/tooltip';
 //import {mainSwiper} from './components/swiper';
 import footerNav from './components/footer';
@@ -38,7 +37,6 @@ if (sidebarEL.length > 0 && $(document).width() > 1024) {
 if (popupEL.length > 0) {
     loadjs([wenpriseSettings.staticPath + 'js/magnific-popup.js'], 'magnific-popup');
 }
-
 
 if (isotopeEL.length > 0) {
     loadjs([wenpriseSettings.staticPath + 'js/isotope.js'], 'isotope');

@@ -42,9 +42,9 @@ module.exports = jQuery;
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!************************************!*\
-  !*** ./assets/scripts/nav-tree.js ***!
-  \************************************/
+/*!********************************************!*\
+  !*** ./assets/scripts/modules/nav-tree.js ***!
+  \********************************************/
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "jquery");
 var $navTreeEl = $('.widget_nav_menu, .widget_product_categories, .widget-nav_menu');
 
@@ -54,7 +54,8 @@ if ($navTreeEl.length > 0) {
         elementSpeed = element.attr('data-speed'),
         elementEasing = element.attr('data-easing'),
         currentChild = element.find('ul li.current_page_parent .children, ul > li.current_page_item .children, ul > li.current-menu-item .children,  ul > li.current-menu-parent .children, ul > li.current-cat-parent .children, ul > li.current-cat.cat-parent .children'),
-        currentSubmenu = element.find('ul li.current_page_parent .sub-menu, ul > li.current_page_item .sub-menu, ul > li.current-menu-item .sub-menu, ul > li.current-menu-parent .sub-menu, ul > li.current-cat-parent .sub-menu, ul > li.current-cat.cat-parent .sub-menu'); // 动画速度
+        currentSubmenu = element.find('ul li.current_page_parent .sub-menu, ul > li.current_page_item .sub-menu, ul > li.current-menu-item .sub-menu, ul > li.current-menu-parent .sub-menu, ul > li.current-cat-parent .sub-menu, ul > li.current-cat.cat-parent .sub-menu'); //element.addClass('widget--tree');
+    // 动画速度
 
     if (!elementSpeed) {
       elementSpeed = 250;
@@ -67,7 +68,7 @@ if ($navTreeEl.length > 0) {
 
 
     element.find('ul li:has(ul)').addClass('sub-menu');
-    element.find('ul li:has(ul) > a').append('<span class="icon"><i class="wpion-angle-down"></i></span>'); // 打开当前菜单的父级
+    element.find('ul li:has(ul) > a').append('<span class="icon"><i class="icon-chevron-down"></i></span>'); // 打开当前菜单的父级
 
     element.find('ul li.current_page_ancestor, ul li.current_page_parent, ul > li.current_page_item, ul > li.current-menu-parent, ul > li.current-cat-parent').addClass('active');
     currentChild.slideDown(Number(elementSpeed), elementEasing);

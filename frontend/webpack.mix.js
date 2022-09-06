@@ -42,13 +42,13 @@ mix.js('assets/scripts/main.js', 'dist/scripts').
     js('assets/scripts/customizer.js', 'dist/scripts').
     js('assets/scripts/woocommerce.js', 'dist/scripts');
 
-mix.js('assets/scripts/dropdown.js', 'static/js');
-mix.js('assets/scripts/popover.js', 'static/js');
-mix.js('assets/scripts/lazy-youtube.js', 'static/js');
-mix.js('assets/scripts/sticky-sidebar.js', 'static/js');
-mix.js('assets/scripts/nav-tree.js', 'static/js');
-mix.js('assets/scripts/magnific-popup.js', 'static/js');
-mix.js('assets/scripts/isotope.js', 'static/js');
+mix.js('assets/scripts/modules/dropdown.js', 'static/js');
+mix.js('assets/scripts/modules/popover.js', 'static/js');
+mix.js('assets/scripts/modules/lazy-youtube.js', 'static/js');
+mix.js('assets/scripts/modules/sticky-sidebar.js', 'static/js');
+mix.js('assets/scripts/modules/nav-tree.js', 'static/js');
+mix.js('assets/scripts/modules/magnific-popup.js', 'static/js');
+mix.js('assets/scripts/modules/isotope.js', 'static/js');
 
 mix.copyWatched('assets/images', 'dist/images').
     copyWatched('assets/fonts', 'dist/fonts');

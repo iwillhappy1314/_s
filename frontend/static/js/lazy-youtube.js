@@ -42,9 +42,9 @@ module.exports = jQuery;
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!****************************************!*\
-  !*** ./assets/scripts/lazy-youtube.js ***!
-  \****************************************/
+/*!************************************************!*\
+  !*** ./assets/scripts/modules/lazy-youtube.js ***!
+  \************************************************/
 /* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ "jquery");
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "jquery");
 

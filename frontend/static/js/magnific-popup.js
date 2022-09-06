@@ -2414,9 +2414,9 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-/*!******************************************!*\
-  !*** ./assets/scripts/magnific-popup.js ***!
-  \******************************************/
+/*!**************************************************!*\
+  !*** ./assets/scripts/modules/magnific-popup.js ***!
+  \**************************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! magnific-popup */ "./node_modules/.pnpm/magnific-popup@1.1.0/node_modules/magnific-popup/dist/jquery.magnific-popup.js");
 /* harmony import */ var magnific_popup__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(magnific_popup__WEBPACK_IMPORTED_MODULE_0__);
@@ -2441,6 +2441,25 @@ if ($('.rs-popup-video').length > 0) {
     fixedContentPos: false
   });
 }
+
+$('.rs-popup-gallery').magnificPopup({
+  delegate: 'a',
+  type: 'image',
+  tLoading: 'Loading image #%curr%...',
+  mainClass: 'mfp-img-mobile',
+  gallery: {
+    enabled: true,
+    navigateByImgClick: true,
+    preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+
+  },
+  image: {
+    tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+    titleSrc: function titleSrc(item) {
+      return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
+    }
+  }
+});
 })();
 
 /******/ })()

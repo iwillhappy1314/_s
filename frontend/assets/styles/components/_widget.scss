@@ -10,11 +10,35 @@ $text-hover-color: darken($text-base, 5%);
     li {
         @apply text-sm leading-relaxed leading-6;
         a {
-            @apply inline-block;
+            @apply flex items-center justify-between;
             color: $text-color;
 
             &:hover {
                 color: $text-hover-color;
+            }
+        }
+
+        ul.sub-menu {
+            @apply hidden mb-0 pb-0;
+        }
+    }
+}
+
+.widget--tree {
+    .menu {
+        border-top: 1px solid #eee;
+        & > li {
+            @apply py-0 my-0 bg-white;
+            & > a {
+                @apply bg-white;
+                padding: 12px 16px;
+                border-bottom: 1px solid #eee;
+                border-left: 1px solid #eee;
+                border-right: 1px solid #eee;
+            }
+
+            & > ul.sub-menu {
+                @apply ml-0 bg-white px-4 border border-gray-100 border-t-0;
             }
         }
     }

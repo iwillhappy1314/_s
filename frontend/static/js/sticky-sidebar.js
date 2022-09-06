@@ -99,13 +99,13 @@ module.exports = jQuery;
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!******************************************!*\
-  !*** ./assets/scripts/sticky-sidebar.js ***!
-  \******************************************/
+/*!**************************************************!*\
+  !*** ./assets/scripts/modules/sticky-sidebar.js ***!
+  \**************************************************/
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "jquery");
 __webpack_require__(/*! script-loader!theia-sticky-sidebar */ "./node_modules/.pnpm/script-loader@0.7.2/node_modules/script-loader/index.js!./node_modules/.pnpm/theia-sticky-sidebar@1.7.0/node_modules/theia-sticky-sidebar/dist/theia-sticky-sidebar.js");
 
-if ($(document).width() > 1024 && $.isFunction($.fn.theiaStickySidebar)) {
+if ($(document).width() > 1024) {
   $('.js-sticky-left, .js-sticky-right').theiaStickySidebar({
     additionalMarginTop: 32
   });

@@ -5551,9 +5551,9 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
-/*!***********************************!*\
-  !*** ./assets/scripts/popover.js ***!
-  \***********************************/
+/*!*******************************************!*\
+  !*** ./assets/scripts/modules/popover.js ***!
+  \*******************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap_js_dist_popover__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap/js/dist/popover */ "./node_modules/.pnpm/bootstrap@5.2.0_@popperjs+core@2.11.6/node_modules/bootstrap/js/dist/popover.js");
 /* harmony import */ var bootstrap_js_dist_popover__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(bootstrap_js_dist_popover__WEBPACK_IMPORTED_MODULE_0__);

@@ -11,6 +11,8 @@ if ($navTreeEl.length > 0) {
             currentSubmenu = element.find(
                 'ul li.current_page_parent .sub-menu, ul > li.current_page_item .sub-menu, ul > li.current-menu-item .sub-menu, ul > li.current-menu-parent .sub-menu, ul > li.current-cat-parent .sub-menu, ul > li.current-cat.cat-parent .sub-menu');
 
+        //element.addClass('widget--tree');
+
         // 动画速度
         if (!elementSpeed) {
             elementSpeed = 250;
@@ -25,7 +27,7 @@ if ($navTreeEl.length > 0) {
         element.find('ul li:has(ul)').addClass('sub-menu');
         element.find('ul li:has(ul) > a').
             append(
-                '<span class="icon"><i class="wpion-angle-down"></i></span>');
+                '<span class="icon"><i class="icon-chevron-down"></i></span>');
 
         // 打开当前菜单的父级
         element.find(

@@ -367,9 +367,9 @@ module.exports = jQuery;
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!***********************************!*\
-  !*** ./assets/scripts/isotope.js ***!
-  \***********************************/
+/*!*******************************************!*\
+  !*** ./assets/scripts/modules/isotope.js ***!
+  \*******************************************/
 /* provided dependency */ var $ = __webpack_require__(/*! jquery */ "jquery");
 var loadjs = __webpack_require__(/*! loadjs */ "./node_modules/.pnpm/loadjs@4.2.0/node_modules/loadjs/dist/loadjs.umd.js");
 
