@@ -42,8 +42,10 @@ mix.js('assets/scripts/main.js', 'dist/scripts').
     js('assets/scripts/customizer.js', 'dist/scripts').
     js('assets/scripts/woocommerce.js', 'dist/scripts');
 
-mix.js('assets/scripts/modules/dropdown.js', 'static/js').
+mix.js('assets/scripts/modules/bootstrap.js', 'static/js').
+    js('assets/scripts/modules/dropdown.js', 'static/js').
     js('assets/scripts/modules/popover.js', 'static/js').
+    js('assets/scripts/modules/tooltip.js', 'static/js').
     js('assets/scripts/modules/lazy-youtube/lazy-youtube.js', 'static/js').
     js('assets/scripts/modules/sticky-sidebar.js', 'static/js').
     js('assets/scripts/modules/nav-tree.js', 'static/js').
@@ -58,7 +60,7 @@ mix.copyWatched('assets/images', 'dist/images').
     copyWatched('assets/fonts', 'dist/fonts');
 
 if (mix.inProduction()) {
-    mix.versionHash();
+    //mix.versionHash();
     mix.icons('assets/icons', 'assets/fonts', 'assets/styles/icons.scss');
 } else {
     mix.sourceMaps();

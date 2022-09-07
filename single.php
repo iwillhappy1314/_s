@@ -9,7 +9,8 @@
 
 get_header();
 ?>
-
+    <button data-tippy-content='Tooltip'>Text</button>
+    <button data-tippy-content='Another Tooltip'>Text</button>
 
     <div id="content" class="site__content">
 

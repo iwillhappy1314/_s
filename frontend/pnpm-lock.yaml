@@ -31,6 +31,7 @@ specifiers:
   sass: ^1.48.0
   sass-loader: ^12.4.0
   script-loader: ^0.7.2
+  simple-scrollspy: ^2.2.0
   smartmenus: ^1.1.1
   swiper: ^8.3.2
   tailwindcss: ^3.0.13
@@ -50,6 +51,7 @@ dependencies:
   jquery-smarttab: 4.0.2
   loadjs: 4.2.0
   magnific-popup: 1.1.0
+  simple-scrollspy: 2.2.0
   smartmenus: 1.1.1
   swiper: 8.3.2
   theia-sticky-sidebar: 1.7.0
@@ -4802,6 +4804,12 @@ packages:
       graceful-fs: 4.2.10
     dev: true
 
+  /jump.js/1.0.2:
+    resolution: {integrity: sha512-oUkJJ/Y4ATU5qjkXBntCZSKctbSyS3ewe2jrLaUu/cc9jsQiAn0fnTUxQnZz3mJdDdem1Q279zrD6h3n+Cgxtg==}
+    requiresBuild: true
+    dev: false
+    optional: true
+
   /junk/3.1.0:
     resolution: {integrity: sha512-pBxcB3LFc8QVgdggvZWyeys+hnrNWg4OcZIU/1X59k5jQdLBlCsYGRQaz234SqoRLTCgMH00fY0xRJH+F9METQ==}
     engines: {node: '>=8'}
@@ -6729,6 +6737,12 @@ packages:
   /signal-exit/3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
     dev: true
+
+  /simple-scrollspy/2.2.0:
+    resolution: {integrity: sha512-kvA+SIJPP9bcYK65EpLIUnYolaBllraZ/9DXi/3/Tn8bSs9XA/Kda5+NT5KxA/VHJLIw6MJmFBC0AKapo6qjXA==}
+    optionalDependencies:
+      jump.js: 1.0.2
+    dev: false
 
   /slash/3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}

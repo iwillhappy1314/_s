@@ -44,6 +44,7 @@
         "jquery-smarttab": "^4.0.2",
         "loadjs": "^4.2.0",
         "magnific-popup": "^1.1.0",
+        "simple-scrollspy": "^2.2.0",
         "smartmenus": "^1.1.1",
         "swiper": "^8.3.2",
         "theia-sticky-sidebar": "^1.7.0",
