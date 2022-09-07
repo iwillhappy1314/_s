@@ -76,5 +76,6 @@
     "/static/js/nav-tree.js": "/static/js/nav-tree.js",
     "/static/js/popover.js": "/static/js/popover.js",
     "/static/js/sticky-sidebar.js": "/static/js/sticky-sidebar.js",
-    "/static/js/swiper.js": "/static/js/swiper.js"
+    "/static/js/swiper.js": "/static/js/swiper.js",
+    "/static/js/wow.js": "/static/js/wow.js"
 }

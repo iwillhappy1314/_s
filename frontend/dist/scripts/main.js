@@ -54,6 +54,7 @@ var isotopeEL = $('.rs-gallery-items');
 var meanMenuEL = $('.rs-mean-menu');
 var accordionEL = $('.rs-accordion-container');
 var swiperEL = $('.rs-swiper-container');
+var wowEL = $('.wow');
 
 if (dropdownEl.length > 0) {
   loadjs([wenpriseSettings.staticPath + 'js/dropdown.js'], 'dropdown');
@@ -95,6 +96,12 @@ if (swiperEL.length > 0) {
   loadjs([wenpriseSettings.staticPath + 'js/swiper.js'], 'swiper');
 }
 
+if (swiperEL.length > 0) {
+  loadjs([wenpriseSettings.staticPath + 'js/wow.js'], 'wow');
+}
+
+loadjs([wenpriseSettings.staticPath + 'js/wow.js'], 'wow');
+
 (function ($) {
   var spaceName = {};
 
@@ -114,12 +121,6 @@ if (swiperEL.length > 0) {
     }).ajaxStop(function () {
       $loading.hide();
     });
-  };
-
-  spaceName.wow = function () {
-    if ($.isClass('WOW')) {
-      new WOW().init();
-    }
   };
 
   $(document).ready(function () {

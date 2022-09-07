@@ -16,6 +16,7 @@ const isotopeEL = $('.rs-gallery-items');
 const meanMenuEL = $('.rs-mean-menu');
 const accordionEL = $('.rs-accordion-container');
 const swiperEL = $('.rs-swiper-container');
+const wowEL = $('.wow');
 
 if (dropdownEl.length > 0) {
     loadjs([wenpriseSettings.staticPath + 'js/dropdown.js'], 'dropdown');
@@ -49,6 +50,7 @@ if (accordionEL.length > 0) {
     loadjs([wenpriseSettings.staticPath + 'js/accordion.js'], 'accordion');
 }
 
+
 if (meanMenuEL.length > 0) {
     loadjs([wenpriseSettings.staticPath + 'js/accordion.js'], 'meanmenu');
 }
@@ -57,6 +59,11 @@ if (swiperEL.length > 0) {
     loadjs([wenpriseSettings.staticPath + 'js/swiper.js'], 'swiper');
 }
 
+if (swiperEL.length > 0) {
+    loadjs([wenpriseSettings.staticPath + 'js/wow.js'], 'wow');
+}
+
+loadjs([wenpriseSettings.staticPath + 'js/wow.js'], 'wow');
 
 (function($) {
 
@@ -78,12 +85,6 @@ if (swiperEL.length > 0) {
         }).ajaxStop(function() {
             $loading.hide();
         });
-    };
-
-    spaceName.wow = function() {
-        if ($.isClass('WOW')) {
-            new WOW().init();
-        }
     };
 
     $(document).ready(function() {

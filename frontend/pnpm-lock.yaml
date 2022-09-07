@@ -39,6 +39,7 @@ specifiers:
   typescript: '>= 2.7'
   webpack: ^5.0.0
   webpack-livereload-plugin: '1'
+  wow.js: ^1.2.2
 
 dependencies:
   '@popperjs/core': 2.11.6
@@ -53,6 +54,7 @@ dependencies:
   swiper: 8.3.2
   theia-sticky-sidebar: 1.7.0
   tippy.js: 6.3.7
+  wow.js: 1.2.2
 
 devDependencies:
   '@tailwindcss/aspect-ratio': 0.4.0_tailwindcss@3.1.7
@@ -7643,6 +7645,11 @@ packages:
   /wildcard/2.0.0:
     resolution: {integrity: sha512-JcKqAHLPxcdb9KM49dufGXn2x3ssnfjbcaQdLlfZsL9rH9wgDQjUtDxbo8NE0F6SFvydeu1VhZe7hZuHsB2/pw==}
     dev: true
+
+  /wow.js/1.2.2:
+    resolution: {integrity: sha512-YTW9eiZimHCJDWofsiz2507txaPteUiQD461I/D8533AiRAn3+Y68/1LDuQ3OTgPjagGZLPYKrpoSgjzeQrO6A==}
+    deprecated: deprecated in favour of aos (Animate On Scroll)
+    dev: false
 
   /wrap-ansi/7.0.0:
     resolution: {integrity: sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==}

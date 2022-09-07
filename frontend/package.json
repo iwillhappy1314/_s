@@ -47,6 +47,7 @@
         "smartmenus": "^1.1.1",
         "swiper": "^8.3.2",
         "theia-sticky-sidebar": "^1.7.0",
-        "tippy.js": "^6.3.7"
+        "tippy.js": "^6.3.7",
+        "wow.js": "^1.2.2"
     }
 }

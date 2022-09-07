@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<div class='js-gallery-items'></div>
-
 <div class="container my-6 lg:my-12">
 
     <?php
