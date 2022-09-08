@@ -75,6 +75,9 @@ module.exports = {
     variants: {
         extend: {},
     },
+    corePlugins: {
+        container: false,
+    },
     plugins : [
         require('@tailwindcss/typography'),
         require('@tailwindcss/line-clamp'),
