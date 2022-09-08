@@ -25,13 +25,13 @@
         </ul>
     </div>
 
-    <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 rs-isotope__container'>
+    <div class='grid gap-6 rs-isotope__container'>
 
         <?php if (have_posts()): ?>
 
             <?php while (have_posts()) : the_post(); ?>
                 <?php $pterms = wp_get_post_terms(get_the_ID(), 'product_cat') ?>
-                <div class='rs-isotope__item term-<?= $pterms[ 0 ]->term_id; ?>'>
+                <div class='w-1/4 mx-6 rs-isotope__item term-<?= $pterms[ 0 ]->term_id; ?>'>
                     <?php \WenpriseContentComponents\Helpers::get_template_part('content', 'product'); ?>
                 </div>
             <?php endwhile; ?>
