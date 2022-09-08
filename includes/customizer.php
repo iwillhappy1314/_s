@@ -23,6 +23,8 @@ function _s_customize_register($wp_customize)
     $wp_customize->remove_section('title');
     $wp_customize->remove_section('header_image');
     $wp_customize->remove_section('static_front_page');
+    $wp_customize->remove_section('colors_background');
+    $wp_customize->remove_section('colors');
 
     $wp_customize->remove_panel('wpuf_panel');
 
@@ -31,9 +33,9 @@ function _s_customize_register($wp_customize)
         'title'    => __('Colors and Background', '_s'),
     ]);
 
-    $wp_customize->get_control('header_textcolor')->section = 'colors_background';
-    $wp_customize->get_control('background_color')->section = 'colors_background';
-    $wp_customize->get_control('background_image')->section = 'colors_background';
+    // $wp_customize->get_control('header_textcolor')->section = 'colors_background';
+    // $wp_customize->get_control('background_color')->section = 'colors_background';
+    // $wp_customize->get_control('background_image')->section = 'colors_background';
 
     /**
      * Add partial refresh call back
