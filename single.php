@@ -18,22 +18,11 @@ get_header();
                 <?php while (have_posts()) : the_post(); ?>
 
                     <div class="rs-post">
-                        <div class="rs-post__header">
-                            <h1 class="rs-post__title">
-                                <?php the_title(); ?>
-                            </h1>
-                            <div class="rs-post__meta">
-                                <div class="rs-post__author">
-                                    By <?php the_author(); ?>
-                                </div>
-                                <div class="rs-post__date">
-                                    <?php the_time('M,d'); ?>
-                                </div>
-                            </div>
-                        </div>
+                        <?php do_action('wprs_before_content'); ?>
                         <div class="typo rs-post__content">
                             <?php the_content(); ?>
                         </div>
+                        <?php do_action('wprs_after_content'); ?>
                     </div>
 
                     <?php the_post_navigation(); ?>

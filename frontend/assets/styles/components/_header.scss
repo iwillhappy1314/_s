@@ -133,6 +133,10 @@ body {
     * {
         color: var(--banner-text-color);
     }
+
+    &+.rs-post__content{
+        @apply mt-8;
+    }
 }
 
 

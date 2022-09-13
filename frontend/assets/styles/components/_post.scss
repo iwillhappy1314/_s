@@ -40,3 +40,16 @@ $text-highlight: $text-highlight;
         }
     }
 }
+
+.text-center{
+    .rs-post__meta{
+        @apply justify-center;
+    }
+}
+
+
+.text-right{
+    .rs-post__meta{
+        @apply justify-end;
+    }
+}
