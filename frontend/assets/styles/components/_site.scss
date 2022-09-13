@@ -16,13 +16,9 @@ body{
 
 .site .elementor-section.elementor-section-boxed:not(.elementor-inner-section) > .elementor-container,
 .container {
-    @apply mx-auto;
+    @apply mx-auto w-full;
     max-width: var(--global-content-width);
     padding: 0 var(--global-content-edge-padding);
-
-    @screen md {
-        @apply px-6;
-    }
 
     &--focus {
         @screen xl {
