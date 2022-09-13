@@ -31,6 +31,18 @@ function _s_scripts()
 }
 
 /**
+ * Disable Weforms CSS
+ */
+add_filter('weforms_frontend_styles', function ($styles)
+{
+    if ( ! is_admin()) {
+        $styles = [];
+    }
+
+    return $styles;
+});
+
+/**
  * Enqueue scripts and styles in wp-admin
  */
 add_action('admin_enqueue_scripts', function ()
