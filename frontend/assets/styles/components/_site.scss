@@ -92,7 +92,7 @@ body{
     }
 }
 
-.sidebar-left {
+.sidebar_left {
     .content__primary {
         @screen lg {
             @apply order-2;
@@ -106,7 +106,7 @@ body{
 }
 
 
-.sidebar-right {
+.sidebar_right {
     .content__primary {
         @screen lg {
             @apply order-1;
@@ -118,6 +118,7 @@ body{
         }
     }
 }
+
 
 body {
     &.sidebar-left {

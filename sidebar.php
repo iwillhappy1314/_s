@@ -6,7 +6,7 @@
  *
  * @package _s
  */
-$page_layout = _s_get_page_settings('_page_layouts');
+$page_layout = WenpriseContentComponents\Helpers::get_page_settings('_page_layout', 'sidebar_none');
 
 if ( ! is_active_sidebar('sidebar-primary') || $page_layout === 'sidebar_none') {
     return;
