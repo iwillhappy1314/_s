@@ -117,7 +117,7 @@ ul.wpuf-column-fields{
 .wpuf-fields {
     input,
     textarea {
-        @apply w-full text-sm;
+        @apply w-full text-sm leading-normal;
     }
 
     input[type=checkbox],

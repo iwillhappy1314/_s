@@ -589,7 +589,7 @@ add_action('woocommerce_after_single_product_summary', function ()
 }, 11);
 
 
-if (_s_get_page_settings('_page_layouts') !== 'sidebar_none') {
+if (WenpriseContentComponents\Helpers::get_page_settings('_page_layouts') !== 'sidebar_none') {
 
     add_action('woocommerce_after_single_product_summary', function ()
     {
@@ -644,7 +644,7 @@ if ( ! function_exists('_s_woocommerce_wrapper_after')) {
         </div><!-- #primary -->
 
         <?php
-        if (_s_get_page_settings('_page_layouts') !== 'sidebar_none' && is_active_sidebar('sidebar-woo') && (is_shop() || is_product_category())) {
+        if (WenpriseContentComponents\Helpers::get_page_settings('_page_layouts') !== 'sidebar_none' && is_active_sidebar('sidebar-woo') && (is_shop() || is_product_category())) {
             if (get_theme_mod('rswc_products_catalog_sidebar_layout', 'sidebar-none') !== 'sidebar-none') {
                 echo '<div class="content__secondary site-woo__sidebar">';
                 dynamic_sidebar('sidebar-woo');
