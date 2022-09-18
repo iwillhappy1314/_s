@@ -19,7 +19,7 @@ function _s_scripts()
 
     wp_enqueue_script('_s-main', _s_assets('dist/scripts/main.js'), ['jquery'], SPACENAME, true);
 
-    $template_path = parse_url(get_template_directory_uri(), PHP_URL_PATH);
+    $template_path = parse_url(get_theme_file_uri(), PHP_URL_PATH);
 
     wp_localize_script('_s-main', 'wenpriseSettings', [
         'staticPath' => $template_path . '/frontend/static/',
