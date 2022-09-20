@@ -28,9 +28,9 @@
                     <?= get_post_meta(get_the_ID(), '_wprs_description', true); ?>
                 </div>
 
-                <div class='flex justify-center rounded-lg text-sm font-semibold py-3 px-4 bg-slate-900 text-white hover:bg-slate-700 rs-project-read_more'>
-                    View Detail
-                </div>
+                <a href="<?php the_permalink(); ?>" data-pid="<?= get_the_ID(); ?>" class='rs-inquiry flex justify-center rounded-lg text-sm font-semibold py-3 px-4 bg-slate-900 text-white hover:bg-slate-700 rs-project-read_more'>
+                    Add to Inquiry List
+                </a>
             </a>
         </div>
     </div>
