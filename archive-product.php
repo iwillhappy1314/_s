@@ -2,44 +2,40 @@
 
 <div class="container my-6 lg:my-12">
 
-    <?php
-    $terms = get_terms([
-        'taxonomy' => 'product_cat',
-    ]);
-    ?>
+    <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8'>
 
-    <div class='navbarsort'>
-        <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#rs-isotope__filter' aria-expanded='false'>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-            <span class='icon-bar'></span>
-        </button>
-    </div>
+        <div class="widget_categories widget_product_categories">
 
-    <div class=block' id='rs-isotope__filter'>
-        <ul class='rs-isotope__filter flex flex-wrap'>
-            <li class='rs-button whitespace-nowrap' data-filter='*'>All</li>
-            <?php foreach ($terms as $term): ?>
-                <li data-filter='.term-<?= $term->term_id; ?>' class='rs-button whitespace-nowrap'><?= $term->name; ?></li>
-            <?php endforeach; ?>
-        </ul>
-    </div>
+            <ul>
+                <?php
+                wp_list_categories([
+                    'taxonomy' => 'product_cat',
+                    'title_li' => false,
+                    'parent' => 0,
+                ]);
+                ?>
+            </ul>
 
-    <div class='grid gap-6 rs-isotope__container'>
 
-        <?php if (have_posts()): ?>
+        </div>
 
-            <?php while (have_posts()) : the_post(); ?>
-                <?php $pterms = wp_get_post_terms(get_the_ID(), 'product_cat') ?>
-                <div class='w-1/4 mx-6 rs-isotope__item term-<?= $pterms[ 0 ]->term_id; ?>'>
-                    <?php \WenpriseContentComponents\Helpers::get_template_part('content', 'product'); ?>
+        <div class="lg:col-span-3">
+            <?php if (have_posts()): ?>
+
+                <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6'>
+                    <?php while (have_posts()) : the_post(); ?>
+                        <?php \WenpriseContentComponents\Helpers::get_template_part('content', 'product'); ?>
+                    <?php endwhile; ?>
                 </div>
-            <?php endwhile; ?>
 
-        <?php endif ?>
+                <div class="mt-6">
+                    <?php wprs_pagination(); ?>
+                </div>
+
+            <?php endif ?>
+        </div>
 
     </div>
-
 
 </div>
 
