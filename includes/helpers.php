@@ -74,14 +74,3 @@ if ( ! function_exists('_s_has_shortcode')) {
         return $found;
     }
 }
-
-
-/**
- * 获取询盘产品ID
- *
- * @return mixed
- */
-function _s_get_inquiry_ids()
-{
-    return array_unique(json_decode($_COOKIE[ 'wenpriseInquiryCart' ]));
-}

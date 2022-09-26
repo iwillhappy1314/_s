@@ -32,15 +32,15 @@ if (class_exists('CSF')) {
 }
 
 
-add_filter('wprs_page_content_fields', function ($fields)
-{
-
-    $product_fields = \Nette\Neon\Neon::decode(file_get_contents(get_theme_file_path('config/fields/product.neon')));
-
-    if (\WenpriseContentComponents\Helpers::get_editor_post_type() == 'product') {
-        $fields = $fields + $product_fields;
-    }
-
-    return $fields;
-
-});
+// add_filter('wprs_page_content_fields', function ($fields)
+// {
+//
+//     $product_fields = \Nette\Neon\Neon::decode(file_get_contents(get_theme_file_path('config/fields/product.neon')));
+//
+//     if (\WenpriseContentComponents\Helpers::get_editor_post_type() == 'product') {
+//         $fields = $fields + $product_fields;
+//     }
+//
+//     return $fields;
+//
+// });
