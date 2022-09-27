@@ -3,7 +3,7 @@
  * @package _s
  */
 
-add_action('wp_enqueue_scripts', '_s_scripts', 999);
+add_action('wp_enqueue_scripts', '_s_scripts');
 
 /**
  * Enqueue scripts and styles.
