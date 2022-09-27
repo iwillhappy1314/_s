@@ -21,9 +21,11 @@
         <div class="lg:col-span-3">
             <?php if (have_posts()): ?>
 
+                <?php $index = 0; ?>
                 <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6'>
                     <?php while (have_posts()) : the_post(); ?>
-                        <?php \WenpriseContentComponents\Helpers::get_template_part('content', 'product'); ?>
+                        <?php \WenpriseContentComponents\Helpers::get_template_part('content', 'product', ['index' => $index]); ?>
+                        <?php $index++; ?>
                     <?php endwhile; ?>
                 </div>
 

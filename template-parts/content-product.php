@@ -4,8 +4,7 @@
  */
 ?>
 
-
-<div class='overflow-hidden bg-white relative rounded-md rs-product group'>
+<div class='overflow-hidden bg-white relative rounded-md rs-product group wow fadeInUp animated' data-wow-delay='0.<?= $args['index']; ?>s' data-wow-duration='.8s'>
     <figure class='mb-4 rs-product-thumbnail'>
         <a class="block relative" href='<?php the_permalink(); ?>''>
         <div class='overflow-hidden aspect-w-4 aspect-h-3'>
