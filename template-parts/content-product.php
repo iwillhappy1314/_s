@@ -9,7 +9,7 @@
         <a class="block relative" href='<?php the_permalink(); ?>''>
         <div class='overflow-hidden aspect-w-4 aspect-h-3'>
             <?php if (has_post_thumbnail()) {
-                echo get_the_post_thumbnail(get_the_ID(), 'full', ['class' => 'object-cover']);
+                echo get_the_post_thumbnail(get_the_ID(), 'full', ['class' => 'object-cover group-hover:scale-125 transition-all duration-300']);
             } ?>
         </div>
         </a>
