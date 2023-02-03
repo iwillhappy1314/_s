@@ -56,7 +56,6 @@ if ( ! function_exists('_s_assets')) {
 
 if ( ! function_exists('_s_has_shortcode')) {
 
-
     function _s_has_shortcode($post): bool
     {
         /*
@@ -72,5 +71,26 @@ if ( ! function_exists('_s_has_shortcode')) {
         }
 
         return $found;
+    }
+}
+
+
+if ( ! function_exists('_s_get_current_language')) {
+    /**
+     * 获取 translatepress 环境下的当前语言
+     *
+     * @return string
+     */
+    function _s_get_current_language(): string
+    {
+        if (class_exists('TRP_Translate_Press')) {
+            $trp              = TRP_Translate_Press::get_trp_instance();
+            $url_converter    = $trp->get_component('url_converter');
+            $current_language = $url_converter->get_lang_from_url_string(wprs_get_current_url());
+        } else {
+            $current_language = 'zh_CN';
+        }
+
+        return $current_language;
     }
 }

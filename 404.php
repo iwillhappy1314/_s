@@ -18,7 +18,7 @@ get_header();
                     <div class="container--focus rs-empty">
 
                         <div class="rs-empty__icon">
-                            <img src="<?= _s_assets('dist/images/404.svg'); ?>" alt="404 Error" />
+                            <img src="<?= _s_assets('dist/images/404.svg'); ?>" alt="404 Error"/>
                         </div>
 
                         <header class="rs-empty__title">

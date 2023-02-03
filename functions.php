@@ -1,6 +1,9 @@
 <?php
 
 define('SPACENAME', '1.1.2');
+define('WENPRISE_INCLUDES_PATH', get_theme_file_path('includes/'));
+
+
 /**
  * _s functions and definitions
  *
@@ -96,5 +99,12 @@ require get_template_directory() . '/inc/class-theme.php';
 // Load the `kadence()` entry point function.
 require get_template_directory() . '/inc/functions.php';
 
+/**
+ * Cleanup assets
+ */
+require_once(get_theme_file_path('includes/header-addons.php'));
+
 // Initialize the theme.
 call_user_func( 'Kadence\kadence' );
+
+

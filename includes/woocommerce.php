@@ -32,7 +32,7 @@ remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_pro
  */
 remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
 
-add_action('wprs_after_header', function ()
+add_action('kadence_after_header', function ()
 {
     if (is_woocommerce()) {
         woocommerce_breadcrumb();
