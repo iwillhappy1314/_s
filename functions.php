@@ -1,6 +1,6 @@
 <?php
 
-define('SPACENAME', '1.1.2');
+const SPACENAME_VERSION = '1.1.2';
 define('WENPRISE_INCLUDES_PATH', get_theme_file_path('includes/'));
 
 
