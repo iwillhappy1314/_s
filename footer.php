@@ -11,18 +11,6 @@
 ?>
 <?php do_action('_s_before_footer'); ?>
 
-<?php
-do_action( 'kadence_before_footer' );
-/**
- * Kadence footer hook.
- *
- * @hooked Kadence/footer_markup - 10
- */
-do_action( 'kadence_footer' );
-
-do_action( 'kadence_after_footer' );
-?>
-
 </div><!-- #page -->
 
 <?php do_action('_s_after_footer'); ?>
