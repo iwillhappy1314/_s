@@ -11,6 +11,16 @@
 ?>
 <?php do_action('_s_before_footer'); ?>
 
+<footer id='colophon' class='site__footer'>
+
+    <div class="container">
+        <?php if (is_active_sidebar('sidebar-footer')): ?>
+            <?php dynamic_sidebar('sidebar-footer'); ?>
+        <?php endif; ?>
+    </div>
+
+</footer>
+
 </div><!-- #page -->
 
 <?php do_action('_s_after_footer'); ?>

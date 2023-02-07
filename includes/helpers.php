@@ -54,6 +54,56 @@ if ( ! function_exists('_s_assets')) {
 }
 
 
+/**
+ * 获取指定值的默认值
+ *
+ * @param mixed $value
+ *
+ * @return mixed
+ */
+if ( ! function_exists('_s_data_value')) {
+    function _s_data_value($value)
+    {
+        return $value instanceof \Closure ? $value() : $value;
+    }
+}
+
+
+/**
+ * 使用点注释获取数据
+ *
+ * @param array|bool  $array
+ * @param string|null $key
+ * @param mixed       $default
+ *
+ * @return mixed
+ */
+if ( ! function_exists('_s_data_get')) {
+    function _s_data_get($array, ?string $key = null, $default = null)
+    {
+        if (is_null($key)) {
+            return $array;
+        }
+
+        $array = (array)$array;
+
+        if (isset($array[ $key ])) {
+            return $array[ $key ];
+        }
+
+        foreach (explode('.', $key) as $segment) {
+            if ( ! is_array($array) || ! array_key_exists($segment, $array)) {
+                return _s_data_value($default);
+            }
+
+            $array = $array[ $segment ];
+        }
+
+        return $array;
+    }
+}
+
+
 if ( ! function_exists('_s_has_shortcode')) {
 
     function _s_has_shortcode($post): bool
