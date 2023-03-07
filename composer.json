@@ -4,11 +4,9 @@
   "type": "wordpress-theme",
   "require": {
     "php": ">=7.1",
-    "proteusthemes/wp-customizer-utilities": "^2.7",
     "wenprise/wordpress-cleaner": "dev-master",
     "wenprise/content-types": "^2.0",
-    "wenprise/theme-helper": "^2.0",
-    "nette/neon": "^2"
+    "wenprise/theme-helper": "^2.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master",

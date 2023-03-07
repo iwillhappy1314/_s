@@ -19,3 +19,36 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
+
+:root{
+  --global-content-width: 1280px;
+  --global-palette9: #e9efe8;
+  --global-palette8: #fafcfa;
+  --header-h: 100px;
+}
+
+.site__topbar{
+  background: var(--global-palette9);
+  border-top: 0px none transparent;
+  border-bottom: 1px solid var(--global-palette8);
+  height: 40px;
+  line-height: 40px;
+}
+
+.site__topbar .wp-block-group__inner-container{
+  display: flex;
+  align-items: center;
+}
+
+.site__footer .kb-form .kadence-blocks-form-field label,
+.site__footer li,
+.site__footer a,
+.site__footer p,
+.site__footer strong,
+.site__footer li{
+  color: var(--text-color);
+}
+
+.site__footer a:hover{
+  color: var(--text-hover-color);
+}

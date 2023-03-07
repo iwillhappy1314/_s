@@ -19,17 +19,19 @@ get_header();
 
                     <div class="rs-post">
                         <?php do_action('wprs_before_content'); ?>
-                        <div class="typo rs-post__content">
+
+                        <?php do_action('wprs_before_content'); ?>
+                        <div class="rs-post__title">
+                            <?php the_title(); ?>
+                        </div>
+
+                        <div class="mt-4 typo rs-post__content">
                             <?php the_content(); ?>
                         </div>
-                        <?php do_action('wprs_after_content'); ?>
-                    </div>
 
-                    <?php
-                    if (comments_open() || get_comments_number()) :
-                        comments_template();
-                    endif;
-                    ?>
+                        <?php do_action('wprs_after_content'); ?>
+
+                    </div>
 
                 <?php endwhile; ?>
 

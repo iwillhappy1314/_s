@@ -2,7 +2,7 @@
 /**
  * The header for our theme
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
+ * This is the template that displays all the <head> section and everything up until <div id="content">
  *
  * @link    https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
@@ -21,6 +21,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+
 <div id="page" class="site">
     <?php
     do_action('_s_before_site');
@@ -28,8 +29,10 @@
     ?>
 
     <?php if (is_active_sidebar('sidebar-top-bar')): ?>
-        <div class="site__notice o-mini-widgets">
-    <?php dynamic_sidebar('sidebar-top-bar'); ?>
+        <div class="site__topbar o-mini-widgets">
+            <div class="container flex justify-between items-center">
+                <?php dynamic_sidebar('sidebar-top-bar'); ?>
+            </div>
         </div>
     <?php endif; ?>
 
