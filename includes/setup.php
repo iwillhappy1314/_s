@@ -149,6 +149,15 @@ if ( ! function_exists('_s_widgets_init')) {
             'before_title'  => '<h2 class="widget-title"><span>',
             'after_title'   => '</span></h2>',
         ]);
+        register_sidebar([
+            'name'          => esc_html__('Copyright Widgets Area', '_s'),
+            'id'            => 'sidebar-copyright',
+            'description'   => esc_html__('Add widgets here.', '_s'),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title"><span>',
+            'after_title'   => '</span></h2>',
+        ]);
     }
 }
 

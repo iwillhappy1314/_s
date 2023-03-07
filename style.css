@@ -35,12 +35,20 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   line-height: 40px;
 }
 
+.kt-row-column-wrap{
+  max-width: var(--global-content-width, 1290px );
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .site__topbar .wp-block-group__inner-container{
   display: flex;
   align-items: center;
 }
 
 .site__footer .kb-form .kadence-blocks-form-field label,
+.site__footer h2,
+.site__footer h3,
 .site__footer li,
 .site__footer a,
 .site__footer p,
