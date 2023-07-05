@@ -3,6 +3,8 @@
  * @package _s
  */
 
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
 add_action('after_setup_theme', '_s_setup');
 add_action('widgets_init', '_s_widgets_init');
 add_action('init', '_s_elementor_widgets_init');
@@ -187,7 +189,7 @@ if ( ! function_exists('_s_elementor_widgets_init')) {
 /**
  * 设置主题更新
  */
-$theme_update_checker = \Puc_v4_Factory::buildUpdateChecker(
+$theme_update_checker = PucFactory::buildUpdateChecker(
     'https://api.wpcio.com/api/theme/info/_s',
     get_parent_theme_file_path('functions.php'),
     '_s'
