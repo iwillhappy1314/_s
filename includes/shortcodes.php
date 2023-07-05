@@ -11,7 +11,7 @@ add_shortcode('_s_elementor_block', '_s_render_elementor_block');
 add_shortcode('_s_product_nav', '_s_render_product_nav');
 add_shortcode('_s_account_menu', '_s_render_account_menu');
 add_shortcode('_s_dropdown_search', '_s_render_dropdown_search');
-
+add_shortcode('_s_language_switcher', '_s_custom_language_switcher');
 
 if (!function_exists('_s_render_elementor_block')) {
     /**
@@ -219,5 +219,26 @@ if (!function_exists('_s_render_dropdown_search')) {
         echo '</ul>';
 
         return ob_get_clean();
+    }
+}
+
+
+
+if (!function_exists('_s_custom_language_switcher')) {
+    function _s_custom_language_switcher()
+    {
+        $locale = trp_get_locale();
+        $languages = trp_custom_language_switcher();
+        $html = "<ul data-no-translation>";
+        foreach ($languages as $name => $item) {
+            if ($locale !== $name) {
+                $html .= "<li style='list-style-image: url({$item['flag_link']})'>";
+                $html .= "<a href='{$item['current_page_url']}'>";
+                $html .= "<span>{$item['language_name']}</span></a></li>";
+            }
+        }
+        $html .= "</ul>";
+
+        return $html;
     }
 }

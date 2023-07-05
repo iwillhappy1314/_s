@@ -124,6 +124,7 @@ if ( ! function_exists('_s_render_mega_menu_content')) {
 /**
  * Append shortcode content
  */
+add_filter('nav_menu_item_args', '_s_append_shortcode_to_menu', 10, 3);
 function _s_append_shortcode_to_menu($args, $menu_item, $depth)
 {
     $is_mega_menu = get_post_meta($menu_item->ID, 'is_mega_menu', true);

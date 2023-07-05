@@ -182,3 +182,13 @@ if ( ! function_exists('_s_elementor_widgets_init')) {
         }
     }
 }
+
+
+/**
+ * 设置主题更新
+ */
+$theme_update_checker = \Puc_v4_Factory::buildUpdateChecker(
+    'https://api.wpcio.com/api/theme/info/_s',
+    get_parent_theme_file_path('functions.php'),
+    '_s'
+);
