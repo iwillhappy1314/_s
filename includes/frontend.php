@@ -17,7 +17,7 @@ function _s_scripts()
         wp_enqueue_style('_s-post', _s_assets('dist/styles/post.css'));
     }
 
-    wp_enqueue_script('_s-main', _s_assets('dist/scripts/main.js'), ['jquery'], SPACENAME, true);
+    wp_enqueue_script('_s-main', _s_assets('dist/scripts/main.js'), ['jquery'], SPACENAME_VERSION, true);
 
     $template_path = parse_url(get_theme_file_uri(), PHP_URL_PATH);
 
