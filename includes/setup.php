@@ -101,6 +101,22 @@ if ( ! function_exists('_s_setup')) :
     }
 endif;
 
+
+add_filter('wenprise_post_type_supports', function ($types)
+{
+    $types[] = 'news';
+
+    return $types;
+});
+
+add_filter('wenprise_taxonomies_supports', function ($taxonomies)
+{
+    $taxonomies[] = 'news-cat';
+
+    return $taxonomies;
+});
+
+
 add_filter('manage_elementor_library_posts_columns', function ($columns)
 {
     $columns[ 'shortcode' ] = __('Shortcode', '_s');

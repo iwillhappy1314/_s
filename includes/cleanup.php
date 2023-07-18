@@ -165,3 +165,25 @@ $cleaner->remove_admin_bar_menu('wp-logo')
 if ( ! current_user_can('administrator')) {
     $cleaner->remove_submenu('edit.php?post_type=staff11', [15]);
 }
+
+
+/**
+ * 移动媒体库菜单位置，移除Kadence区块介绍页面
+ */
+add_action('admin_menu', function ()
+{
+    global $menu;
+
+    foreach ($menu as $key => $value) {
+        if ('upload.php' == $value[ 2 ]) {
+            $old_key = $key;
+        }
+    }
+
+    // 新的媒体菜单位置
+    $new_key = 51;
+    $menu[ $new_key ] = $menu[ $old_key ];
+
+    unset($menu[ $old_key ]);
+    unset($menu[ 100 ]); //kadence区块
+});
