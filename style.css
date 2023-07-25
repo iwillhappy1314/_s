@@ -45,18 +45,3 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   display: flex;
   align-items: center;
 }
-
-.site__footer .kb-form .kadence-blocks-form-field label,
-.site__footer h2,
-.site__footer h3,
-.site__footer li,
-.site__footer a,
-.site__footer p,
-.site__footer strong,
-.site__footer li{
-  color: var(--text-color);
-}
-
-.site__footer a:hover{
-  color: var(--text-hover-color);
-}
