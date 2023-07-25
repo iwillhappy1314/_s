@@ -78,6 +78,10 @@ require_once(get_theme_file_path('includes/cleanup.php'));
  * Load WooCommerce compatibility file.
  */
 if (class_exists('WooCommerce')) {
-    require_once(get_theme_file_path('includes/woocommerce.php'));
+    require_once(get_theme_file_path('includes/woocommerce/setup.php'));
+    require_once(get_theme_file_path('includes/woocommerce/frontend.php'));
+    require_once(get_theme_file_path('includes/woocommerce/fields.php'));
+    require_once(get_theme_file_path('includes/woocommerce/elements.php'));
+    require_once(get_theme_file_path('includes/woocommerce/shortcodes.php'));
 }
 

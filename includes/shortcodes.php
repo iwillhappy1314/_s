@@ -9,7 +9,6 @@
 
 add_shortcode('_s_elementor_block', '_s_render_elementor_block');
 add_shortcode('_s_product_nav', '_s_render_product_nav');
-add_shortcode('_s_account_menu', '_s_render_account_menu');
 add_shortcode('_s_dropdown_search', '_s_render_dropdown_search');
 add_shortcode('_s_language_switcher', '_s_custom_language_switcher');
 
@@ -185,27 +184,6 @@ if (!function_exists('_s_render_product_nav')) {
 }
 
 
-if (!function_exists('_s_render_account_menu')) {
-    function _s_render_account_menu($atts)
-    {
-        $html = '<ul class="sub-menu has-submenu">';
-
-        if (is_user_logged_in()) {
-            $html .= '<li class="menu-item"><a href="' . wc_get_account_endpoint_url('dashboard') . '">My Account</a></li>';
-        } else {
-            $html .= '<li class="menu-item"><a href="' . wc_get_account_endpoint_url('dashboard') . '">Login</a></li>';
-            $html .= '<li class="menu-item"><a href="' . wc_get_account_endpoint_url('dashboard') . '">Register</a></li>';
-        }
-
-        $html .= '<li class="menu-item"><a href="' . home_url('track-your-order') . '">Track Order</a></li>';
-
-        $html .= '</ul>';
-
-        return $html;
-    }
-}
-
-
 if (!function_exists('_s_render_dropdown_search')) {
     function _s_render_dropdown_search($atts)
     {
@@ -221,7 +199,6 @@ if (!function_exists('_s_render_dropdown_search')) {
         return ob_get_clean();
     }
 }
-
 
 
 if (!function_exists('_s_custom_language_switcher')) {

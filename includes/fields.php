@@ -29,28 +29,72 @@ if (class_exists('CSF')) {
 
         ],
     ]);
+
+    add_action('wprs_before_term_options', function ($prefix)
+    {
+        $col_options = [
+            '1' => __('1 Col', 'wenprise-content-components'),
+            '2' => __('2 Col', 'wenprise-content-components'),
+            '3' => __('3 Col', 'wenprise-content-components'),
+            '4' => __('4 Col', 'wenprise-content-components'),
+            '5' => __('5 Col', 'wenprise-content-components'),
+            '6' => __('6 Col', 'wenprise-content-components'),
+        ];
+
+        \CSF::createSection($prefix, [
+            'fields' => [
+                [
+                    'id'      => '_wprs_loop_layout',
+                    'type'    => 'button_set',
+                    'title'   => __('Page Content Layout', 'wenprise-content-components'),
+                    'options' => [
+                        ''     => __('Default', 'wenprise-content-components'),
+                        'grid' => __('Grid', 'wenprise-content-components'),
+                        'list' => __('List', 'wenprise-content-components'),
+                    ],
+                ],
+                [
+                    'id'      => '_wprs_gird_cols',
+                    'type'    => 'select',
+                    'title'   => __('Cols', 'wenprise-content-components'),
+                    'options' => $col_options,
+                    'default' => 1,
+                ],
+                [
+                    'id'      => '_wprs_gird_cols_md',
+                    'type'    => 'select',
+                    'title'   => __('Col in Tablet', 'wenprise-content-components'),
+                    'options' => $col_options,
+                    'default' => 1,
+                ],
+                [
+                    'id'      => '_wprs_gird_cols_sm',
+                    'type'    => 'select',
+                    'title'   => __('Cols in mobile', 'wenprise-content-components'),
+                    'options' => $col_options,
+                    'default' => 1,
+                ],
+            ],
+        ]);
+    });
+
+
+    add_action('wprs_after_site_options', function ($prefix)
+    {
+        \CSF::createSection($prefix, [
+            'title'  => __('图像设置', 'wenprise-content-components'),
+            'fields' => [
+                [
+                    'id'      => '_wprs_default_thumbnail',
+                    'type'    => 'media',
+                    'title'   => __('默认文章图像', 'wenprise-content-components'),
+                ],
+                [
+                    'id'      => '_wprs_default_banner',
+                    'type'    => 'media',
+                    'title'   => __('默认Banner图像', 'wenprise-content-components'),
+                ],
+            ],
+        ]);
+    });
 }
-
-
-add_action('woocommerce_product_options_general_product_data', function () {
-    woocommerce_wp_text_input([
-        'id' => '_delivery_date',
-        'label' => __('货期(天)', 'flashfox'),
-    ]);
-
-    woocommerce_wp_checkbox([
-        'id' => '_allow_make_offer',
-        'label' => __('允许议价', 'flashfox'),
-        'description' => __('选中允许议价', 'flashfox'),
-    ]);
-});
-
-
-add_action('woocommerce_process_product_meta', function ($post_id) {
-    $product = wc_get_product($post_id);
-
-    $product->update_meta_data('_delivery_date', sanitize_text_field($_POST['_delivery_date'] ?? ''));
-    $product->update_meta_data('_allow_make_offer', sanitize_text_field($_POST['_allow_make_offer'] ?? ''));
-
-    $product->save();
-});
