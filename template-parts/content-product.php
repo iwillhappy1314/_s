@@ -4,7 +4,7 @@
  */
 ?>
 
-<div class='overflow-hidden bg-white relative rounded-md rs-product group wow fadeInUp animated' data-wow-delay='0.<?= $args['index']; ?>s' data-wow-duration='.8s'>
+<div class='overflow-hidden bg-white relative rounded-md rs-product group wow fadeIn animated border border-solid border-gray-300' data-wow-delay='0.<?= $args['index']; ?>s' data-wow-duration='.8s'>
     <figure class='mb-4 rs-product-thumbnail'>
         <a class="block relative" href='<?php the_permalink(); ?>''>
         <div class='overflow-hidden aspect-w-4 aspect-h-3'>
@@ -32,7 +32,7 @@
                 <?php endif; ?>
             </a>
 
-            <a href='<?php the_permalink(); ?>' data-pid='<?= get_the_ID(); ?>' class='rs-inquiry flex justify-center rounded text-sm font-semibold py-3 px-4 bg-slate-900 text-white hover:bg-slate-700 hover:text-white rs-project-read_more'>
+            <a href='<?php the_permalink(); ?>' data-pid='<?= get_the_ID(); ?>' class='rs-inquiry flex justify-center rounded text-sm font-semibold py-2 px-4 bg-slate-900 text-white hover:bg-slate-700 hover:text-white rs-project-read_more'>
                 Add to Inquiry List
             </a>
         </div>
