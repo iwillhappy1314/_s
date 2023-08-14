@@ -14,6 +14,7 @@ add_filter('widget_nav_menu_args', '_s_widget_menu_args');
 add_filter('nav_menu_item_title', '_s_render_shortcode_in_menu_title');
 add_filter('nav_menu_item_args', '_s_append_shortcode_to_menu', 10, 3);
 add_filter('wp_footer', '_s_add_to_top_element', 10, 3);
+add_filter('_s_before_nav_menu', '_s_render_menu_toggle', 10, 3);
 
 // Code in header and footer
 
@@ -143,9 +144,32 @@ function _s_append_shortcode_to_menu($args, $menu_item, $depth)
  */
 function _s_add_to_top_element()
 {
+    $options = get_option('wenprise-site-settings');
+
+    if ( ! _s_data_get($options, 'enable_go_to_top')) {
+        return;
+    }
     ?>
     <div class="cursor-pointer rs-back-to-top fixed h-10 w-10 right-6 bottom-6 z-50 border border-solid border-gray-300 inline-flex justify-center items-center hover:border-primary hover:bg-primary group" data-offset="250" data-speed="300" data-easing="swing">
         <i class="icomoon icon-arrow-up text-gray-300 text-2xl group-hover:text-white"></i>
     </div>
+    <?php
+}
+
+
+function _s_render_menu_toggle()
+{
+    $options = get_option('wenprise-site-settings');
+
+    $toggle_class = 'rs-dropdown-toggle';
+    if (_s_data_get($options, 'mobile_nav_style', 'dropdown') === 'off-canvas') {
+        $toggle_class = 'rs-off-canvas-toggle';
+    }
+    ?>
+
+    <button class="menu-toggle <?= $toggle_class; ?>" aria-controls="primary-menu" aria-expanded="false">
+        <span><?php esc_html_e('Menu', '_s'); ?></span>
+    </button>
+
     <?php
 }

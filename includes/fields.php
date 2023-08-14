@@ -85,16 +85,47 @@ if (class_exists('CSF')) {
             'title'  => __('图像设置', 'wenprise-content-components'),
             'fields' => [
                 [
-                    'id'      => '_wprs_default_thumbnail',
-                    'type'    => 'media',
-                    'title'   => __('默认文章图像', 'wenprise-content-components'),
+                    'id'    => '_wprs_default_thumbnail',
+                    'type'  => 'media',
+                    'title' => __('默认文章图像', 'wenprise-content-components'),
                 ],
                 [
-                    'id'      => '_wprs_default_banner',
-                    'type'    => 'media',
-                    'title'   => __('默认Banner图像', 'wenprise-content-components'),
+                    'id'    => '_wprs_default_banner',
+                    'type'  => 'media',
+                    'title' => __('默认Banner图像', 'wenprise-content-components'),
                 ],
             ],
         ]);
+    });
+
+
+    add_action('wprs_after_header_options', function ($prefix)
+    {
+        \CSF::createSection($prefix, [
+            'title'  => __('页脚设置', 'wenprise-content-components'),
+            'fields' => [
+                [
+                    'id'    => 'enable_go_to_top',
+                    'type'  => 'checkbox',
+                    'title' => __('Enable go to top button', 'wenprise-content-components'),
+                ],
+            ],
+        ]);
+    });
+
+    add_filter('wprs_site_header_options', function ($options)
+    {
+        $options[] = [
+            'id'      => 'mobile_nav_style',
+            'type'    => 'select',
+            'title'   => __('Enable Sticky Header', 'wenprise-content-components'),
+            'default' => 'dropdown',
+            'options' => [
+                'dropdown'   => __('Dropdown', 'wenprise-content-components'),
+                'off-canvas' => __('Off Canvas', 'wenprise-content-components'),
+            ],
+        ];
+
+        return $options;
     });
 }

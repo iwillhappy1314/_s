@@ -49,12 +49,13 @@
             <?php do_action('_s_before_navigation'); ?>
 
             <nav id="site-navigation" class="site__nav main-navigation">
-                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                    <span><?php esc_html_e('Menu', '_s'); ?></span>
-                </button>
+
+                <?php do_action('_s_before_nav_menu'); ?>
+
                 <?php
                 wp_nav_menu([
                     'theme_location' => 'menu-primary',
+                    'container_id'   => 'rs-primary-nav',
                     'menu_id'        => 'primary-menu',
                     'menu_class'     => 'sm sm-menu nav-menu',
                     'fallback_cb'    => '_s_page_menu',
