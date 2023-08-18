@@ -4,60 +4,33 @@
  *
  * @link    https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package _s
+ * @package qinghaixinbao
  */
 
 ?>
 
 <section class="no-results not-found">
-    <div class="container--focus rs-empty">
+    <div class="container--focus text-center mx-auto py-12 lg:py-16">
 
-        <div class="rs-empty__icon">
-            <div class="rs-empty__icon">
-                <img src="<?= _s_assets('dist/images/empty.svg'); ?>" alt="Nothing found" />
-            </div>
+        <div class="max-w-[16rem] mx-auto mb-8 lg:mb-12">
+            <img src="<?= qinghaixinbao_assets('dist/images/empty.svg'); ?>" alt="Nothing found" />
         </div>
 
-        <header class="rs-empty__title">
-            <?php esc_html_e('Nothing Found', '_s'); ?>
+        <header class="mb-4 text-2xl lg:text-4xl">
+            <?php esc_html_e('Nothing Found', 'qinghaixinbao'); ?>
         </header>
 
-        <?php
-        if (is_home() && current_user_can('publish_posts')) :
+        <?php if (is_search()) : ?>
 
-            printf(
-                '<p class="rs-empty__subtitle">' . wp_kses(
-                /* translators: 1: link to WP admin new post page. */
-                    __('Ready to publish your first post? <a href="%1$s">Get started here</a>.', '_s'),
-                    [
-                        'a' => [
-                            'href' => [],
-                        ],
-                    ]
-                ) . '</p>',
-                esc_url(admin_url('post-new.php'))
-            );
-            ?>
-
-        <?php elseif (is_search()) : ?>
-
-            <p class="rs-empty__subtitle">
-                <?php esc_html_e('Sorry, but nothing matched your search terms. Please try again with some different keywords.', '_s'); ?>
+            <p>
+                <?php esc_html_e('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'qinghaixinbao'); ?>
             </p>
-
-            <div class="rs-empty__action input-group input-inline">
-                <?php get_search_form(); ?>
-            </div>
 
         <?php else : ?>
 
-            <p class="rs-empty__subtitle">
-                <?php esc_html_e('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', '_s'); ?>
+            <p>
+                <?php esc_html_e('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'qinghaixinbao'); ?>
             </p>
-
-            <div class="rs-empty__action input-group input-inline">
-                <?php get_search_form(); ?>
-            </div>
 
         <?php endif; ?>
     </div>
