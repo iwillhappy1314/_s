@@ -161,7 +161,7 @@ function _s_render_menu_toggle()
 {
     $options = get_option('wenprise-site-settings');
 
-    $toggle_class = 'rs-dropdown-toggle';
+    $toggle_class = 'rs-dropdown-nav-toggle';
     if (_s_data_get($options, 'mobile_nav_style', 'dropdown') === 'off-canvas') {
         $toggle_class = 'rs-off-canvas-toggle';
     }
