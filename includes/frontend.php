@@ -33,6 +33,14 @@ function _s_scripts()
 }
 
 /**
+ * 添加样式到经典编辑器
+ */
+add_action('admin_init', function ()
+{
+    add_editor_style( _s_assets('dist/styles/editor.css') );
+});
+
+/**
  * Disable Weforms CSS
  */
 add_filter('weforms_frontend_styles', function ($styles)
