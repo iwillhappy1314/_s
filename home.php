@@ -14,7 +14,7 @@
 
 get_header();
 ?>
-    <div class="container mt-8">
+    <div class="container my-8">
 
         <div class="grid grid-cols-2 gap-8">
 
@@ -26,7 +26,7 @@ get_header();
             </section>
 
             <section>
-                <h2 class="mb-4 text-2xl">Popover</h2>
+                <h2 class="mb-4 text-2xl">Bootstrap Popover</h2>
 
                 <button type='button' class='rs-button rs-button--primary rs-popover'
                         data-bs-toggle='popover' data-bs-placement='right'
@@ -35,7 +35,263 @@ get_header();
                         data-bs-content='This popover is themed via CSS variables.'>
                     Custom popover
                 </button>
+
+                <div class="hs-tooltip inline-block [--trigger:click]">
+                    <a class="rs-button hs-tooltip-toggle block" href="javascript:;">
+                        Click me
+                        <div class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white" role="tooltip">
+                            Top popover
+                        </div>
+                    </a>
+                </div>
             </section>
+
+
+            <section>
+                <h2 class="mb-4 text-2xl">Scroll to top</h2>
+
+                <p>效果参见右下角</p>
+
+                <div class="cursor-pointer rs-back-to-top fixed hidden right-6 bottom-6 z-50 border border-solid border-gray-300 hover:border-primary hover:bg-primary group" data-offset="300" data-speed="300" data-easing="swing" data-mobile="true">
+                    <div class="h-10 w-10 inline-flex justify-center items-center">
+                        <i class="icomoon icon-arrow-up text-gray-300 text-2xl group-hover:text-white"></i>
+                    </div>
+                </div>
+            </section>
+
+
+            <section>
+                <h2 class="mb-4 text-2xl">Splide Slider</h2>
+
+                <div id="rs-news-slider" class="splide rs-news-slider">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <div>
+                                    <a href="#">
+                                        <div class="flex aspect-w-3 aspect-h-2">
+                                            <img width="584" height="381" src="http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_s.jpg" class="object-cover wp-post-image" alt="" decoding="async" />
+                                        </div>
+                                    </a>
+
+                                    <div class="rs-news-slider__title">
+                                        <a href="#">一只正在休息的大老虎</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div>
+                                    <a href="#">
+                                        <div class="flex aspect-w-3 aspect-h-2">
+                                            <img width="584" height="381" src="http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_s.jpg" class="object-cover wp-post-image" alt="" decoding="async" />
+                                        </div>
+                                    </a>
+
+                                    <div class="rs-news-slider__title">
+                                        <a href="#">两只正在跳舞的天鹅</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div>
+                                    <a href="http://qx.pr.wpcio.com/news/bao-hu-sheng-tai-huan-jing-ling-lue-gao-yuan-mei-li-can/">
+                                        <div class="flex aspect-w-3 aspect-h-2">
+                                            <img width="584" height="381" src="http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_s.jpg" class="object-cover wp-post-image" alt="" decoding="async" />
+                                        </div>
+                                    </a>
+
+                                    <div class="rs-news-slider__title">
+                                        <a href="#">几只正在玩耍的熊</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="container sc-corps">
+                <h2 class="text-2xl">合作伙伴</h2>
+
+
+                <div class="mt-6">
+                    <div class="rsp-tabs">
+                        <ul class="resp-tabs-list hor_1 flex">
+                            <li><span>合作银行</span></li>
+                            <li><span>合作机构</span></li>
+                        </ul>
+                        <div class="resp-tabs-container hor_1">
+
+                            <div>
+                                <div class="grid grid-cols-2 gap-4">
+
+                                    <a href="https://www.icbc.com.cn/" target="_blank">
+                                        <div class="overflow-hidden border h-[61px] border-solid border-gray-300 bg-gray-200 flex items-center hover:bg-gray-300 hover:border-gray-400 cursor-pointer">
+                                            <div class="text-center  text-sm flex items-center">
+                                                <img width="171" height="56" src="http://qinghaixinbao.local:58071/wp-content/uploads/2023/07/gongshang.png" class="attachment-full size-full wp-post-image" alt="" decoding="async" /></div>
+                                        </div>
+                                    </a>
+                                    <a href="https://www.boc.cn/" target="_blank">
+                                        <div class="overflow-hidden border h-[61px] border-solid border-gray-300 bg-gray-200 flex items-center hover:bg-gray-300 hover:border-gray-400 cursor-pointer">
+                                            <div class="text-center  text-sm flex items-center">
+                                                <img width="171" height="56" src="http://qinghaixinbao.local:58071/wp-content/uploads/2023/07/zhy.png" class="attachment-full size-full wp-post-image" alt="" decoding="async" /></div>
+                                        </div>
+                                    </a>
+                                    <a href="http://www.ccb.com/" target="_blank">
+                                        <div class="overflow-hidden border h-[61px] border-solid border-gray-300 bg-gray-200 flex items-center hover:bg-gray-300 hover:border-gray-400 cursor-pointer">
+                                            <div class="text-center  text-sm flex items-center">
+                                                <img width="171" height="56" src="http://qinghaixinbao.local:58071/wp-content/uploads/2023/07/js.png" class="attachment-full size-full wp-post-image" alt="" decoding="async" /></div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <div class="grid grid-cols-2 gap-4">
+
+                                    <a href="/member/qing-hai-xin-bao-xiao-wei-rong-zi-dan-bao/" target="_blank">
+                                        <div class="overflow-hidden border h-[61px] border-solid border-gray-300 bg-gray-200 flex items-center hover:bg-gray-300 hover:border-gray-400 cursor-pointer">
+                                            <div class="text-center  text-sm flex items-center px-6 line-clamp-2">
+                                                青海信保小微融资担保有限公司
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="http://qhnmdb.com/" target="_blank">
+                                        <div class="overflow-hidden border h-[61px] border-solid border-gray-300 bg-gray-200 flex items-center hover:bg-gray-300 hover:border-gray-400 cursor-pointer">
+                                            <div class="text-center  text-sm flex items-center px-6 line-clamp-2">
+                                                青海省农牧业信贷担保有限责任公司
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div class="overflow-hidden border h-[61px] border-solid border-gray-300 bg-gray-200 flex items-center hover:bg-gray-300 hover:border-gray-400 cursor-pointer">
+                                        <div class="text-center  text-sm flex items-center px-6 line-clamp-2">
+                                            西宁产业融资担保集团有限公司
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="container my-8">
+                <h2 class="text-2xl">Shuffle</h2>
+
+                <ul class="flex flex-wrap lg:flex-nowrap gap-2 rsi-filters rs-shuffle__filter mt-6 mb-8">
+                    <li class="rsi-filters_item active" data-filter="all"><a href="#">All</a></li>
+                    <li class="rsi-filters_item" data-filter="cat-91"><a href="#">Cat1</a></li>
+                    <li class="rsi-filters_item" data-filter="cat-389"><a href="#">Cat2</a></li>
+                    <li class="rsi-filters_item" data-filter="cat-396"><a href="#">Cat3</a></li>
+                    <li class="rsi-filters_item" data-filter="cat-88"><a href="#">Cat4</a></li>
+                </ul>
+
+                <div class="rs-shuffle__container grid lg:grid-cols-2 gap-6 lg:gap-8">
+
+                    <div class="rs-shuffle__item" data-groups='["cat-91"]'>
+                        <div class="bz-card relative border border-solid border-gray-300 group hover:shadow-md hover:bg-gray-200 hover:border-b-0 transition-all rounded overflow-hidden">
+                            <div class="flex">
+                                <a class="block flex-shrink-0" href="#">
+                                    <div class="flex">
+                                        <img width="171" height="162" src="http://qx.pr.wpcio.com/wp-content/uploads/2023/07/qz.png" class="object-cover wp-post-image" alt="" decoding="async" /></div>
+                                </a>
+                                <div class="px-4 flex flex-col flex-nowrap justify-center w-full">
+                                    <h3 class="text-lg text-gray-900 w-full">
+                                        <a class="block leading-none" href="#">银担“总对总”批量担保业务</a>
+                                    </h3>
+
+                                    <div class="text-gray-700 w-full mt-3 text-sm">
+                                        <p class="bz-card__desc">
+                                            国家融资担保基金与法人银行总部共同确定合作业务政策和操作流程，直接办理担保贷款的地方银…
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rs-shuffle__item" data-groups='["cat-91"]'>
+                        <div class="bz-card relative border border-solid border-gray-300 group hover:shadow-md hover:bg-gray-200 hover:border-b-0 transition-all rounded overflow-hidden">
+                            <div class="flex">
+                                <a class="block flex-shrink-0" href="#">
+                                    <div class="flex">
+                                        <img width="172" height="162" src="http://qx.pr.wpcio.com/wp-content/uploads/2023/07/b.png" class="object-cover wp-post-image" alt="" decoding="async" /></div>
+                                </a>
+                                <div class="px-4 flex flex-col flex-nowrap justify-center w-full">
+                                    <h3 class="text-lg text-gray-900 w-full">
+                                        <a class="block leading-none" href="#">青海省再国担非专项业务</a>
+                                    </h3>
+
+                                    <div class="text-gray-700 w-full mt-3 text-sm">
+                                        <p class="bz-card__desc">
+                                            对符合条件的体系内融资担保机构针对小微企业、“三农”和创业创新等市场主体，以及符合条件的…
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rs-shuffle__item" data-groups='["cat-389"]'>
+                        <div class="bz-card relative border border-solid border-gray-300 group hover:shadow-md hover:bg-gray-200 hover:border-b-0 transition-all rounded overflow-hidden">
+                            <div class="flex">
+                                <a class="block flex-shrink-0" href="#">
+                                    <div class="flex">
+                                        <img width="171" height="162" src="http://qx.pr.wpcio.com/wp-content/uploads/2023/07/f.png" class="object-cover wp-post-image" alt="" decoding="async" /></div>
+                                </a>
+                                <div class="px-4 flex flex-col flex-nowrap justify-center w-full">
+                                    <h3 class="text-lg text-gray-900 w-full">
+                                        <a class="block leading-none" href="#">政采保</a>
+                                    </h3>
+
+                                    <div class="text-gray-700 w-full mt-3 text-sm">
+                                        <p class="bz-card__desc">
+                                            支持小微企业发展，满足小微企业承揽政府采购项目时的融资需求，进一步降低小微企业融资成本,…
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-1/2 rs-shuffle__sizer"></div>
+                </div>
+            </section>
+
+
+            <section>
+                <h2 class="mb-4 text-2xl">
+                    <a target=_blank href="https://dimsemenov.com/plugins/magnific-popup/">Magnific Popup</a>
+                </h2>
+
+                <div class="my-4">
+                    <a class='rs-popup rs-popup-video' href='http://www.youtube.com/watch?v=0O2aH4XLbto'>Open YouTube video</a>
+                </div>
+
+                <div class="my-4">
+                    <a class='rs-popup rs-popup-image' href='http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg' title='The Cleaner'>
+                        <img src='http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_s.jpg' width='75' height='75'>
+                    </a>
+                </div>
+
+                <div class='rs-popup rs-popup-gallery flex gap-4 my-4'>
+                    <a href='http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_b.jpg' title='The Cleaner'>
+                        <img src='http://farm9.staticflickr.com/8242/8558295633_f34a55c1c6_s.jpg' width='75' height='75'>
+                    </a>
+                    <a href='http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_b.jpg' title='Winter Dance'>
+                        <img src='http://farm9.staticflickr.com/8382/8558295631_0f56c1284f_s.jpg' width='75' height='75'>
+                    </a>
+                    <a href='http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_b.jpg' title="Who's that, mommy?">
+                        <img src='http://farm9.staticflickr.com/8378/8559402848_9fcd90d20b_s.jpg' width='75' height='75'>
+                    </a>
+                </div>
+            </section>
+
 
             <section>
                 <h2 class="mb-4 text-2xl">Accordion</h2>
@@ -67,34 +323,35 @@ get_header();
                             </div>
                         </div>
                     </div>
+
                 </div>
             </section>
 
 
-            <section
-            ">
-            <h2 class="mb-4 text-2xl">Dropdown</h2>
+            <section>
+                <h2 class="mb-4 text-2xl">Dropdown</h2>
 
-            <div class="dropdown">
-                <button class="rs-button btn-secondary rs-dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown button
-                </button>
+                <div class="dropdown">
+                    <button class="rs-button btn-secondary rs-dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown button
+                    </button>
 
-                <ul class="dropdown-menu py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
-                    <li>
-                        <a href="#" class="dropdown-item">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="#" class="dropdown-item">Settings</a>
-                    </li>
-                    <li>
-                        <a href="#" class="dropdown-item">Earnings</a>
-                    </li>
-                    <li>
-                        <a href="#" class="dropdown-item">Sign out</a>
-                    </li>
-                </ul>
-            </div>
+                    <ul class="dropdown-menu py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
+                        <li>
+                            <a href="#" class="dropdown-item">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-item">Settings</a>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-item">Earnings</a>
+                        </li>
+                        <li>
+                            <a href="#" class="dropdown-item">Sign out</a>
+                        </li>
+                    </ul>
+                </div>
+
             </section>
 
 
@@ -158,5 +415,6 @@ get_header();
 
     </div>
 
+    <script type='text/javascript' src='http://starter.test/wp-content/themes/_s/frontend/dist/scripts/demo.js?ver=1.1.2' id='_s-demo-js'></script>
 
 <?php get_footer();

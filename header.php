@@ -22,7 +22,7 @@
 
 <body <?php body_class(); ?>>
 
-<div id="page" class="site">
+<div id="page" class="site bg-gray-100">
     <?php
     do_action('_s_before_site');
     do_action('_s_before_header');
