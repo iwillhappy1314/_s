@@ -41,6 +41,8 @@ if (class_exists('CSF')) {
             '6' => __('6 Col', 'wenprise-content-components'),
         ];
 
+        $gap_options = array_values(range(0, 12));
+
         \CSF::createSection($prefix, [
             'fields' => [
                 [
@@ -48,9 +50,9 @@ if (class_exists('CSF')) {
                     'type'    => 'button_set',
                     'title'   => __('Page Content Layout', 'wenprise-content-components'),
                     'options' => [
-                        ''     => __('Default', 'wenprise-content-components'),
+                        ''     => __('List', 'wenprise-content-components'),
                         'grid' => __('Grid', 'wenprise-content-components'),
-                        'list' => __('List', 'wenprise-content-components'),
+                        'news' => __('News', 'wenprise-content-components'),
                     ],
                 ],
                 [
@@ -73,6 +75,27 @@ if (class_exists('CSF')) {
                     'title'   => __('Cols in mobile', 'wenprise-content-components'),
                     'options' => $col_options,
                     'default' => 1,
+                ],
+                [
+                    'id'      => '_wprs_gird_gap',
+                    'type'    => 'select',
+                    'title'   => __('Gap', 'wenprise-content-components'),
+                    'options' => $gap_options,
+                    'default' => 4,
+                ],
+                [
+                    'id'      => '_wprs_gird_gap_md',
+                    'type'    => 'select',
+                    'title'   => __('Gap in Tablet', 'wenprise-content-components'),
+                    'options' => $gap_options,
+                    'default' => 6,
+                ],
+                [
+                    'id'      => '_wprs_gird_gap_sm',
+                    'type'    => 'select',
+                    'title'   => __('Gap in mobile', 'wenprise-content-components'),
+                    'options' => $gap_options,
+                    'default' => 8,
                 ],
             ],
         ]);

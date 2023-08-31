@@ -10,7 +10,7 @@
 $options = get_option('wenprise-site-settings');
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('mb-4'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('pt-8 first:pt-0 mb-8 last:mb-0 lg:px-0'); ?>>
 
     <a href="<?php the_permalink(); ?>" class="flex flex-wrap lg:flex-nowrap gap-4 lg:gap-6 rs-entry group">
 

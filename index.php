@@ -13,42 +13,38 @@
  */
 
 get_header();
+
+
+$taxonomy = get_queried_object();
+$post_type = wprs_get_term_post_type();
+$post_type_obj = get_post_type_object($post_type);
+
+$loop_template = get_term_meta($taxonomy->term_id, '_wprs_loop_layout', true);
+$cols_lg = get_term_meta($taxonomy->term_id, '_wprs_gird_cols', true);
+$cols_md = get_term_meta($taxonomy->term_id, '_wprs_gird_cols_md', true);
+$cols_sm = get_term_meta($taxonomy->term_id, '_wprs_gird_cols_sm', true);
+$gap_lg = get_term_meta($taxonomy->term_id, '_wprs_gird_gap', true);
+$gap_md = get_term_meta($taxonomy->term_id, '_wprs_gird_gap_md', true);
+$gap_sm = get_term_meta($taxonomy->term_id, '_wprs_gird_gap_sm', true);
 ?>
     <div id="content" class="site__content">
 
         <div id="primary" class="content__primary">
             <main id="main" class="site__main">
 
-                <?php
-                if (have_posts()) :
+                <?php if (have_posts()) : ?>
 
-                    if (is_home() && ! is_front_page()) :
-                        ?>
-                        <header>
-                            <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-                        </header>
-                    <?php
-                    endif;
+                    <div class='grid grid-cols-<?= $cols_sm; ?> md:grid-cols-<?= $cols_md; ?> lg:grid-cols-<?= $cols_lg; ?> gap-<?= $gap_sm; ?> md:gap-<?= $gap_md; ?> lg:gap-<?= $gap_lg; ?> divide-y divide-gray-300'>
+                        <?php while (have_posts()) : the_post(); ?>
+                            <?php get_template_part('template-parts/content', $loop_template) ?>
+                        <?php endwhile; ?>
+                    </div>
 
-                    /* Start the Loop */
-                    while (have_posts()) :
-                        the_post();
+                <?php else : ?>
 
-                        /*
-                         * Include the Post-Type-specific template for the content.
-                         * If you want to override this in a child theme, then include a file
-                         * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-                         */
-                        get_template_part('template-parts/content', get_post_type());
+                    <?php get_template_part('templates/content', 'none'); ?>
 
-                    endwhile;
-
-                else :
-
-                    get_template_part('templates/content', 'none');
-
-                endif;
-                ?>
+                <?php endif; ?>
 
             </main><!-- #main -->
         </div><!-- #primary -->
