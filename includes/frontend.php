@@ -40,6 +40,16 @@ add_action('admin_init', function ()
     add_editor_style( _s_assets('dist/styles/editor.css') );
 });
 
+
+/**
+ * 添加登录界面样式
+ */
+add_action('login_enqueue_scripts', function ()
+{
+    wp_enqueue_style('qx-login-theme', _s_assets('dist/styles/login.css'));
+});
+
+
 /**
  * Disable Weforms CSS
  */

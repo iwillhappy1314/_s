@@ -187,3 +187,11 @@ add_action('admin_menu', function ()
     unset($menu[ $old_key ]);
     unset($menu[ 100 ]); //kadence区块
 });
+
+
+/**
+ * 修改登录连接
+ */
+add_filter( 'login_headerurl', function ( $url ) {
+    return home_url();
+} );
