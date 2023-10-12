@@ -8,7 +8,7 @@ add_action('wp_enqueue_scripts', '_s_woocommerce_scripts');
 /**
  * Remove Select2 CSS
  */
-add_action('wp_print_styles', '_s_deregister_select2', 5);
+// add_action('wp_print_styles', '_s_deregister_select2', 5);
 
 
 /**
