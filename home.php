@@ -458,6 +458,61 @@ get_header();
                 </nav>
             </section>
 
+            <div>
+                <h2 class="mb-4 text-2xl">Simple scroll spy</h2>
+
+                <style>
+                    .rs-scroll-section{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                </style>
+
+                <div class="menu rs-scroll-nav" id="main-menu">
+                    <a class="menu-item active" href="#hero">Hero</a>
+                    <a class="menu-item" href="#section-1">Section 1</a>
+                    <a class="menu-item" href="#section-2">Section 2</a>
+                    <a class="menu-item" href="#section-3">Section 3</a>
+                    <a class="menu-item" href="#section-4">Section 4</a>
+                </div>
+
+                <div class="rs-scroll-container" style="height: 399px; overflow: auto">
+                    <section class="section scrollspy rs-scroll-section" style="height: 400px; background: #ccc;" id="hero">Hero</section>
+                    <section class="section scrollspy rs-scroll-section" style="height: 400px; background: #cc5;" id="section-1">Section 1</section>
+                    <section class="section scrollspy rs-scroll-section" style="height: 400px; background: #ccc;" id="section-2">Section 2</section>
+                    <section class="section scrollspy rs-scroll-section" style="height: 400px; background: #cc5;" id="section-3">Section 3</section>
+                    <section class="section scrollspy rs-scroll-section" style="height: 400px; background: #ccc;" id="section-4">Section 4</section>
+                </div>
+
+            </div>
+
+            <section>
+                <h2 class="mb-4 text-2xl">Count up</h2>
+
+                <div class="grid grid-cols-2 lg:grid-cols-4 my-4">
+                    <div class="rs-count-up mb-4 lg:mb-0">
+                        <span>公司成立于</span>
+                        <div><strong id="rscp-1">2013</strong><span>年</span></div>
+                    </div>
+
+                    <div class="rs-count-up mb-4 lg:mb-0">
+                        <span>注册资本</span>
+                        <div><strong id="rscp-2"> 32</strong><span>亿</span></div>
+                    </div>
+
+                    <div class="rs-count-up">
+                        <span>现有员工</span>
+                        <div><strong id="rscp-3">100</strong><span>+</span></div>
+                    </div>
+
+                    <div class="rs-count-up">
+                        <span>集团子公司</span>
+                        <div><strong id="rscp-4">5</strong><span>家</span></div>
+                    </div>
+                </div>
+            </section>
+
         </div>
 
     </div>
