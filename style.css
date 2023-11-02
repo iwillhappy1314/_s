@@ -27,30 +27,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   --header-h: 100px;
 }
 
-.site__topbar{
-  background: var(--global-palette9);
-  border-top: 0px none transparent;
-  border-bottom: 1px solid var(--global-palette8);
-  height: 40px;
-  line-height: 40px;
-}
-
-.kt-row-column-wrap{
-  max-width: var(--global-content-width, 1290px );
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.site__topbar .wp-block-group__inner-container{
-  display: flex;
-  align-items: center;
-}
-
-.site__topbar .wp-block-group__inner-container{
-  display: flex;
-  align-items: center;
-}
-
 .site__footer .kb-form .kadence-blocks-form-field label,
 .site__footer h2,
 .site__footer h3,

@@ -16,7 +16,7 @@ get_header();
 ?>
     <div class="container my-8">
 
-        <div class="grid grid-cols-2 gap-8">
+        <div class="grid gird-cols-1 lg:grid-cols-2 gap-8">
 
             <section>
                 <h2 class="mb-4 text-2xl">Tooltip</h2>
@@ -409,6 +409,53 @@ get_header();
                     </div>
 
                 </div>
+            </section>
+
+            <section>
+                <h2 class="mb-4 text-2xl">Lazy Youtube</h2>
+                <div class="lazyYT rs-lazyYT" data-youtube-id="_oEA18Y8gM0" data-ratio="16:9">loading...</div>
+            </section>
+
+            <section>
+                <h2 class="mb-4 text-2xl">Mean menu</h2>
+
+                <p>请在移动端查看效果。</p>
+
+                <div class='f-mean-nav'>
+                </div>
+
+                <nav class="rs-mean-menu" style="display: block;">
+                    <ul>
+                        <li><a href="#">Top Level Link</a>
+                            <ul>
+                                <li><a href="#">Second Level Link</a>
+                                    <ul>
+                                        <li><a href="#">Third Level Link</a></li>
+                                        <li><a href="#">Third Level Link</a></li>
+                                        <li><a href="#">Third Level Link</a>
+                                            <ul>
+                                                <li><a href="#">Fourth Level Link</a></li>
+                                                <li><a href="#">Fourth Level Link</a></li>
+                                                <li><a href="#">Fourth Level Link with extra long name so it wraps</a>
+                                                    <ul>
+                                                        <li><a href="#">Fifth Level Link</a></li>
+                                                        <li><a href="#">Fifth Level Link</a></li>
+                                                        <li><a href="#">Fifth Level Link</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Second Level Link</a></li>
+                                <li><a href="#">Second Level Link</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Top Level Link</a></li>
+                        <li><a href="#">Top Level Link</a></li>
+                        <li><a href="#">Top Level Link</a></li>
+                    </ul>
+                </nav>
             </section>
 
         </div>
