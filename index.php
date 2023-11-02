@@ -40,6 +40,10 @@ $gap_sm = get_term_meta($taxonomy->term_id, '_wprs_gird_gap_sm', true);
                         <?php endwhile; ?>
                     </div>
 
+                    <div class="mt-8">
+                        <?php wprs_pagination(); ?>
+                    </div>
+
                 <?php else : ?>
 
                     <?php get_template_part('templates/content', 'none'); ?>
