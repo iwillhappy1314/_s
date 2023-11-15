@@ -28,22 +28,26 @@ get_header();
             <section>
                 <h2 class="mb-4 text-2xl">Bootstrap Popover</h2>
 
-                <button type='button' class='rs-button rs-button--primary rs-popover'
-                        data-bs-toggle='popover' data-bs-placement='right'
+                <button type='button'
+                        class='rs-button rs-button--primary rs-popover'
+                        data-bs-toggle='popover'
+                        data-bs-placement='right'
                         data-bs-custom-class='custom-popover'
                         data-bs-title='Custom popover'
                         data-bs-content='This popover is themed via CSS variables.'>
                     Custom popover
                 </button>
 
-                <div class="hs-tooltip inline-block [--trigger:click]">
-                    <a class="rs-button hs-tooltip-toggle block" href="javascript:;">
-                        Click me
-                        <div class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-3 px-4 bg-white" role="tooltip">
-                            Top popover
+                <div class="rs-popover__wrapper">
+                    <a class="rs-button" href="#">Hover me</a>
+                    <div class="rs-popover__content">
+                        <div>
+                            这是 CSS Popover 的内容
                         </div>
-                    </a>
+                        <div class="rs-popover__placeholder"></div>
+                    </div>
                 </div>
+
             </section>
 
 
