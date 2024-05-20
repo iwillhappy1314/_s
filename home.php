@@ -133,19 +133,19 @@ get_header();
                                     <a href="https://www.icbc.com.cn/" target="_blank">
                                         <div class="overflow-hidden border h-[61px] border-solid border-gray-300 bg-gray-200 flex items-center hover:bg-gray-300 hover:border-gray-400 cursor-pointer">
                                             <div class="text-center  text-sm flex items-center">
-                                                <img width="171" height="56" src="http://qinghaixinbao.local:58071/wp-content/uploads/2023/07/gongshang.png" class="attachment-full size-full wp-post-image" alt="" decoding="async" /></div>
+                                                <img width="171" height="56" src="https://placehold.co/171x56" class="attachment-full size-full wp-post-image" alt="" decoding="async" /></div>
                                         </div>
                                     </a>
                                     <a href="https://www.boc.cn/" target="_blank">
                                         <div class="overflow-hidden border h-[61px] border-solid border-gray-300 bg-gray-200 flex items-center hover:bg-gray-300 hover:border-gray-400 cursor-pointer">
                                             <div class="text-center  text-sm flex items-center">
-                                                <img width="171" height="56" src="http://qinghaixinbao.local:58071/wp-content/uploads/2023/07/zhy.png" class="attachment-full size-full wp-post-image" alt="" decoding="async" /></div>
+                                                <img width="171" height="56" src="https://placehold.co/171x56" class="attachment-full size-full wp-post-image" alt="" decoding="async" /></div>
                                         </div>
                                     </a>
                                     <a href="http://www.ccb.com/" target="_blank">
                                         <div class="overflow-hidden border h-[61px] border-solid border-gray-300 bg-gray-200 flex items-center hover:bg-gray-300 hover:border-gray-400 cursor-pointer">
                                             <div class="text-center  text-sm flex items-center">
-                                                <img width="171" height="56" src="http://qinghaixinbao.local:58071/wp-content/uploads/2023/07/js.png" class="attachment-full size-full wp-post-image" alt="" decoding="async" /></div>
+                                                <img width="171" height="56" src="https://placehold.co/252x61" class="attachment-full size-full wp-post-image" alt="" decoding="async" /></div>
                                         </div>
                                     </a>
                                 </div>
@@ -201,7 +201,7 @@ get_header();
                             <div class="flex">
                                 <a class="block flex-shrink-0" href="#">
                                     <div class="flex">
-                                        <img width="171" height="162" src="http://qx.pr.wpcio.com/wp-content/uploads/2023/07/qz.png" class="object-cover wp-post-image" alt="" decoding="async" /></div>
+                                        <img width="171" height="162" src="https://placehold.co/400x300" class="object-cover wp-post-image" alt="" decoding="async" /></div>
                                 </a>
                                 <div class="px-4 flex flex-col flex-nowrap justify-center w-full">
                                     <h3 class="text-lg text-gray-900 w-full">
@@ -224,7 +224,7 @@ get_header();
                             <div class="flex">
                                 <a class="block flex-shrink-0" href="#">
                                     <div class="flex">
-                                        <img width="172" height="162" src="http://qx.pr.wpcio.com/wp-content/uploads/2023/07/b.png" class="object-cover wp-post-image" alt="" decoding="async" /></div>
+                                        <img width="172" height="162" src="https://placehold.co/400x300" class="object-cover wp-post-image" alt="" decoding="async" /></div>
                                 </a>
                                 <div class="px-4 flex flex-col flex-nowrap justify-center w-full">
                                     <h3 class="text-lg text-gray-900 w-full">
@@ -246,7 +246,7 @@ get_header();
                             <div class="flex">
                                 <a class="block flex-shrink-0" href="#">
                                     <div class="flex">
-                                        <img width="171" height="162" src="http://qx.pr.wpcio.com/wp-content/uploads/2023/07/f.png" class="object-cover wp-post-image" alt="" decoding="async" /></div>
+                                        <img width="171" height="162" src="https://placehold.co/400x300" class="object-cover wp-post-image" alt="" decoding="async" /></div>
                                 </a>
                                 <div class="px-4 flex flex-col flex-nowrap justify-center w-full">
                                     <h3 class="text-lg text-gray-900 w-full">
