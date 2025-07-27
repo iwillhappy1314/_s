@@ -164,3 +164,8 @@ function _s_page_menu()
         ]
     );
 }
+
+
+function _s_icon($id){
+    return '<use xlink:href="' . _s_assets('frontend/dist/images/icons.svg') . '#rsicon-' . $id . '"></use>';
+}
